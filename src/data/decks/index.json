@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ntibavuga-bavuga",
+    "title": "Ntibavuga Bavuga",
+    "format": "suited",
+    "pageCount": 56,
+    "cardCount": 54
+  },
+  {
+    "id": "ikeshamvugo",
+    "title": "Ikeshamvugo",
+    "format": "suited",
+    "pageCount": 56,
+    "cardCount": 54
+  },
+  {
+    "id": "imvugo",
+    "title": "Imvugo",
+    "format": "suited",
+    "pageCount": 56,
+    "cardCount": 54
+  },
+  {
+    "id": "kirazira",
+    "title": "Kirazira",
+    "format": "suited",
+    "pageCount": 56,
+    "cardCount": 54
+  },
+  {
+    "id": "indangagaciro",
+    "title": "Indangagaciro",
+    "format": "suited",
+    "pageCount": 56,
+    "cardCount": 54
+  },
+  {
+    "id": "ibisakuzo",
+    "title": "Ibisakuzo",
+    "format": "riddle",
+    "pageCount": 56,
+    "cardCount": 54
+  }
+]

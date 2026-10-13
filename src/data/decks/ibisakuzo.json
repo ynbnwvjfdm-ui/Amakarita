@@ -1,0 +1,1845 @@
+{
+  "id": "ibisakuzo",
+  "title": "Ibisakuzo",
+  "format": "riddle",
+  "source": "source/Ibisakuzo_-_Cards.pdf",
+  "pageCount": 56,
+  "pageSize": {
+    "width": 820.0,
+    "height": 1120.0
+  },
+  "fonts": [
+    "Futura",
+    "KorpenTagPERSONALUSE-Regular",
+    "Krunc",
+    "Parslay-Regular"
+  ],
+  "colors": {
+    "ink": "#930009",
+    "accent": null
+  },
+  "cover": {
+    "page": 1,
+    "image": "assets/decks/ibisakuzo/page-01.webp",
+    "text": "SAKWE\nIBISAKUZO\nSAKWE"
+  },
+  "back": {
+    "page": 2,
+    "image": "assets/decks/ibisakuzo/page-02.webp",
+    "text": "SAKWE\nIBISAKUZO NI UMUKINO WO MU\nMAGAMBO, IBIBAZO N’IBISUBIZO\nBIHIMBAZA ABAKURU N’ABATO\nKANDI BIRIMO UBUHANGA.\nSAKWE"
+  },
+  "cards": [
+    {
+      "id": "ibisakuzo-01",
+      "page": 3,
+      "image": "assets/decks/ibisakuzo/page-03.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NAGUTERA ICYO\nUTAZI UTABONYE",
+        "lines": [
+          [
+            {
+              "text": "NAGUTERA ICYO",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "UTAZI UTABONYE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "UBUTO\nBWA SO NA NYOKO",
+        "lines": [
+          [
+            {
+              "text": "UBUTO",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "BWA SO NA NYOKO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-02",
+      "page": 4,
+      "image": "assets/decks/ibisakuzo/page-04.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NAGUTERA ICYAMBUKA AMAZI\nKITAGIRA AMAGURU",
+        "lines": [
+          [
+            {
+              "text": "NAGUTERA ICYAMBUKA AMAZI",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "KITAGIRA AMAGURU",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IJWI",
+        "lines": [
+          [
+            {
+              "text": "IJWI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-03",
+      "page": 5,
+      "image": "assets/decks/ibisakuzo/page-05.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "HAGARARA HAKUNO, MPAGARARE\nHAKURYA TURATE ABEZA",
+        "lines": [
+          [
+            {
+              "text": "HAGARARA HAKUNO, MPAGARARE",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "HAKURYA TURATE ABEZA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AMENYO",
+        "lines": [
+          [
+            {
+              "text": "AMENYO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-04",
+      "page": 6,
+      "image": "assets/decks/ibisakuzo/page-06.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "HAKURYA NI UMUKOKI\nHAKUNO NI UMUKOKI",
+        "lines": [
+          [
+            {
+              "text": "HAKURYA NI UMUKOKI",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "HAKUNO NI UMUKOKI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IKIBUNO",
+        "lines": [
+          [
+            {
+              "text": "IKIBUNO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-05",
+      "page": 7,
+      "image": "assets/decks/ibisakuzo/page-07.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NGEZE MU ISHYAMBA\nRIRAHUNGABANA",
+        "lines": [
+          [
+            {
+              "text": "NGEZE MU ISHYAMBA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "RIRAHUNGABANA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "INZARA Y’UMUSORE",
+        "lines": [
+          [
+            {
+              "text": "INZARA Y’UMUSORE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-06",
+      "page": 8,
+      "image": "assets/decks/ibisakuzo/page-08.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NSHINZE UMWE NDASAKARA",
+        "lines": [
+          [
+            {
+              "text": "NSHINZE UMWE NDASAKARA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "ICYOBO",
+        "lines": [
+          [
+            {
+              "text": "ICYOBO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-07",
+      "page": 9,
+      "image": "assets/decks/ibisakuzo/page-09.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NYIRABAKANGAZA\nNGO MUTAHE",
+        "lines": [
+          [
+            {
+              "text": "NYIRABAKANGAZA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "NGO MUTAHE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IMBEHO KU RUGI",
+        "lines": [
+          [
+            {
+              "text": "IMBEHO KU RUGI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-08",
+      "page": 10,
+      "image": "assets/decks/ibisakuzo/page-10.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "INKA YANJYE\nNYIKAMA IGARAMYE",
+        "lines": [
+          [
+            {
+              "text": "INKA YANJYE",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "NYIKAMA IGARAMYE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "UMUVURE",
+        "lines": [
+          [
+            {
+              "text": "UMUVURE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-09",
+      "page": 11,
+      "image": "assets/decks/ibisakuzo/page-11.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "TWAVAMO UMWE NTITWARYA",
+        "lines": [
+          [
+            {
+              "text": "TWAVAMO UMWE NTITWARYA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "ISHYIGA",
+        "lines": [
+          [
+            {
+              "text": "ISHYIGA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-10",
+      "page": 12,
+      "image": "assets/decks/ibisakuzo/page-12.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "MUTAMU IRABYINA\nMU GATABIRE",
+        "lines": [
+          [
+            {
+              "text": "MUTAMU IRABYINA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "MU GATABIRE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IMBWA MU MASINDE",
+        "lines": [
+          [
+            {
+              "text": "IMBWA MU MASINDE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-11",
+      "page": 13,
+      "image": "assets/decks/ibisakuzo/page-13.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "UWAGACA\nYABA ARI UMUGABO",
+        "lines": [
+          [
+            {
+              "text": "UWAGACA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "YABA ARI UMUGABO",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "KUBUZA UMURYI KURYA",
+        "lines": [
+          [
+            {
+              "text": "KUBUZA UMURYI KURYA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-12",
+      "page": 14,
+      "image": "assets/decks/ibisakuzo/page-14.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NGEZE MU RUTOKI\nABASIRIKARE BARAMFATA",
+        "lines": [
+          [
+            {
+              "text": "NGEZE MU RUTOKI",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "ABASIRIKARE BARAMFATA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IBISHOKORO",
+        "lines": [
+          [
+            {
+              "text": "IBISHOKORO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-13",
+      "page": 15,
+      "image": "assets/decks/ibisakuzo/page-15.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NKUBISE URUSHYI RURUMIRA",
+        "lines": [
+          [
+            {
+              "text": "NKUBISE URUSHYI RURUMIRA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IBARA RY’INKA",
+        "lines": [
+          [
+            {
+              "text": "IBARA RY’INKA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-14",
+      "page": 16,
+      "image": "assets/decks/ibisakuzo/page-16.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "HAKURYA URWERERANE\nHAKUNO URWERERANE",
+        "lines": [
+          [
+            {
+              "text": "HAKURYA URWERERANE",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "HAKUNO URWERERANE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "URURABO RW’AMASHAZA",
+        "lines": [
+          [
+            {
+              "text": "URURABO RW’AMASHAZA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-15",
+      "page": 17,
+      "image": "assets/decks/ibisakuzo/page-17.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "INKA YANJYE NYIZIRIKA KU NZIRA\nUYINYUZEHO WESE AKAYISHITURA",
+        "lines": [
+          [
+            {
+              "text": "INKA YANJYE NYIZIRIKA KU NZIRA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "UYINYUZEHO WESE AKAYISHITURA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "URUTORYI",
+        "lines": [
+          [
+            {
+              "text": "URUTORYI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-16",
+      "page": 18,
+      "image": "assets/decks/ibisakuzo/page-18.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NAPFA, NAKIRA, SIMBIZI",
+        "lines": [
+          [
+            {
+              "text": "NAPFA, NAKIRA, SIMBIZI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AKANYONI KARITSE KU NZIRA",
+        "lines": [
+          [
+            {
+              "text": "AKANYONI KARITSE KU NZIRA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-17",
+      "page": 19,
+      "image": "assets/decks/ibisakuzo/page-19.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "KARAVUGIRA IBUHANIKA",
+        "lines": [
+          [
+            {
+              "text": "KARAVUGIRA IBUHANIKA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "INGASIRE",
+        "lines": [
+          [
+            {
+              "text": "INGASIRE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-18",
+      "page": 20,
+      "image": "assets/decks/ibisakuzo/page-20.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "RUGANZU ARAGUYE\nN’INGABO ZE",
+        "lines": [
+          [
+            {
+              "text": "RUGANZU ARAGUYE",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "N’INGABO ZE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IGITOKI",
+        "lines": [
+          [
+            {
+              "text": "IGITOKI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-19",
+      "page": 21,
+      "image": "assets/decks/ibisakuzo/page-21.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "SOGOKURU ARYOHA ABOZE",
+        "lines": [
+          [
+            {
+              "text": "SOGOKURU ARYOHA ABOZE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "UMUNEKE",
+        "lines": [
+          [
+            {
+              "text": "UMUNEKE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-20",
+      "page": 22,
+      "image": "assets/decks/ibisakuzo/page-22.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "MUTUMBAJURU WA RUJUGIRA",
+        "lines": [
+          [
+            {
+              "text": "MUTUMBAJURU WA RUJUGIRA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "UMWUMBA W’INSINA",
+        "lines": [
+          [
+            {
+              "text": "UMWUMBA W’INSINA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-21",
+      "page": 23,
+      "image": "assets/decks/ibisakuzo/page-23.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "HAKURYA MU BIHUKU",
+        "lines": [
+          [
+            {
+              "text": "HAKURYA MU BIHUKU",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IBIZU BITAGIRA ABANTU",
+        "lines": [
+          [
+            {
+              "text": "IBIZU BITAGIRA ABANTU",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-22",
+      "page": 24,
+      "image": "assets/decks/ibisakuzo/page-24.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "ABAKOBWA BANJYE BARARA\nBAHAGAZE BWACYA BAKARYAMA",
+        "lines": [
+          [
+            {
+              "text": "ABAKOBWA BANJYE BARARA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "BAHAGAZE BWACYA BAKARYAMA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IMYUGARIRO",
+        "lines": [
+          [
+            {
+              "text": "IMYUGARIRO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-23",
+      "page": 25,
+      "image": "assets/decks/ibisakuzo/page-25.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "RUKARA ARATEMA UMUVUMBA",
+        "lines": [
+          [
+            {
+              "text": "RUKARA ARATEMA UMUVUMBA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "URWEMBE MU MUSATSI",
+        "lines": [
+          [
+            {
+              "text": "URWEMBE MU MUSATSI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-24",
+      "page": 26,
+      "image": "assets/decks/ibisakuzo/page-26.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "RUKARA RW’UMWAMI\nYICARIRA ABAGABO BATATU",
+        "lines": [
+          [
+            {
+              "text": "RUKARA RW’UMWAMI",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "YICARIRA ABAGABO BATATU",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "INKONO",
+        "lines": [
+          [
+            {
+              "text": "INKONO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-25",
+      "page": 27,
+      "image": "assets/decks/ibisakuzo/page-27.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "FARAZIYA ACEZA YICAYE",
+        "lines": [
+          [
+            {
+              "text": "FARAZIYA ACEZA YICAYE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AKAYUNGURUZO",
+        "lines": [
+          [
+            {
+              "text": "AKAYUNGURUZO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-26",
+      "page": 28,
+      "image": "assets/decks/ibisakuzo/page-28.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "ABAKOBWA BANJYE\nBIKWIJE IMPINDU BOSE",
+        "lines": [
+          [
+            {
+              "text": "ABAKOBWA BANJYE",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "BIKWIJE IMPINDU BOSE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IMIRIZO Y’IMBEBA",
+        "lines": [
+          [
+            {
+              "text": "IMIRIZO Y’IMBEBA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-27",
+      "page": 29,
+      "image": "assets/decks/ibisakuzo/page-29.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NKIZA IBYO BITOKI\nBYA SO BINSABA INYAMA",
+        "lines": [
+          [
+            {
+              "text": "NKIZA IBYO BITOKI",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "BYA SO BINSABA INYAMA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IBABI BY’IBIBONOBONO",
+        "lines": [
+          [
+            {
+              "text": "IBABI BY’IBIBONOBONO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-28",
+      "page": 30,
+      "image": "assets/decks/ibisakuzo/page-30.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "MPIRITSE INDOBO\nIKWIRA HOSE",
+        "lines": [
+          [
+            {
+              "text": "MPIRITSE INDOBO",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "IKWIRA HOSE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AMAGAMBO YO KU RUREMBO",
+        "lines": [
+          [
+            {
+              "text": "AMAGAMBO YO KU RUREMBO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-29",
+      "page": 31,
+      "image": "assets/decks/ibisakuzo/page-31.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "MPAGAZE MU GAHINGA\nNYARIRA AB ‘EPFO",
+        "lines": [
+          [
+            {
+              "text": "MPAGAZE MU GAHINGA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "NYARIRA AB ‘EPFO",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IMVURA",
+        "lines": [
+          [
+            {
+              "text": "IMVURA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-30",
+      "page": 32,
+      "image": "assets/decks/ibisakuzo/page-32.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "ICYO NSASIRA NTIKIRAME",
+        "lines": [
+          [
+            {
+              "text": "ICYO NSASIRA NTIKIRAME",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IKAWA",
+        "lines": [
+          [
+            {
+              "text": "IKAWA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-31",
+      "page": 33,
+      "image": "assets/decks/ibisakuzo/page-33.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NSHUKUYE URWINA SINATARA",
+        "lines": [
+          [
+            {
+              "text": "NSHUKUYE URWINA SINATARA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IGIHANDURE",
+        "lines": [
+          [
+            {
+              "text": "IGIHANDURE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-32",
+      "page": 34,
+      "image": "assets/decks/ibisakuzo/page-34.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "HAVUYEMO UMWE NTITWABIMENYA",
+        "lines": [
+          [
+            {
+              "text": "HAVUYEMO UMWE NTITWABIMENYA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "UBWATSI BUSAKAYE INZU",
+        "lines": [
+          [
+            {
+              "text": "UBWATSI BUSAKAYE INZU",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-33",
+      "page": 35,
+      "image": "assets/decks/ibisakuzo/page-35.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NAGUTERA RUGANWA\nIGANIRA N’ABANTU",
+        "lines": [
+          [
+            {
+              "text": "NAGUTERA RUGANWA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "IGANIRA N’ABANTU",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "TEREFONI",
+        "lines": [
+          [
+            {
+              "text": "TEREFONI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-34",
+      "page": 36,
+      "image": "assets/decks/ibisakuzo/page-36.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "ABANA B’UMWAMI\nBICAYE KU NTEBE IMWE",
+        "lines": [
+          [
+            {
+              "text": "ABANA B’UMWAMI",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "BICAYE KU NTEBE IMWE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "INTOKI KU BIGANZA",
+        "lines": [
+          [
+            {
+              "text": "INTOKI KU BIGANZA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-35",
+      "page": 37,
+      "image": "assets/decks/ibisakuzo/page-37.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "KO UNDEBA NDAGUHA",
+        "lines": [
+          [
+            {
+              "text": "KO UNDEBA NDAGUHA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IMYENGE Y’INZU",
+        "lines": [
+          [
+            {
+              "text": "IMYENGE Y’INZU",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-36",
+      "page": 38,
+      "image": "assets/decks/ibisakuzo/page-38.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "SAKUZA N’UWO MURI KUMWE",
+        "lines": [
+          [
+            {
+              "text": "SAKUZA N’UWO MURI KUMWE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "URURIMI RWAWE",
+        "lines": [
+          [
+            {
+              "text": "URURIMI RWAWE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-37",
+      "page": 39,
+      "image": "assets/decks/ibisakuzo/page-39.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NDI KAGUFI NAHINA SO",
+        "lines": [
+          [
+            {
+              "text": "NDI KAGUFI NAHINA SO",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "ICYANZU",
+        "lines": [
+          [
+            {
+              "text": "ICYANZU",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-38",
+      "page": 40,
+      "image": "assets/decks/ibisakuzo/page-40.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "AKA KARIZA SO",
+        "lines": [
+          [
+            {
+              "text": "AKA KARIZA SO",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AKANYARIRAJISHO",
+        "lines": [
+          [
+            {
+              "text": "AKANYARIRAJISHO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-39",
+      "page": 41,
+      "image": "assets/decks/ibisakuzo/page-41.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "KARATEMBASHYASHYA",
+        "lines": [
+          [
+            {
+              "text": "KARATEMBASHYASHYA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AMAZI KU ITEKE",
+        "lines": [
+          [
+            {
+              "text": "AMAZI KU ITEKE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-40",
+      "page": 42,
+      "image": "assets/decks/ibisakuzo/page-42.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "ABAKOBWA BANJYE\nBANAGANA AMAJOSI",
+        "lines": [
+          [
+            {
+              "text": "ABAKOBWA BANJYE",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "BANAGANA AMAJOSI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "URUGOYI RWIBISHYIMBO",
+        "lines": [
+          [
+            {
+              "text": "URUGOYI RWIBISHYIMBO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-41",
+      "page": 43,
+      "image": "assets/decks/ibisakuzo/page-43.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "HAKURYA DUUUUUU\nHAKUNO DUUUUUU",
+        "lines": [
+          [
+            {
+              "text": "HAKURYA DUUUUUU",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "HAKUNO DUUUUUU",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IBIRADIYO BITEGANYE",
+        "lines": [
+          [
+            {
+              "text": "IBIRADIYO BITEGANYE",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-42",
+      "page": 44,
+      "image": "assets/decks/ibisakuzo/page-44.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "ZENGURUKA DUHURE",
+        "lines": [
+          [
+            {
+              "text": "ZENGURUKA DUHURE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "UMUKANDARA",
+        "lines": [
+          [
+            {
+              "text": "UMUKANDARA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-43",
+      "page": 45,
+      "image": "assets/decks/ibisakuzo/page-45.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NICAYE IWACU MURIKA ISI",
+        "lines": [
+          [
+            {
+              "text": "NICAYE IWACU MURIKA ISI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IZUBA",
+        "lines": [
+          [
+            {
+              "text": "IZUBA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-44",
+      "page": 46,
+      "image": "assets/decks/ibisakuzo/page-46.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "SO NA NYOKO\nBAPFAGA IKI",
+        "lines": [
+          [
+            {
+              "text": "SO NA NYOKO",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "BAPFAGA IKI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AKAYUZI KO MU RUBIBI",
+        "lines": [
+          [
+            {
+              "text": "AKAYUZI KO MU RUBIBI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-45",
+      "page": 47,
+      "image": "assets/decks/ibisakuzo/page-47.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "IYO UMUGABO AGEZE\nMU RUTOKI ABANZA IKI",
+        "lines": [
+          [
+            {
+              "text": "IYO UMUGABO AGEZE",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "MU RUTOKI ABANZA IKI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IKIVUGIRIZO",
+        "lines": [
+          [
+            {
+              "text": "IKIVUGIRIZO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-46",
+      "page": 48,
+      "image": "assets/decks/ibisakuzo/page-48.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "IYO UMUGORE AGEZE\nMU RUTOKI ABANZA IKI",
+        "lines": [
+          [
+            {
+              "text": "IYO UMUGORE AGEZE",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "MU RUTOKI ABANZA IKI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "INYAMUNYO",
+        "lines": [
+          [
+            {
+              "text": "INYAMUNYO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-47",
+      "page": 49,
+      "image": "assets/decks/ibisakuzo/page-49.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "IKI GIKUNDA INSHYI",
+        "lines": [
+          [
+            {
+              "text": "IKI GIKUNDA INSHYI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AKAYUNGURUZO",
+        "lines": [
+          [
+            {
+              "text": "AKAYUNGURUZO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-48",
+      "page": 50,
+      "image": "assets/decks/ibisakuzo/page-50.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "ARIYA MABUYE YA RUBARABARA\nWAYABARA UKAYARANGIZA",
+        "lines": [
+          [
+            {
+              "text": "ARIYA MABUYE YA RUBARABARA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "WAYABARA UKAYARANGIZA",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "INYENYERI",
+        "lines": [
+          [
+            {
+              "text": "INYENYERI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-49",
+      "page": 51,
+      "image": "assets/decks/ibisakuzo/page-51.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NAGUTERA NAKWITEGUYE",
+        "lines": [
+          [
+            {
+              "text": "NAGUTERA NAKWITEGUYE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "GUSITARA",
+        "lines": [
+          [
+            {
+              "text": "GUSITARA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-50",
+      "page": 52,
+      "image": "assets/decks/ibisakuzo/page-52.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "MPAGAZE INAHA\nNDASA KWA MYASIRO I BURUNDI",
+        "lines": [
+          [
+            {
+              "text": "MPAGAZE INAHA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "NDASA KWA MYASIRO I BURUNDI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "UMURABYO",
+        "lines": [
+          [
+            {
+              "text": "UMURABYO",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-51",
+      "page": 53,
+      "image": "assets/decks/ibisakuzo/page-53.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "DORE AHO SO ARENGA\nN’IBIKOTE BIBI",
+        "lines": [
+          [
+            {
+              "text": "DORE AHO SO ARENGA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "N’IBIKOTE BIBI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "IKIVUMVURI",
+        "lines": [
+          [
+            {
+              "text": "IKIVUMVURI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-52",
+      "page": 54,
+      "image": "assets/decks/ibisakuzo/page-54.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NAGUTERA NAKWITEGUYE",
+        "lines": [
+          [
+            {
+              "text": "NAGUTERA NAKWITEGUYE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "GUSITARA",
+        "lines": [
+          [
+            {
+              "text": "GUSITARA",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-53",
+      "page": 55,
+      "image": "assets/decks/ibisakuzo/page-55.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "NI IKI CYATANZE UMUZUNGU\nKWAMBARA KARUVATI",
+        "lines": [
+          [
+            {
+              "text": "NI IKI CYATANZE UMUZUNGU",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "KWAMBARA KARUVATI",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "ICYIYONI",
+        "lines": [
+          [
+            {
+              "text": "ICYIYONI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ibisakuzo-54",
+      "page": 56,
+      "image": "assets/decks/ibisakuzo/page-56.webp",
+      "kind": "riddle",
+      "rank": null,
+      "suit": null,
+      "riddle": {
+        "text": "DORE ABAKOBWA\nBEREKANA AMABERE",
+        "lines": [
+          [
+            {
+              "text": "DORE ABAKOBWA",
+              "accent": false
+            }
+          ],
+          [
+            {
+              "text": "BEREKANA AMABERE",
+              "accent": false
+            }
+          ]
+        ]
+      },
+      "answer": {
+        "text": "AMAPAPAYI",
+        "lines": [
+          [
+            {
+              "text": "AMAPAPAYI",
+              "accent": false
+            }
+          ]
+        ]
+      }
+    }
+  ]
+}

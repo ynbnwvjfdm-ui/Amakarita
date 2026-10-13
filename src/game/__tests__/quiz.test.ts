@@ -87,6 +87,7 @@ describe('a turn in phone mode', () => {
     s = nextTurn(answer(s, 'NOPE'));
     expect(s.phase).toBe('over');
     expect(s.taken).toEqual([1, 1]);
+    expect([attemptsLeft(s, 0), attemptsLeft(s, 1)]).toEqual([0, 0]);
     expect(quizWinners(s)).toEqual([0]);
   });
   it('every player gets the same number of turns', () => {

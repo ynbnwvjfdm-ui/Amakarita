@@ -205,7 +205,8 @@ export function nextTurn(state: QuizState): QuizState {
 
 /** Attempts the player whose turn it is has left, counting the one being played. */
 export function attemptsLeft(state: QuizState, seat: number): number {
-  const inPlay = state.phase !== 'draw' && seat === state.turn ? 1 : 0;
+  const playing = state.phase === 'answer' || state.phase === 'joker' || state.phase === 'result';
+  const inPlay = playing && seat === state.turn ? 1 : 0;
   return Math.max(0, state.attempts - state.taken[seat] + inPlay);
 }
 

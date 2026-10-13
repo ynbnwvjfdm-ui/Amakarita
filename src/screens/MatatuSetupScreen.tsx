@@ -77,10 +77,7 @@ export function MatatuSetupScreen() {
         />
       </View>
 
-      <View style={formStyles.group}>
-        <Text style={formStyles.sectionTight}>{t('whoPlays')}</Text>
-        <SeatChips seats={active} onChange={updateSeat} width={Math.min(width, MAX_WIDTH) - 32} />
-      </View>
+      <SeatChips title={t('whoPlays')} seats={active} onChange={updateSeat} width={Math.min(width, MAX_WIDTH) - 32} />
     </Screen>
   );
 }

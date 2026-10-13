@@ -32,7 +32,7 @@ export function Screen({ title, eyebrow, onBack, backLabel, right, children, foo
   return (
     <SafeAreaView style={styles.safe} edges={tabbed ? ['top'] : ['top', 'bottom']}>
       <View style={styles.column}>
-        <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        <ScrollView contentContainerStyle={[styles.content, compact && styles.contentCompact]} showsVerticalScrollIndicator={false}>
           {compact ? (
             <View style={styles.compactRow}>
               {back}
@@ -56,7 +56,7 @@ export function Screen({ title, eyebrow, onBack, backLabel, right, children, foo
           )}
           {children}
         </ScrollView>
-        {footer ? <View style={styles.footer}>{footer}</View> : null}
+        {footer ? <View style={[styles.footer, compact && styles.footerCompact]}>{footer}</View> : null}
       </View>
     </SafeAreaView>
   );
@@ -83,6 +83,8 @@ const styles = StyleSheet.create({
   title: { fontFamily: fonts.display, fontSize: 34, lineHeight: 38, color: colors.ink, letterSpacing: -0.8 },
   content: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 32, gap: 18 },
   footer: { padding: 16, backgroundColor: colors.bg },
+  contentCompact: { gap: 14, paddingBottom: 16 },
+  footerCompact: { paddingTop: 10, paddingBottom: 12 },
 });
 
 /** Shared text styles for setup forms. */

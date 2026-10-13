@@ -4,6 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { useI18n } from '../i18n';
 import { SeatConfig } from '../navigation';
 import { Button } from './Button';
+import { formStyles } from './Screen';
 import { Panel } from './table';
 import { colors, fonts, radius } from './theme';
 
@@ -14,6 +15,8 @@ interface Props {
   width: number;
   /** Every seat is a person; tapping does nothing. */
   peopleOnly?: boolean;
+  /** Section title, shown on the same line as the names link. */
+  title: string;
 }
 
 const GAP = 8;
@@ -23,7 +26,7 @@ const GAP = 8;
  * person and the phone. Names are written in a separate panel so the form
  * stays on one screen.
  */
-export function SeatChips({ seats, onChange, width, peopleOnly }: Props) {
+export function SeatChips({ seats, onChange, width, peopleOnly, title }: Props) {
   const { t } = useI18n();
   const [naming, setNaming] = useState(false);
   const perRow = Math.min(3, Math.max(1, seats.length));
@@ -32,6 +35,15 @@ export function SeatChips({ seats, onChange, width, peopleOnly }: Props) {
 
   return (
     <View style={styles.wrap}>
+      <View style={styles.head}>
+        <Text style={[formStyles.sectionTight, styles.title]} numberOfLines={1}>
+          {title}
+        </Text>
+        <Pressable accessibilityRole="button" onPress={() => setNaming(true)} style={styles.namesButton} hitSlop={8}>
+          <Ionicons name="create-outline" size={16} color={colors.ink} />
+          <Text style={styles.namesText}>{t('writeNames')}</Text>
+        </Pressable>
+      </View>
       <View style={styles.grid}>
         {seats.map((seat, i) => {
           const human = peopleOnly || seat.kind === 'human';
@@ -58,10 +70,6 @@ export function SeatChips({ seats, onChange, width, peopleOnly }: Props) {
           );
         })}
       </View>
-      <Pressable accessibilityRole="button" onPress={() => setNaming(true)} style={styles.namesButton} hitSlop={6}>
-        <Ionicons name="create-outline" size={16} color={colors.ink} />
-        <Text style={styles.namesText}>{t('writeNames')}</Text>
-      </Pressable>
 
       <Panel visible={naming} title={t('writeNames')} onRequestClose={() => setNaming(false)}>
         {seats.map((seat, i) => (
@@ -83,7 +91,9 @@ export function SeatChips({ seats, onChange, width, peopleOnly }: Props) {
 }
 
 const styles = StyleSheet.create({
-  wrap: { gap: 8 },
+  wrap: { gap: 6 },
+  head: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  title: { flex: 1 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP },
   chip: { height: 50, flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 10, borderRadius: 14, borderWidth: 1.5 },
   chipHuman: { backgroundColor: colors.surface, borderColor: colors.ink },
@@ -93,7 +103,7 @@ const styles = StyleSheet.create({
   name: { fontFamily: fonts.semibold, fontSize: 12, color: colors.muted },
   kind: { fontFamily: fonts.bold, fontSize: 14, color: colors.ink },
   kindBot: { color: colors.muted },
-  namesButton: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', paddingVertical: 4 },
+  namesButton: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   namesText: { fontFamily: fonts.semibold, fontSize: 14, color: colors.ink, textDecorationLine: 'underline' },
   input: {
     minHeight: 44,

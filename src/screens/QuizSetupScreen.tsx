@@ -11,12 +11,12 @@ import { defaultSeats } from '../ui/SeatEditor';
 import { Segmented } from '../ui/Segmented';
 import { MAX_WIDTH } from '../ui/theme';
 
-/** Two steps: the deck, then everything else on one screen. */
+/** Three short steps, each on one screen: the deck, how to play, who plays. */
 export function QuizSetupScreen() {
   const { t } = useI18n();
   const nav = useNav();
   const { width } = useWindowDimensions();
-  const [step, setStep] = useState<1 | 2>(1);
+  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [deckId, setDeckId] = useState('mix');
   const [mode, setMode] = useState<QuizMode>('phone');
   const [playerCount, setPlayerCount] = useState(2);
@@ -38,12 +38,43 @@ export function QuizSetupScreen() {
     );
   }
 
+  if (step === 2) {
+    return (
+      <Screen key="how" compact title="Amakarita" onBack={() => setStep(1)} backLabel={t('back')} footer={<Button label={t('continue')} onPress={() => setStep(3)} />}>
+        <View style={formStyles.group}>
+          <Text style={formStyles.sectionTight}>{t('howToAnswer')}</Text>
+          <Segmented
+            options={[
+              { value: 'phone' as QuizMode, label: t('modePhone') },
+              { value: 'group' as QuizMode, label: t('modeGroup') },
+            ]}
+            value={mode}
+            onChange={setMode}
+            label={(v) => (v === 'phone' ? t('modePhone') : t('modeGroup'))}
+          />
+          <Text style={formStyles.note}>{mode === 'phone' ? t('modePhoneNote') : t('modeGroupNote')}</Text>
+        </View>
+
+        <View style={formStyles.group}>
+          <Text style={formStyles.sectionTight}>{t('attempts')}</Text>
+          <Segmented
+            options={ATTEMPT_CHOICES.map((n) => ({ value: n, label: String(n) }))}
+            value={attempts}
+            onChange={setAttempts}
+            label={(n) => t('attemptsN', { n })}
+          />
+          <Text style={formStyles.note}>{t('attemptsNote')}</Text>
+        </View>
+      </Screen>
+    );
+  }
+
   return (
     <Screen
-      key="settings"
+      key="players"
       compact
       title="Amakarita"
-      onBack={() => setStep(1)}
+      onBack={() => setStep(2)}
       backLabel={t('back')}
       footer={
         <View style={{ gap: 8 }}>
@@ -57,20 +88,6 @@ export function QuizSetupScreen() {
       }
     >
       <View style={formStyles.group}>
-        <Text style={formStyles.sectionTight}>{t('howToAnswer')}</Text>
-        <Segmented
-          options={[
-            { value: 'phone' as QuizMode, label: t('modePhone') },
-            { value: 'group' as QuizMode, label: t('modeGroup') },
-          ]}
-          value={mode}
-          onChange={setMode}
-          label={(v) => (v === 'phone' ? t('modePhone') : t('modeGroup'))}
-        />
-        <Text style={formStyles.note}>{mode === 'phone' ? t('modePhoneNote') : t('modeGroupNote')}</Text>
-      </View>
-
-      <View style={formStyles.group}>
         <Text style={formStyles.sectionTight}>{t('players')}</Text>
         <Segmented
           options={[1, 2, 3, 4, 5, 6].map((n) => ({ value: n, label: String(n) }))}
@@ -80,21 +97,7 @@ export function QuizSetupScreen() {
         />
       </View>
 
-      <View style={formStyles.group}>
-        <Text style={formStyles.sectionTight}>{t('attempts')}</Text>
-        <Segmented
-          options={ATTEMPT_CHOICES.map((n) => ({ value: n, label: String(n) }))}
-          value={attempts}
-          onChange={setAttempts}
-          label={(n) => t('attemptsN', { n })}
-        />
-        <Text style={formStyles.note}>{t('attemptsNote')}</Text>
-      </View>
-
-      <View style={formStyles.group}>
-        <Text style={formStyles.sectionTight}>{t('whoPlays')}</Text>
-        <SeatChips seats={active} onChange={updateSeat} width={Math.min(width, MAX_WIDTH) - 32} peopleOnly={mode === 'group'} />
-      </View>
+      <SeatChips title={t('whoPlays')} seats={active} onChange={updateSeat} width={Math.min(width, MAX_WIDTH) - 32} peopleOnly={mode === 'group'} />
     </Screen>
   );
 }

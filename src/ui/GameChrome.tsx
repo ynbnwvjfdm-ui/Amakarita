@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   chipHead: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   chipName: { fontFamily: fonts.semibold, fontSize: 12, color: 'rgba(255,255,255,0.85)', flexShrink: 1 },
   chipCompact: { minWidth: 0, flexDirection: 'row', alignItems: 'center', gap: 6, height: 38, paddingVertical: 0, borderRadius: 14 },
-  chipNameCompact: { flex: 1 },
+  chipNameCompact: { flex: 1, minWidth: 0 },
   chipValueCompact: { fontFamily: fonts.display, fontSize: 18, color: colors.surface },
   chipStateCompact: { fontFamily: fonts.bold, fontSize: 12, color: 'rgba(255,255,255,0.85)', flexShrink: 0 },
   chipNameOn: { color: colors.ink },

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LayoutChangeEvent, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { LayoutChangeEvent, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MatatuCard, matchWinner, topCard } from '../game/matatu';
@@ -11,8 +11,8 @@ import { Button } from '../ui/Button';
 import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
-import { CHIP_ROW, GameTopBar, InfoPill, PillText, PlayerChip } from '../ui/GameChrome';
-import { HandFan } from '../ui/HandFan';
+import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
+import { HandGrid } from '../ui/HandGrid';
 import { LeaveConfirm, Panel, PassPhone, SUIT_SYMBOL, tableStyles } from '../ui/table';
 import { colors, deckTheme, fonts, MAX_WIDTH, radius } from '../ui/theme';
 import { useMatatuTable } from './useMatatuTable';
@@ -38,6 +38,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
   const [zoom, setZoom] = useState<ArtRef | null>(null);
   const [leaving, setLeaving] = useState(false);
   const [stageH, setStageH] = useState(0);
+  const [handBox, setHandBox] = useState({ w: 0, h: 0 });
 
   const n = config.seats.length;
   const deck = getDeck(config.deckId);
@@ -51,11 +52,9 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
   const me = viewer ?? table.humans[0];
   const others = Array.from({ length: n - 1 }, (_, i) => (me + 1 + i) % n);
   const W = Math.min(width, MAX_WIDTH);
-  const handCardW = Math.min(104, (W - 32) * 0.28);
   // Both piles side by side, as big as the measured middle allows. Besides the
-  // piles it holds the notice (34), the chips under the piles (38), the status
-  // (up to two lines) and the gaps.
-  const pileW = Math.max(64, Math.min(136, (W - 32 - 40) / 2.4, stageH > 0 ? (stageH - 150) * CARD_RATIO : 100));
+  // piles it holds the chips under them (38), the status line (40) and gaps.
+  const pileW = Math.max(56, Math.min(136, (W - 32 - 40) / 2.4, stageH > 0 ? (stageH - 104) * CARD_RATIO : 100));
   const pileH = pileW / CARD_RATIO;
 
   const top = topCard(game);
@@ -107,42 +106,36 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
           }
         />
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={CHIP_ROW} style={{ flexGrow: 0 }}>
-          {others.map((seat) => {
+        <PlayerChips
+          width={W - 32}
+          players={others.map((seat) => {
             const count = game.hands[seat].length;
             const out = !game.inMatch[seat];
             const safe = game.inMatch[seat] && !game.inRound[seat];
             const said = table.said[seat];
-            return (
-              <PlayerChip
-                key={seat}
-                name={name(seat)}
-                value={count}
-                active={game.turn === seat && !over}
-                dim={out}
-                badge={said === 'warning' && count === 2 ? '2!' : said === 'oneCard' && count === 1 ? '1!' : null}
-                state={out ? t('outBadge') : safe ? t('safe') : null}
-              />
-            );
+            return {
+              key: seat,
+              name: name(seat),
+              value: count,
+              active: game.turn === seat && !over,
+              dim: out,
+              badge: said === 'warning' && count === 2 ? '2!' : said === 'oneCard' && count === 1 ? '1!' : null,
+              state: out ? t('outBadge') : safe ? t('safe') : null,
+            };
           })}
-        </ScrollView>
+        />
 
         {/* The two piles */}
         <View style={styles.stage} onLayout={(e: LayoutChangeEvent) => setStageH(e.nativeEvent.layout.height)}>
-          <View style={styles.noticeSlot}>{noticeText ? <Text style={styles.notice}>{noticeText}</Text> : null}</View>
           <View style={styles.piles}>
             <View style={styles.pileCol}>
-              <View style={{ width: pileW, height: pileH }}>
-                {game.stock.length > 2 ? <View style={[styles.under, { width: pileW, height: pileH, transform: [{ rotate: '-5deg' }] }]} /> : null}
-                {game.stock.length > 1 ? <View style={[styles.under, { width: pileW, height: pileH, transform: [{ rotate: '3deg' }] }]} /> : null}
-                {game.stock.length > 0 ? <CardImage source={pageImage(config.deckId, deck.cover.page)} width={pileW} /> : <View style={[styles.empty, { width: pileW, height: pileH }]} />}
-              </View>
+              {game.stock.length > 0 ? <CardImage source={pageImage(config.deckId, deck.cover.page)} width={pileW} /> : <View style={[styles.empty, { width: pileW, height: pileH }]} />}
               <Text style={[styles.pileLabel, { color: theme.onBase }]}>{t('pile', { n: game.stock.length })}</Text>
             </View>
             <View style={styles.pileCol}>
               {top ? (
                 <Pressable accessibilityRole="button" accessibilityLabel={label(top)} onPress={() => setZoom(art(top))}>
-                  <CardArt {...art(top)} width={pileW} style={{ transform: [{ rotate: '2deg' }] }} />
+                  <CardArt {...art(top)} width={pileW} />
                 </Pressable>
               ) : (
                 <View style={[styles.empty, { width: pileW, height: pileH }]} />
@@ -162,7 +155,16 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
               </View>
             </View>
           </View>
-          <Text style={[styles.status, { color: game.turn === viewer ? colors.lime : theme.onBase }]}>{status}</Text>
+          {/* A notice takes the status line's place for a moment. */}
+          <View style={styles.statusSlot}>
+            {noticeText ? (
+              <Text style={styles.notice}>{noticeText}</Text>
+            ) : (
+              <Text style={[styles.status, { color: game.turn === viewer ? colors.lime : theme.onBase }]} numberOfLines={2}>
+                {status}
+              </Text>
+            )}
+          </View>
         </View>
 
         {/* The hand of the person holding the phone */}
@@ -173,17 +175,20 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
               {name(viewer)} · {t('cardsCount', { n: hand.length })}
             </Text>
           ) : null}
-          <HandFan
-            deckId={config.deckId}
-            cards={hand.map((c) => ({ id: c.id, label: label(c) }))}
-            width={W - 32}
-            cardWidth={handCardW}
-            onPress={(id) => {
-              const c = hand.find((x) => x.id === id)!;
-              if (choosing && (game.phase === 'play' || game.phase === 'queen')) setPreview(c);
-              else setZoom(art(c));
-            }}
-          />
+          <View style={styles.handBox} onLayout={(e: LayoutChangeEvent) => setHandBox({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
+            <HandGrid
+              deckId={config.deckId}
+              cards={hand.map((c) => ({ id: c.id, label: label(c) }))}
+              width={handBox.w}
+              height={handBox.h}
+              maxCardWidth={104}
+              onPress={(id) => {
+                const c = hand.find((x) => x.id === id)!;
+                if (choosing && (game.phase === 'play' || game.phase === 'queen')) setPreview(c);
+                else setZoom(art(c));
+              }}
+            />
+          </View>
           <View style={styles.actions}>
             <Button
               variant="secondary"
@@ -304,11 +309,10 @@ const styles = StyleSheet.create({
   safe: { flex: 1 },
   column: { flex: 1, alignSelf: 'center', paddingHorizontal: 16 },
   stage: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
-  noticeSlot: { minHeight: 34, justifyContent: 'center' },
+  statusSlot: { height: 40, justifyContent: 'center', alignItems: 'center' },
   notice: { fontFamily: fonts.bold, fontSize: 14, color: colors.ink, backgroundColor: colors.lime, paddingHorizontal: 14, paddingVertical: 7, borderRadius: radius.pill, overflow: 'hidden' },
   piles: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'center', gap: 28 },
   pileCol: { alignItems: 'center', gap: 10 },
-  under: { position: 'absolute', borderRadius: 14, backgroundColor: 'rgba(255,255,255,0.22)' },
   empty: { borderRadius: 14, borderWidth: 2, borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.3)' },
   pileLabel: { fontFamily: fonts.semibold, fontSize: 12, opacity: 0.85 },
   pileInfo: { flexDirection: 'row', gap: 6, minHeight: 28 },
@@ -316,7 +320,9 @@ const styles = StyleSheet.create({
   infoChipText: { fontFamily: fonts.bold, fontSize: 12, color: colors.ink },
   infoChipSuit: { fontFamily: fonts.display, fontSize: 16 },
   status: { fontFamily: fonts.bold, fontSize: 15, textAlign: 'center' },
-  handArea: { gap: 8, paddingBottom: 10 },
+  // Shares the space below the chips with the piles.
+  handArea: { flex: 1.15, gap: 8, paddingBottom: 10 },
+  handBox: { flex: 1, justifyContent: 'center' },
   handName: { fontFamily: fonts.semibold, fontSize: 13, textAlign: 'center', opacity: 0.85 },
   actions: { flexDirection: 'row', gap: 10 },
   wide: { flex: 1 },

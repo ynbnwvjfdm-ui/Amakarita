@@ -2,11 +2,10 @@ import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-na
 import { DECKS, pageImage } from '../decks';
 import { useI18n } from '../i18n';
 import { useNav } from '../navigation';
-import { CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { LanguageToggle } from '../ui/LanguageToggle';
 import { Screen } from '../ui/Screen';
-import { deckTheme, fonts, MAX_WIDTH, radius } from '../ui/theme';
+import { deckTheme, fonts, MAX_WIDTH } from '../ui/theme';
 
 /** The six decks, each on a block of its own colour. */
 export function DeckListScreen() {
@@ -32,8 +31,7 @@ export function DeckListScreen() {
               </Text>
               <Text style={[styles.sub, { color: theme.onBase }]}>{t('cardsCount', { n: d.cards.length })}</Text>
               <View style={styles.cardWrap}>
-                <CardArt deckId={d.id} cardId={d.cards[0].id} width={tile * 0.56} style={styles.back2} />
-                <CardImage source={pageImage(d.id, d.cover.page)} width={tile * 0.56} style={styles.front} />
+                <CardImage source={pageImage(d.id, d.cover.page)} width={tile * 0.56} />
               </View>
             </Pressable>
           );
@@ -46,9 +44,8 @@ export function DeckListScreen() {
 const styles = StyleSheet.create({
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   tile: { borderRadius: 24, padding: 14, gap: 2, overflow: 'hidden' },
-  title: { fontFamily: fonts.display, fontSize: 20, lineHeight: 23 },
+  // Room for two lines, so the cards line up across a row.
+  title: { fontFamily: fonts.display, fontSize: 20, lineHeight: 23, minHeight: 46 },
   sub: { fontFamily: fonts.semibold, fontSize: 12, opacity: 0.85 },
-  cardWrap: { height: 150, marginTop: 10, alignItems: 'center', justifyContent: 'flex-end' },
-  back2: { position: 'absolute', bottom: -30, right: 0, transform: [{ rotate: '12deg' }] },
-  front: { position: 'absolute', bottom: -40, left: 4, transform: [{ rotate: '-6deg' }], borderRadius: radius.card },
+  cardWrap: { marginTop: 12, alignItems: 'center' },
 });

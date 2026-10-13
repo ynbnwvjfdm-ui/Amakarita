@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Overlay } from './Overlay';
 import { Suit } from '../game/cards';
 import { useI18n } from '../i18n';
@@ -18,8 +18,11 @@ export function Panel({ visible, title, children, onRequestClose }: { visible: b
     <Overlay visible={visible} onRequestClose={onRequestClose}>
       <View style={styles.dim}>
         <View style={styles.panel}>
-          <Text style={styles.panelTitle}>{title}</Text>
-          {children}
+          {/* Scrolls when the content is taller than the screen. */}
+          <ScrollView style={styles.panelScroll} contentContainerStyle={styles.panelBody} showsVerticalScrollIndicator={false}>
+            <Text style={styles.panelTitle}>{title}</Text>
+            {children}
+          </ScrollView>
         </View>
       </View>
     </Overlay>
@@ -89,8 +92,10 @@ export const tableStyles = StyleSheet.create({
 });
 
 const styles = StyleSheet.create({
-  dim: { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', alignItems: 'center', justifyContent: 'center', padding: 24 },
-  panel: { width: '100%', maxWidth: 400, backgroundColor: colors.bg, borderRadius: radius.panel, padding: 20, gap: 12 },
+  dim: { flex: 1, backgroundColor: 'rgba(10,8,20,0.88)', alignItems: 'center', justifyContent: 'center', padding: 24 },
+  panel: { width: '100%', maxWidth: 400, maxHeight: '100%', backgroundColor: colors.bg, borderRadius: radius.panel, overflow: 'hidden' },
+  panelScroll: { flexGrow: 0, flexShrink: 1 },
+  panelBody: { padding: 20, gap: 12 },
   panelTitle: { fontSize: 22, fontFamily: fonts.display, color: colors.ink, textAlign: 'center' },
   handoff: { flex: 1, backgroundColor: colors.table, alignItems: 'center', justifyContent: 'center', gap: 20, padding: 24 },
   handoffTitle: { fontSize: 26, fontFamily: fonts.display, color: colors.tableInk, textAlign: 'center' },

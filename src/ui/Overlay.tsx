@@ -30,7 +30,11 @@ function FadeIn({ children }: { children: ReactNode }) {
   useEffect(() => {
     Animated.timing(opacity, { toValue: 1, duration: 160, useNativeDriver: false }).start();
   }, [opacity]);
-  return <Animated.View style={[StyleSheet.absoluteFill, styles.layer, { opacity }]}>{children}</Animated.View>;
+  return (
+    <Animated.View testID="overlay" style={[StyleSheet.absoluteFill, styles.layer, { opacity }]}>
+      {children}
+    </Animated.View>
+  );
 }
 
 const styles = StyleSheet.create({

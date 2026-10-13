@@ -29,7 +29,8 @@ export function PillText({ children, color }: { children: ReactNode; color?: str
   return <Text style={[styles.pillText, color ? { color } : null]}>{children}</Text>;
 }
 
-interface ChipProps {
+export interface ChipProps {
+  key?: string | number;
   name: string;
   value: string | number;
   active?: boolean;
@@ -37,12 +38,48 @@ interface ChipProps {
   badge?: string | null;
   /** Shown instead of the value when the player is out or finished. */
   state?: string | null;
+  /** Name and number on one line, for tables with many players. */
+  compact?: boolean;
+  width?: number;
+}
+
+const CHIP_GAP = 8;
+
+/**
+ * Every player's chip, all in view: one row of up to three, otherwise
+ * smaller one-line chips in rows of two or three.
+ */
+export function PlayerChips({ width, players }: { width: number; players: ChipProps[] }) {
+  const n = players.length;
+  const perRow = n <= 3 ? Math.max(n, 1) : n === 4 ? 2 : 3;
+  const compact = n >= 4;
+  const chipW = Math.floor((width - CHIP_GAP * (perRow - 1)) / perRow);
+  return (
+    <View style={styles.chips}>
+      {players.map(({ key, ...p }, i) => (
+        <PlayerChip key={key ?? i} {...p} compact={compact} width={n <= 2 ? Math.min(chipW, 150) : chipW} />
+      ))}
+    </View>
+  );
 }
 
 /** A player's name over a big number (score or cards in hand). */
-export function PlayerChip({ name, value, active, dim, badge, state }: ChipProps) {
+export function PlayerChip({ name, value, active, dim, badge, state, compact, width }: ChipProps) {
+  if (compact) {
+    return (
+      <View style={[styles.chip, styles.chipCompact, { width }, active && styles.chipOn, dim && styles.chipDim]}>
+        <Text style={[styles.chipName, styles.chipNameCompact, active && styles.chipNameOn]} numberOfLines={1}>
+          {name}
+        </Text>
+        {badge ? <Text style={styles.badge}>{badge}</Text> : null}
+        <Text style={[state ? styles.chipStateCompact : styles.chipValueCompact, active && styles.chipValueOn]} numberOfLines={1}>
+          {state ?? value}
+        </Text>
+      </View>
+    );
+  }
   return (
-    <View style={[styles.chip, active && styles.chipOn, dim && styles.chipDim]}>
+    <View style={[styles.chip, width !== undefined && { width, minWidth: 0 }, active && styles.chipOn, dim && styles.chipDim]}>
       <View style={styles.chipHead}>
         <Text style={[styles.chipName, active && styles.chipNameOn]} numberOfLines={1}>
           {name}
@@ -58,7 +95,6 @@ export function PlayerChip({ name, value, active, dim, badge, state }: ChipProps
   );
 }
 
-export const CHIP_ROW = { gap: 8, paddingVertical: 6 };
 
 const styles = StyleSheet.create({
   topBar: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 8 },
@@ -68,11 +104,16 @@ const styles = StyleSheet.create({
   spacer: { width: 44 },
   pill: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: colors.surface, borderRadius: radius.pill, paddingHorizontal: 12, height: 40 },
   pillText: { fontFamily: fonts.bold, fontSize: 13, color: colors.ink },
+  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: CHIP_GAP, paddingVertical: 6 },
   chip: { minWidth: 96, backgroundColor: 'rgba(255,255,255,0.14)', borderRadius: 18, paddingHorizontal: 12, paddingVertical: 8, gap: 2 },
   chipOn: { backgroundColor: colors.lime },
   chipDim: { opacity: 0.45 },
   chipHead: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  chipName: { fontFamily: fonts.semibold, fontSize: 12, color: 'rgba(255,255,255,0.85)', maxWidth: 110 },
+  chipName: { fontFamily: fonts.semibold, fontSize: 12, color: 'rgba(255,255,255,0.85)', flexShrink: 1 },
+  chipCompact: { minWidth: 0, flexDirection: 'row', alignItems: 'center', gap: 6, height: 38, paddingVertical: 0, borderRadius: 14 },
+  chipNameCompact: { flex: 1 },
+  chipValueCompact: { fontFamily: fonts.display, fontSize: 18, color: colors.surface },
+  chipStateCompact: { fontFamily: fonts.bold, fontSize: 12, color: 'rgba(255,255,255,0.85)', flexShrink: 0 },
   chipNameOn: { color: colors.ink },
   chipValue: { fontFamily: fonts.display, fontSize: 28, lineHeight: 32, color: colors.surface, letterSpacing: -0.5 },
   chipValueOn: { color: colors.ink },

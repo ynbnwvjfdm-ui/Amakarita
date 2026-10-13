@@ -44,7 +44,8 @@ export function CardViewer({ art, caption, onClose, actions, footer }: Props) {
 }
 
 const styles = StyleSheet.create({
-  backdrop: { flex: 1, backgroundColor: 'rgba(10,8,20,0.84)', alignItems: 'center' },
+  // Nearly opaque, so nothing on the screen behind shows through under the buttons.
+  backdrop: { flex: 1, backgroundColor: 'rgba(10,8,20,0.94)', alignItems: 'center' },
   top: { width: '100%', maxWidth: MAX_WIDTH, alignItems: 'flex-end', paddingHorizontal: 16, paddingTop: 12 },
   close: { width: 44, height: 44, borderRadius: radius.pill, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },
   column: { width: '100%', maxWidth: MAX_WIDTH },

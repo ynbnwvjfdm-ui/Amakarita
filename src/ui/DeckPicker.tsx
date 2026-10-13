@@ -1,37 +1,66 @@
-import { Pressable, ScrollView, StyleSheet, Text } from 'react-native';
-import { SUITED_DECKS, pageImage } from '../decks';
+import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { CARD_RATIO, SUITED_DECKS, pageImage } from '../decks';
 import { CardImage } from './CardImage';
-import { colors, radius, fonts } from './theme';
+import { colors, fonts, MAX_WIDTH } from './theme';
 
-/** Horizontal choice between the five suited decks. */
-export function DeckPicker({ value, onChange }: { value: string; onChange: (deckId: string) => void }) {
+interface Props {
+  value: string;
+  onChange: (deckId: string) => void;
+  /** Adds an "all decks" choice first, with this title. */
+  mixTitle?: string;
+}
+
+const COLS = 3;
+const GAP = 10;
+
+/** The suited decks in rows of three, every cover fully in view. */
+export function DeckPicker({ value, onChange, mixTitle }: Props) {
+  const { width } = useWindowDimensions();
+  const cell = Math.floor((Math.min(width, MAX_WIDTH) - 32 - GAP * (COLS - 1)) / COLS);
+  const cardW = cell - 16;
+  const choices = [...(mixTitle ? [{ id: 'mix', title: mixTitle }] : []), ...SUITED_DECKS.map((d) => ({ id: d.id, title: d.title }))];
+
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.decks}>
-      {SUITED_DECKS.map((d) => {
-        const on = d.id === value;
+    <View style={styles.grid}>
+      {choices.map((c) => {
+        const on = c.id === value;
         return (
           <Pressable
-            key={d.id}
+            key={c.id}
             accessibilityRole="radio"
             accessibilityState={{ selected: on }}
-            accessibilityLabel={d.title}
-            onPress={() => onChange(d.id)}
-            style={[styles.deck, on && styles.deckOn]}
+            accessibilityLabel={c.title}
+            onPress={() => onChange(c.id)}
+            style={[styles.deck, { width: cell }, on && styles.deckOn]}
           >
-            <CardImage source={pageImage(d.id, d.cover.page)} width={84} />
+            {c.id === 'mix' ? <AllDecks width={cardW} /> : <CardImage source={pageImage(c.id, SUITED_DECKS.find((d) => d.id === c.id)!.cover.page)} width={cardW} />}
             <Text style={styles.deckTitle} numberOfLines={1}>
-              {d.title}
+              {c.title}
             </Text>
           </Pressable>
         );
       })}
-    </ScrollView>
+    </View>
+  );
+}
+
+/** Five small covers side by side in two rows, in the space of one card. */
+function AllDecks({ width }: { width: number }) {
+  const gap = 4;
+  const mini = (width - gap * 2) / 3;
+  return (
+    <View style={[styles.all, { width, height: width / CARD_RATIO, gap }]}>
+      {SUITED_DECKS.map((d) => (
+        <CardImage key={d.id} source={pageImage(d.id, d.cover.page)} width={mini} />
+      ))}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  decks: { gap: 10, paddingVertical: 2, paddingRight: 16 },
-  deck: { padding: 6, borderRadius: radius.button, borderWidth: 2, borderColor: 'transparent' },
-  deckOn: { borderColor: colors.accent, backgroundColor: colors.surface },
-  deckTitle: { marginTop: 6, fontSize: 12, fontFamily: fonts.semibold, color: colors.ink, width: 84, textAlign: 'center' },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP },
+  deck: { padding: 6, borderRadius: 18, borderWidth: 2, borderColor: 'transparent', alignItems: 'center' },
+  deckOn: { borderColor: colors.ink, backgroundColor: colors.surface },
+  all: { flexDirection: 'row', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'center' },
+  deckTitle: { marginTop: 6, fontSize: 12, fontFamily: fonts.semibold, color: colors.ink, alignSelf: 'stretch', textAlign: 'center' },
 });

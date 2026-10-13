@@ -34,14 +34,10 @@ export function CardOfDay({ width }: { width: number }) {
         onPress={() => setFlipped((f) => !f)}
         style={styles.stage}
       >
-        {/* Two cards fanned behind, like a small pile. */}
-        <View style={[styles.behind, { width: cardW, height: cardH, transform: [{ rotate: '7deg' }, { translateX: 18 }] }]} />
-        <View style={[styles.behind, styles.behind2, { width: cardW, height: cardH, transform: [{ rotate: '-8deg' }, { translateX: -16 }] }]} />
         <FlipCard
           flipped={flipped}
           width={cardW}
           height={cardH}
-          style={{ transform: [{ rotate: '-2deg' }] }}
           front={<QuestionCard question={q} width={cardW} view="read" />}
           back={<CardArt deckId={q.deck} cardId={q.card} width={cardW} />}
         />
@@ -60,9 +56,7 @@ const styles = StyleSheet.create({
   title: { fontFamily: fonts.display, fontSize: 22, color: colors.surface },
   date: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: colors.lime, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 5 },
   dateText: { fontFamily: fonts.semibold, fontSize: 12, color: colors.ink },
-  stage: { alignItems: 'center', justifyContent: 'center', paddingVertical: 18 },
-  behind: { position: 'absolute', borderRadius: 18, backgroundColor: 'rgba(255,255,255,0.28)' },
-  behind2: { backgroundColor: 'rgba(255,255,255,0.16)' },
+  stage: { alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
   hint: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 6, backgroundColor: 'rgba(255,255,255,0.9)', alignSelf: 'center', borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 6 },
   hintText: { fontFamily: fonts.semibold, fontSize: 13, color: colors.ink },
 });

@@ -10,6 +10,8 @@ const STRINGS = {
   browseDecks: { rw: 'Reba amakarita', en: 'Browse the cards' },
   comingSoon: { rw: 'Biraza vuba', en: 'Coming soon' },
   back: { rw: 'Subira inyuma', en: 'Back' },
+  previous: { rw: 'Ibanjirije', en: 'Previous' },
+  next: { rw: 'Ikurikira', en: 'Next' },
   amaturufuTagline: { rw: 'Abakinnyi 2, 4 cyangwa 6', en: '2, 4 or 6 players' },
   matatuTagline: { rw: 'Abakinnyi 2 kugeza kuri 6', en: '2 to 6 players' },
   ibisakuzoTagline: { rw: 'Sakwe sakwe — soma', en: 'Riddles: Sakwe sakwe — soma' },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { LayoutChangeEvent, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { LayoutChangeEvent, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CARD_RATIO, getDeck, pageImage } from '../decks';
@@ -11,7 +11,7 @@ import { Button } from '../ui/Button';
 import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
-import { CHIP_ROW, GameTopBar, InfoPill, PillText, PlayerChip } from '../ui/GameChrome';
+import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
 import { FlipCard } from '../ui/FlipCard';
 import { QuestionCard } from '../ui/QuestionCard';
 import { LeaveConfirm, Panel } from '../ui/table';
@@ -82,24 +82,21 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
           }
         />
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={CHIP_ROW} style={{ flexGrow: 0 }}>
-          {game.scores.map((score, seat) => (
-            <PlayerChip
-              key={seat}
-              name={name(seat)}
-              value={score}
-              active={seat === game.turn && game.phase !== 'over'}
-              badge={game.doubled[seat] ? '×2' : null}
-            />
-          ))}
-        </ScrollView>
+        <PlayerChips
+          width={W - 32}
+          players={game.scores.map((score, seat) => ({
+            key: seat,
+            name: name(seat),
+            value: score,
+            active: seat === game.turn && game.phase !== 'over',
+            badge: game.doubled[seat] ? '×2' : null,
+          }))}
+        />
 
         {/* The card, as large as the space between scores and buttons allows */}
         <View style={styles.stage} onLayout={onStage}>
           {cardW === 0 ? null : game.phase === 'draw' && nextId ? (
             <Pressable accessibilityRole="button" accessibilityLabel={t('drawCard')} onPress={table.draw} disabled={bot} style={styles.drawWrap}>
-              <View style={[styles.pileCard, { width: cardW, height: cardH, transform: [{ rotate: '6deg' }] }]} />
-              <View style={[styles.pileCard, { width: cardW, height: cardH, transform: [{ rotate: '-4deg' }] }]} />
               <CardImage source={pageImage(QUESTIONS[nextId].deck, getDeck(QUESTIONS[nextId].deck).cover.page)} width={cardW} />
             </Pressable>
           ) : current ? (
@@ -232,13 +229,13 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
         {game.missed.length ? (
           <>
             <Text style={styles.reviewTitle}>{t('toReview')}</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
+            <View style={styles.missed}>
               {game.missed.map((id) => (
-                <Pressable key={id} onPress={() => setZoom({ deckId: QUESTIONS[id].deck, cardId: id })}>
+                <Pressable key={id} accessibilityRole="button" onPress={() => setZoom({ deckId: QUESTIONS[id].deck, cardId: id })}>
                   <CardArt deckId={QUESTIONS[id].deck} cardId={id} width={64} />
                 </Pressable>
               ))}
-            </ScrollView>
+            </View>
           </>
         ) : null}
         <Button variant="lime" label={t('playAgain')} onPress={table.playAgain} />
@@ -254,9 +251,9 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
 const styles = StyleSheet.create({
   safe: { flex: 1 },
   column: { flex: 1, alignSelf: 'center', paddingHorizontal: 16 },
+  missed: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   stage: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   drawWrap: { alignItems: 'center', justifyContent: 'center' },
-  pileCard: { position: 'absolute', borderRadius: 14, backgroundColor: 'rgba(255,255,255,0.22)' },
   panel: { gap: 10, paddingBottom: 12 },
   turn: { fontFamily: fonts.bold, fontSize: 16, textAlign: 'center' },
   hint: { fontFamily: fonts.semibold, fontSize: 14, textAlign: 'center', opacity: 0.9 },

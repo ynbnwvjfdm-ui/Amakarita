@@ -57,7 +57,7 @@ export function QuestionCard({ question, width, view, revealed, sort, doubled, s
   const size = (chars > 90 ? 16 : chars > 55 ? 19 : chars > 28 ? 23 : 29) * s;
 
   return (
-    <View style={[styles.card, { width, height, backgroundColor: theme.face, borderRadius: 18 * s, padding: 16 * s }, style]}>
+    <View testID="card" style={[styles.card, { width, height, backgroundColor: theme.face, borderRadius: 18 * s, padding: 16 * s }, style]}>
       <View style={styles.top}>
         {question.rank && question.suit ? (
           <View style={styles.cornerCol}>

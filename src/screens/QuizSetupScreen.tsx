@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { QuizMode } from '../game/quiz';
-import { SUITED_DECKS, pageImage } from '../decks';
 import { useI18n } from '../i18n';
 import { SeatConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
-import { CardImage } from '../ui/CardImage';
+import { DeckPicker } from '../ui/DeckPicker';
 import { Screen, formStyles } from '../ui/Screen';
 import { SeatEditor, defaultSeats } from '../ui/SeatEditor';
 import { Segmented } from '../ui/Segmented';
-import { colors, fonts, radius } from '../ui/theme';
 
 const TARGETS = [50, 100, 150];
 
@@ -28,8 +26,6 @@ export function QuizSetupScreen() {
   const updateSeat = (i: number, patch: Partial<SeatConfig>) =>
     setSeats((all) => all.map((s, j) => (j === i ? { ...s, ...patch } : s)));
 
-  const choices = [{ id: 'mix', title: t('mix') }, ...SUITED_DECKS.map((d) => ({ id: d.id, title: d.title }))];
-
   return (
     <Screen
       title="Amakarita"
@@ -45,39 +41,7 @@ export function QuizSetupScreen() {
       }
     >
       <Text style={formStyles.section}>{t('chooseDeck')}</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.decks} style={{ marginHorizontal: -16 }}>
-        {choices.map((c) => {
-          const on = c.id === deckId;
-          return (
-            <Pressable
-              key={c.id}
-              accessibilityRole="radio"
-              accessibilityState={{ selected: on }}
-              accessibilityLabel={c.title}
-              onPress={() => setDeckId(c.id)}
-              style={[styles.deck, on && styles.deckOn]}
-            >
-              {c.id === 'mix' ? (
-                <View style={styles.fan}>
-                  {SUITED_DECKS.map((d, i) => (
-                    <CardImage
-                      key={d.id}
-                      source={pageImage(d.id, d.cover.page)}
-                      width={60}
-                      style={{ position: 'absolute', left: 6 + i * 6, top: 4, transform: [{ rotate: `${(i - 2) * 9}deg` }] }}
-                    />
-                  ))}
-                </View>
-              ) : (
-                <CardImage source={pageImage(c.id, SUITED_DECKS.find((d) => d.id === c.id)!.cover.page)} width={84} />
-              )}
-              <Text style={styles.deckTitle} numberOfLines={1}>
-                {c.title}
-              </Text>
-            </Pressable>
-          );
-        })}
-      </ScrollView>
+      <DeckPicker value={deckId} onChange={setDeckId} mixTitle={t('mix')} />
 
       <Text style={formStyles.section}>{t('howToAnswer')}</Text>
       <Segmented
@@ -112,11 +76,3 @@ export function QuizSetupScreen() {
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  decks: { gap: 10, paddingVertical: 2, paddingHorizontal: 16 },
-  deck: { padding: 6, borderRadius: 18, borderWidth: 2, borderColor: 'transparent', alignItems: 'center' },
-  deckOn: { borderColor: colors.ink, backgroundColor: colors.surface },
-  fan: { width: 84, height: 115 },
-  deckTitle: { marginTop: 6, fontSize: 12, fontFamily: fonts.semibold, color: colors.ink, width: 84, textAlign: 'center', borderRadius: radius.pill },
-});

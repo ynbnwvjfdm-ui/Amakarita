@@ -30,11 +30,7 @@ export function GameTickets() {
     <View>
       {tickets.map((tk, i) => (
         <Fragment key={tk.key}>
-          {i > 0 ? (
-            <View style={styles.seam}>
-              <View style={styles.hole} />
-            </View>
-          ) : null}
+          {i > 0 ? <View style={styles.seam} /> : null}
           <Pressable
             accessibilityRole="button"
             accessibilityLabel={tk.title}
@@ -86,6 +82,5 @@ const styles = StyleSheet.create({
   playText: { fontFamily: fonts.bold, fontSize: 15, color: colors.ink },
   soonPill: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: 'rgba(255,255,255,0.6)', borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 6 },
   soonText: { fontFamily: fonts.semibold, fontSize: 13, color: colors.muted },
-  seam: { height: 4, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
-  hole: { width: 16, height: 16, borderRadius: 8, backgroundColor: colors.ink },
+  seam: { height: 10 },
 });

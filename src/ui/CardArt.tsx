@@ -65,7 +65,7 @@ export function CardArt({ width, style, ...ref }: Props) {
 
   if (!redesign || !card) {
     return (
-      <View style={[styles.shadow, { width, height, borderRadius: radius }, style]}>
+      <View testID="card" style={[styles.shadow, { width, height, borderRadius: radius }, style]}>
         <View style={[styles.clip, { borderRadius: radius }]}>
           <Image source={source} style={{ width, height }} resizeMode="cover" />
         </View>
@@ -89,7 +89,7 @@ export function CardArt({ width, style, ...ref }: Props) {
   );
 
   return (
-    <View style={[styles.shadow, { width, height, borderRadius: radius }, style]}>
+    <View testID="card" style={[styles.shadow, { width, height, borderRadius: radius }, style]}>
       <View style={[styles.clip, { borderRadius: radius, backgroundColor: theme.face }]}>
       <View
         style={[

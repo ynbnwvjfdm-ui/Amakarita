@@ -20,7 +20,7 @@ export function HomeScreen() {
   return (
     <Screen tabbed eyebrow={t(greetingKey(now))} title={t('appTitle')} right={<LanguageToggle />}>
       <Text style={styles.tagline}>{t('homeTagline')}</Text>
-      <DeckCarousel width={W + 32} onOpen={(deckId) => nav.push({ name: 'deck', deckId })} />
+      <DeckCarousel width={W} onOpen={(deckId) => nav.push({ name: 'deck', deckId })} />
       <CardOfDay width={W} />
       <Text style={formStyles.section}>{t('games')}</Text>
       <GameTickets />

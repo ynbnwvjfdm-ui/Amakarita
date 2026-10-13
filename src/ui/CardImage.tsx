@@ -13,7 +13,7 @@ export function CardImage({ source, width, style }: Props) {
   const height = width / CARD_RATIO;
   const r = Math.max(3, Math.round((radius.card * width) / 120));
   return (
-    <View style={[styles.shadow, { width, height, borderRadius: r }, style]}>
+    <View testID="card" style={[styles.shadow, { width, height, borderRadius: r }, style]}>
       <Image source={source} style={{ width, height, borderRadius: r }} resizeMode="cover" />
     </View>
   );

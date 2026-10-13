@@ -1,7 +1,29 @@
 # Amakarita
 
-Mobile app for traditional Rwandan card decks. The app itself is not built yet;
-this repository currently holds the six decks, taken in exactly as designed.
+Mobile app for traditional Rwandan card decks, built with Expo (React Native).
+
+Playable now: **Amaturufu** for 2, 4 or 6 players, against the phone or
+passing one phone around. Amagande and Ibisakuzo are coming next.
+
+## Running the app
+
+```sh
+npm install
+npx expo start          # scan the QR code with Expo Go on a phone
+npm test                # game-rule tests
+npm run typecheck
+npm run export:web      # browser build in dist/
+```
+
+## Code
+
+- `src/game/` — game rules, with no screen code: `amaturufu.ts` (rules),
+  `amaturufuBot.ts` (computer player), tests in `__tests__/`.
+- `src/screens/` — the app's screens; `useAmaturufuTable.ts` runs a game
+  (computer turns, pauses, passing the phone).
+- `src/ui/` — shared building blocks (buttons, card images, theme).
+- `src/i18n.tsx` — every piece of on-screen text in Kinyarwanda and English.
+- `src/decks.ts` — loads the deck data and card images.
 
 ## Decks
 

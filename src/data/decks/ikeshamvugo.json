@@ -1,0 +1,1601 @@
+{
+  "id": "ikeshamvugo",
+  "title": "Ikeshamvugo",
+  "subtitle": "Inka n'amata",
+  "format": "suited",
+  "source": "source/Ikeshamvugo_-_Cards.pdf",
+  "pageCount": 56,
+  "pageSize": {
+    "width": 820.0,
+    "height": 1120.0
+  },
+  "fonts": [
+    "Bebas-Regular",
+    "Futura",
+    "Futura-Book",
+    "SinkRegular",
+    "Wosker-Regular"
+  ],
+  "colors": {
+    "ink": "#e0ffe4",
+    "accent": "#aeff66"
+  },
+  "cover": {
+    "page": 1,
+    "image": "assets/decks/ikeshamvugo/page-01.webp",
+    "text": "IKESHAMVUGO - INKA N’AMATA\nUMUGAMBI\nIKESHAMVUGO - INKA N’AMATA"
+  },
+  "back": {
+    "page": 56,
+    "image": "assets/decks/ikeshamvugo/page-56.webp",
+    "text": "IKESHAMVUGO - INKA N’AMATA\nAYA MAKARITA YAKORANYWE INTEGO\nYO KUGUFASHA KUMENYA IKESHAMVUGO\nKU NKA N’AMATA\nIKESHAMVUGO - INKA N’AMATA"
+  },
+  "cards": [
+    {
+      "id": "ikeshamvugo-2S",
+      "page": 2,
+      "image": "assets/decks/ikeshamvugo/page-02.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "spades",
+      "text": "NTIBAVUGA AHO BASHYIRA AMATA\nBAVUGA ICYANSI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AHO BASHYIRA AMATA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "ICYANSI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-3S",
+      "page": 3,
+      "image": "assets/decks/ikeshamvugo/page-03.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "spades",
+      "text": "NTIBAVUGA GUSUKA AMATA\nBAVUGA KUYABUGANIZA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "GUSUKA AMATA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KUYABUGANIZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-4S",
+      "page": 4,
+      "image": "assets/decks/ikeshamvugo/page-04.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "spades",
+      "text": "NTIBAVUGA KURANGIZA GUKAMA\nBAVUGA GUHUMUZA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KURANGIZA GUKAMA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "GUHUMUZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-5S",
+      "page": 5,
+      "image": "assets/decks/ikeshamvugo/page-05.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "spades",
+      "text": "NTIBAVUGA KUMENA AMATA UBISHATSE\nBAVUGA KUYABYARIRA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KUMENA AMATA UBISHATSE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KUYABYARIRA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-6S",
+      "page": 6,
+      "image": "assets/decks/ikeshamvugo/page-06.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "spades",
+      "text": "NTIBAVUGA KUMENA AMATA UTABISHATSE\nBAVUGA KUYABOGORA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KUMENA AMATA UTABISHATSE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KUYABOGORA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-7S",
+      "page": 7,
+      "image": "assets/decks/ikeshamvugo/page-07.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "spades",
+      "text": "NTIBAVUGA KUMARA AMATA MU KINTU\nBAVUGA KUYAGWIZAMO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KUMARA AMATA MU KINTU",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KUYAGWIZAMO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-8S",
+      "page": 8,
+      "image": "assets/decks/ikeshamvugo/page-08.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "spades",
+      "text": "NTIBAVUGA KUREKERAHO GUKAMWA\nBAVUGA GUTEKA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KUREKERAHO GUKAMWA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "GUTEKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-9S",
+      "page": 9,
+      "image": "assets/decks/ikeshamvugo/page-09.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMATA Y’INKA IKIBYARA\nBAVUGA UMUHONDO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMATA Y’INKA IKIBYARA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UMUHONDO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-10S",
+      "page": 10,
+      "image": "assets/decks/ikeshamvugo/page-10.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMATA Y’INKA IHAKA\nBAVUGA AMASITU",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMATA Y’INKA IHAKA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMASITU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-JS",
+      "page": 11,
+      "image": "assets/decks/ikeshamvugo/page-11.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMATA YARAYE ATARAVURA\nBAVUGA UMUBANJI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMATA YARAYE ATARAVURA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UMUBANJI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-QS",
+      "page": 12,
+      "image": "assets/decks/ikeshamvugo/page-12.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMATA BAVANZE N’AMAZI\nBAVUGA UMWERERA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMATA BAVANZE N’AMAZI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UMWERERA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-KS",
+      "page": 13,
+      "image": "assets/decks/ikeshamvugo/page-13.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMATA YIRIWE\nBAVUGA AMIRIRE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMATA YIRIWE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMIRIRE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-AS",
+      "page": 14,
+      "image": "assets/decks/ikeshamvugo/page-14.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMATA AMAZE KUVURA\nBAVUGA IKIVUGUTO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMATA AMAZE KUVURA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "IKIVUGUTO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-2H",
+      "page": 15,
+      "image": "assets/decks/ikeshamvugo/page-15.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "hearts",
+      "text": "IYO BAGUHAYE AMATA\nCYANGWA SE BAKAGUHA ICYANSI\nBARIMO GUKAMIRAMO\nUGIRA UTI “ZINGANA NYIRAZO”",
+      "lines": [
+        [
+          {
+            "text": "IYO BAGUHAYE AMATA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "CYANGWA SE BAKAGUHA ICYANSI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BARIMO GUKAMIRAMO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UGIRA UTI ",
+            "accent": false
+          },
+          {
+            "text": "“ZINGANA NYIRAZO”",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-3H",
+      "page": 16,
+      "image": "assets/decks/ikeshamvugo/page-16.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "hearts",
+      "text": "NTIBAVUGA GUSUBIZA INYUMA INKA\nBAVUGA GUKUMIRA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "GUSUBIZA INYUMA INKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "GUKUMIRA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-4H",
+      "page": 17,
+      "image": "assets/decks/ikeshamvugo/page-17.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "hearts",
+      "text": "NTIBAVUGA KURANGIZA GUKAMA\nBAVUGA GUHUMUZA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KURANGIZA GUKAMA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "GUHUMUZA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-5H",
+      "page": 18,
+      "image": "assets/decks/ikeshamvugo/page-18.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "hearts",
+      "text": "NTIBAVUGA KURORERA GUKAMA\nBAVUGA GUTEKA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KURORERA GUKAMA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "GUTEKA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-6H",
+      "page": 19,
+      "image": "assets/decks/ikeshamvugo/page-19.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "hearts",
+      "text": "NTIBAVUGA GUKAMANA INGOGA\nBAVUGA GUKAMA KERA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "GUKAMANA INGOGA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "GUKAMA KERA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-7H",
+      "page": 20,
+      "image": "assets/decks/ikeshamvugo/page-20.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "hearts",
+      "text": "INKA NTIKOMEREKA\nINKA IRASARIKA",
+      "lines": [
+        [
+          {
+            "text": "INKA ",
+            "accent": true
+          },
+          {
+            "text": "NTIKOMEREKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "INKA ",
+            "accent": true
+          },
+          {
+            "text": "IRASARIKA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-8H",
+      "page": 21,
+      "image": "assets/decks/ikeshamvugo/page-21.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "hearts",
+      "text": "NTIBAVUGA KUJYANA INKA KUZIRAGIRA\nBAVUGA KUZAHURA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KUJYANA INKA KUZIRAGIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KUZAHURA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-9H",
+      "page": 22,
+      "image": "assets/decks/ikeshamvugo/page-22.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "hearts",
+      "text": "INKA NTIZITOROKA\nINKA ZIRAMENA",
+      "lines": [
+        [
+          {
+            "text": "INKA ",
+            "accent": true
+          },
+          {
+            "text": "NTIZITOROKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "INKA ",
+            "accent": true
+          },
+          {
+            "text": "ZIRAMENA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-10H",
+      "page": 23,
+      "image": "assets/decks/ikeshamvugo/page-23.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "hearts",
+      "text": "INKA NTIZIRYA\nINKA ZIRARISHA",
+      "lines": [
+        [
+          {
+            "text": "INKA ",
+            "accent": true
+          },
+          {
+            "text": "NTIZIRYA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "INKA ",
+            "accent": true
+          },
+          {
+            "text": "ZIRARISHA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-JH",
+      "page": 24,
+      "image": "assets/decks/ikeshamvugo/page-24.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "hearts",
+      "text": "AHO INKA ZIRISHIRIZA\nBAHITA URWURI",
+      "lines": [
+        [
+          {
+            "text": "AHO INKA ZIRISHIRIZA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAHITA ",
+            "accent": false
+          },
+          {
+            "text": "URWURI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-QH",
+      "page": 25,
+      "image": "assets/decks/ikeshamvugo/page-25.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "hearts",
+      "text": "NTIBAVUGA KWAHURA KURE\nBAVUGA GUTURUKA KURE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KWAHURA KURE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "GUTURUKA KURE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-KH",
+      "page": 26,
+      "image": "assets/decks/ikeshamvugo/page-26.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "hearts",
+      "text": "NTIBAVUGA KUGARURA INKA MU RUGO\nBAVUGA KUZICYURA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KUGARURA INKA MU RUGO",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KUZICYURA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-AH",
+      "page": 27,
+      "image": "assets/decks/ikeshamvugo/page-27.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "hearts",
+      "text": "INKA UMUNANI ZIDAFITE IZAZO\nBAZITA UMUNANI WUMANYE",
+      "lines": [
+        [
+          {
+            "text": "INKA UMUNANI ZIDAFITE IZAZO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAZITA ",
+            "accent": false
+          },
+          {
+            "text": "UMUNANI WUMANYE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-2C",
+      "page": 28,
+      "image": "assets/decks/ikeshamvugo/page-28.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "clubs",
+      "text": "KUVOMERA INKA\nBABYITA KUZIDAHIRIRA",
+      "lines": [
+        [
+          {
+            "text": "KUVOMERA INKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "KUZIDAHIRIRA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-3C",
+      "page": 29,
+      "image": "assets/decks/ikeshamvugo/page-29.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "clubs",
+      "text": "KWENDA KWIMA INKA ZITARARINDA\nBABYITA KUBA MU BITWARIZI",
+      "lines": [
+        [
+          {
+            "text": "KWENDA KWIMA INKA ZITARARINDA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "KUBA MU BITWARIZI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-4C",
+      "page": 30,
+      "image": "assets/decks/ikeshamvugo/page-30.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "clubs",
+      "text": "GUHANAGURA INKA\nBABYITA KUZIHONORA",
+      "lines": [
+        [
+          {
+            "text": "GUHANAGURA INKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "KUZIHONORA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-5C",
+      "page": 31,
+      "image": "assets/decks/ikeshamvugo/page-31.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "clubs",
+      "text": "KWIRUKA INKA ZIGUSIGA\nBABYITA GUTARA",
+      "lines": [
+        [
+          {
+            "text": "KWIRUKA INKA ZIGUSIGA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "GUTARA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-6C",
+      "page": 32,
+      "image": "assets/decks/ikeshamvugo/page-32.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "clubs",
+      "text": "IBYATSI BAHANAGUZA INKA\nBABYITA INKUYO",
+      "lines": [
+        [
+          {
+            "text": "IBYATSI BAHANAGUZA INKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "INKUYO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-7C",
+      "page": 33,
+      "image": "assets/decks/ikeshamvugo/page-33.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "clubs",
+      "text": "INKONI BARAGIZA INKA\nBAYITA INSHYIMBO",
+      "lines": [
+        [
+          {
+            "text": "INKONI BARAGIZA INKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAYITA ",
+            "accent": true
+          },
+          {
+            "text": "INSHYIMBO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-8C",
+      "page": 34,
+      "image": "assets/decks/ikeshamvugo/page-34.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "clubs",
+      "text": "GUCA UBWATSI BW’INKA\nBABYITA KWAHIRA",
+      "lines": [
+        [
+          {
+            "text": "GUCA UBWATSI BW’INKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "KWAHIRA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-9C",
+      "page": 35,
+      "image": "assets/decks/ikeshamvugo/page-35.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "clubs",
+      "text": "KUJYANA INKA AHARI UBWATSI\nBABYITA KUGISHA",
+      "lines": [
+        [
+          {
+            "text": "KUJYANA INKA AHARI UBWATSI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "KUGISHA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-10C",
+      "page": 36,
+      "image": "assets/decks/ikeshamvugo/page-36.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "clubs",
+      "text": "KUJYANA INKA KU KIBUMBIRO\nBABYITA GUSHORA",
+      "lines": [
+        [
+          {
+            "text": "KUJYANA INKA KU KIBUMBIRO",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "GUSHORA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-JC",
+      "page": 37,
+      "image": "assets/decks/ikeshamvugo/page-37.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "clubs",
+      "text": "KUYOBORA INKA / GUSHORERA INKA\nBABYITA KUZIRONGORA",
+      "lines": [
+        [
+          {
+            "text": "KUYOBORA INKA / GUSHORERA INKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "KUZIRONGORA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-QC",
+      "page": 38,
+      "image": "assets/decks/ikeshamvugo/page-38.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "clubs",
+      "text": "INKA NTITWITA\nINKA IRAHAKA",
+      "lines": [
+        [
+          {
+            "text": "INKA ",
+            "accent": true
+          },
+          {
+            "text": "NTITWITA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "INKA ",
+            "accent": true
+          },
+          {
+            "text": "IRAHAKA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-KC",
+      "page": 39,
+      "image": "assets/decks/ikeshamvugo/page-39.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "clubs",
+      "text": "GUSHYIRAHO INKA IYAYO\nBABYITA KWINIKIZA",
+      "lines": [
+        [
+          {
+            "text": "GUSHYIRAHO INKA IYAYO",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "KWINIKIZA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-AC",
+      "page": 40,
+      "image": "assets/decks/ikeshamvugo/page-40.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "clubs",
+      "text": "GUKAMISHA YOMBI\nBABYITA KUVURUGANYA",
+      "lines": [
+        [
+          {
+            "text": "GUKAMISHA YOMBI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": true
+          },
+          {
+            "text": "KUVURUGANYA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-2D",
+      "page": 41,
+      "image": "assets/decks/ikeshamvugo/page-41.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "diamonds",
+      "text": "KUBURA AMAZI KW’INKA\nBABYITA KURUMANGA",
+      "lines": [
+        [
+          {
+            "text": "KUBURA AMAZI KW’INKA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": false
+          },
+          {
+            "text": "KURUMANGA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-3D",
+      "page": 42,
+      "image": "assets/decks/ikeshamvugo/page-42.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "diamonds",
+      "text": "GUCA INKA IBERE\nBABYITA KURYOGOSHA",
+      "lines": [
+        [
+          {
+            "text": "GUCA INKA IBERE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": false
+          },
+          {
+            "text": "KURYOGOSHA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-4D",
+      "page": 43,
+      "image": "assets/decks/ikeshamvugo/page-43.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "diamonds",
+      "text": "INZU Y’INYANA\nBAYITA URUHONGORE",
+      "lines": [
+        [
+          {
+            "text": "INZU Y’INYANA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAYITA ",
+            "accent": false
+          },
+          {
+            "text": "URUHONGORE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-5D",
+      "page": 44,
+      "image": "assets/decks/ikeshamvugo/page-44.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "diamonds",
+      "text": "INZU Y’INKA\nBAYITA KIRARO",
+      "lines": [
+        [
+          {
+            "text": "INZU Y’INKA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAYITA ",
+            "accent": false
+          },
+          {
+            "text": "KIRARO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-6D",
+      "page": 45,
+      "image": "assets/decks/ikeshamvugo/page-45.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "diamonds",
+      "text": "AHO INKA ZIBYARIRA\nBAHITA MU NGOMBE",
+      "lines": [
+        [
+          {
+            "text": "AHO INKA ZIBYARIRA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAHITA ",
+            "accent": false
+          },
+          {
+            "text": "MU NGOMBE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-7D",
+      "page": 46,
+      "image": "assets/decks/ikeshamvugo/page-46.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "diamonds",
+      "text": "IBIKI BIKINGA IKIRARO\nBABYITA IBIHINDIZO",
+      "lines": [
+        [
+          {
+            "text": "IBIKI BIKINGA IKIRARO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": false
+          },
+          {
+            "text": "IBIHINDIZO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-8D",
+      "page": 47,
+      "image": "assets/decks/ikeshamvugo/page-47.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "diamonds",
+      "text": "GUKURA AMASE MU KIRARO\nBABYITA GUKUKA",
+      "lines": [
+        [
+          {
+            "text": "GUKURA AMASE MU KIRARO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": false
+          },
+          {
+            "text": "GUKUKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-9D",
+      "page": 48,
+      "image": "assets/decks/ikeshamvugo/page-48.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "diamonds",
+      "text": "AHO BAMENA AMASE Y’INKA\nBAHITA MU ICUKIRO",
+      "lines": [
+        [
+          {
+            "text": "AHO BAMENA AMASE Y’INKA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAHITA ",
+            "accent": false
+          },
+          {
+            "text": "MU ICUKIRO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-10D",
+      "page": 49,
+      "image": "assets/decks/ikeshamvugo/page-49.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "diamonds",
+      "text": "KUBORA KW’AMASE Y’INKA\nBABYITA GUSHANGUKA",
+      "lines": [
+        [
+          {
+            "text": "KUBORA KW’AMASE Y’INKA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": false
+          },
+          {
+            "text": "GUSHANGUKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-JD",
+      "page": 50,
+      "image": "assets/decks/ikeshamvugo/page-50.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "diamonds",
+      "text": "INKA ITANGIRIRWAHO KORORA\nBAYITA INKA Y’UMURIRO",
+      "lines": [
+        [
+          {
+            "text": "INKA ITANGIRIRWAHO KORORA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAYITA ",
+            "accent": false
+          },
+          {
+            "text": "INKA Y’UMURIRO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-QD",
+      "page": 51,
+      "image": "assets/decks/ikeshamvugo/page-51.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "diamonds",
+      "text": "IBYATSI BASASIRA INKA\nBABYITA ICYARIRE",
+      "lines": [
+        [
+          {
+            "text": "IBYATSI BASASIRA INKA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BABYITA ",
+            "accent": false
+          },
+          {
+            "text": "ICYARIRE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-KD",
+      "page": 52,
+      "image": "assets/decks/ikeshamvugo/page-52.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "diamonds",
+      "text": "UTUBERE TW’INKA TUDAKAMWA\nBATWITA INDOREREZI",
+      "lines": [
+        [
+          {
+            "text": "UTUBERE TW’INKA TUDAKAMWA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BATWITA ",
+            "accent": false
+          },
+          {
+            "text": "INDOREREZI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-AD",
+      "page": 53,
+      "image": "assets/decks/ikeshamvugo/page-53.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "diamonds",
+      "text": "INKA UMUNANI N’INYANA ZAZO\nBAZITA UMUNANI UKINZE",
+      "lines": [
+        [
+          {
+            "text": "INKA UMUNANI N’INYANA ZAZO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAZITA ",
+            "accent": false
+          },
+          {
+            "text": "UMUNANI UKINZE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-joker1",
+      "page": 54,
+      "image": "assets/decks/ikeshamvugo/page-54.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "AGATI BAVURISHA AMATA\nBAKITA UMUTOZO",
+      "lines": [
+        [
+          {
+            "text": "AGATI BAVURISHA AMATA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAKITA ",
+            "accent": true
+          },
+          {
+            "text": "UMUTOZO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ikeshamvugo-joker2",
+      "page": 55,
+      "image": "assets/decks/ikeshamvugo/page-55.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "AMATA Y’ABASHUMBA\nBAYITA IMYEZO",
+      "lines": [
+        [
+          {
+            "text": "AMATA Y’ABASHUMBA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAYITA ",
+            "accent": true
+          },
+          {
+            "text": "IMYEZO",
+            "accent": false
+          }
+        ]
+      ]
+    }
+  ]
+}

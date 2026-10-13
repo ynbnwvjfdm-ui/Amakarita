@@ -1,0 +1,1536 @@
+{
+  "id": "imvugo",
+  "title": "Imvugo",
+  "format": "suited",
+  "source": "source/Imvugo_-_Cards.pdf",
+  "pageCount": 56,
+  "pageSize": {
+    "width": 820.0,
+    "height": 1120.0
+  },
+  "fonts": [
+    "Bebas-Regular",
+    "Futura",
+    "Futura-Book",
+    "SinkRegular",
+    "Wosker-Regular"
+  ],
+  "colors": {
+    "ink": "#081c3c",
+    "accent": "#53041d"
+  },
+  "cover": {
+    "page": 1,
+    "image": "assets/decks/imvugo/page-01.webp",
+    "text": "IMVUGO\nUMUGAMBI\nIMVUGO"
+  },
+  "back": {
+    "page": 56,
+    "image": "assets/decks/imvugo/page-56.webp",
+    "text": "IMVUGO\nAYA MAKARITA YAKORANYWE INTEGO\nYO KUGUFASHA KUGIRA IMIVUGIRE\nMYIZA Y’IKINYARWANDA\nIMVUGO"
+  },
+  "cards": [
+    {
+      "id": "imvugo-2S",
+      "page": 2,
+      "image": "assets/decks/imvugo/page-02.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "spades",
+      "text": "UMWAMI NTABWO AGIRA UMUGORE\nUMWAMI AGIRA UMWAMIKAZI",
+      "lines": [
+        [
+          {
+            "text": "UMWAMI NTABWO AGIRA ",
+            "accent": false
+          },
+          {
+            "text": "UMUGORE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UMWAMI AGIRA ",
+            "accent": false
+          },
+          {
+            "text": "UMWAMIKAZI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-3S",
+      "page": 3,
+      "image": "assets/decks/imvugo/page-03.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "spades",
+      "text": "NTIBAVUGA “NYINA W’UMWAMI”\nBAVUGA “UMUGABEKAZI”",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "“NYINA W’UMWAMI”",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "“UMUGABEKAZI”",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-4S",
+      "page": 4,
+      "image": "assets/decks/imvugo/page-04.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "spades",
+      "text": "NTIBAVUGA “ABANA B’UMWAMI”\nBAVUGA “IBIKOMANGOMA”",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "“ABANA B’UMWAMI”",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "“IBIKOMANGOMA”",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-5S",
+      "page": 5,
+      "image": "assets/decks/imvugo/page-05.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "spades",
+      "text": "IMPYISI NTIVUGA\nIMPISI IRAHUMA",
+      "lines": [
+        [
+          {
+            "text": "IMPYISI ",
+            "accent": false
+          },
+          {
+            "text": "NTIVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "IMPISI ",
+            "accent": false
+          },
+          {
+            "text": "IRAHUMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-6S",
+      "page": 6,
+      "image": "assets/decks/imvugo/page-06.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "spades",
+      "text": "INTARE NTIVUGA\nINTARE IRATONTOMA",
+      "lines": [
+        [
+          {
+            "text": "INTARE ",
+            "accent": false
+          },
+          {
+            "text": "NTIVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "INTARE ",
+            "accent": false
+          },
+          {
+            "text": "IRATONTOMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-7S",
+      "page": 7,
+      "image": "assets/decks/imvugo/page-07.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "spades",
+      "text": "INKA NTIVUGA\nINKA IRABIRA",
+      "lines": [
+        [
+          {
+            "text": "INKA ",
+            "accent": false
+          },
+          {
+            "text": "NTIVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "INKA ",
+            "accent": false
+          },
+          {
+            "text": "IRABIRA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-8S",
+      "page": 8,
+      "image": "assets/decks/imvugo/page-08.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "spades",
+      "text": "IMBWA NTIVUGA\nIMBWA IRAMOKA",
+      "lines": [
+        [
+          {
+            "text": "IMBWA ",
+            "accent": false
+          },
+          {
+            "text": "NTIVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "IMBWA ",
+            "accent": false
+          },
+          {
+            "text": "IRAMOKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-9S",
+      "page": 9,
+      "image": "assets/decks/imvugo/page-09.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "spades",
+      "text": "ISAKE NTIVUGA\nISAKE IRABIKA",
+      "lines": [
+        [
+          {
+            "text": "ISAKE ",
+            "accent": false
+          },
+          {
+            "text": "NTIVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "ISAKE ",
+            "accent": false
+          },
+          {
+            "text": "IRABIKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-10S",
+      "page": 10,
+      "image": "assets/decks/imvugo/page-10.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "spades",
+      "text": "IHENE NTIVUGA\nIHENE IRAHEBEBA",
+      "lines": [
+        [
+          {
+            "text": "IHENE ",
+            "accent": false
+          },
+          {
+            "text": "NTIVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "IHENE ",
+            "accent": false
+          },
+          {
+            "text": "IRAHEBEBA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-JS",
+      "page": 11,
+      "image": "assets/decks/imvugo/page-11.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "spades",
+      "text": "IMBEBA NTIVUGA\nIMBEBA IRAJWIGIRA",
+      "lines": [
+        [
+          {
+            "text": "IMBEBA ",
+            "accent": false
+          },
+          {
+            "text": "NTIVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "IMBEBA ",
+            "accent": false
+          },
+          {
+            "text": "IRAJWIGIRA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-QS",
+      "page": 12,
+      "image": "assets/decks/imvugo/page-12.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "spades",
+      "text": "INTAMA/IHENE/INKA NTIZITWITA\nINTAMA/IHENE/INKA ZIRAHAKA",
+      "lines": [
+        [
+          {
+            "text": "INTAMA/IHENE/INKA ",
+            "accent": false
+          },
+          {
+            "text": "NTIZITWITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "INTAMA/IHENE/INKA ",
+            "accent": false
+          },
+          {
+            "text": "ZIRAHAKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-KS",
+      "page": 13,
+      "image": "assets/decks/imvugo/page-13.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "spades",
+      "text": "IMBWA NTIHAKA, NTITWITA\nIMBWA IRABWEGEKA",
+      "lines": [
+        [
+          {
+            "text": "IMBWA ",
+            "accent": false
+          },
+          {
+            "text": "NTIHAKA, NTITWITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "IMBWA ",
+            "accent": false
+          },
+          {
+            "text": "IRABWEGEKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-AS",
+      "page": 14,
+      "image": "assets/decks/imvugo/page-14.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "spades",
+      "text": "INGURUBE NTIHAKA, NTITWITA\nINGURUBE IRABWEGEKA",
+      "lines": [
+        [
+          {
+            "text": "INGURUBE ",
+            "accent": false
+          },
+          {
+            "text": "NTIHAKA, NTITWITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "INGURUBE ",
+            "accent": false
+          },
+          {
+            "text": "IRABWEGEKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-2H",
+      "page": 15,
+      "image": "assets/decks/imvugo/page-15.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "hearts",
+      "text": "IBIBWANA NTIBYONKA\nIBIBWANA BIRABWAGAGUZA",
+      "lines": [
+        [
+          {
+            "text": "IBIBWANA ",
+            "accent": true
+          },
+          {
+            "text": "NTIBYONKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "IBIBWANA ",
+            "accent": true
+          },
+          {
+            "text": "BIRABWAGAGUZA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-3H",
+      "page": 16,
+      "image": "assets/decks/imvugo/page-16.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "hearts",
+      "text": "AMATA Y’IHENE BAYITA\nAMAHENEHENE",
+      "lines": [
+        [
+          {
+            "text": "AMATA Y’IHENE BAYITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "AMAHENEHENE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-4H",
+      "page": 17,
+      "image": "assets/decks/imvugo/page-17.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "hearts",
+      "text": "AMATA Y’INTAMA BAYITA\nAMATAMATAMA",
+      "lines": [
+        [
+          {
+            "text": "AMATA Y’INTAMA BAYITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "AMATAMATAMA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-5H",
+      "page": 18,
+      "image": "assets/decks/imvugo/page-18.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "hearts",
+      "text": "INKA Y’INGABO BAYITA\nIKIMASA, IMFIZI (IKUZE)",
+      "lines": [
+        [
+          {
+            "text": "INKA Y’INGABO BAYITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "IKIMASA, IMFIZI (IKUZE)",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-6H",
+      "page": 19,
+      "image": "assets/decks/imvugo/page-19.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "hearts",
+      "text": "INKA Y’INGORE BAYITA\nINYANA, IMBYEYI (NIBA YONSA)",
+      "lines": [
+        [
+          {
+            "text": "INKA Y’INGORE BAYITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "INYANA, IMBYEYI (NIBA YONSA)",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-7H",
+      "page": 20,
+      "image": "assets/decks/imvugo/page-20.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "hearts",
+      "text": "INTAMA Y’INGABO BAYITA\nISEKURUME Y’INTAMA, IMFIZI\nY’INTAMA (IKUZE)",
+      "lines": [
+        [
+          {
+            "text": "INTAMA Y’INGABO BAYITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "ISEKURUME Y’INTAMA, IMFIZI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "Y’INTAMA (IKUZE)",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-8H",
+      "page": 21,
+      "image": "assets/decks/imvugo/page-21.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "hearts",
+      "text": "INKA IKIRI NTO BAYITA\nINYANA, UMUTAVU (INYANA IKIVUKA)",
+      "lines": [
+        [
+          {
+            "text": "INKA IKIRI NTO BAYITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "INYANA, UMUTAVU (INYANA IKIVUKA)",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-9H",
+      "page": 22,
+      "image": "assets/decks/imvugo/page-22.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "hearts",
+      "text": "IMBWA IKIRI NTO BAYITA\nIKIBWANA",
+      "lines": [
+        [
+          {
+            "text": "IMBWA IKIRI NTO BAYITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "IKIBWANA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-10H",
+      "page": 23,
+      "image": "assets/decks/imvugo/page-23.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "hearts",
+      "text": "INKOKO IKIVUKA BAYITA\nUMUSHWI",
+      "lines": [
+        [
+          {
+            "text": "INKOKO IKIVUKA BAYITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UMUSHWI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-JH",
+      "page": 24,
+      "image": "assets/decks/imvugo/page-24.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "hearts",
+      "text": "MUSAZA WA MAMA BAMWITA\nMARUME",
+      "lines": [
+        [
+          {
+            "text": "MUSAZA WA MAMA BAMWITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "MARUME",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-QH",
+      "page": 25,
+      "image": "assets/decks/imvugo/page-25.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "hearts",
+      "text": "MUSHIKI WA DATA BAMWITA\nMASENGE",
+      "lines": [
+        [
+          {
+            "text": "MUSHIKI WA DATA BAMWITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "MASENGE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-KH",
+      "page": 26,
+      "image": "assets/decks/imvugo/page-26.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "hearts",
+      "text": "MUKURU/MURUMUNA WA MAMA\nBAMWITA MAMA WACU",
+      "lines": [
+        [
+          {
+            "text": "MUKURU/MURUMUNA WA MAMA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAMWITA ",
+            "accent": true
+          },
+          {
+            "text": "MAMA WACU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-AH",
+      "page": 27,
+      "image": "assets/decks/imvugo/page-27.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "hearts",
+      "text": "MUKURU/MURUMUNA WA DATA\nBAMWITA DATA WACU",
+      "lines": [
+        [
+          {
+            "text": "MUKURU/MURUMUNA WA DATA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAMWITA ",
+            "accent": true
+          },
+          {
+            "text": "DATA WACU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-2C",
+      "page": 28,
+      "image": "assets/decks/imvugo/page-28.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA MBERE\nBAVUGA MUTARAMA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA MBERE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MUTARAMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-3C",
+      "page": 29,
+      "image": "assets/decks/imvugo/page-29.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA KABIRI\nBAVUGA GASHYANTARE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA KABIRI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "GASHYANTARE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-4C",
+      "page": 30,
+      "image": "assets/decks/imvugo/page-30.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA GATATU\nBAVUGA WERURWE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA GATATU",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "WERURWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-5C",
+      "page": 31,
+      "image": "assets/decks/imvugo/page-31.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA KANE\nBAVUGA MATA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA KANE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MATA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-6C",
+      "page": 32,
+      "image": "assets/decks/imvugo/page-32.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA GATANU\nBAVUGA GICURASI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA GATANU",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "GICURASI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-7C",
+      "page": 33,
+      "image": "assets/decks/imvugo/page-33.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA GATANDATU\nBAVUGA KAMENA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA GATANDATU",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KAMENA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-8C",
+      "page": 34,
+      "image": "assets/decks/imvugo/page-34.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA KARINDWI\nBAVUGA NYAKANGA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA KARINDWI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NYAKANGA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-9C",
+      "page": 35,
+      "image": "assets/decks/imvugo/page-35.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA MUNANI\nBAVUGA KANAMA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA MUNANI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "KANAMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-10C",
+      "page": 36,
+      "image": "assets/decks/imvugo/page-36.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA CYENDA\nBAVUGA NZERI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA CYENDA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NZERI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-JC",
+      "page": 37,
+      "image": "assets/decks/imvugo/page-37.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA CUMI\nBAVUGA UKWAKIRA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA CUMI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UKWAKIRA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-QC",
+      "page": 38,
+      "image": "assets/decks/imvugo/page-38.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA CUMI NA KUMWE\nBAVUGA UGUSHYINGO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA CUMI NA KUMWE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UGUSHYINGO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-KC",
+      "page": 39,
+      "image": "assets/decks/imvugo/page-39.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU KWA CUMI NA KABIRI\nBAVUGA UKUBOZA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU KWA CUMI NA KABIRI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UKUBOZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-AC",
+      "page": 40,
+      "image": "assets/decks/imvugo/page-40.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "clubs",
+      "text": "NYINA/SE W’UMUNTU BAMWITA\nUMUBYEYI",
+      "lines": [
+        [
+          {
+            "text": "NYINA/SE W’UMUNTU BAMWITA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "UMUBYEYI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-2D",
+      "page": 41,
+      "image": "assets/decks/imvugo/page-41.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "diamonds",
+      "text": "UWABYAYE UMUNTU BAMWITA\nUMUBYEYI",
+      "lines": [
+        [
+          {
+            "text": "UWABYAYE UMUNTU BAMWITA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UMUBYEYI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-3D",
+      "page": 42,
+      "image": "assets/decks/imvugo/page-42.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "diamonds",
+      "text": "UWO TUVA INDA IMWE UNDUTA NI\nMUKURU WANGE",
+      "lines": [
+        [
+          {
+            "text": "UWO TUVA INDA IMWE UNDUTA NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "MUKURU WANGE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-4D",
+      "page": 43,
+      "image": "assets/decks/imvugo/page-43.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "diamonds",
+      "text": "UWO TUVA INDA IMWE NDUTA NI\nMURUMUNA WANGE",
+      "lines": [
+        [
+          {
+            "text": "UWO TUVA INDA IMWE NDUTA NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "MURUMUNA WANGE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-5D",
+      "page": 44,
+      "image": "assets/decks/imvugo/page-44.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "diamonds",
+      "text": "UMWANA WA MUSHIKI W’UMUNTU NI\nUMWISHYWA",
+      "lines": [
+        [
+          {
+            "text": "UMWANA WA MUSHIKI W’UMUNTU NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UMWISHYWA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-6D",
+      "page": 45,
+      "image": "assets/decks/imvugo/page-45.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "diamonds",
+      "text": "ABASHATSE ABAGORE\nBAVA INDA IMWE NI\nABASANZIRE",
+      "lines": [
+        [
+          {
+            "text": "ABASHATSE ABAGORE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVA INDA IMWE NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "ABASANZIRE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-7D",
+      "page": 46,
+      "image": "assets/decks/imvugo/page-46.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "diamonds",
+      "text": "ABAHANYE ABAGENI NI\nBAMWANA",
+      "lines": [
+        [
+          {
+            "text": "ABAHANYE ABAGENI NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAMWANA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-8D",
+      "page": 47,
+      "image": "assets/decks/imvugo/page-47.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "diamonds",
+      "text": "MUSHIKI W’UMUGABO WAWE NI\nMURAMUKAZI WAWE",
+      "lines": [
+        [
+          {
+            "text": "MUSHIKI W’UMUGABO WAWE NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "MURAMUKAZI ",
+            "accent": false
+          },
+          {
+            "text": "WAWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-9D",
+      "page": 48,
+      "image": "assets/decks/imvugo/page-48.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "diamonds",
+      "text": "MUSAZA W’UMUGORE WAWE NI\nMURAMU WAWE",
+      "lines": [
+        [
+          {
+            "text": "MUSAZA W’UMUGORE WAWE NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "MURAMU ",
+            "accent": false
+          },
+          {
+            "text": "WAWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-10D",
+      "page": 49,
+      "image": "assets/decks/imvugo/page-49.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA UNDI MUGORE WA DATA\nBAVUGA MUKADATA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "UNDI MUGORE WA DATA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "MUKADATA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-JD",
+      "page": 50,
+      "image": "assets/decks/imvugo/page-50.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "diamonds",
+      "text": "UMUGABO UBYARA UMUBYEYI WAWE NI\nSOGOKURU",
+      "lines": [
+        [
+          {
+            "text": "UMUGABO UBYARA UMUBYEYI WAWE NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "SOGOKURU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-QD",
+      "page": 51,
+      "image": "assets/decks/imvugo/page-51.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "diamonds",
+      "text": "UMUGORE UBYARA UMUBYEYI WAWE NI\nNYOGOKURU",
+      "lines": [
+        [
+          {
+            "text": "UMUGORE UBYARA UMUBYEYI WAWE NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "NYOGOKURU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-KD",
+      "page": 52,
+      "image": "assets/decks/imvugo/page-52.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "diamonds",
+      "text": "UMWANA W’UMWANA W’UMUNTU NI\nUMWUZUKURU",
+      "lines": [
+        [
+          {
+            "text": "UMWANA W’UMWANA W’UMUNTU NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UMWUZUKURU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-AD",
+      "page": 53,
+      "image": "assets/decks/imvugo/page-53.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "diamonds",
+      "text": "UMWANA W’UMWUZUKURU NI\nUMWUZUKURUZA",
+      "lines": [
+        [
+          {
+            "text": "UMWANA W’UMWUZUKURU NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UMWUZUKURUZA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-joker1",
+      "page": 54,
+      "image": "assets/decks/imvugo/page-54.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "UMWAMI NTABWO APFA\nUMWAMI ARATANGA",
+      "lines": [
+        [
+          {
+            "text": "UMWAMI ",
+            "accent": false
+          },
+          {
+            "text": "NTABWO APFA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UMWAMI ",
+            "accent": false
+          },
+          {
+            "text": "ARATANGA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "imvugo-joker2",
+      "page": 55,
+      "image": "assets/decks/imvugo/page-55.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "UMWAMI NTABWO AGIRA INTEBE\nUMWAMI AGIRA INTEKO",
+      "lines": [
+        [
+          {
+            "text": "UMWAMI NTABWO AGIRA ",
+            "accent": true
+          },
+          {
+            "text": "INTEBE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "UMWAMI AGIRA ",
+            "accent": true
+          },
+          {
+            "text": "INTEKO",
+            "accent": false
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1182 @@
+{
+  "id": "indangagaciro",
+  "title": "Indangagaciro",
+  "format": "suited",
+  "source": "source/Indangagaciro_-_Cards.pdf",
+  "pageCount": 56,
+  "pageSize": {
+    "width": 820.0,
+    "height": 1120.0
+  },
+  "fonts": [
+    "Bebas-Regular",
+    "Futura",
+    "Futura-Book",
+    "SinkRegular",
+    "Wosker-Regular"
+  ],
+  "colors": {
+    "ink": "#08006d",
+    "accent": "#13752e"
+  },
+  "cover": {
+    "page": 1,
+    "image": "assets/decks/indangagaciro/page-01.webp",
+    "text": "INDANGAGACIRO\nUMUGAMBI\nINDANGAGACIRO"
+  },
+  "back": {
+    "page": 56,
+    "image": "assets/decks/indangagaciro/page-56.webp",
+    "text": "INDANGAGACIRO\nAYA MAKARITA YAKORANYWE\nINTEGO YO KUGUFASHA GUSIGASIRA\nINDANGAGACIRO ZAWE NK’UMUNYARWANDA\nINDANGAGACIRO"
+  },
+  "cards": [
+    {
+      "id": "indangagaciro-2S",
+      "page": 2,
+      "image": "assets/decks/indangagaciro/page-02.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "spades",
+      "text": "GUKUNDA IGIHUGU",
+      "lines": [
+        [
+          {
+            "text": "GUKUNDA ",
+            "accent": false
+          },
+          {
+            "text": "IGIHUGU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-3S",
+      "page": 3,
+      "image": "assets/decks/indangagaciro/page-03.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "spades",
+      "text": "KUGIRA ISHYAKA N’UBUTWARI",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA ISHYAKA ",
+            "accent": false
+          },
+          {
+            "text": "N’UBUTWARI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-4S",
+      "page": 4,
+      "image": "assets/decks/indangagaciro/page-04.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "spades",
+      "text": "KUGIRA UBWITANGE",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA ",
+            "accent": false
+          },
+          {
+            "text": "UBWITANGE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-5S",
+      "page": 5,
+      "image": "assets/decks/indangagaciro/page-05.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "spades",
+      "text": "KWIHESHA AGACIRO",
+      "lines": [
+        [
+          {
+            "text": "KWIHESHA ",
+            "accent": false
+          },
+          {
+            "text": "AGACIRO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-6S",
+      "page": 6,
+      "image": "assets/decks/indangagaciro/page-06.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "spades",
+      "text": "KUBAHA UMURYANGO",
+      "lines": [
+        [
+          {
+            "text": "KUBAHA ",
+            "accent": false
+          },
+          {
+            "text": "UMURYANGO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-7S",
+      "page": 7,
+      "image": "assets/decks/indangagaciro/page-07.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "spades",
+      "text": "KUGIRA URUHARE\nMU BIKORWA BY’IGIHUGU",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA URUHARE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "MU BIKORWA BY’IGIHUGU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-8S",
+      "page": 8,
+      "image": "assets/decks/indangagaciro/page-08.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "spades",
+      "text": "GUCUNGA NEZA\nIBYA RUBANDA",
+      "lines": [
+        [
+          {
+            "text": "GUCUNGA NEZA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "IBYA RUBANDA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-9S",
+      "page": 9,
+      "image": "assets/decks/indangagaciro/page-09.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "spades",
+      "text": "KUBUNGABUNGA UMUTEKANO",
+      "lines": [
+        [
+          {
+            "text": "KUBUNGABUNGA ",
+            "accent": false
+          },
+          {
+            "text": "UMUTEKANO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-10S",
+      "page": 10,
+      "image": "assets/decks/indangagaciro/page-10.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "spades",
+      "text": "UBUMWE",
+      "lines": [
+        [
+          {
+            "text": "UBUMWE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-JS",
+      "page": 11,
+      "image": "assets/decks/indangagaciro/page-11.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "spades",
+      "text": "KUGIRA\nUBUFATANYE N’UBUSABANE",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "UBUFATANYE N’UBUSABANE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-QS",
+      "page": 12,
+      "image": "assets/decks/indangagaciro/page-12.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "spades",
+      "text": "GUTABARANA",
+      "lines": [
+        [
+          {
+            "text": "GUTABARANA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-KS",
+      "page": 13,
+      "image": "assets/decks/indangagaciro/page-13.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "spades",
+      "text": "GUFATANYA",
+      "lines": [
+        [
+          {
+            "text": "GUFATANYA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-AS",
+      "page": 14,
+      "image": "assets/decks/indangagaciro/page-14.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "spades",
+      "text": "KUBAHANA",
+      "lines": [
+        [
+          {
+            "text": "KUBAHANA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-2H",
+      "page": 15,
+      "image": "assets/decks/indangagaciro/page-15.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "hearts",
+      "text": "KUGIRA UBUCUTI",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA ",
+            "accent": true
+          },
+          {
+            "text": "UBUCUTI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-3H",
+      "page": 16,
+      "image": "assets/decks/indangagaciro/page-16.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "hearts",
+      "text": "KUGANURA",
+      "lines": [
+        [
+          {
+            "text": "KUGANURA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-4H",
+      "page": 17,
+      "image": "assets/decks/indangagaciro/page-17.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "hearts",
+      "text": "GUKUNDA UMURIMO",
+      "lines": [
+        [
+          {
+            "text": "GUKUNDA ",
+            "accent": true
+          },
+          {
+            "text": "UMURIMO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-5H",
+      "page": 18,
+      "image": "assets/decks/indangagaciro/page-18.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "hearts",
+      "text": "GUSHISHIKARIRA UMURIMO",
+      "lines": [
+        [
+          {
+            "text": "GUSHISHIKARIRA ",
+            "accent": true
+          },
+          {
+            "text": "UMURIMO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-6H",
+      "page": 19,
+      "image": "assets/decks/indangagaciro/page-19.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "hearts",
+      "text": "GUKORA UMURIMO UNOZE\nKANDI UFITE IREME",
+      "lines": [
+        [
+          {
+            "text": "GUKORA UMURIMO UNOZE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "KANDI UFITE IREME",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-7H",
+      "page": 20,
+      "image": "assets/decks/indangagaciro/page-20.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "hearts",
+      "text": "GUKORERA HAMWE",
+      "lines": [
+        [
+          {
+            "text": "GUKORERA ",
+            "accent": true
+          },
+          {
+            "text": "HAMWE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-8H",
+      "page": 21,
+      "image": "assets/decks/indangagaciro/page-21.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "hearts",
+      "text": "GUKORERA KU GIHE",
+      "lines": [
+        [
+          {
+            "text": "GUKORERA ",
+            "accent": true
+          },
+          {
+            "text": "KU GIHE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-9H",
+      "page": 22,
+      "image": "assets/decks/indangagaciro/page-22.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "hearts",
+      "text": "GUHANGA IMIRIMO MISHYA",
+      "lines": [
+        [
+          {
+            "text": "GUHANGA ",
+            "accent": true
+          },
+          {
+            "text": "IMIRIMO MISHYA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-10H",
+      "page": 23,
+      "image": "assets/decks/indangagaciro/page-23.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "hearts",
+      "text": "GUTEGANYA\nNO KWITEGANYIRIZA",
+      "lines": [
+        [
+          {
+            "text": "GUTEGANYA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "NO KWITEGANYIRIZA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-JH",
+      "page": 24,
+      "image": "assets/decks/indangagaciro/page-24.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "hearts",
+      "text": "KWIGIRA",
+      "lines": [
+        [
+          {
+            "text": "KWIGIRA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-QH",
+      "page": 25,
+      "image": "assets/decks/indangagaciro/page-25.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "hearts",
+      "text": "KUGIRA UMUCO WO GUHIGANWA\nNO KUBA INDASHYIKIRWA",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA UMUCO WO GUHIGANWA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "NO KUBA INDASHYIKIRWA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-KH",
+      "page": 26,
+      "image": "assets/decks/indangagaciro/page-26.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "hearts",
+      "text": "UBUPFURA",
+      "lines": [
+        [
+          {
+            "text": "UBUPFURA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-AH",
+      "page": 27,
+      "image": "assets/decks/indangagaciro/page-27.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "hearts",
+      "text": "KWANGA UMUGAYO",
+      "lines": [
+        [
+          {
+            "text": "KWANGA ",
+            "accent": true
+          },
+          {
+            "text": "UMUGAYO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-2C",
+      "page": 28,
+      "image": "assets/decks/indangagaciro/page-28.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "clubs",
+      "text": "GUSHISHOZA",
+      "lines": [
+        [
+          {
+            "text": "GUSHISHOZA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-3C",
+      "page": 29,
+      "image": "assets/decks/indangagaciro/page-29.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "clubs",
+      "text": "KUDAHEMUKA",
+      "lines": [
+        [
+          {
+            "text": "KUDAHEMUKA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-4C",
+      "page": 30,
+      "image": "assets/decks/indangagaciro/page-30.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "clubs",
+      "text": "KWIYOROSHYA",
+      "lines": [
+        [
+          {
+            "text": "KWIYOROSHYA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-5C",
+      "page": 31,
+      "image": "assets/decks/indangagaciro/page-31.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "clubs",
+      "text": "KUBAHA",
+      "lines": [
+        [
+          {
+            "text": "KUBAHA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-6C",
+      "page": 32,
+      "image": "assets/decks/indangagaciro/page-32.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "clubs",
+      "text": "KUNOZA AMASEZERANO,\nIJAMBO, INDAHIRO N’IGIHANGO",
+      "lines": [
+        [
+          {
+            "text": "KUNOZA AMASEZERANO,",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "IJAMBO, ",
+            "accent": true
+          },
+          {
+            "text": "INDAHIRO N’IGIHANGO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-7C",
+      "page": 33,
+      "image": "assets/decks/indangagaciro/page-33.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "clubs",
+      "text": "KWIHANGANA",
+      "lines": [
+        [
+          {
+            "text": "KWIHANGANA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-8C",
+      "page": 34,
+      "image": "assets/decks/indangagaciro/page-34.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "clubs",
+      "text": "KUJYA INAMA",
+      "lines": [
+        [
+          {
+            "text": "KUJYA ",
+            "accent": false
+          },
+          {
+            "text": "INAMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-9C",
+      "page": 35,
+      "image": "assets/decks/indangagaciro/page-35.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "clubs",
+      "text": "KUGIRA IJAMBO RYIZA",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA IJAMBO ",
+            "accent": false
+          },
+          {
+            "text": "RYIZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-10C",
+      "page": 36,
+      "image": "assets/decks/indangagaciro/page-36.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "clubs",
+      "text": "GUSHIMA NO GUSHIMIRA",
+      "lines": [
+        [
+          {
+            "text": "GUSHIMA ",
+            "accent": false
+          },
+          {
+            "text": "NO ",
+            "accent": true
+          },
+          {
+            "text": "GUSHIMIRA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-JC",
+      "page": 37,
+      "image": "assets/decks/indangagaciro/page-37.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "clubs",
+      "text": "KUGIRA UBUNTU N’UBUMUNTU",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA ",
+            "accent": false
+          },
+          {
+            "text": "UBUNTU ",
+            "accent": true
+          },
+          {
+            "text": "N’",
+            "accent": false
+          },
+          {
+            "text": "UBUMUNTU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-QC",
+      "page": 38,
+      "image": "assets/decks/indangagaciro/page-38.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "clubs",
+      "text": "GUHARANIRA UBUMANZI",
+      "lines": [
+        [
+          {
+            "text": "GUHARANIRA ",
+            "accent": false
+          },
+          {
+            "text": "UBUMANZI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-KC",
+      "page": 39,
+      "image": "assets/decks/indangagaciro/page-39.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "clubs",
+      "text": "KUGIRA URURIMI N’UMUCO",
+      "lines": [
+        [
+          {
+            "text": "KUGIRA ",
+            "accent": false
+          },
+          {
+            "text": "URURIMI ",
+            "accent": true
+          },
+          {
+            "text": "N’",
+            "accent": false
+          },
+          {
+            "text": "UMUCO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-AC",
+      "page": 40,
+      "image": "assets/decks/indangagaciro/page-40.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "clubs",
+      "text": "GUSIGASIRA UBUMWE",
+      "lines": [
+        [
+          {
+            "text": "GUSIGASIRA ",
+            "accent": false
+          },
+          {
+            "text": "UBUMWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-2D",
+      "page": 41,
+      "image": "assets/decks/indangagaciro/page-41.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "diamonds",
+      "text": "KUBA INTABERA",
+      "lines": [
+        [
+          {
+            "text": "KUBA ",
+            "accent": true
+          },
+          {
+            "text": "INTABERA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-3D",
+      "page": 42,
+      "image": "assets/decks/indangagaciro/page-42.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "diamonds",
+      "text": "KUZUZA AMASEZERANO",
+      "lines": [
+        [
+          {
+            "text": "KUZUZA ",
+            "accent": true
+          },
+          {
+            "text": "AMASEZERANO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-4D",
+      "page": 43,
+      "image": "assets/decks/indangagaciro/page-43.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "diamonds",
+      "text": "IKINYABUPFURA",
+      "lines": [
+        [
+          {
+            "text": "IKINYABUPFURA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-5D",
+      "page": 44,
+      "image": "assets/decks/indangagaciro/page-44.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "diamonds",
+      "text": "UBUMWE N’UBWIYUNGE",
+      "lines": [
+        [
+          {
+            "text": "UBUMWE ",
+            "accent": true
+          },
+          {
+            "text": "N’",
+            "accent": false
+          },
+          {
+            "text": "UBWIYUNGE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-6D",
+      "page": 45,
+      "image": "assets/decks/indangagaciro/page-45.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "diamonds",
+      "text": "KURWANYA AKARENGANE",
+      "lines": [
+        [
+          {
+            "text": "KURWANYA ",
+            "accent": true
+          },
+          {
+            "text": "AKARENGANE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-7D",
+      "page": 46,
+      "image": "assets/decks/indangagaciro/page-46.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "diamonds",
+      "text": "KUBUNGABUNGA UMUTEKANO",
+      "lines": [
+        [
+          {
+            "text": "KUBUNGABUNGA ",
+            "accent": true
+          },
+          {
+            "text": "UMUTEKANO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-8D",
+      "page": 47,
+      "image": "assets/decks/indangagaciro/page-47.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "diamonds",
+      "text": "KURWANYA RUSWA",
+      "lines": [
+        [
+          {
+            "text": "KURWANYA ",
+            "accent": true
+          },
+          {
+            "text": "RUSWA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-9D",
+      "page": 48,
+      "image": "assets/decks/indangagaciro/page-48.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "diamonds",
+      "text": "KWIGIRIRA ICYIZERE",
+      "lines": [
+        [
+          {
+            "text": "KWIGIRIRA ",
+            "accent": true
+          },
+          {
+            "text": "ICYIZERE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-10D",
+      "page": 49,
+      "image": "assets/decks/indangagaciro/page-49.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "diamonds",
+      "text": "IMPUHWE",
+      "lines": [
+        [
+          {
+            "text": "IMPUHWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-JD",
+      "page": 50,
+      "image": "assets/decks/indangagaciro/page-50.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "diamonds",
+      "text": "IMBABAZI",
+      "lines": [
+        [
+          {
+            "text": "IMBABAZI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-QD",
+      "page": 51,
+      "image": "assets/decks/indangagaciro/page-51.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "diamonds",
+      "text": "UBWUZU",
+      "lines": [
+        [
+          {
+            "text": "UBWUZU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-KD",
+      "page": 52,
+      "image": "assets/decks/indangagaciro/page-52.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "diamonds",
+      "text": "URUGWIRO",
+      "lines": [
+        [
+          {
+            "text": "URUGWIRO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-AD",
+      "page": 53,
+      "image": "assets/decks/indangagaciro/page-53.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "diamonds",
+      "text": "KURANGIZA IBYO WATANGIYE\nNO KWISHIMIRA IBYAGEZWEHO",
+      "lines": [
+        [
+          {
+            "text": "KURANGIZA IBYO WATANGIYE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "NO KWISHIMIRA IBYAGEZWEHO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-joker1",
+      "page": 54,
+      "image": "assets/decks/indangagaciro/page-54.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "INDANGAGACIRO NI IBIMENYETSO\nNGIRO, NI IMYIFATIRE MYIZA IRANGA\nABANTU BATUYE IGIHUGU",
+      "lines": [
+        [
+          {
+            "text": "INDANGAGACIRO NI ",
+            "accent": false
+          },
+          {
+            "text": "IBIMENYETSO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "NGIRO",
+            "accent": true
+          },
+          {
+            "text": ", NI ",
+            "accent": false
+          },
+          {
+            "text": "IMYIFATIRE MYIZA ",
+            "accent": true
+          },
+          {
+            "text": "IRANGA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "ABANTU BATUYE IGIHUGU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "indangagaciro-joker2",
+      "page": 55,
+      "image": "assets/decks/indangagaciro/page-55.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "INDANGAGACIRO NI\nIBIKORWA NDANGAMUCO\nABENEGIHUGU BEMERA, KANDI\nBAKIFUZA KO BIBARANGA",
+      "lines": [
+        [
+          {
+            "text": "INDANGAGACIRO NI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "IBIKORWA NDANGAMUCO",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "ABENEGIHUGU BEMERA, KANDI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAKIFUZA KO BIBARANGA",
+            "accent": true
+          }
+        ]
+      ]
+    }
+  ]
+}

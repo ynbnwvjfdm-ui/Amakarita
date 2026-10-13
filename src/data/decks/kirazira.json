@@ -1,0 +1,1248 @@
+{
+  "id": "kirazira",
+  "title": "Kirazira",
+  "format": "suited",
+  "source": "source/Kirazira_-_Cards.pdf",
+  "pageCount": 56,
+  "pageSize": {
+    "width": 820.0,
+    "height": 1120.0
+  },
+  "fonts": [
+    "Bebas-Regular",
+    "Futura",
+    "Futura-Book",
+    "SinkRegular",
+    "Wosker-Regular"
+  ],
+  "colors": {
+    "ink": "#29432e",
+    "accent": "#5b0b45"
+  },
+  "cover": {
+    "page": 1,
+    "image": "assets/decks/kirazira/page-01.webp",
+    "text": "KIRAZIRA\nUMUGAMBI\nKIRAZIRA"
+  },
+  "back": {
+    "page": 56,
+    "image": "assets/decks/kirazira/page-56.webp",
+    "text": "KIRAZIRA\nAYA MAKARITA YAKORANYWE INTEGO\nYO KUGUFASHA KUMENYA KIRAZIRA\nUGOMBA KWIRINDA\nKIRAZIRA"
+  },
+  "cards": [
+    {
+      "id": "kirazira-2S",
+      "page": 2,
+      "image": "assets/decks/kirazira/page-02.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "spades",
+      "text": "KIRAZIRA KUDATINYA UMUGAYO",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUDATINYA UMUGAYO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-3S",
+      "page": 3,
+      "image": "assets/decks/kirazira/page-03.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "spades",
+      "text": "KIRAZIRA KWITURA INABI",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KWITURA INABI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-4S",
+      "page": 4,
+      "image": "assets/decks/kirazira/page-04.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "spades",
+      "text": "KIRAZIRA KUBIBA\nINGENGABITEKEREZO YA JENOSIDE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUBIBA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "INGENGABITEKEREZO YA JENOSIDE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-5S",
+      "page": 5,
+      "image": "assets/decks/kirazira/page-05.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "spades",
+      "text": "KIRAZIRA KWIYANDARIKA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KWIYANDARIKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-6S",
+      "page": 6,
+      "image": "assets/decks/kirazira/page-06.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "spades",
+      "text": "KIRAZIRA KUTIGIRIRA ICYIZERE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUTIGIRIRA ICYIZERE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-7S",
+      "page": 7,
+      "image": "assets/decks/kirazira/page-07.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "spades",
+      "text": "KIRAZIRA KUGIRA\nUMURURUMBA / UBUSAMBO",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUGIRA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UMURURUMBA / UBUSAMBO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-8S",
+      "page": 8,
+      "image": "assets/decks/kirazira/page-08.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "spades",
+      "text": "KIRAZIRA KUGIRA AGASUZUGURO",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUGIRA AGASUZUGURO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-9S",
+      "page": 9,
+      "image": "assets/decks/kirazira/page-09.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "spades",
+      "text": "KIRAZIRA KWIYEMERA NO KWIKUZA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KWIYEMERA ",
+            "accent": true
+          },
+          {
+            "text": "NO ",
+            "accent": false
+          },
+          {
+            "text": "KWIKUZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-10S",
+      "page": 10,
+      "image": "assets/decks/kirazira/page-10.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "spades",
+      "text": "KIRAZIRA KWIRATA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KWIRATA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-JS",
+      "page": 11,
+      "image": "assets/decks/kirazira/page-11.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "spades",
+      "text": "KIRAZIRA KUGIRA UMWANDA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUGIRA UMWANDA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-QS",
+      "page": 12,
+      "image": "assets/decks/kirazira/page-12.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "spades",
+      "text": "KIRAZIRA KWIRONDA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KWIRONDA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-KS",
+      "page": 13,
+      "image": "assets/decks/kirazira/page-13.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "spades",
+      "text": "KIRAZIRA KUBIBA\nAMACAKUBIRI N’IVANGURA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA KUBIBA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "AMACAKUBIRI N’IVANGURA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-AS",
+      "page": 14,
+      "image": "assets/decks/kirazira/page-14.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "spades",
+      "text": "KIRAZIRA GUKORERA MU DUTSIKO",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "GUKORERA MU DUTSIKO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-2H",
+      "page": 15,
+      "image": "assets/decks/kirazira/page-15.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "hearts",
+      "text": "KIRAZIRA KUBOGAMA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUBOGAMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-3H",
+      "page": 16,
+      "image": "assets/decks/kirazira/page-16.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "hearts",
+      "text": "KIRAZIRA GUSABIRIZA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "GUSABIRIZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-4H",
+      "page": 17,
+      "image": "assets/decks/kirazira/page-17.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "hearts",
+      "text": "KIRAZIRA KWIYANDARIKA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KWIYANDARIKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-5H",
+      "page": 18,
+      "image": "assets/decks/kirazira/page-18.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "hearts",
+      "text": "KIRAZIRA KUBESHYA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUBESHYA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-6H",
+      "page": 19,
+      "image": "assets/decks/kirazira/page-19.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "hearts",
+      "text": "KIRAZIRA\nGUTANGA NO KWAKIRA RUSWA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "GUTANGA NO KWAKIRA RUSWA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-7H",
+      "page": 20,
+      "image": "assets/decks/kirazira/page-20.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "hearts",
+      "text": "KIRAZIRA KUBIBA INZANGANO",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUBIBA INZANGANO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-8H",
+      "page": 21,
+      "image": "assets/decks/kirazira/page-21.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "hearts",
+      "text": "KIRAZIRA KUTUBAHIRIZA IGIHE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUTUBAHIRIZA IGIHE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-9H",
+      "page": 22,
+      "image": "assets/decks/kirazira/page-22.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "hearts",
+      "text": "KIRAZIRA KUGIRA UBUNEBWE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUGIRA UBUNEBWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-10H",
+      "page": 23,
+      "image": "assets/decks/kirazira/page-23.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "hearts",
+      "text": "KIRAZIRA\nGUTSIMBARARA KU KIBI",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "GUTSIMBARARA KU KIBI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-JH",
+      "page": 24,
+      "image": "assets/decks/kirazira/page-24.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "hearts",
+      "text": "KIRAZIRA KUGIRA UBUGWARI",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUGIRA UBUGWARI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-QH",
+      "page": 25,
+      "image": "assets/decks/kirazira/page-25.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "hearts",
+      "text": "KIRAZIRA KUGIRA UBUHEMU",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUGIRA UBUHEMU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-KH",
+      "page": 26,
+      "image": "assets/decks/kirazira/page-26.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "hearts",
+      "text": "KIRAZIRA KURANGARANA ABANTU",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KURANGARANA ABANTU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-AH",
+      "page": 27,
+      "image": "assets/decks/kirazira/page-27.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "hearts",
+      "text": "KIRAZIRA GUTONESHA UMWE\nUKAREKA UNDI",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "GUTONESHA UMWE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UKAREKA UNDI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-2C",
+      "page": 28,
+      "image": "assets/decks/kirazira/page-28.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "clubs",
+      "text": "KIRAZIRA KUTAGIRA GAHUNDA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUTAGIRA GAHUNDA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-3C",
+      "page": 29,
+      "image": "assets/decks/kirazira/page-29.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "clubs",
+      "text": "KIRAZIRA KUTAGISHA INAMA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUTAGISHA INAMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-4C",
+      "page": 30,
+      "image": "assets/decks/kirazira/page-30.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "clubs",
+      "text": "KIRAZIRA\nKUNYEREZA UMUTUNGO W’IGIHUGU",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KUNYEREZA UMUTUNGO W’IGIHUGU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-5C",
+      "page": 31,
+      "image": "assets/decks/kirazira/page-31.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "clubs",
+      "text": "KIRAZIRA\nKUTAGIRA ISHYAKA MURI\nGAHUNDA Z’ITERAMBERE RY’IGIHUGU",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KUTAGIRA ISHYAKA MURI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "GAHUNDA Z’ITERAMBERE RY’IGIHUGU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-6C",
+      "page": 32,
+      "image": "assets/decks/kirazira/page-32.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "clubs",
+      "text": "KIRAZIRA\nKUTUBAHIRIZA AMATEGEKO",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KUTUBAHIRIZA AMATEGEKO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-7C",
+      "page": 33,
+      "image": "assets/decks/kirazira/page-33.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "clubs",
+      "text": "KIRAZIRA KUTITANGA\nMU BIKORWA BY’IGIHUGU",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUTITANGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "MU BIKORWA BY’IGIHUGU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-8C",
+      "page": 34,
+      "image": "assets/decks/kirazira/page-34.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "clubs",
+      "text": "KIRAZIRA KUDASHISHIKARA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUDASHISHIKARA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-9C",
+      "page": 35,
+      "image": "assets/decks/kirazira/page-35.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "clubs",
+      "text": "KIRAZIRA KUDAKORA NEZA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUDAKORA NEZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-10C",
+      "page": 36,
+      "image": "assets/decks/kirazira/page-36.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "clubs",
+      "text": "KIRAZIRA GEKERERERWA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "GEKERERERWA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-JC",
+      "page": 37,
+      "image": "assets/decks/kirazira/page-37.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "clubs",
+      "text": "KIRAZIRA KURENGANYA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KURENGANYA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-QC",
+      "page": 38,
+      "image": "assets/decks/kirazira/page-38.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "clubs",
+      "text": "KIRAZIRA GUHUBUKA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "GUHUBUKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-KC",
+      "page": 39,
+      "image": "assets/decks/kirazira/page-39.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "clubs",
+      "text": "KIRAZIRA KUDASHISHOZA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUDASHISHOZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-AC",
+      "page": 40,
+      "image": "assets/decks/kirazira/page-40.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "clubs",
+      "text": "KIRAZIRA KUGAYA\nNO GUSUZUGURA IMIRIMO",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUGAYA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "NO GUSUZUGURA IMIRIMO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-2D",
+      "page": 41,
+      "image": "assets/decks/kirazira/page-41.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "diamonds",
+      "text": "KIRAZIRA GUSAMBANA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "GUSAMBANA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-3D",
+      "page": 42,
+      "image": "assets/decks/kirazira/page-42.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nKWIHESHA IKINTU CY’UNDI",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KWIHESHA IKINTU CY’UNDI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-4D",
+      "page": 43,
+      "image": "assets/decks/kirazira/page-43.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nKUNKWA IBIYOBYABWENGE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KUNKWA IBIYOBYABWENGE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-5D",
+      "page": 44,
+      "image": "assets/decks/kirazira/page-44.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nKUGENDERA MU KIGARE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KUGENDERA MU KIGARE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-6D",
+      "page": 45,
+      "image": "assets/decks/kirazira/page-45.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "diamonds",
+      "text": "KIRAZIRA KUTITEZA IMBERE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUTITEZA IMBERE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-7D",
+      "page": 46,
+      "image": "assets/decks/kirazira/page-46.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "diamonds",
+      "text": "KIRAZIRA KUTUMVIRA ABABYEYI",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUTUMVIRA ABABYEYI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-8D",
+      "page": 47,
+      "image": "assets/decks/kirazira/page-47.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nKWANGA KUGIRWA INAMA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KWANGA KUGIRWA INAMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-9D",
+      "page": 48,
+      "image": "assets/decks/kirazira/page-48.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nGUHERANWA N’AGAHINDA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "GUHERANWA N’AGAHINDA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-10D",
+      "page": 49,
+      "image": "assets/decks/kirazira/page-49.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "diamonds",
+      "text": "KIRAZIRA GUPFOBYA JENOSIDE\nYAKOREWE ABATUTSI MURI 1994",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "GUPFOBYA JENOSIDE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "YAKOREWE ABATUTSI MURI 1994",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-JD",
+      "page": 50,
+      "image": "assets/decks/kirazira/page-50.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nKUDAKUNDA MUGENZI WAWE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KUDAKUNDA MUGENZI WAWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-QD",
+      "page": 51,
+      "image": "assets/decks/kirazira/page-51.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nKUGAMBANIRA MUGENZI WAWE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KUGAMBANIRA MUGENZI WAWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-KD",
+      "page": 52,
+      "image": "assets/decks/kirazira/page-52.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nGUHISHIRA ICYAHA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "GUHISHIRA ICYAHA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-AD",
+      "page": 53,
+      "image": "assets/decks/kirazira/page-53.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "diamonds",
+      "text": "KIRAZIRA\nKUMVA KO NTACYO UZIMARIRA",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "KUMVA KO NTACYO UZIMARIRA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-joker1",
+      "page": 54,
+      "image": "assets/decks/kirazira/page-54.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "KIRAZIRA GUSENYA UBUMWE",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "GUSENYA UBUMWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "kirazira-joker2",
+      "page": 55,
+      "image": "assets/decks/kirazira/page-55.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "KIRAZIRA KUGAMBANIRA IGIHUGU",
+      "lines": [
+        [
+          {
+            "text": "KIRAZIRA ",
+            "accent": false
+          },
+          {
+            "text": "KUGAMBANIRA IGIHUGU",
+            "accent": true
+          }
+        ]
+      ]
+    }
+  ]
+}

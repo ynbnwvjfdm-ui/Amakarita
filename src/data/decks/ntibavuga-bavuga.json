@@ -1,0 +1,1772 @@
+{
+  "id": "ntibavuga-bavuga",
+  "title": "Ntibavuga Bavuga",
+  "format": "suited",
+  "source": "source/Ntibavuga_Bavuga_-_Cards.pdf",
+  "pageCount": 56,
+  "pageSize": {
+    "width": 820.0,
+    "height": 1120.0
+  },
+  "fonts": [
+    "Bebas-Regular",
+    "Futura",
+    "Futura-Book",
+    "SinkRegular",
+    "Wosker-Regular"
+  ],
+  "colors": {
+    "ink": "#212829",
+    "accent": "#ad0014"
+  },
+  "cover": {
+    "page": 1,
+    "image": "assets/decks/ntibavuga-bavuga/page-01.webp",
+    "text": "NTIBAVUGA BAVUGA\nUMUGAMBI\nNTIBAVUGA BAVUGA"
+  },
+  "back": {
+    "page": 56,
+    "image": "assets/decks/ntibavuga-bavuga/page-56.webp",
+    "text": "NTIBAVUGA BAVUGA\nAYA MAKARITA YAKORANYWE INTEGO\nYO KUGUFASHA KUVUGA NEZA\nIKINYARWANDA\nNTIBAVUGA BAVUGA"
+  },
+  "cards": [
+    {
+      "id": "ntibavuga-bavuga-2S",
+      "page": 2,
+      "image": "assets/decks/ntibavuga-bavuga/page-02.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "spades",
+      "text": "NTIBAVUGA CYAZE CYANGWA CYAKOZE\nBAVUGA ICYAKORA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "CYAZE ",
+            "accent": true
+          },
+          {
+            "text": "CYANGWA ",
+            "accent": false
+          },
+          {
+            "text": "CYAKOZE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "ICYAKORA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-3S",
+      "page": 3,
+      "image": "assets/decks/ntibavuga-bavuga/page-03.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "spades",
+      "text": "NTIBAVUGA NUMVISHE\nBAVUGA NUMVISE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NUMVISHE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NUMVISE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-4S",
+      "page": 4,
+      "image": "assets/decks/ntibavuga-bavuga/page-04.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "spades",
+      "text": "NTIBAVUGA\nJENOSIDE YO MU RWANDA\nINTAMBARA YO MU RWANDA\nJENOSIDE YAKOREWE ABANYARWANDA\nBAVUGA\nJENOSIDE YAKOREWE ABATUTSI MURI 1994",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "JENOSIDE YO MU RWANDA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "INTAMBARA YO MU RWANDA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "JENOSIDE YAKOREWE ABANYARWANDA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "JENOSIDE YAKOREWE ABATUTSI MURI 1994",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-5S",
+      "page": 5,
+      "image": "assets/decks/ntibavuga-bavuga/page-05.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "spades",
+      "text": "NTIBAVUGA SINZI CYANGWA NTAGO MBIZI\nBAVUGA NTABWO MBIZI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "SINZI ",
+            "accent": true
+          },
+          {
+            "text": "CYANGWA ",
+            "accent": false
+          },
+          {
+            "text": "NTAGO MBIZI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NTABWO MBIZI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-6S",
+      "page": 6,
+      "image": "assets/decks/ntibavuga-bavuga/page-06.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "spades",
+      "text": "NTIBAVUGA NJYEWE CYANGWA NGE\nBAVUGA JYEWE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NJYEWE ",
+            "accent": true
+          },
+          {
+            "text": "CYANGWA ",
+            "accent": false
+          },
+          {
+            "text": "NGE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "JYEWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-7S",
+      "page": 7,
+      "image": "assets/decks/ntibavuga-bavuga/page-07.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "spades",
+      "text": "NTIBAVUGA WARI WAKUBITWAHO ?\nBAVUGA WARI WAKUBITWA ?",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "WARI WAKUBITWAHO ?",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "WARI WAKUBITWA ?",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-8S",
+      "page": 8,
+      "image": "assets/decks/ntibavuga-bavuga/page-08.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "spades",
+      "text": "NTIBAVUGA SIWUMVA ?\nBAVUGA NTIWUMVA ?",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "SIWUMVA ?",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NTIWUMVA ?",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-9S",
+      "page": 9,
+      "image": "assets/decks/ntibavuga-bavuga/page-09.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "spades",
+      "text": "INDAMUKANYO “AMASHYO”\nNTIYIKIRIZWA AMASHYONGORE\nNTIYIKIRIZWA AMASHONGORE",
+      "lines": [
+        [
+          {
+            "text": "INDAMUKANYO ",
+            "accent": false
+          },
+          {
+            "text": "“AMASHYO”",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "NTIYIKIRIZWA ",
+            "accent": false
+          },
+          {
+            "text": "AMASHYONGORE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "NTIYIKIRIZWA ",
+            "accent": false
+          },
+          {
+            "text": "AMASHONGORE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-10S",
+      "page": 10,
+      "image": "assets/decks/ntibavuga-bavuga/page-10.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "spades",
+      "text": "NTIBAVUGA BATI\nIMANA IBAHEREZE UMUGISHA\nBAVUGA BATI\nIMANA IBAHE UMUGISHA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA BATI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "IMANA IBAHEREZE UMUGISHA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA BATI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "IMANA IBAHE UMUGISHA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-JS",
+      "page": 11,
+      "image": "assets/decks/ntibavuga-bavuga/page-11.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "spades",
+      "text": "NTIBAVUGA INKA NYINSHI\nBAVUGA ISHYO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "INKA NYINSHI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "ISHYO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-QS",
+      "page": 12,
+      "image": "assets/decks/ntibavuga-bavuga/page-12.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMAGO\nBAVUGA INGO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMAGO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "INGO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-KS",
+      "page": 13,
+      "image": "assets/decks/ntibavuga-bavuga/page-13.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMAKWE\nBAVUGA UBUKWE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMAKWE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UBUKWE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-AS",
+      "page": 14,
+      "image": "assets/decks/ntibavuga-bavuga/page-14.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "spades",
+      "text": "NTIBAVUGA AMANAMA\nBAVUGA INAMA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMANAMA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "INAMA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-2H",
+      "page": 15,
+      "image": "assets/decks/ntibavuga-bavuga/page-15.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "hearts",
+      "text": "NTIBAVUGA YAVUZE UTI\nBAVUGA YAVUZE ATI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "YAVUZE UTI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "YAVUZE ATI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-3H",
+      "page": 16,
+      "image": "assets/decks/ntibavuga-bavuga/page-16.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "hearts",
+      "text": "NTIBAVUGA AGASAKU\nBAVUGA URUSAKU",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "AGASAKU",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "URUSAKU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-4H",
+      "page": 17,
+      "image": "assets/decks/ntibavuga-bavuga/page-17.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "hearts",
+      "text": "NTIBAVUGA YAVUZE YUKO ARI BUZE\nBAVUGA YAVUZE KO ARI BUZE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "YAVUZE YUKO ARI BUZE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "YAVUZE KO ARI BUZE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-5H",
+      "page": 18,
+      "image": "assets/decks/ntibavuga-bavuga/page-18.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "hearts",
+      "text": "NTIBAVUGA\nMUKURU/MURUMUNA WA PAPA\nBAVUGA\nDATA WACU",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "MUKURU/MURUMUNA WA PAPA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "DATA WACU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-6H",
+      "page": 19,
+      "image": "assets/decks/ntibavuga-bavuga/page-19.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "hearts",
+      "text": "NTIBAVUGA YANKWEYE AMAZI\nBAVUGA YANYOYE AMAZI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "YANKWEYE AMAZI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "YANYOYE AMAZI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-7H",
+      "page": 20,
+      "image": "assets/decks/ntibavuga-bavuga/page-20.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "hearts",
+      "text": "NTIBAVUGA AMAGO\nBAVUGA INGO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "AMAGO",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "INGO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-8H",
+      "page": 21,
+      "image": "assets/decks/ntibavuga-bavuga/page-21.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "hearts",
+      "text": "NTIBAVUGA AMAMODOKA\nBAVUGA IMODOKA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "AMAMODOKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "IMODOKA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-9H",
+      "page": 22,
+      "image": "assets/decks/ntibavuga-bavuga/page-22.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "hearts",
+      "text": "NTIBAVUGA AMAZU\nBAVUGA INZU",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "AMAZU",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "INZU",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-10H",
+      "page": 23,
+      "image": "assets/decks/ntibavuga-bavuga/page-23.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "hearts",
+      "text": "NTIBAVUGA KU GITI CYANGE\nBAVUGA KU BWANGE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KU GITI CYANGE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "KU BWANGE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-JH",
+      "page": 24,
+      "image": "assets/decks/ntibavuga-bavuga/page-24.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "hearts",
+      "text": "NTIBAVUGA ABASHUTI BANGE\nBAVUGA INSHUTI ZANGE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "ABASHUTI BANGE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "INSHUTI ZANGE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-QH",
+      "page": 25,
+      "image": "assets/decks/ntibavuga-bavuga/page-25.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "hearts",
+      "text": "NTIBAVUGA YABASHIJE GUTSINDA\nBAVUGA YATSINZE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "YABASHIJE GUTSINDA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "YATSINZE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-KH",
+      "page": 26,
+      "image": "assets/decks/ntibavuga-bavuga/page-26.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "hearts",
+      "text": "NTIBAVUGA MUBIGENZE UTYO\nBAVUGA MUBIGENZE GUTYO/MUTYO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "MUBIGENZE UTYO",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "MUBIGENZE GUTYO/MUTYO",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-AH",
+      "page": 27,
+      "image": "assets/decks/ntibavuga-bavuga/page-27.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "hearts",
+      "text": "NTIBAVUGA NDAVUZE ATI\nBAVUGA NDAVUZE NTI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NDAVUZE ATI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NDAVUZE NTI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-2C",
+      "page": 28,
+      "image": "assets/decks/ntibavuga-bavuga/page-28.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MWABIGENZA UTE\nBAVUGA MWABIGENZA MUTE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MWABIGENZA UTE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MWABIGENZA MUTE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-3C",
+      "page": 29,
+      "image": "assets/decks/ntibavuga-bavuga/page-29.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "clubs",
+      "text": "NTIBAVUGA SIYAJE\nBAVUGA NTIYAJE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "SIYAJE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NTIYAJE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-4C",
+      "page": 30,
+      "image": "assets/decks/ntibavuga-bavuga/page-30.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "clubs",
+      "text": "NTIBAVUGA SUBONA KO ARI BYIZA ?\nBAVUGA NTUBONA KO ARI BYIZA ?",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "SUBONA KO ARI BYIZA ?",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NTUBONA KO ARI BYIZA ?",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-5C",
+      "page": 31,
+      "image": "assets/decks/ntibavuga-bavuga/page-31.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "clubs",
+      "text": "NTIBAVUGA NTIZA KU NTEBE\nBAVUGA NTIZA INTEBE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NTIZA KU NTEBE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NTIZA INTEBE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-6C",
+      "page": 32,
+      "image": "assets/decks/ntibavuga-bavuga/page-32.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MPA KURI UWO MWENDA\nBAVUGA MPA UWO MWENDA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MPA KURI UWO MWENDA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MPA UWO MWENDA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-7C",
+      "page": 33,
+      "image": "assets/decks/ntibavuga-bavuga/page-33.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "clubs",
+      "text": "NTIBAVUGA GUHANAHANA AMAKURU\nBAVUGA GUTANGA AMAKURU",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "GUHANAHANA AMAKURU",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "GUTANGA AMAKURU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-8C",
+      "page": 34,
+      "image": "assets/decks/ntibavuga-bavuga/page-34.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "clubs",
+      "text": "NTIBAVUGA UBUSOBANURO\nBAVUGA IBISOBANURO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UBUSOBANURO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "IBISOBANURO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-9C",
+      "page": 35,
+      "image": "assets/decks/ntibavuga-bavuga/page-35.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "clubs",
+      "text": "NTIBAVUGA MU GATONDO\nBAVUGA MU GITONDO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU GATONDO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "MU GITONDO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-10C",
+      "page": 36,
+      "image": "assets/decks/ntibavuga-bavuga/page-36.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "clubs",
+      "text": "NTIBAVUGA AMABWIRIZWA\nBAVUGA AMABWIRIZA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMABWIRIZWA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMABWIRIZA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-JC",
+      "page": 37,
+      "image": "assets/decks/ntibavuga-bavuga/page-37.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "clubs",
+      "text": "NTIBAVUGA NIBATARARA BAMBWIYE\nBAVUGA NIBARARA BATAMBWIYE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NIBATARARA BAMBWIYE",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "NIBARARA BATAMBWIYE",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-QC",
+      "page": 38,
+      "image": "assets/decks/ntibavuga-bavuga/page-38.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "clubs",
+      "text": "NTIBAVUGA IGO/EGO/INGO\nBAVUGA YEGO",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "IGO/EGO/INGO",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "YEGO",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-KC",
+      "page": 39,
+      "image": "assets/decks/ntibavuga-bavuga/page-39.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "clubs",
+      "text": "NTIBAVUGA AMAKA MENSHI\nBAVUGA INKA NYINSHI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "AMAKA MENSHI",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "INKA NYINSHI",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-AC",
+      "page": 40,
+      "image": "assets/decks/ntibavuga-bavuga/page-40.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "clubs",
+      "text": "NTIBAVUGA UMUTICA WACU\nBAVUGA UMWARIMU WACU",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UMUTICA WACU",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": false
+          },
+          {
+            "text": "UMWARIMU WACU",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-2D",
+      "page": 41,
+      "image": "assets/decks/ntibavuga-bavuga/page-41.webp",
+      "kind": "number",
+      "rank": "2",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA MURAMBWIYE ATI/UTI\nBAVUGA MURATUBWIYE MUTI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "MURAMBWIYE ATI/UTI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "MURATUBWIYE MUTI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-3D",
+      "page": 42,
+      "image": "assets/decks/ntibavuga-bavuga/page-42.webp",
+      "kind": "number",
+      "rank": "3",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA TURAVUZE ATI/UTI\nBAVUGA TWE TURAVUZE TUTI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "TURAVUZE ATI/UTI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "TWE TURAVUZE TUTI",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-4D",
+      "page": 43,
+      "image": "assets/decks/ntibavuga-bavuga/page-43.webp",
+      "kind": "number",
+      "rank": "4",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA SINDAZA\nBAVUGA NTABWO NDAZA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "SINDAZA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NTABWO NDAZA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-5D",
+      "page": 44,
+      "image": "assets/decks/ntibavuga-bavuga/page-44.webp",
+      "kind": "number",
+      "rank": "5",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA SINDAKAGENDA\nBAVUGA NTABWO NDAGENDA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "SINDAKAGENDA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NTABWO NDAGENDA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-6D",
+      "page": 45,
+      "image": "assets/decks/ntibavuga-bavuga/page-45.webp",
+      "kind": "number",
+      "rank": "6",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA NAJE NATARIYE”\nBAVUGA NAJE NTARIYE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NAJE NATARIYE”",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NAJE NTARIYE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-7D",
+      "page": 46,
+      "image": "assets/decks/ntibavuga-bavuga/page-46.webp",
+      "kind": "number",
+      "rank": "7",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA SINITABA\nBAVUGA NTABWO NITABA",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "SINITABA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NTABWO NITABA",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-8D",
+      "page": 47,
+      "image": "assets/decks/ntibavuga-bavuga/page-47.webp",
+      "kind": "number",
+      "rank": "8",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA ARIKO SE WANDEKA\nBAVUGA ARIKO SE WANDETSE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "ARIKO SE WANDEKA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "ARIKO SE WANDETSE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-9D",
+      "page": 48,
+      "image": "assets/decks/ntibavuga-bavuga/page-48.webp",
+      "kind": "number",
+      "rank": "9",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA SHANGAZI\nBAVUGA MASENGE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "SHANGAZI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "MASENGE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-10D",
+      "page": 49,
+      "image": "assets/decks/ntibavuga-bavuga/page-49.webp",
+      "kind": "number",
+      "rank": "10",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA BYARI FEKE\nBAVUGA NTA GACIRO BYARI BIFITE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "BYARI FEKE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NTA GACIRO BYARI BIFITE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-JD",
+      "page": 50,
+      "image": "assets/decks/ntibavuga-bavuga/page-50.webp",
+      "kind": "jack",
+      "rank": "J",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA IZI NKWETO NI PIRATE\nBAVUGA IZI NKWETO SI UMWIMERERE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "IZI NKWETO NI PIRATE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "IZI NKWETO SI UMWIMERERE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-QD",
+      "page": 51,
+      "image": "assets/decks/ntibavuga-bavuga/page-51.webp",
+      "kind": "queen",
+      "rank": "Q",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA IBINTU NI DANJE\nBAVUGA IBINTU BIRAKOMEYE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "IBINTU NI DANJE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "IBINTU BIRAKOMEYE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-KD",
+      "page": 52,
+      "image": "assets/decks/ntibavuga-bavuga/page-52.webp",
+      "kind": "king",
+      "rank": "K",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA NDAZA KABISA\nBAVUGA NDAZA RWOSE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NDAZA KABISA",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "NDAZA RWOSE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-AD",
+      "page": 53,
+      "image": "assets/decks/ntibavuga-bavuga/page-53.webp",
+      "kind": "ace",
+      "rank": "A",
+      "suit": "diamonds",
+      "text": "NTIBAVUGA UMUJAMA WANGE\nBAVUGA INSHUTI YANGE",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "UMUJAMA WANGE",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "INSHUTI YANGE",
+            "accent": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-joker1",
+      "page": 54,
+      "image": "assets/decks/ntibavuga-bavuga/page-54.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "IYO URI KWIVUGA,\nNTAGO UVUGA UTI BANYITA KANAKA\nUVUGA UTI NITWA KANAKA",
+      "lines": [
+        [
+          {
+            "text": "IYO URI KWIVUGA,",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "NTAGO UVUGA UTI ",
+            "accent": false
+          },
+          {
+            "text": "BANYITA KANAKA",
+            "accent": true
+          }
+        ],
+        [
+          {
+            "text": "UVUGA UTI ",
+            "accent": false
+          },
+          {
+            "text": "NITWA KANAKA",
+            "accent": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ntibavuga-bavuga-joker2",
+      "page": 55,
+      "image": "assets/decks/ntibavuga-bavuga/page-55.webp",
+      "kind": "joker",
+      "rank": null,
+      "suit": null,
+      "text": "NTIBAVUGA IKIRIMI\nBAVUGA URURIMI",
+      "lines": [
+        [
+          {
+            "text": "NTIBAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "IKIRIMI",
+            "accent": false
+          }
+        ],
+        [
+          {
+            "text": "BAVUGA ",
+            "accent": true
+          },
+          {
+            "text": "URURIMI",
+            "accent": false
+          }
+        ]
+      ]
+    }
+  ]
+}

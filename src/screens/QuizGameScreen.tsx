@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ImageSourcePropType, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CARD_RATIO, cardImage, getDeck, pageImage } from '../decks';
 import { QUESTIONS } from '../questions';

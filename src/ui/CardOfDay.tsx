@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { CARD_RATIO, cardImage } from '../decks';
 import { longDate } from '../dates';
 import { useI18n } from '../i18n';

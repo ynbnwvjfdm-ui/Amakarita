@@ -38,7 +38,7 @@ export interface ChipProps {
   badge?: string | null;
   /** Shown instead of the value when the player is out or finished. */
   state?: string | null;
-  /** Name and number on one line, for tables with many players. */
+  /** A smaller chip (short name line over the number), for tables with many players. */
   compact?: boolean;
   width?: number;
 }
@@ -66,15 +66,18 @@ export function PlayerChips({ width, players, compact: forceCompact }: { width: 
 /** A player's name over a big number (score or cards in hand). */
 export function PlayerChip({ name, value, active, dim, badge, state, compact, width }: ChipProps) {
   if (compact) {
+    // The name gets the chip's whole width, so "Umukinnyi 2" is never cut short.
     return (
       <View style={[styles.chip, styles.chipCompact, { width }, active && styles.chipOn, dim && styles.chipDim]}>
         <Text style={[styles.chipName, styles.chipNameCompact, active && styles.chipNameOn]} numberOfLines={1}>
           {name}
         </Text>
-        {badge ? <Text style={styles.badge}>{badge}</Text> : null}
-        <Text style={[state ? styles.chipStateCompact : styles.chipValueCompact, active && styles.chipValueOn]} numberOfLines={1}>
-          {state ?? value}
-        </Text>
+        <View style={styles.chipHead}>
+          <Text style={[state ? styles.chipStateCompact : styles.chipValueCompact, active && styles.chipValueOn]} numberOfLines={1}>
+            {state ?? value}
+          </Text>
+          {badge ? <Text style={styles.badge}>{badge}</Text> : null}
+        </View>
       </View>
     );
   }
@@ -110,10 +113,10 @@ const styles = StyleSheet.create({
   chipDim: { opacity: 0.45 },
   chipHead: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   chipName: { fontFamily: fonts.semibold, fontSize: 12, color: 'rgba(255,255,255,0.85)', flexShrink: 1 },
-  chipCompact: { minWidth: 0, flexDirection: 'row', alignItems: 'center', gap: 6, height: 38, paddingVertical: 0, borderRadius: 14 },
-  chipNameCompact: { flex: 1, minWidth: 0 },
-  chipValueCompact: { fontFamily: fonts.display, fontSize: 18, color: colors.surface },
-  chipStateCompact: { fontFamily: fonts.bold, fontSize: 12, color: 'rgba(255,255,255,0.85)', flexShrink: 0 },
+  chipCompact: { minWidth: 0, gap: 0, paddingHorizontal: 10, paddingVertical: 5, borderRadius: 14 },
+  chipNameCompact: { fontSize: 11, lineHeight: 14 },
+  chipValueCompact: { fontFamily: fonts.display, fontSize: 18, lineHeight: 22, color: colors.surface },
+  chipStateCompact: { fontFamily: fonts.bold, fontSize: 12, lineHeight: 22, color: 'rgba(255,255,255,0.85)' },
   chipNameOn: { color: colors.ink },
   chipValue: { fontFamily: fonts.display, fontSize: 28, lineHeight: 32, color: colors.surface, letterSpacing: -0.5 },
   chipValueOn: { color: colors.ink },

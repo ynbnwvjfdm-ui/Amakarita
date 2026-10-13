@@ -23,6 +23,7 @@ const STRINGS = {
   everyoneAlone: { rw: 'Buri wese ku giti cye', en: 'Everyone for themselves' },
   teamsNote4: { rw: 'Abakinnyi 4 bakina mu makipe 2. Abo mukinana mwicarana muteganye.', en: '4 players play in 2 teams. Partners sit opposite each other.' },
   whoPlays: { rw: 'Ni nde ukina?', en: 'Who is playing?' },
+  writeNames: { rw: 'Andika amazina', en: 'Write names' },
   person: { rw: 'Umuntu', en: 'Person' },
   phone: { rw: 'Telefoni', en: 'Phone' },
   playerN: { rw: 'Umukinnyi {n}', en: 'Player {n}' },

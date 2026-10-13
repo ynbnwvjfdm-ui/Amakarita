@@ -49,10 +49,10 @@ const CHIP_GAP = 8;
  * Every player's chip, all in view: one row of up to three, otherwise
  * smaller one-line chips in rows of two or three.
  */
-export function PlayerChips({ width, players }: { width: number; players: ChipProps[] }) {
+export function PlayerChips({ width, players, compact: forceCompact }: { width: number; players: ChipProps[]; compact?: boolean }) {
   const n = players.length;
   const perRow = n <= 3 ? Math.max(n, 1) : n === 4 ? 2 : 3;
-  const compact = n >= 4;
+  const compact = forceCompact || n >= 4;
   const chipW = Math.floor((width - CHIP_GAP * (perRow - 1)) / perRow);
   return (
     <View style={styles.chips}>
@@ -97,7 +97,7 @@ export function PlayerChip({ name, value, active, dim, badge, state, compact, wi
 
 
 const styles = StyleSheet.create({
-  topBar: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 8 },
+  topBar: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 6 },
   round: { width: 44, height: 44, borderRadius: radius.pill, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },
   center: { flex: 1, alignItems: 'center' },
   // Same width as the close button, so the middle pill stays centred.

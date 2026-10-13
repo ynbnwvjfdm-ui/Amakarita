@@ -46,13 +46,13 @@ export function PassPhone({
   const { t } = useI18n();
   return (
     <Overlay visible={name !== null} onRequestClose={onRequestClose}>
-      <View style={styles.handoff}>
+      <ScrollView style={styles.handoffScroll} contentContainerStyle={styles.handoff} bounces={false}>
         <CardImage source={cover} width={120} />
         <Text style={styles.handoffTitle}>{name !== null ? t('passPhoneTo', { name }) : ''}</Text>
         <Text style={styles.handoffNote}>{t('dontLook')}</Text>
         <Button variant="lime" label={name !== null ? t('showMyCards', { name }) : ''} onPress={onAccept} />
         {children}
-      </View>
+      </ScrollView>
     </Overlay>
   );
 }
@@ -97,7 +97,8 @@ const styles = StyleSheet.create({
   panelScroll: { flexGrow: 0, flexShrink: 1 },
   panelBody: { padding: 20, gap: 12 },
   panelTitle: { fontSize: 22, fontFamily: fonts.display, color: colors.ink, textAlign: 'center' },
-  handoff: { flex: 1, backgroundColor: colors.table, alignItems: 'center', justifyContent: 'center', gap: 20, padding: 24 },
+  handoffScroll: { flex: 1, backgroundColor: colors.table },
+  handoff: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', gap: 20, padding: 24 },
   handoffTitle: { fontSize: 26, fontFamily: fonts.display, color: colors.tableInk, textAlign: 'center' },
   handoffNote: { fontFamily: fonts.body, fontSize: 16, color: colors.tableMuted, textAlign: 'center' },
 });

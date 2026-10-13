@@ -15,23 +15,34 @@ interface Props {
   footer?: ReactNode;
   /** On a tab: the tab bar sits below, so no bottom safe-area padding here. */
   tabbed?: boolean;
+  /** Back button and a smaller title on one line, to leave room for a form. */
+  compact?: boolean;
 }
 
 /**
  * Standard page: a compact header that scrolls away with the content, and an
  * optional pinned footer.
  */
-export function Screen({ title, eyebrow, onBack, backLabel, right, children, footer, tabbed }: Props) {
+export function Screen({ title, eyebrow, onBack, backLabel, right, children, footer, tabbed, compact }: Props) {
+  const back = onBack ? (
+    <Pressable accessibilityRole="button" accessibilityLabel={backLabel} onPress={onBack} hitSlop={12} style={styles.back}>
+      <Ionicons name="chevron-back" size={22} color={colors.ink} />
+    </Pressable>
+  ) : null;
   return (
     <SafeAreaView style={styles.safe} edges={tabbed ? ['top'] : ['top', 'bottom']}>
       <View style={styles.column}>
         <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+          {compact ? (
+            <View style={styles.compactRow}>
+              {back}
+              <Text style={styles.compactTitle} numberOfLines={1}>
+                {title}
+              </Text>
+            </View>
+          ) : (
           <View style={styles.header}>
-            {onBack ? (
-              <Pressable accessibilityRole="button" accessibilityLabel={backLabel} onPress={onBack} hitSlop={12} style={styles.back}>
-                <Ionicons name="chevron-back" size={22} color={colors.ink} />
-              </Pressable>
-            ) : null}
+            {back}
             <View style={styles.titleRow}>
               <View style={styles.titleBlock}>
                 {eyebrow ? <Text style={styles.eyebrow}>{eyebrow}</Text> : null}
@@ -42,6 +53,7 @@ export function Screen({ title, eyebrow, onBack, backLabel, right, children, foo
               {right ? <View style={styles.right}>{right}</View> : null}
             </View>
           </View>
+          )}
           {children}
         </ScrollView>
         {footer ? <View style={styles.footer}>{footer}</View> : null}
@@ -54,6 +66,8 @@ const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.bg },
   column: { flex: 1, width: '100%', maxWidth: MAX_WIDTH, alignSelf: 'center' },
   header: { gap: 10 },
+  compactRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  compactTitle: { flex: 1, fontFamily: fonts.display, fontSize: 26, color: colors.ink, letterSpacing: -0.5 },
   titleRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 12 },
   titleBlock: { flex: 1, minWidth: 0 },
   right: { paddingBottom: 6 },
@@ -74,6 +88,9 @@ const styles = StyleSheet.create({
 /** Shared text styles for setup forms. */
 export const formStyles = StyleSheet.create({
   section: { fontFamily: fonts.bold, fontSize: 13, color: colors.muted, textTransform: 'uppercase', letterSpacing: 1.2, marginTop: 4 },
+  sectionTight: { fontFamily: fonts.bold, fontSize: 13, color: colors.muted, textTransform: 'uppercase', letterSpacing: 1.2 },
+  /** A label with its control and note, kept close together. */
+  group: { gap: 6 },
   note: { fontFamily: fonts.body, fontSize: 14, color: colors.muted, lineHeight: 20 },
   warning: { fontFamily: fonts.semibold, fontSize: 14, color: colors.coral, textAlign: 'center' },
 });

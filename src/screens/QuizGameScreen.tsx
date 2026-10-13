@@ -11,12 +11,16 @@ import { Button } from '../ui/Button';
 import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
+import { FitScroll } from '../ui/FitScroll';
 import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
 import { FlipCard } from '../ui/FlipCard';
 import { QuestionCard } from '../ui/QuestionCard';
 import { LeaveConfirm, Panel } from '../ui/table';
 import { colors, deckTheme, fonts, MAX_WIDTH, MIX_THEME, radius } from '../ui/theme';
 import { useQuizTable } from './useQuizTable';
+
+/** The question card never gets narrower than this. */
+const MIN_CARD_W = 120;
 
 export function QuizGameScreen({ config }: { config: QuizConfig }) {
   const { t } = useI18n();
@@ -43,7 +47,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
   const theme = stageDeck ? deckTheme(stageDeck) : MIX_THEME;
 
   const W = Math.min(width, MAX_WIDTH);
-  const cardW = stage.h > 0 ? Math.min(W * 0.66, (stage.h - 24) * CARD_RATIO) : 0;
+  const cardW = stage.h > 0 ? Math.max(MIN_CARD_W, Math.min(W * 0.66, (stage.h - 24) * CARD_RATIO)) : 0;
   const cardH = cardW / CARD_RATIO;
   const onStage = (e: LayoutChangeEvent) => {
     const { width: w, height: h } = e.nativeEvent.layout;
@@ -64,6 +68,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: theme.base }]} edges={['top', 'bottom']}>
+      <FitScroll>
       <View style={[styles.column, { width: W }]}>
         <GameTopBar
           onLeave={() => setLeaving(true)}
@@ -207,6 +212,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
           ) : null}
         </View>
       </View>
+      </FitScroll>
 
       <Panel visible={game.phase === 'over'} title={t('gameOver')}>
         <Text style={styles.winner}>
@@ -252,7 +258,8 @@ const styles = StyleSheet.create({
   safe: { flex: 1 },
   column: { flex: 1, alignSelf: 'center', paddingHorizontal: 16 },
   missed: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  stage: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  // Never shorter than the smallest card, so a very short screen scrolls instead of overlapping.
+  stage: { flex: 1, minHeight: MIN_CARD_W / CARD_RATIO + 24, alignItems: 'center', justifyContent: 'center' },
   drawWrap: { alignItems: 'center', justifyContent: 'center' },
   panel: { gap: 10, paddingBottom: 12 },
   turn: { fontFamily: fonts.bold, fontSize: 16, textAlign: 'center' },

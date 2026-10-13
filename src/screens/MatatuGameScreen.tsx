@@ -11,6 +11,7 @@ import { Button } from '../ui/Button';
 import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
+import { FitScroll } from '../ui/FitScroll';
 import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
 import { HandRow } from '../ui/HandRow';
 import { LeaveConfirm, Panel, PassPhone, SUIT_SYMBOL, tableStyles } from '../ui/table';
@@ -21,6 +22,13 @@ const SUIT_ORDER = [...SUITS];
 const RANK_ORDER = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 /** Suit colours on white pills and panels. */
 const SUIT_INK: Record<Suit, string> = { spades: colors.ink, clubs: colors.ink, hearts: '#D12C3A', diamonds: '#D12C3A' };
+
+// The middle of the table: two piles and a status column, in one row.
+const STAGE_GAP = 12;
+const STAGE_LABEL = 26;
+const INFO_MIN_W = 110;
+const MIN_PILE_W = 48;
+const MAX_PILE_W = 130;
 
 /** Hand shown grouped by suit, low to high, jokers last. */
 function sortHand(hand: MatatuCard[]): MatatuCard[] {
@@ -51,9 +59,11 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
   const me = viewer ?? table.humans[0];
   const others = Array.from({ length: n - 1 }, (_, i) => (me + 1 + i) % n);
   const W = Math.min(width, MAX_WIDTH);
-  // Both piles side by side, as big as the measured middle allows. Besides the
-  // piles it holds the chips under them (38), the status line (40) and gaps.
-  const pileW = Math.max(56, Math.min(150, (W - 32 - 28) / 2.2, stageH > 0 ? (stageH - 104) * CARD_RATIO : 100));
+  // Both piles side by side with the status beside them, as big as the
+  // measured middle allows: the draw pile's label sits under it (STAGE_LABEL).
+  const pileW = Math.floor(
+    Math.max(MIN_PILE_W, Math.min(MAX_PILE_W, (W - 32 - 2 * STAGE_GAP - INFO_MIN_W) / 2, stageH > 0 ? (stageH - STAGE_LABEL) * CARD_RATIO : 80)),
+  );
   const pileH = pileW / CARD_RATIO;
 
   const top = topCard(game);
@@ -90,6 +100,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: theme.base }]} edges={['top', 'bottom']}>
+      <FitScroll>
       <View style={[styles.column, { width: W }]}>
         <GameTopBar
           onLeave={() => setLeaving(true)}
@@ -107,6 +118,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
 
         <PlayerChips
           width={W - 32}
+          compact
           players={others.map((seat) => {
             const count = game.hands[seat].length;
             const out = !game.inMatch[seat];
@@ -124,12 +136,14 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
           })}
         />
 
-        {/* The two piles */}
+        {/* The two piles side by side, with what is happening beside them */}
         <View style={styles.stage} onLayout={(e: LayoutChangeEvent) => setStageH(e.nativeEvent.layout.height)}>
-          <View style={styles.piles}>
+          <View style={styles.stageRow}>
             <View style={styles.pileCol}>
               {game.stock.length > 0 ? <CardImage source={pageImage(config.deckId, deck.cover.page)} width={pileW} /> : <View style={[styles.empty, { width: pileW, height: pileH }]} />}
-              <Text style={[styles.pileLabel, { color: theme.onBase }]}>{t('pile', { n: game.stock.length })}</Text>
+              <Text style={[styles.pileLabel, { color: theme.onBase }]} numberOfLines={1}>
+                {t('pile', { n: game.stock.length })}
+              </Text>
             </View>
             <View style={styles.pileCol}>
               {top ? (
@@ -139,30 +153,26 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
               ) : (
                 <View style={[styles.empty, { width: pileW, height: pileH }]} />
               )}
-              <View style={styles.pileInfo}>
-                {game.activeSuit && top && (top.suit !== game.activeSuit || top.rank === 'A') ? (
-                  <View style={styles.infoChip}>
-                    <Text style={styles.infoChipText}>{t('askedSuit')}</Text>
-                    <Text style={[styles.infoChipSuit, { color: SUIT_INK[game.activeSuit] }]}>{SUIT_SYMBOL[game.activeSuit]}</Text>
-                  </View>
-                ) : null}
-                {game.pickup ? (
-                  <View style={[styles.infoChip, { backgroundColor: colors.coral }]}>
-                    <Text style={styles.infoChipText}>+{game.pickup.total}</Text>
-                  </View>
-                ) : null}
-              </View>
             </View>
-          </View>
-          {/* A notice takes the status line's place for a moment. */}
-          <View style={styles.statusSlot}>
-            {noticeText ? (
-              <Text style={styles.notice}>{noticeText}</Text>
-            ) : (
-              <Text style={[styles.status, { color: game.turn === viewer ? colors.lime : theme.onBase }]} numberOfLines={2}>
-                {status}
-              </Text>
-            )}
+            <View style={styles.info}>
+              {/* A notice takes the status line's place for a moment. */}
+              {noticeText ? (
+                <Text style={styles.notice}>{noticeText}</Text>
+              ) : (
+                <Text style={[styles.status, { color: game.turn === viewer ? colors.lime : theme.onBase }]}>{status}</Text>
+              )}
+              {game.activeSuit && top && (top.suit !== game.activeSuit || top.rank === 'A') ? (
+                <View style={styles.infoChip}>
+                  <Text style={styles.infoChipText}>{t('askedSuit')}</Text>
+                  <Text style={[styles.infoChipSuit, { color: SUIT_INK[game.activeSuit] }]}>{SUIT_SYMBOL[game.activeSuit]}</Text>
+                </View>
+              ) : null}
+              {game.pickup ? (
+                <View style={[styles.infoChip, { backgroundColor: colors.coral }]}>
+                  <Text style={styles.infoChipText}>+{game.pickup.total}</Text>
+                </View>
+              ) : null}
+            </View>
           </View>
         </View>
 
@@ -196,6 +206,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
           </View>
         </View>
       </View>
+      </FitScroll>
 
       <CardViewer art={spotlight ? art(spotlight.card) : null} caption={spotlight ? name(spotlight.seat) : undefined} onClose={table.dismissSpotlight} />
 
@@ -304,18 +315,18 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
 const styles = StyleSheet.create({
   safe: { flex: 1 },
   column: { flex: 1, alignSelf: 'center', paddingHorizontal: 16 },
-  stage: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
-  statusSlot: { height: 40, justifyContent: 'center', alignItems: 'center' },
+  // Never shorter than its smallest piles, so on a very short screen the page scrolls instead of overlapping.
+  stage: { flex: 1, minHeight: STAGE_LABEL + MIN_PILE_W / CARD_RATIO + 8, justifyContent: 'center', paddingVertical: 4 },
+  stageRow: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'center', gap: STAGE_GAP },
+  info: { flex: 1, minWidth: INFO_MIN_W, maxWidth: 170, gap: 8, alignItems: 'flex-start' },
   notice: { fontFamily: fonts.bold, fontSize: 14, color: colors.ink, backgroundColor: colors.lime, paddingHorizontal: 14, paddingVertical: 7, borderRadius: radius.pill, overflow: 'hidden' },
-  piles: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'center', gap: 28 },
-  pileCol: { alignItems: 'center', gap: 10 },
+  pileCol: { alignItems: 'center', gap: 6 },
   empty: { borderRadius: 14, borderWidth: 2, borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.3)' },
   pileLabel: { fontFamily: fonts.semibold, fontSize: 12, opacity: 0.85 },
-  pileInfo: { flexDirection: 'row', gap: 6, minHeight: 28 },
   infoChip: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: colors.surface, borderRadius: radius.pill, paddingHorizontal: 10, height: 28 },
   infoChipText: { fontFamily: fonts.bold, fontSize: 12, color: colors.ink },
   infoChipSuit: { fontFamily: fonts.display, fontSize: 16 },
-  status: { fontFamily: fonts.bold, fontSize: 15, textAlign: 'center' },
+  status: { fontFamily: fonts.bold, fontSize: 15, lineHeight: 20 },
   handArea: { gap: 8, paddingBottom: 10 },
   handName: { fontFamily: fonts.semibold, fontSize: 13, textAlign: 'center', opacity: 0.85 },
   actions: { flexDirection: 'row', gap: 10 },

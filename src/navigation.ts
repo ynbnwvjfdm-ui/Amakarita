@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
 import { PlayerCount, TeamMode } from './game/amaturufu';
+import { QuizMode } from './game/quiz';
 
 export interface SeatConfig {
   kind: 'human' | 'bot';
@@ -20,9 +21,23 @@ export interface MatatuConfig {
   seats: SeatConfig[];
 }
 
+export interface QuizConfig {
+  /** A deck id, or 'mix' for all five suited decks. */
+  deckId: string;
+  mode: QuizMode;
+  target: number;
+  seats: SeatConfig[];
+}
+
+/** The screens reached from the tab bar. */
+export type TabName = 'home' | 'decks' | 'games';
+
 export type Route =
   | { name: 'home' }
   | { name: 'decks' }
+  | { name: 'games' }
+  | { name: 'quizSetup' }
+  | { name: 'quizGame'; config: QuizConfig }
   | { name: 'deck'; deckId: string }
   | { name: 'amaturufuSetup' }
   | { name: 'amaturufuGame'; config: AmaturufuConfig }
@@ -35,6 +50,8 @@ export interface Nav {
   /** Replace the top screen. */
   replace: (route: Route) => void;
   home: () => void;
+  /** Switch to a tab, clearing anything opened on top. */
+  tab: (name: TabName) => void;
 }
 
 export const NavContext = createContext<Nav | null>(null);

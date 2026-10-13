@@ -1,14 +1,15 @@
 import { Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
-import { colors, radius } from './theme';
+import { colors, fonts, radius } from './theme';
 
 interface Props {
   label: string;
   onPress: () => void;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'lime';
   disabled?: boolean;
   style?: ViewStyle;
 }
 
+/** Pill-shaped button. */
 export function Button({ label, onPress, variant = 'primary', disabled, style }: Props) {
   return (
     <Pressable
@@ -30,18 +31,19 @@ export function Button({ label, onPress, variant = 'primary', disabled, style }:
 
 const styles = StyleSheet.create({
   base: {
-    minHeight: 48,
-    paddingHorizontal: 20,
-    borderRadius: radius.button,
+    minHeight: 52,
+    paddingHorizontal: 22,
+    borderRadius: radius.pill,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  primary: { backgroundColor: colors.accent },
-  secondary: { backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.line },
+  primary: { backgroundColor: colors.ink },
+  lime: { backgroundColor: colors.lime },
+  secondary: { backgroundColor: colors.surface, borderWidth: 1.5, borderColor: colors.line },
   ghost: { backgroundColor: 'transparent' },
-  disabled: { opacity: 0.4 },
-  pressed: { opacity: 0.8 },
-  label: { fontSize: 16, fontWeight: '600' },
-  primaryLabel: { color: colors.accentInk },
+  disabled: { opacity: 0.35 },
+  pressed: { transform: [{ scale: 0.98 }], opacity: 0.9 },
+  label: { fontFamily: fonts.bold, fontSize: 16 },
+  primaryLabel: { color: colors.surface },
   otherLabel: { color: colors.ink },
 });

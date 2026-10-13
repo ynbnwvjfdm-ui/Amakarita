@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Lang, useI18n } from '../i18n';
-import { colors } from './theme';
+import { colors, fonts } from './theme';
 
 const OPTIONS: { lang: Lang; label: string }[] = [
   { lang: 'rw', label: 'RW' },
@@ -33,6 +33,6 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', borderRadius: 18, borderWidth: 1, borderColor: colors.line, backgroundColor: colors.surface, padding: 2 },
   option: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16 },
   on: { backgroundColor: colors.ink },
-  label: { fontSize: 13, fontWeight: '700', color: colors.muted },
+  label: { fontSize: 13, fontFamily: fonts.bold, color: colors.muted },
   onLabel: { color: colors.surface },
 });

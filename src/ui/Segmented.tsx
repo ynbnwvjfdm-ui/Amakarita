@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { colors, radius } from './theme';
+import { colors, radius, fonts } from './theme';
 
 interface Props<T extends string | number> {
   options: { value: T; label: string }[];
@@ -33,9 +33,9 @@ export function Segmented<T extends string | number>({ options, value, onChange,
 }
 
 const styles = StyleSheet.create({
-  segmented: { flexDirection: 'row', backgroundColor: colors.surface, borderRadius: radius.button, borderWidth: 1, borderColor: colors.line, padding: 3 },
-  segment: { flex: 1, minHeight: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 9, paddingHorizontal: 8 },
+  segmented: { flexDirection: 'row', backgroundColor: colors.surface, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.line, padding: 3 },
+  segment: { flex: 1, minHeight: 42, alignItems: 'center', justifyContent: 'center', borderRadius: radius.pill, paddingHorizontal: 8 },
   segmentOn: { backgroundColor: colors.ink },
-  segmentLabel: { fontSize: 15, fontWeight: '600', color: colors.ink, textAlign: 'center' },
+  segmentLabel: { fontSize: 15, fontFamily: fonts.semibold, color: colors.ink, textAlign: 'center' },
   segmentLabelOn: { color: colors.surface },
 });

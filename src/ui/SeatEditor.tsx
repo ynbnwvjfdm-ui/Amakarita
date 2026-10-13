@@ -2,17 +2,19 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { useI18n } from '../i18n';
 import { SeatConfig } from '../navigation';
 import { Segmented } from './Segmented';
-import { colors, radius } from './theme';
+import { colors, radius, fonts } from './theme';
 
 interface Props {
   seats: SeatConfig[];
   onChange: (index: number, patch: Partial<SeatConfig>) => void;
   /** Team number per seat, when playing in teams. */
   teams?: number[];
+  /** Hide the person/phone switch: every seat is a person. */
+  peopleOnly?: boolean;
 }
 
 /** One row per seat: an optional name and whether a person or the phone plays it. */
-export function SeatEditor({ seats, onChange, teams }: Props) {
+export function SeatEditor({ seats, onChange, teams, peopleOnly }: Props) {
   const { t } = useI18n();
   return (
     <View style={styles.seats}>
@@ -32,6 +34,7 @@ export function SeatEditor({ seats, onChange, teams }: Props) {
             maxLength={16}
             accessibilityLabel={t('playerN', { n: i + 1 })}
           />
+          {peopleOnly ? null : (
           <View style={styles.kind}>
             <Segmented
               options={[
@@ -43,6 +46,7 @@ export function SeatEditor({ seats, onChange, teams }: Props) {
               label={(v) => `${t('playerN', { n: i + 1 })}: ${v === 'human' ? t('person') : t('phone')}`}
             />
           </View>
+          )}
         </View>
       ))}
     </View>
@@ -59,16 +63,17 @@ const styles = StyleSheet.create({
   seat: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   kind: { width: 184 },
   teamDot: { width: 26, height: 26, borderRadius: 13, alignItems: 'center', justifyContent: 'center' },
-  teamDotText: { fontSize: 13, fontWeight: '800', color: colors.ink },
+  teamDotText: { fontSize: 13, fontFamily: fonts.display, color: colors.ink },
   name: {
     flex: 1,
     minWidth: 0,
     minHeight: 44,
     paddingHorizontal: 12,
-    borderRadius: radius.button,
+    borderRadius: radius.pill,
     borderWidth: 1,
     borderColor: colors.line,
     backgroundColor: colors.surface,
+    fontFamily: fonts.body,
     fontSize: 16,
     color: colors.ink,
   },

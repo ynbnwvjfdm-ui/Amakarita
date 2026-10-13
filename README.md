@@ -2,14 +2,24 @@
 
 Mobile app for traditional Rwandan card decks, built with Expo (React Native).
 
-Playable now, against the phone or passing one phone around:
+The main goal is teaching the Kinyarwanda printed on every card; the games
+are how people practise it.
 
+- **Amakarita** (question game): draw a card, answer its question, score
+  the card's value. The phone checks the answer, or players ask each other
+  out loud. Rules at the top of `src/game/quiz.ts`.
 - **Matatu** (Amagande): 2–6 players, 4–7 cards each, rounds until one
-  player is left. Rules as given by the deck's author are written out at the
-  top of `src/game/matatu.ts`.
-- **Amaturufu**: 2, 4 or 6 players; rules at the top of `src/game/amaturufu.ts`.
+  player is left. Rules at the top of `src/game/matatu.ts`.
+- **Card of the day** on the home screen, and every card's question in the
+  deck browser.
+- Amaturufu (rules in `src/game/amaturufu.ts`) and Ibisakuzo are switched
+  off for now.
 
-Ibisakuzo (riddles) comes later.
+## Questions
+
+`tools/make_questions.py` turns every card into a question using the card's
+own words with the answer left blank, and writes `src/data/questions.json`.
+Corrections from the deck's author go into its `OVERRIDES`.
 
 ## Running the app
 
@@ -30,8 +40,8 @@ npm run export:web      # browser build in dist/
 - `src/screens/` — the app's screens; `useMatatuTable.ts` and
   `useAmaturufuTable.ts` run a game (computer turns, pauses, passing the
   phone, Matatu's hidden 10-second "Warning!" timer).
-- `src/ui/` — shared building blocks (buttons, card images, setup form
-  pieces, table modals, theme).
+- `src/ui/` — shared building blocks: theme (colours, fonts, each deck's
+  colours), question card, flip card, deck carousel, game tickets, tab bar.
 - `src/i18n.tsx` — every piece of on-screen text in Kinyarwanda and English.
 - `src/decks.ts` — loads the deck data and card images.
 
@@ -93,6 +103,9 @@ The script checks every card's printed rank and suit colour against its
 expected position and fails if anything is out of place.
 
 ## Fonts
+
+The app's own text uses Bricolage Grotesque and Bebas Neue (both Open Font
+Licence, bundled from Google Fonts). The card designs themselves stay images.
 
 The designs use Bebas, Futura, Futura Book, Sink and Wosker (suited decks), and
 Futura, KorpenTag (personal-use edition), Krunc and Parslay (Ibisakuzo). Fonts are

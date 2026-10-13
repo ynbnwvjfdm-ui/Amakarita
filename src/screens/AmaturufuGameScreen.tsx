@@ -10,7 +10,7 @@ import { Button } from '../ui/Button';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
 import { LeaveConfirm, Panel, PassPhone, SUIT_COLOR, SUIT_SYMBOL, tableStyles } from '../ui/table';
-import { colors, MAX_WIDTH } from '../ui/theme';
+import { colors, MAX_WIDTH, fonts } from '../ui/theme';
 import { useAmaturufuTable } from './useAmaturufuTable';
 
 export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
@@ -248,7 +248,7 @@ function Results({
 const styles = StyleSheet.create({
   trump: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   pile: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  pileText: { fontSize: 13, color: colors.tableMuted, fontWeight: '600' },
+  pileText: { fontSize: 13, color: colors.tableMuted, fontFamily: fonts.semibold },
   dot: { width: 10, height: 10, borderRadius: 5 },
   backs: { flexDirection: 'row', gap: 3, minHeight: 22 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 16 },

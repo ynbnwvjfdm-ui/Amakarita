@@ -1,7 +1,7 @@
 import { Pressable, ScrollView, StyleSheet, Text } from 'react-native';
 import { SUITED_DECKS, pageImage } from '../decks';
 import { CardImage } from './CardImage';
-import { colors, radius } from './theme';
+import { colors, radius, fonts } from './theme';
 
 /** Horizontal choice between the five suited decks. */
 export function DeckPicker({ value, onChange }: { value: string; onChange: (deckId: string) => void }) {
@@ -33,5 +33,5 @@ const styles = StyleSheet.create({
   decks: { gap: 10, paddingVertical: 2, paddingRight: 16 },
   deck: { padding: 6, borderRadius: radius.button, borderWidth: 2, borderColor: 'transparent' },
   deckOn: { borderColor: colors.accent, backgroundColor: colors.surface },
-  deckTitle: { marginTop: 6, fontSize: 12, fontWeight: '600', color: colors.ink, width: 84, textAlign: 'center' },
+  deckTitle: { marginTop: 6, fontSize: 12, fontFamily: fonts.semibold, color: colors.ink, width: 84, textAlign: 'center' },
 });

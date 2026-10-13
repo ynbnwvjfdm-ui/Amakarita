@@ -10,7 +10,7 @@ import { Button } from '../ui/Button';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
 import { LeaveConfirm, Panel, PassPhone, SUIT_COLOR, SUIT_SYMBOL, tableStyles } from '../ui/table';
-import { colors, MAX_WIDTH, radius } from '../ui/theme';
+import { colors, MAX_WIDTH, radius, fonts } from '../ui/theme';
 import { useMatatuTable } from './useMatatuTable';
 
 const HAND_CARD = 84;
@@ -314,15 +314,15 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  pileText: { fontSize: 13, color: colors.tableMuted, fontWeight: '600' },
+  pileText: { fontSize: 13, color: colors.tableMuted, fontFamily: fonts.semibold },
   badgeOut: { opacity: 0.45 },
-  badgeState: { fontSize: 12, fontWeight: '700', color: colors.tableMuted },
-  count: { fontSize: 15, fontWeight: '800', color: colors.tableInk },
-  chip: { fontSize: 11, fontWeight: '800', color: colors.table, backgroundColor: colors.highlight, borderRadius: 8, paddingHorizontal: 5, overflow: 'hidden' },
+  badgeState: { fontSize: 12, fontFamily: fonts.bold, color: colors.tableMuted },
+  count: { fontSize: 15, fontFamily: fonts.display, color: colors.tableInk },
+  chip: { fontSize: 11, fontFamily: fonts.display, color: colors.table, backgroundColor: colors.highlight, borderRadius: 8, paddingHorizontal: 5, overflow: 'hidden' },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 14 },
   notice: {
     fontSize: 15,
-    fontWeight: '700',
+    fontFamily: fonts.bold,
     color: colors.table,
     backgroundColor: colors.highlight,
     paddingHorizontal: 14,
@@ -334,8 +334,8 @@ const styles = StyleSheet.create({
   emptyPile: { width: 112, height: 153, borderRadius: radius.card, borderWidth: 2, borderColor: 'rgba(255,255,255,0.25)', borderStyle: 'dashed' },
   pileInfo: { gap: 10, alignItems: 'center', minWidth: 56 },
   asked: { alignItems: 'center' },
-  askedSuit: { fontSize: 34, fontWeight: '800' },
-  pickup: { fontSize: 26, fontWeight: '900', color: '#FF6B6B' },
+  askedSuit: { fontSize: 34, fontFamily: fonts.display },
+  pickup: { fontSize: 26, fontFamily: fonts.display, color: '#FF6B6B' },
   handArea: { paddingBottom: 12, gap: 8, alignItems: 'center' },
   sayIt: { alignSelf: 'stretch' },
   hand: { height: HAND_CARD / 0.732 + 10, position: 'relative' },
@@ -345,5 +345,5 @@ const styles = StyleSheet.create({
   pickSpacer: { height: 48 },
   suits: { flexDirection: 'row', justifyContent: 'space-between', gap: 10 },
   suitButton: { flex: 1, aspectRatio: 1, borderRadius: radius.button, backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.line, alignItems: 'center', justifyContent: 'center' },
-  suitButtonText: { fontSize: 40, fontWeight: '800' },
+  suitButtonText: { fontSize: 40, fontFamily: fonts.display },
 });

@@ -1,34 +1,46 @@
 import { ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { colors, MAX_WIDTH } from './theme';
+import { colors, fonts, MAX_WIDTH, radius } from './theme';
 
 interface Props {
   title: string;
+  /** Small line above the title. */
+  eyebrow?: string;
   onBack?: () => void;
   backLabel?: string;
   right?: ReactNode;
   children: ReactNode;
   footer?: ReactNode;
+  /** On a tab: the tab bar sits below, so no bottom safe-area padding here. */
+  tabbed?: boolean;
 }
 
 /** Standard page: title bar, scrolling content, optional pinned footer. */
-export function Screen({ title, onBack, backLabel, right, children, footer }: Props) {
+export function Screen({ title, eyebrow, onBack, backLabel, right, children, footer, tabbed }: Props) {
   return (
-    <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
+    <SafeAreaView style={styles.safe} edges={tabbed ? ['top'] : ['top', 'bottom']}>
       <View style={styles.column}>
         <View style={styles.header}>
-          {onBack ? (
-            <Pressable accessibilityRole="button" onPress={onBack} hitSlop={12} style={styles.back}>
-              <Text style={styles.backText}>‹ {backLabel}</Text>
-            </Pressable>
-          ) : null}
-          <Text style={styles.title} numberOfLines={1}>
+          <View style={styles.headerRow}>
+            {onBack ? (
+              <Pressable accessibilityRole="button" accessibilityLabel={backLabel} onPress={onBack} hitSlop={12} style={styles.back}>
+                <Ionicons name="chevron-back" size={22} color={colors.ink} />
+              </Pressable>
+            ) : (
+              <View />
+            )}
+            {right}
+          </View>
+          {eyebrow ? <Text style={styles.eyebrow}>{eyebrow}</Text> : null}
+          <Text style={styles.title} numberOfLines={2}>
             {title}
           </Text>
-          <View style={styles.right}>{right}</View>
         </View>
-        <ScrollView contentContainerStyle={styles.content}>{children}</ScrollView>
+        <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+          {children}
+        </ScrollView>
         {footer ? <View style={styles.footer}>{footer}</View> : null}
       </View>
     </SafeAreaView>
@@ -38,18 +50,25 @@ export function Screen({ title, onBack, backLabel, right, children, footer }: Pr
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.bg },
   column: { flex: 1, width: '100%', maxWidth: MAX_WIDTH, alignSelf: 'center' },
-  header: { paddingHorizontal: 16, paddingTop: 8, paddingBottom: 4 },
-  back: { alignSelf: 'flex-start', paddingVertical: 6 },
-  backText: { fontSize: 16, color: colors.accent, fontWeight: '600' },
-  title: { fontSize: 28, fontWeight: '800', color: colors.ink, marginTop: 4 },
-  right: { position: 'absolute', right: 16, top: 12 },
-  content: { padding: 16, paddingBottom: 32, gap: 16 },
-  footer: { padding: 16, borderTopWidth: 1, borderTopColor: colors.line, backgroundColor: colors.bg },
+  header: { paddingHorizontal: 16, paddingTop: 8, paddingBottom: 4, gap: 2 },
+  headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', minHeight: 44 },
+  back: {
+    width: 44,
+    height: 44,
+    borderRadius: radius.pill,
+    backgroundColor: colors.surface,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  eyebrow: { fontFamily: fonts.semibold, fontSize: 15, color: colors.muted, marginTop: 6 },
+  title: { fontFamily: fonts.display, fontSize: 38, lineHeight: 42, color: colors.ink, letterSpacing: -0.5 },
+  content: { padding: 16, paddingBottom: 32, gap: 18 },
+  footer: { padding: 16, backgroundColor: colors.bg },
 });
 
 /** Shared text styles for setup forms. */
 export const formStyles = StyleSheet.create({
-  section: { fontSize: 13, fontWeight: '700', color: colors.muted, textTransform: 'uppercase', letterSpacing: 1, marginTop: 4 },
-  note: { fontSize: 14, color: colors.muted, lineHeight: 20 },
-  warning: { fontSize: 14, color: colors.accent, textAlign: 'center' },
+  section: { fontFamily: fonts.bold, fontSize: 13, color: colors.muted, textTransform: 'uppercase', letterSpacing: 1.2, marginTop: 4 },
+  note: { fontFamily: fonts.body, fontSize: 14, color: colors.muted, lineHeight: 20 },
+  warning: { fontFamily: fonts.semibold, fontSize: 14, color: colors.coral, textAlign: 'center' },
 });

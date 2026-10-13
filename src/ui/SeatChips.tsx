@@ -57,11 +57,12 @@ export function SeatChips({ seats, onChange, width, peopleOnly, title }: Props) 
               onPress={() => onChange(i, { kind: seat.kind === 'human' ? 'bot' : 'human' })}
               style={({ pressed }) => [styles.chip, { width: chipW }, human ? styles.chipHuman : styles.chipBot, pressed && styles.pressed]}
             >
-              <Ionicons name={human ? 'person' : 'phone-portrait-outline'} size={20} color={human ? colors.ink : colors.muted} />
-              <View style={styles.texts}>
-                <Text style={styles.name} numberOfLines={1}>
-                  {name}
-                </Text>
+              {/* The name gets the tile's whole width, so "Umukinnyi 2" is never cut short. */}
+              <Text style={styles.name} numberOfLines={1}>
+                {name}
+              </Text>
+              <View style={styles.kindRow}>
+                <Ionicons name={human ? 'person' : 'phone-portrait-outline'} size={14} color={human ? colors.ink : colors.muted} />
                 <Text style={[styles.kind, !human && styles.kindBot]} numberOfLines={1}>
                   {peopleOnly ? t('person') : kindLabel(seat)}
                 </Text>
@@ -95,13 +96,13 @@ const styles = StyleSheet.create({
   head: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   title: { flex: 1 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP },
-  chip: { height: 50, flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 10, borderRadius: 14, borderWidth: 1.5 },
+  chip: { height: 50, justifyContent: 'center', paddingHorizontal: 10, borderRadius: 14, borderWidth: 1.5 },
   chipHuman: { backgroundColor: colors.surface, borderColor: colors.ink },
   chipBot: { backgroundColor: 'transparent', borderColor: colors.line },
   pressed: { opacity: 0.7 },
-  texts: { flex: 1, minWidth: 0 },
+  kindRow: { flexDirection: 'row', alignItems: 'center', gap: 5 },
   name: { fontFamily: fonts.semibold, fontSize: 12, color: colors.muted },
-  kind: { fontFamily: fonts.bold, fontSize: 14, color: colors.ink },
+  kind: { flexShrink: 1, fontFamily: fonts.bold, fontSize: 14, color: colors.ink },
   kindBot: { color: colors.muted },
   namesButton: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   namesText: { fontFamily: fonts.semibold, fontSize: 14, color: colors.ink, textDecorationLine: 'underline' },

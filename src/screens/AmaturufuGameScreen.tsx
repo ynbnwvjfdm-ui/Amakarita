@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 16 },
   trick: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 10, minHeight: 120 },
   played: { alignItems: 'center', gap: 4 },
-  playedName: { fontSize: 12, color: colors.tableMuted, maxWidth: 92 },
+  playedName: { fontFamily: fonts.body, fontSize: 12, color: colors.tableMuted, maxWidth: 92 },
   winnerCard: { borderWidth: 3, borderColor: colors.highlight },
   handArea: { paddingBottom: 12, gap: 8 },
   hand: { flexDirection: 'row', justifyContent: 'center', gap: 12, minHeight: 150 },

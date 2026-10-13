@@ -54,12 +54,12 @@ export function QuestionCard({ question, width, view, revealed, sort, doubled, s
   }
 
   const chars = lines.join(' ').length;
-  const size = (chars > 90 ? 22 : chars > 55 ? 27 : chars > 28 ? 32 : 40) * s;
+  const size = (chars > 90 ? 16 : chars > 55 ? 19 : chars > 28 ? 23 : 29) * s;
 
   return (
     <View style={[styles.card, { width, height, backgroundColor: theme.face, borderRadius: 18 * s, padding: 16 * s }, style]}>
       <View style={styles.top}>
-        <Text style={[styles.rank, { fontSize: 30 * s, color: red ? theme.accent : theme.ink }]}>
+        <Text style={[styles.rank, { fontSize: 24 * s, color: red ? theme.accent : theme.ink }]}>
           {question.rank ? `${question.rank}${question.suit ? SUIT_SYMBOL[question.suit] : ''}` : 'JOKER'}
         </Text>
         {/* The deck name would give away a taboo-or-value answer. */}
@@ -82,7 +82,7 @@ export function QuestionCard({ question, width, view, revealed, sort, doubled, s
           const [before, after] = line.split(BLANK);
           const hasBlank = after !== undefined;
           return (
-            <Text key={i} style={[styles.line, { color: theme.ink, fontSize: size, lineHeight: size * 1.08 }]}>
+            <Text key={i} style={[styles.line, { color: theme.ink, fontSize: size, lineHeight: size * 1.2 }]}>
               {before}
               {hasBlank ? (
                 revealed ? (
@@ -121,12 +121,12 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   top: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
-  rank: { fontFamily: fonts.card, letterSpacing: 0.5 },
+  rank: { fontFamily: fonts.card, letterSpacing: -0.5 },
   pill: { borderRadius: radius.pill, maxWidth: '62%' },
   pillText: { fontFamily: fonts.bold, letterSpacing: 0.3 },
   body: { flex: 1, justifyContent: 'center', gap: 6 },
   heading: { fontFamily: fonts.bold, textAlign: 'center' },
-  line: { fontFamily: fonts.card, textAlign: 'center', letterSpacing: 0.4 },
+  line: { fontFamily: fonts.card, textAlign: 'center', letterSpacing: -0.3 },
   blank: { borderRadius: 6, overflow: 'hidden' },
   bottom: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   points: { backgroundColor: colors.lime, borderRadius: radius.pill },

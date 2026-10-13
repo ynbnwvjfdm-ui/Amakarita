@@ -24,13 +24,14 @@ export const colors = {
   teams: ['#F2C14E', '#7FB2F0', '#E58A8A', '#9FD39A', '#C9A3E6', '#F0A86A'],
 };
 
+/** Space Grotesk throughout, chosen by the deck's author. */
 export const fonts = {
-  display: 'BricolageGrotesque_800ExtraBold',
-  bold: 'BricolageGrotesque_700Bold',
-  semibold: 'BricolageGrotesque_600SemiBold',
-  body: 'BricolageGrotesque_400Regular',
-  /** Matches the condensed capitals printed on the cards. */
-  card: 'BebasNeue_400Regular',
+  display: 'SpaceGrotesk_700Bold',
+  bold: 'SpaceGrotesk_600SemiBold',
+  semibold: 'SpaceGrotesk_500Medium',
+  body: 'SpaceGrotesk_400Regular',
+  /** Card phrases on question cards and answer choices. */
+  card: 'SpaceGrotesk_700Bold',
 };
 
 export const radius = { card: 8, button: 14, panel: 22, pill: 999 };

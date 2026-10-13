@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   panel: { backgroundColor: colors.surface, borderRadius: radius.panel, padding: 16, gap: 8, marginHorizontal: 8 },
   label: { fontFamily: fonts.bold, fontSize: 12, color: colors.muted, textTransform: 'uppercase', letterSpacing: 1.2, marginTop: 4 },
   heading: { fontFamily: fonts.bold, fontSize: 16, color: colors.ink },
-  prompt: { fontFamily: fonts.card, fontSize: 24, lineHeight: 26, color: colors.ink },
+  prompt: { fontFamily: fonts.card, fontSize: 17, lineHeight: 23, color: colors.ink },
   body: { fontFamily: fonts.body, fontSize: 14, color: colors.ink },
   options: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   option: { flexDirection: 'row', alignItems: 'center', gap: 6, borderWidth: 1.5, borderColor: colors.line, borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 7 },

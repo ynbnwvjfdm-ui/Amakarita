@@ -104,8 +104,9 @@ expected position and fails if anything is out of place.
 
 ## Fonts
 
-The app's own text uses Bricolage Grotesque and Bebas Neue (both Open Font
-Licence, bundled from Google Fonts). The card designs themselves stay images.
+The app's own text uses Space Grotesk (Open Font Licence, bundled from
+Google Fonts), chosen by the deck's author. The card designs themselves stay
+images.
 
 The designs use Bebas, Futura, Futura Book, Sink and Wosker (suited decks), and
 Futura, KorpenTag (personal-use edition), Krunc and Parslay (Ibisakuzo). Fonts are

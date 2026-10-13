@@ -6,6 +6,7 @@ import { getDeck, pageImage } from '../decks';
 import { useI18n } from '../i18n';
 import { useNav } from '../navigation';
 import { questionFor } from '../questions';
+import { CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
 import { QuestionReview } from '../ui/QuestionReview';
@@ -23,6 +24,10 @@ export function DeckScreen({ deckId }: { deckId: string }) {
   const cardWidth = (W - 32 - 2 * 10) / 3;
   const pages = Array.from({ length: deck.pageCount }, (_, i) => i + 1);
   const openCard = open !== null ? deck.cards.find((c) => c.page === open) : undefined;
+  // Shrink the title so its longest word never breaks across lines.
+  const titleRoom = W - 32 - 32 - 12 - 100;
+  const longest = Math.max(...deck.title.split(' ').map((w) => w.length));
+  const titleSize = Math.min(34, titleRoom / (longest * 0.58));
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
@@ -33,7 +38,7 @@ export function DeckScreen({ deckId }: { deckId: string }) {
           </Pressable>
           <View style={styles.heroRow}>
             <View style={{ flex: 1, gap: 4 }}>
-              <Text style={[styles.title, { color: theme.onBase }]}>{deck.title}</Text>
+              <Text style={[styles.title, { color: theme.onBase, fontSize: titleSize, lineHeight: titleSize * 1.12 }]}>{deck.title}</Text>
               {deck.subtitle ? <Text style={[styles.sub, { color: theme.onBase }]}>{deck.subtitle}</Text> : null}
               <View style={styles.chip}>
                 <Text style={styles.chipText}>{t('cardsCount', { n: deck.cards.length })}</Text>
@@ -45,13 +50,13 @@ export function DeckScreen({ deckId }: { deckId: string }) {
         <View style={styles.grid}>
           {pages.map((p) => (
             <Pressable key={p} accessibilityRole="button" onPress={() => setOpen(p)}>
-              <CardImage source={pageImage(deckId, p)} width={cardWidth} />
+              <CardArt deckId={deckId} page={p} width={cardWidth} />
             </Pressable>
           ))}
         </View>
       </ScrollView>
       <CardViewer
-        source={open !== null ? pageImage(deckId, open) : null}
+        art={open !== null ? { deckId, page: open } : null}
         onClose={() => setOpen(null)}
         footer={openCard ? <QuestionReview question={questionFor(openCard.id)} /> : undefined}
       />
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
   hero: { borderRadius: 28, padding: 16, gap: 12 },
   back: { width: 44, height: 44, borderRadius: radius.pill, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },
   heroRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 12 },
-  title: { fontFamily: fonts.display, fontSize: 34, lineHeight: 38, letterSpacing: -0.5 },
+  title: { fontFamily: fonts.display, letterSpacing: -0.5 },
   sub: { fontFamily: fonts.semibold, fontSize: 15, opacity: 0.85 },
   chip: { alignSelf: 'flex-start', backgroundColor: colors.lime, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 4, marginTop: 6 },
   chipText: { fontFamily: fonts.bold, fontSize: 12, color: colors.ink },

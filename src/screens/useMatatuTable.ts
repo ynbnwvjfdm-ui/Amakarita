@@ -11,6 +11,7 @@ import {
   nextRound,
   penalize,
   playCard,
+  putDown,
 } from '../game/matatu';
 import { botAction } from '../game/matatuBot';
 import { Suit } from '../game/cards';
@@ -25,7 +26,10 @@ export const NOTICE_MS = 2200;
 export const ANNOUNCE_MS = 10_000;
 
 export type Word = 'warning' | 'oneCard';
-export type Notice = { kind: 'said'; seat: number; word: Word } | { kind: 'caught'; seat: number };
+export type Notice =
+  | { kind: 'said'; seat: number; word: Word }
+  | { kind: 'caught'; seat: number }
+  | { kind: 'wrong'; seat: number };
 
 /**
  * Runs one Matatu table: computer turns, the pause while each played card is
@@ -138,7 +142,17 @@ export function useMatatuTable(config: MatatuConfig) {
     owed,
     said,
     notice,
-    play: (card: MatatuCard) => mine((seat) => commit(seat, playCard(game, seat, card.id, Math.random), card))(),
+    /** A person puts a card down; a card that doesn't fit is fined, as at a real table. */
+    play: (card: MatatuCard) =>
+      mine((seat) => {
+        const r = putDown(game, seat, card.id, Math.random);
+        if (r.wrong) {
+          setGame(r.state);
+          setNotice({ kind: 'wrong', seat });
+        } else {
+          commit(seat, r.state, card);
+        }
+      })(),
     pick: mine((seat) => commit(seat, drawCard(game, seat, Math.random))),
     keep: mine((seat) => commit(seat, keepDrawn(game, seat))),
     choose: (suit: Suit) => mine((seat) => commit(seat, chooseSuit(game, seat, suit)))(),

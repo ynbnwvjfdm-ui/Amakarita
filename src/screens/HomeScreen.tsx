@@ -29,5 +29,5 @@ export function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  tagline: { fontFamily: fonts.semibold, fontSize: 16, color: colors.muted, marginTop: -10 },
+  tagline: { fontFamily: fonts.semibold, fontSize: 15, color: colors.muted, marginTop: -12 },
 });

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { Modal, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View } from 'react-native';
+import { Overlay } from './Overlay';
 import { Suit } from '../game/cards';
 import { useI18n } from '../i18n';
 import { Button } from './Button';
@@ -15,14 +15,14 @@ export const SUIT_COLOR: Record<Suit, string> = { spades: '#FFFFFF', hearts: '#F
 /** A centred panel over a dimmed table. */
 export function Panel({ visible, title, children, onRequestClose }: { visible: boolean; title: string; children: ReactNode; onRequestClose?: () => void }) {
   return (
-    <Modal visible={visible} transparent animationType="fade" onRequestClose={onRequestClose}>
+    <Overlay visible={visible} onRequestClose={onRequestClose}>
       <View style={styles.dim}>
         <View style={styles.panel}>
           <Text style={styles.panelTitle}>{title}</Text>
           {children}
         </View>
       </View>
-    </Modal>
+    </Overlay>
   );
 }
 
@@ -42,15 +42,15 @@ export function PassPhone({
 }) {
   const { t } = useI18n();
   return (
-    <Modal visible={name !== null} animationType="fade" onRequestClose={onRequestClose}>
-      <SafeAreaView style={styles.handoff}>
+    <Overlay visible={name !== null} onRequestClose={onRequestClose}>
+      <View style={styles.handoff}>
         <CardImage source={cover} width={120} />
         <Text style={styles.handoffTitle}>{name !== null ? t('passPhoneTo', { name }) : ''}</Text>
         <Text style={styles.handoffNote}>{t('dontLook')}</Text>
-        <Button label={name !== null ? t('showMyCards', { name }) : ''} onPress={onAccept} />
+        <Button variant="lime" label={name !== null ? t('showMyCards', { name }) : ''} onPress={onAccept} />
         {children}
-      </SafeAreaView>
-    </Modal>
+      </View>
+    </Overlay>
   );
 }
 

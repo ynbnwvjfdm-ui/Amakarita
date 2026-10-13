@@ -59,9 +59,14 @@ export function QuestionCard({ question, width, view, revealed, sort, doubled, s
   return (
     <View style={[styles.card, { width, height, backgroundColor: theme.face, borderRadius: 18 * s, padding: 16 * s }, style]}>
       <View style={styles.top}>
-        <Text style={[styles.rank, { fontSize: 24 * s, color: red ? theme.accent : theme.ink }]}>
-          {question.rank ? `${question.rank}${question.suit ? SUIT_SYMBOL[question.suit] : ''}` : 'JOKER'}
-        </Text>
+        {question.rank && question.suit ? (
+          <View style={styles.cornerCol}>
+            <Text style={[styles.rank, { fontSize: 34 * s, lineHeight: 36 * s, letterSpacing: -1.5 * s, color: red ? theme.accent : theme.ink }]}>{question.rank}</Text>
+            <Text style={[styles.rank, { fontSize: 24 * s, lineHeight: 26 * s, marginTop: -2, color: red ? theme.accent : theme.ink }]}>{SUIT_SYMBOL[question.suit]}</Text>
+          </View>
+        ) : (
+          <Text style={[styles.rank, { fontSize: 21 * s, letterSpacing: 1 * s, color: question.card.endsWith('joker2') ? theme.accent : theme.ink }]}>JOKER</Text>
+        )}
         {/* The deck name would give away a taboo-or-value answer. */}
         {sort ? null : (
           <View style={[styles.pill, { backgroundColor: theme.base, paddingHorizontal: 10 * s, paddingVertical: 4 * s }]}>
@@ -121,7 +126,8 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   top: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
-  rank: { fontFamily: fonts.card, letterSpacing: -0.5 },
+  rank: { fontFamily: fonts.card },
+  cornerCol: { alignItems: 'center' },
   pill: { borderRadius: radius.pill, maxWidth: '62%' },
   pillText: { fontFamily: fonts.bold, letterSpacing: 0.3 },
   body: { flex: 1, justifyContent: 'center', gap: 6 },

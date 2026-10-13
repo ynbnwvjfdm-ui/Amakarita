@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { ImageSourcePropType, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { teamScores, trickWinner, winningTeams } from '../game/amaturufu';
 import { PlayingCard } from '../game/cards';
-import { backImage, cardImage, pageImage, getDeck } from '../decks';
+import { backImage, pageImage, getDeck } from '../decks';
 import { useI18n } from '../i18n';
 import { AmaturufuConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
+import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
 import { LeaveConfirm, Panel, PassPhone, SUIT_COLOR, SUIT_SYMBOL, tableStyles } from '../ui/table';
@@ -20,13 +21,13 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
   const { game, viewer, spotlight, handoff, myTurn } = table;
   const { width } = useWindowDimensions();
   const [preview, setPreview] = useState<PlayingCard | null>(null);
-  const [zoom, setZoom] = useState<ImageSourcePropType | null>(null);
+  const [zoom, setZoom] = useState<ArtRef | null>(null);
   const [leaving, setLeaving] = useState(false);
 
   const n = config.playerCount;
   const teamsMode = config.teamMode === 'teams';
   const deck = getDeck(config.deckId);
-  const img = (c: PlayingCard) => cardImage(config.deckId, c.id);
+  const img = (c: PlayingCard): ArtRef => ({ deckId: config.deckId, cardId: c.id });
   const soloHuman = table.humans.length === 1 ? table.humans[0] : null;
   const name = (seat: number) =>
     config.seats[seat].name ?? (seat === soloHuman ? t('you') : t('playerN', { n: seat + 1 }));
@@ -73,7 +74,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
             onPress={() => setZoom(img(game.trumpCard))}
             style={styles.trump}
           >
-            {game.stock.length > 0 ? <CardImage source={img(game.trumpCard)} width={40} /> : null}
+            {game.stock.length > 0 ? <CardArt {...img(game.trumpCard)} width={40} /> : null}
             <View>
               <Text style={tableStyles.label}>{t('trump')}</Text>
               <Text style={[tableStyles.suit, { color: SUIT_COLOR[game.trumpSuit] }]}>{SUIT_SYMBOL[game.trumpSuit]}</Text>
@@ -112,8 +113,8 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
           <View style={styles.trick}>
             {game.trick.map((p) => (
               <Pressable key={p.card.id} accessibilityRole="button" onPress={() => setZoom(img(p.card))} style={styles.played}>
-                <CardImage
-                  source={img(p.card)}
+                <CardArt
+                  {...img(p.card)}
                   width={trickWidth}
                   style={p.seat === trickWinnerSeat ? styles.winnerCard : undefined}
                 />
@@ -143,7 +144,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
                     onPress={() => tapHandCard(c)}
                     style={({ pressed }) => [myTurn && styles.playable, pressed && { opacity: 0.85 }]}
                   >
-                    <CardImage source={img(c)} width={handWidth} />
+                    <CardArt {...img(c)} width={handWidth} />
                   </Pressable>
                 ))
               : null}
@@ -153,14 +154,14 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
 
       {/* A card just played, shown large so its words can be read */}
       <CardViewer
-        source={spotlight ? img(spotlight.card) : null}
+        art={spotlight ? img(spotlight.card) : null}
         caption={spotlight ? name(spotlight.seat) : undefined}
         onClose={table.dismissSpotlight}
       />
 
       {/* Confirm before playing a card from the hand */}
       <CardViewer
-        source={preview ? img(preview) : null}
+        art={preview ? img(preview) : null}
         onClose={() => setPreview(null)}
         actions={
           <>
@@ -176,7 +177,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
         }
       />
 
-      <CardViewer source={zoom} onClose={() => setZoom(null)} />
+      <CardViewer art={zoom} onClose={() => setZoom(null)} />
 
       <PassPhone
         name={handoff !== null ? name(handoff) : null}

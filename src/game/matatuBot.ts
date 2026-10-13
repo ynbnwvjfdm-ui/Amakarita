@@ -4,7 +4,7 @@
  */
 
 import { Suit, SUITS } from './cards';
-import { MatatuCard, MatatuState, cardPoints, handPoints, pickupValue, playableCards } from './matatu';
+import { MatatuCard, MatatuState, canPlay, cardPoints, handPoints, pickupValue, playableCards } from './matatu';
 
 export type BotAction =
   | { type: 'play'; cardId: string }
@@ -24,7 +24,7 @@ export function botAction(state: MatatuState, seat: number): BotAction {
     case 'confirmCut':
       return { type: 'cut', end: handPoints(hand) <= CUT_AT };
     case 'drawn':
-      return { type: 'play', cardId: state.drawn!.id };
+      return canPlay(state, state.drawn!) ? { type: 'play', cardId: state.drawn!.id } : { type: 'keep' };
     default: {
       const card = chooseCard(state, seat);
       return card ? { type: 'play', cardId: card.id } : { type: 'draw' };

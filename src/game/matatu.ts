@@ -7,8 +7,11 @@
  *   special card or a 7. Its suit is the cut suit.
  * - The player left of the dealer starts with any card. After that a card
  *   must match the suit or the number of the top card.
- * - Instead of playing you may pick one card ("pick and play"): if it fits
- *   you may play it at once, otherwise your turn ends.
+ * - Instead of playing you may pick one card ("pick and play"): you may play
+ *   it at once, otherwise your turn ends.
+ * - Nothing tells a person which card fits, as at a real table. A card that
+ *   doesn't fit goes back to the hand along with a penalty card; after a
+ *   pick, a wrong card also ends the turn.
  * - When the pile runs out, the played cards except the top one are shuffled
  *   into a new pile.
  *
@@ -54,6 +57,7 @@ export const MIN_PLAYERS = 2;
 export const MAX_PLAYERS = 6;
 export const HAND_SIZES = [4, 5, 6, 7] as const;
 export const WARNING_PENALTY = 2;
+export const WRONG_CARD_PENALTY = 1;
 
 const PICKUP_VALUE: Partial<Record<MatatuRank, number>> = { '2': 2, '3': 3, joker: 6 };
 const CUT_CARD_RANKS: MatatuRank[] = ['4', '5', '6', '9', '10', 'K'];
@@ -390,7 +394,7 @@ export function confirmCut(state: MatatuState, seat: number, endRound: boolean):
 
 /**
  * Pick from the pile. Facing a pick-up: take the whole total and the turn
- * ends. Otherwise take one card; if it fits, the player may play it.
+ * ends. Otherwise take one card, which the player may then play or keep.
  */
 export function drawCard(state: MatatuState, seat: number, rng: Rng): MatatuState {
   if (seat !== state.turn) throw new Error(`Not seat ${seat}'s turn`);
@@ -402,11 +406,24 @@ export function drawCard(state: MatatuState, seat: number, rng: Rng): MatatuStat
   }
   const s = takeCards(state, seat, 1, rng);
   const got = s.hands[seat].length > state.hands[seat].length ? s.hands[seat][s.hands[seat].length - 1] : null;
-  if (got && fits(s, got)) return { ...s, phase: 'drawn', drawn: got };
+  if (got) return { ...s, phase: 'drawn', drawn: got };
   return endTurn(s);
 }
 
-/** After picking a card that fits: keep it instead of playing it. */
+/**
+ * A person puts a card down. If it fits it is played; if not it stays in the
+ * hand and the player takes a penalty card (and, after a pick, the turn ends).
+ */
+export function putDown(state: MatatuState, seat: number, cardId: string, rng: Rng): { state: MatatuState; wrong: boolean } {
+  if (seat !== state.turn) throw new Error(`Not seat ${seat}'s turn`);
+  const card = state.hands[seat].find((c) => c.id === cardId);
+  if (!card) throw new Error(`Seat ${seat} does not hold ${cardId}`);
+  if (canPlay(state, card)) return { state: playCard(state, seat, cardId, rng), wrong: false };
+  const fined = takeCards(state, seat, WRONG_CARD_PENALTY, rng);
+  return { state: state.phase === 'drawn' ? endTurn(fined) : fined, wrong: true };
+}
+
+/** After picking a card: keep it instead of playing it. */
 export function keepDrawn(state: MatatuState, seat: number): MatatuState {
   if (state.phase !== 'drawn' || seat !== state.turn) throw new Error('No picked card to keep');
   return endTurn(state);

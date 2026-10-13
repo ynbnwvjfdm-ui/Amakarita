@@ -15,6 +15,7 @@ import {
   nextRound,
   penalize,
   playCard,
+  putDown,
   suitColor,
 } from '../matatu';
 import { botAction } from '../matatuBot';
@@ -221,6 +222,9 @@ describe('special cards', () => {
     s = play(s, c('Q', 'spades'));
     s = { ...s, stock: [c('5', 'hearts'), ...s.stock.filter((x) => x.id !== 't-5H')] };
     s = drawCard(s, 0, rng);
+    expect(s.phase).toBe('drawn');
+    expect(canPlay(s, c('5', 'hearts'))).toBe(false);
+    s = keepDrawn(s, 0);
     expect(s.hands[0]).toHaveLength(2);
     expect(s.turn).toBe(1);
 
@@ -246,12 +250,21 @@ describe('pick and play', () => {
     expect(played.hands[0]).toHaveLength(2);
     expect(played.turn).toBe(1);
   });
-  it('a picked card that does not fit ends the turn', () => {
+  it('a picked card is always offered, even when it does not fit (no hints)', () => {
     let s = table([filler(2, 'hearts'), filler(3, 'diamonds')], c('9', 'spades'));
     s = { ...s, stock: [c('5', 'hearts'), ...s.stock.filter((x) => x.id !== 't-5H')] };
     s = drawCard(s, 0, rng);
-    expect(s.phase).toBe('play');
-    expect(s.turn).toBe(1);
+    expect(s.phase).toBe('drawn');
+    expect(keepDrawn(s, 0).turn).toBe(1);
+  });
+  it('playing a picked card that does not fit: penalty card and the turn ends', () => {
+    let s = table([filler(2, 'hearts'), filler(3, 'diamonds')], c('9', 'spades'));
+    s = { ...s, stock: [c('5', 'hearts'), ...s.stock.filter((x) => x.id !== 't-5H')] };
+    s = drawCard(s, 0, rng);
+    const r = putDown(s, 0, 't-5H', rng);
+    expect(r.wrong).toBe(true);
+    expect(r.state.hands[0]).toHaveLength(4);
+    expect(r.state.turn).toBe(1);
   });
   it('an empty pile is refilled from played cards, keeping the top card', () => {
     let s = table([filler(2, 'hearts'), filler(3, 'diamonds')], c('9', 'spades'));
@@ -260,6 +273,29 @@ describe('pick and play', () => {
     s = drawCard(s, 0, rng);
     expect(s.discard).toEqual([c('9', 'spades')]);
     expect(s.hands[0].length + s.stock.length).toBe(4);
+  });
+});
+
+describe('wrong cards', () => {
+  it('a card that does not fit goes back with a penalty card; the turn goes on', () => {
+    const s = table([[c('4', 'hearts'), c('5', 'spades')], filler(3, 'diamonds')], c('9', 'spades'));
+    const r = putDown(s, 0, 't-4H', rng);
+    expect(r.wrong).toBe(true);
+    expect(r.state.hands[0].map((x) => x.id)).toContain('t-4H');
+    expect(r.state.hands[0]).toHaveLength(3);
+    expect(r.state.turn).toBe(0);
+    expect(r.state.discard).toEqual(s.discard);
+    const ok = putDown(r.state, 0, 't-5S', rng);
+    expect(ok.wrong).toBe(false);
+    expect(ok.state.turn).toBe(1);
+  });
+  it('facing a pick-up, a wrong card is fined and the pick-up still waits', () => {
+    let s = table([[c('3', 'spades'), ...filler(2)], [c('9', 'hearts'), ...filler(2, 'hearts')], filler(3, 'diamonds')], c('9', 'spades'));
+    s = playCard(s, 0, 't-3S', rng);
+    const r = putDown(s, 1, 't-9H', rng);
+    expect(r.wrong).toBe(true);
+    expect(r.state.pickup).toEqual({ total: 3, last: 3 });
+    expect(r.state.turn).toBe(1);
   });
 });
 

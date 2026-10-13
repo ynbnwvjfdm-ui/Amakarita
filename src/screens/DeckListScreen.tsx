@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-na
 import { DECKS, pageImage } from '../decks';
 import { useI18n } from '../i18n';
 import { useNav } from '../navigation';
+import { CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { LanguageToggle } from '../ui/LanguageToggle';
 import { Screen } from '../ui/Screen';
@@ -31,7 +32,7 @@ export function DeckListScreen() {
               </Text>
               <Text style={[styles.sub, { color: theme.onBase }]}>{t('cardsCount', { n: d.cards.length })}</Text>
               <View style={styles.cardWrap}>
-                <CardImage source={pageImage(d.id, d.cards[0].page)} width={tile * 0.56} style={styles.back2} />
+                <CardArt deckId={d.id} cardId={d.cards[0].id} width={tile * 0.56} style={styles.back2} />
                 <CardImage source={pageImage(d.id, d.cover.page)} width={tile * 0.56} style={styles.front} />
               </View>
             </Pressable>

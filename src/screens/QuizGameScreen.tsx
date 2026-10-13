@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
-import { ImageSourcePropType, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { LayoutChangeEvent, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { CARD_RATIO, cardImage, getDeck, pageImage } from '../decks';
+import { CARD_RATIO, getDeck, pageImage } from '../decks';
 import { QUESTIONS } from '../questions';
 import { quizWinners, stealTarget, STEAL } from '../game/quiz';
 import { useI18n } from '../i18n';
 import { QuizConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
+import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
+import { CHIP_ROW, GameTopBar, InfoPill, PillText, PlayerChip } from '../ui/GameChrome';
 import { FlipCard } from '../ui/FlipCard';
 import { QuestionCard } from '../ui/QuestionCard';
 import { LeaveConfirm, Panel } from '../ui/table';
@@ -21,9 +23,11 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
   const nav = useNav();
   const table = useQuizTable(config);
   const { game, bot, revealed } = table;
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const [leaving, setLeaving] = useState(false);
-  const [zoom, setZoom] = useState<ImageSourcePropType | null>(null);
+  const [zoom, setZoom] = useState<ArtRef | null>(null);
+  // The card is sized to the space measured between the scores and the buttons.
+  const [stage, setStage] = useState({ w: 0, h: 0 });
   // After answering, the card turns to show the printed card; tap to turn it back.
   // Remembered per turn, so a new question always starts question-side up.
   const [printedFor, setPrintedFor] = useState<string | null>(null);
@@ -39,8 +43,12 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
   const theme = stageDeck ? deckTheme(stageDeck) : MIX_THEME;
 
   const W = Math.min(width, MAX_WIDTH);
-  const cardW = Math.min(W * 0.62, (height * 0.42) * CARD_RATIO);
+  const cardW = stage.h > 0 ? Math.min(W * 0.66, (stage.h - 24) * CARD_RATIO) : 0;
   const cardH = cardW / CARD_RATIO;
+  const onStage = (e: LayoutChangeEvent) => {
+    const { width: w, height: h } = e.nativeEvent.layout;
+    if (Math.abs(h - stage.h) > 1 || Math.abs(w - stage.w) > 1) setStage({ w, h });
+  };
 
   const turnKey = current ? `${game.pile.length}:${current.question.card}` : null;
   const showPrinted = game.phase === 'result' && printedFor === turnKey;
@@ -57,42 +65,38 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: theme.base }]} edges={['top', 'bottom']}>
       <View style={[styles.column, { width: W }]}>
-        {/* Top bar */}
-        <View style={styles.topBar}>
-          <Pressable accessibilityRole="button" accessibilityLabel={t('leaveGame')} onPress={() => setLeaving(true)} style={styles.round}>
-            <Ionicons name="close" size={22} color={colors.ink} />
-          </Pressable>
-          <View style={styles.targetPill}>
-            <Ionicons name="flag" size={14} color={colors.ink} />
-            <Text style={styles.targetText}>{t('targetPoints', { n: config.target })}</Text>
-          </View>
-          <View style={styles.leftPill} accessibilityLabel={t('cardsCount', { n: game.pile.length })}>
-            <Ionicons name="albums-outline" size={15} color={colors.ink} />
-            <Text style={styles.left}>{game.pile.length}</Text>
-          </View>
-        </View>
+        <GameTopBar
+          onLeave={() => setLeaving(true)}
+          leaveLabel={t('leaveGame')}
+          center={
+            <InfoPill>
+              <Ionicons name="flag" size={14} color={colors.ink} />
+              <PillText>{t('targetPoints', { n: config.target })}</PillText>
+            </InfoPill>
+          }
+          right={
+            <InfoPill label={t('cardsCount', { n: game.pile.length })}>
+              <Ionicons name="albums-outline" size={15} color={colors.ink} />
+              <PillText>{game.pile.length}</PillText>
+            </InfoPill>
+          }
+        />
 
-        {/* Scores */}
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.scores} style={{ flexGrow: 0 }}>
-          {game.scores.map((score, seat) => {
-            const on = seat === game.turn && game.phase !== 'over';
-            return (
-              <View key={seat} style={[styles.score, on && styles.scoreOn]}>
-                <Text style={[styles.scoreName, on && styles.scoreNameOn]} numberOfLines={1}>
-                  {name(seat)}
-                </Text>
-                <View style={styles.scoreRow}>
-                  <Text style={[styles.scoreNum, on && styles.scoreNumOn]}>{score}</Text>
-                  {game.doubled[seat] ? <Text style={styles.double}>×2</Text> : null}
-                </View>
-              </View>
-            );
-          })}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={CHIP_ROW} style={{ flexGrow: 0 }}>
+          {game.scores.map((score, seat) => (
+            <PlayerChip
+              key={seat}
+              name={name(seat)}
+              value={score}
+              active={seat === game.turn && game.phase !== 'over'}
+              badge={game.doubled[seat] ? '×2' : null}
+            />
+          ))}
         </ScrollView>
 
-        {/* The card */}
-        <View style={styles.stage}>
-          {game.phase === 'draw' && nextId ? (
+        {/* The card, as large as the space between scores and buttons allows */}
+        <View style={styles.stage} onLayout={onStage}>
+          {cardW === 0 ? null : game.phase === 'draw' && nextId ? (
             <Pressable accessibilityRole="button" accessibilityLabel={t('drawCard')} onPress={table.draw} disabled={bot} style={styles.drawWrap}>
               <View style={[styles.pileCard, { width: cardW, height: cardH, transform: [{ rotate: '6deg' }] }]} />
               <View style={[styles.pileCard, { width: cardW, height: cardH, transform: [{ rotate: '-4deg' }] }]} />
@@ -115,8 +119,9 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
                   />
                 }
                 back={
-                  <CardImage
-                    source={cardImage(QUESTIONS[current.sort?.card ?? current.question.card].deck, current.sort?.card ?? current.question.card)}
+                  <CardArt
+                    deckId={QUESTIONS[current.sort?.card ?? current.question.card].deck}
+                    cardId={current.sort?.card ?? current.question.card}
                     width={cardW}
                   />
                 }
@@ -229,8 +234,8 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
             <Text style={styles.reviewTitle}>{t('toReview')}</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
               {game.missed.map((id) => (
-                <Pressable key={id} onPress={() => setZoom(cardImage(QUESTIONS[id].deck, id))}>
-                  <CardImage source={cardImage(QUESTIONS[id].deck, id)} width={64} />
+                <Pressable key={id} onPress={() => setZoom({ deckId: QUESTIONS[id].deck, cardId: id })}>
+                  <CardArt deckId={QUESTIONS[id].deck} cardId={id} width={64} />
                 </Pressable>
               ))}
             </ScrollView>
@@ -240,7 +245,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
         <Button variant="secondary" label={t('home')} onPress={nav.home} />
       </Panel>
 
-      <CardViewer source={zoom} onClose={() => setZoom(null)} />
+      <CardViewer art={zoom} onClose={() => setZoom(null)} />
       <LeaveConfirm visible={leaving} onLeave={nav.home} onStay={() => setLeaving(false)} />
     </SafeAreaView>
   );
@@ -249,21 +254,6 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
 const styles = StyleSheet.create({
   safe: { flex: 1 },
   column: { flex: 1, alignSelf: 'center', paddingHorizontal: 16 },
-  topBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 8 },
-  round: { width: 44, height: 44, borderRadius: radius.pill, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },
-  leftPill: { flexDirection: 'row', alignItems: 'center', gap: 5, backgroundColor: colors.surface, borderRadius: radius.pill, paddingHorizontal: 12, height: 36 },
-  left: { fontFamily: fonts.display, fontSize: 15, color: colors.ink },
-  targetPill: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: colors.surface, borderRadius: radius.pill, paddingHorizontal: 14, height: 36 },
-  targetText: { fontFamily: fonts.bold, fontSize: 13, color: colors.ink },
-  scores: { gap: 8, paddingVertical: 6 },
-  score: { minWidth: 92, backgroundColor: 'rgba(255,255,255,0.14)', borderRadius: 18, paddingHorizontal: 12, paddingVertical: 8 },
-  scoreOn: { backgroundColor: colors.lime },
-  scoreName: { fontFamily: fonts.semibold, fontSize: 12, color: 'rgba(255,255,255,0.85)', maxWidth: 110 },
-  scoreNameOn: { color: colors.ink },
-  scoreRow: { flexDirection: 'row', alignItems: 'baseline', gap: 6 },
-  scoreNum: { fontFamily: fonts.display, fontSize: 30, lineHeight: 34, color: colors.surface, letterSpacing: -0.5 },
-  scoreNumOn: { color: colors.ink },
-  double: { fontFamily: fonts.display, fontSize: 14, color: colors.coral },
   stage: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   drawWrap: { alignItems: 'center', justifyContent: 'center' },
   pileCard: { position: 'absolute', borderRadius: 14, backgroundColor: 'rgba(255,255,255,0.22)' },

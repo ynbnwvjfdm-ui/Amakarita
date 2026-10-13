@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { CARD_RATIO, cardImage } from '../decks';
+import { CARD_RATIO } from '../decks';
 import { longDate } from '../dates';
 import { useI18n } from '../i18n';
 import { cardOfTheDay } from '../questions';
-import { CardImage } from './CardImage';
+import { CardArt } from './CardArt';
 import { FlipCard } from './FlipCard';
 import { QuestionCard } from './QuestionCard';
 import { colors, fonts, radius } from './theme';
@@ -43,7 +43,7 @@ export function CardOfDay({ width }: { width: number }) {
           height={cardH}
           style={{ transform: [{ rotate: '-2deg' }] }}
           front={<QuestionCard question={q} width={cardW} view="read" />}
-          back={<CardImage source={cardImage(q.deck, q.card)} width={cardW} />}
+          back={<CardArt deckId={q.deck} cardId={q.card} width={cardW} />}
         />
       </Pressable>
       <View style={styles.hint}>

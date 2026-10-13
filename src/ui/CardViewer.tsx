@@ -1,11 +1,14 @@
 import { ReactNode } from 'react';
-import { ImageSourcePropType, Modal, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { CARD_RATIO } from '../decks';
-import { CardImage } from './CardImage';
-import { MAX_WIDTH, fonts } from './theme';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { ArtRef, CardArt } from './CardArt';
+import { Overlay } from './Overlay';
+import { colors, MAX_WIDTH, fonts, radius } from './theme';
 
 interface Props {
-  source: ImageSourcePropType | null;
+  /** The card to show, or null when closed. */
+  art: ArtRef | null;
   caption?: string;
   onClose: () => void;
   /** Buttons shown under the card. Tapping outside the card closes. */
@@ -15,41 +18,38 @@ interface Props {
 }
 
 /** A card shown large over a dimmed background, so its words can be read. */
-export function CardViewer({ source, caption, onClose, actions, footer }: Props) {
+export function CardViewer({ art, caption, onClose, actions, footer }: Props) {
   const { width, height } = useWindowDimensions();
-  const room = Math.min(width, MAX_WIDTH) * (footer ? 0.62 : 0.78);
-  const cardWidth = Math.min(room, (height - (actions ? 220 : 140)) * CARD_RATIO);
-  const body = (
-    <>
-      {caption ? <Text style={styles.caption}>{caption}</Text> : null}
-      {source ? <CardImage source={source} width={cardWidth} /> : null}
-      {actions ? <View style={styles.actions}>{actions}</View> : null}
-    </>
-  );
+  const room = Math.min(width, MAX_WIDTH) * (footer ? 0.66 : 0.8);
+  const cardWidth = Math.min(room, (height - (actions ? 260 : 180)) * CARD_RATIO);
+  const card = art ? <CardArt {...art} width={cardWidth} /> : null;
   return (
-    <Modal visible={source !== null} transparent animationType="fade" onRequestClose={onClose}>
-      {footer ? (
-        <View style={styles.backdrop}>
-          <Pressable style={StyleSheet.absoluteFill} onPress={onClose} accessibilityLabel="close" />
-          <ScrollView contentContainerStyle={styles.scroll} style={{ width: '100%', maxWidth: MAX_WIDTH }}>
-            <Pressable onPress={onClose} style={{ alignItems: 'center', gap: 16 }}>
-              {body}
-            </Pressable>
-            {footer}
-          </ScrollView>
+    <Overlay visible={art !== null} onRequestClose={onClose}>
+      <View style={styles.backdrop}>
+        <Pressable style={StyleSheet.absoluteFill} onPress={onClose} accessibilityLabel="close" />
+        <View style={styles.top}>
+          <Pressable accessibilityRole="button" accessibilityLabel="close" onPress={onClose} hitSlop={10} style={styles.close}>
+            <Ionicons name="close" size={22} color={colors.ink} />
+          </Pressable>
         </View>
-      ) : (
-        <Pressable style={styles.backdrop} onPress={onClose} accessibilityLabel="close">
-          {body}
-        </Pressable>
-      )}
-    </Modal>
+        <ScrollView contentContainerStyle={styles.scroll} style={styles.column} showsVerticalScrollIndicator={false}>
+          {caption ? <Text style={styles.caption}>{caption}</Text> : null}
+          <Pressable onPress={actions ? undefined : onClose}>{card}</Pressable>
+          {actions ? <View style={styles.actions}>{actions}</View> : null}
+          {footer ? <View style={styles.footer}>{footer}</View> : null}
+        </ScrollView>
+      </View>
+    </Overlay>
   );
 }
 
 const styles = StyleSheet.create({
-  backdrop: { flex: 1, backgroundColor: 'rgba(10,8,20,0.82)', alignItems: 'center', justifyContent: 'center', padding: 16, gap: 16 },
-  scroll: { paddingVertical: 32, gap: 16 },
+  backdrop: { flex: 1, backgroundColor: 'rgba(10,8,20,0.84)', alignItems: 'center' },
+  top: { width: '100%', maxWidth: MAX_WIDTH, alignItems: 'flex-end', paddingHorizontal: 16, paddingTop: 12 },
+  close: { width: 44, height: 44, borderRadius: radius.pill, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },
+  column: { width: '100%', maxWidth: MAX_WIDTH },
+  scroll: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 4, paddingBottom: 28, paddingHorizontal: 16, gap: 16 },
   caption: { color: '#fff', fontSize: 18, fontFamily: fonts.bold, textAlign: 'center' },
-  actions: { flexDirection: 'row', gap: 12 },
+  actions: { flexDirection: 'row', gap: 12, justifyContent: 'center', flexWrap: 'wrap' },
+  footer: { alignSelf: 'stretch' },
 });

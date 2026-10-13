@@ -98,8 +98,11 @@ export function newQuiz(
   mode: QuizMode,
   attempts: number,
   rng: Rng,
+  /** Puts some cards first more often (a learner's missed cards); plain shuffle without it. */
+  order?: (ids: string[], rng: Rng) => string[],
 ): QuizState {
-  const pile = shuffle(cardIds.filter((id) => bank[id]), rng);
+  const ids = cardIds.filter((id) => bank[id]);
+  const pile = order ? order(ids, rng) : shuffle(ids, rng);
   return {
     mode,
     playerCount,

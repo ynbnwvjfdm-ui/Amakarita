@@ -109,8 +109,9 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
             <Pressable accessibilityRole="button" onPress={() => setZoom(art(game.cutCard))}>
               <InfoPill label={`${t('cut')} ${SUIT_SYMBOL[game.cutSuit]}`}>
                 <Ionicons name="cut-outline" size={16} color={colors.ink} />
-                <PillText>{t('cut')}</PillText>
-                <PillText color={SUIT_INK[game.cutSuit]}>{SUIT_SYMBOL[game.cutSuit]}</PillText>
+                {/* Names the card that cuts, not just its suit. */}
+                <PillText>{t('cut')}:</PillText>
+                <PillText color={SUIT_INK[game.cutSuit]}>7{SUIT_SYMBOL[game.cutSuit]}</PillText>
               </InfoPill>
             </Pressable>
           }

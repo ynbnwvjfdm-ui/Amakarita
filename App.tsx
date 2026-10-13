@@ -10,6 +10,7 @@ import { SpaceGrotesk_600SemiBold } from '@expo-google-fonts/space-grotesk/600Se
 import { SpaceGrotesk_700Bold } from '@expo-google-fonts/space-grotesk/700Bold';
 
 import { I18nProvider } from './src/i18n';
+import { ProgressProvider } from './src/progressStore';
 import { Nav, NavContext, Route, TabName } from './src/navigation';
 import { HomeScreen } from './src/screens/HomeScreen';
 import { DeckListScreen } from './src/screens/DeckListScreen';
@@ -89,13 +90,15 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <I18nProvider>
-        <NavContext.Provider value={nav}>
-          <StatusBar style={DARK_SCREENS.includes(route.name) ? 'light' : 'dark'} />
-          <View style={{ flex: 1, backgroundColor: colors.bg }}>
-            <CurrentScreen route={route} />
-            {tab ? <TabBar active={tab} onSelect={nav.tab} /> : null}
-          </View>
-        </NavContext.Provider>
+        <ProgressProvider>
+          <NavContext.Provider value={nav}>
+            <StatusBar style={DARK_SCREENS.includes(route.name) ? 'light' : 'dark'} />
+            <View style={{ flex: 1, backgroundColor: colors.bg }}>
+              <CurrentScreen route={route} />
+              {tab ? <TabBar active={tab} onSelect={nav.tab} /> : null}
+            </View>
+          </NavContext.Provider>
+        </ProgressProvider>
       </I18nProvider>
     </SafeAreaProvider>
   );

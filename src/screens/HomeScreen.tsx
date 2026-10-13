@@ -7,6 +7,7 @@ import { CardOfDay } from '../ui/CardOfDay';
 import { DeckCarousel } from '../ui/DeckCarousel';
 import { GameTickets } from '../ui/GameTickets';
 import { LanguageToggle } from '../ui/LanguageToggle';
+import { ProgressPanel } from '../ui/ProgressPanel';
 import { Screen, formStyles } from '../ui/Screen';
 import { colors, fonts, MAX_WIDTH } from '../ui/theme';
 
@@ -21,6 +22,7 @@ export function HomeScreen() {
     <Screen tabbed eyebrow={t(greetingKey(now))} title={t('appTitle')} right={<LanguageToggle />}>
       <Text style={styles.tagline}>{t('homeTagline')}</Text>
       <DeckCarousel width={W} onOpen={(deckId) => nav.push({ name: 'deck', deckId })} />
+      <ProgressPanel onOpenDeck={(deckId) => nav.push({ name: 'deck', deckId })} />
       <CardOfDay width={W} />
       <Text style={formStyles.section}>{t('games')}</Text>
       <GameTickets />

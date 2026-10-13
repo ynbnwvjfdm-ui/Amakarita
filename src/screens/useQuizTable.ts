@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
+import { drawWeight, weightedOrder } from '../game/progress';
 import { QuizState, answer, applyJoker, draw, judge, newQuiz, nextTurn, stealTarget } from '../game/quiz';
+import { useProgress } from '../progressStore';
 import { SUITED_DECKS } from '../decks';
 import { QUESTIONS } from '../questions';
 import { QuizConfig } from '../navigation';
@@ -21,7 +23,16 @@ export function useQuizTable(config: QuizConfig) {
       .map((q) => q.card);
   }, [config.deckId]);
 
-  const fresh = () => newQuiz(QUESTIONS, cardIds, n, config.mode, config.attempts, Math.random);
+  const { progress, record } = useProgress();
+  // Progress belongs to the one person learning on this phone: games with several people don't count.
+  const learner = config.seats.filter((s) => s.kind === 'human').length === 1;
+  // Cards this learner keeps missing come up earlier.
+  const fresh = () =>
+    newQuiz(QUESTIONS, cardIds, n, config.mode, config.attempts, Math.random, learner ? (ids, rng) => weightedOrder(ids, (id) => drawWeight(progress, id), rng) : undefined);
+  const keep = (g: QuizState) => {
+    if (learner && g.current && g.result && g.result.correct !== null) record(g.current.sort?.card ?? g.current.question.card, g.result.correct);
+    return g;
+  };
   const [game, setGame] = useState<QuizState>(fresh);
   // Group mode: the reader has looked at the answer.
   const [revealed, setRevealed] = useState(false);
@@ -63,11 +74,11 @@ export function useQuizTable(config: QuizConfig) {
     revealed,
     cardIds,
     draw: () => humanTurn && game.phase === 'draw' && setGame(draw(game, QUESTIONS, Math.random)),
-    choose: (option: string) => humanTurn && game.phase === 'answer' && setGame(answer(game, option)),
+    choose: (option: string) => humanTurn && game.phase === 'answer' && setGame(keep(answer(game, option))),
     reveal: () => setRevealed(true),
     judge: (correct: boolean) => {
       if (game.phase !== 'answer') return;
-      setGame(judge(game, correct));
+      setGame(config.seats[game.turn]?.kind === 'human' ? keep(judge(game, correct)) : judge(game, correct));
     },
     joker: (power: 'steal' | 'double') => humanTurn && game.phase === 'joker' && setGame(applyJoker(game, power)),
     next: () => {

@@ -39,6 +39,20 @@ export const radius = { card: 8, button: 14, panel: 22, pill: 999 };
 /** Widest the layout grows on tablets and in the browser preview. */
 export const MAX_WIDTH = 480;
 
+/**
+ * A card lying on a table of its own colour: a tight contact shadow plus two
+ * softer ones, growing with the card so small and large cards look alike.
+ */
+export function cardShadow(width: number): string {
+  const s = width / 300;
+  const px = (v: number, min: number) => `${Math.max(min, Math.round(v * s))}px`;
+  return [
+    `0 1px ${px(2, 1)} rgba(0,0,0,0.30)`,
+    `0 ${px(5, 2)} ${px(12, 4)} rgba(0,0,0,0.24)`,
+    `0 ${px(16, 4)} ${px(32, 8)} rgba(0,0,0,0.22)`,
+  ].join(', ');
+}
+
 export interface DeckTheme {
   /** The deck's signature colour: headers, game table, chips. */
   base: string;

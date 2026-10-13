@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CARD_RATIO, getDeck, pageImage } from '../decks';
 import { QUESTIONS } from '../questions';
-import { quizWinners, stealTarget, STEAL } from '../game/quiz';
+import { attemptsLeft, quizWinners, stealTarget, STEAL } from '../game/quiz';
 import { useI18n } from '../i18n';
 import { QuizConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
@@ -70,8 +70,8 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
           leaveLabel={t('leaveGame')}
           center={
             <InfoPill>
-              <Ionicons name="flag" size={14} color={colors.ink} />
-              <PillText>{t('targetPoints', { n: config.target })}</PillText>
+              <Ionicons name="hourglass-outline" size={14} color={colors.ink} />
+              <PillText>{t('attemptsLeft', { n: attemptsLeft(game, game.turn) })}</PillText>
             </InfoPill>
           }
           right={

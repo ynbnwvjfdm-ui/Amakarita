@@ -4,8 +4,11 @@
  * Players take turns drawing a card and answering its question. A right
  * answer scores the card's value (2–10 face value, J 11, Q 12, K 13, A 15).
  * A joker answered right (or a joker with nothing to ask) gives a power:
- * steal 10 points from the leader, or double your next right answer. First
- * to the target score wins; if the cards run out, the highest score wins.
+ * steal 10 points from the leader, or double your next right answer.
+ *
+ * Each player has the same number of attempts; every card drawn uses one.
+ * When everyone has used theirs the highest score wins. If the cards run out
+ * first, the game ends there and the highest score wins.
  *
  * Two ways to check answers:
  * - phone: the player taps one of the choices and the phone checks it.
@@ -39,6 +42,8 @@ export interface Question {
 }
 
 export const STEAL = 10;
+/** The attempts per player a game can be set to. */
+export const ATTEMPT_CHOICES = [5, 10, 15];
 const FACE: Partial<Record<Rank, number>> = { J: 11, Q: 12, K: 13, A: 15 };
 
 export function cardPoints(q: Question): number {
@@ -66,7 +71,10 @@ export interface QuizResult {
 export interface QuizState {
   mode: QuizMode;
   playerCount: number;
-  target: number;
+  /** Attempts each player gets. */
+  attempts: number;
+  /** Attempts each player has used so far. */
+  taken: number[];
   scores: number[];
   /** A joker's double waiting for the player's next right answer. */
   doubled: boolean[];
@@ -88,14 +96,15 @@ export function newQuiz(
   cardIds: string[],
   playerCount: number,
   mode: QuizMode,
-  target: number,
+  attempts: number,
   rng: Rng,
 ): QuizState {
   const pile = shuffle(cardIds.filter((id) => bank[id]), rng);
   return {
     mode,
     playerCount,
-    target,
+    attempts,
+    taken: Array.from({ length: playerCount }, () => 0),
     scores: Array.from({ length: playerCount }, () => 0),
     doubled: Array.from({ length: playerCount }, () => false),
     pile,
@@ -125,7 +134,8 @@ export function draw(state: QuizState, bank: QuestionBank, rng: Rng): QuizState 
     }
   }
   const options = question.options ? shuffle(question.options, rng) : [];
-  const s: QuizState = { ...state, pile, current: { question, options, sort }, result: null };
+  const taken = state.taken.map((v, i) => (i === state.turn ? v + 1 : v));
+  const s: QuizState = { ...state, pile, taken, current: { question, options, sort }, result: null };
   if (question.kind === 'read') {
     return isJoker(question)
       ? { ...s, result: { correct: null, chosen: null, points: 0 }, phase: 'joker' }
@@ -187,10 +197,16 @@ export function applyJoker(state: QuizState, power: 'steal' | 'double'): QuizSta
 
 export function nextTurn(state: QuizState): QuizState {
   if (state.phase !== 'result') throw new Error(`Cannot move on during ${state.phase}`);
-  if (state.scores.some((v) => v >= state.target) || state.pile.length === 0) {
+  if (state.taken.every((v) => v >= state.attempts) || state.pile.length === 0) {
     return { ...state, phase: 'over' };
   }
   return { ...state, turn: (state.turn + 1) % state.playerCount, current: null, phase: 'draw' };
+}
+
+/** Attempts the player whose turn it is has left, counting the one being played. */
+export function attemptsLeft(state: QuizState, seat: number): number {
+  const inPlay = state.phase !== 'draw' && seat === state.turn ? 1 : 0;
+  return Math.max(0, state.attempts - state.taken[seat] + inPlay);
 }
 
 /** Seats with the highest score (more than one is a draw). */

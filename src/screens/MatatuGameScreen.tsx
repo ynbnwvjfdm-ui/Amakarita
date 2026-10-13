@@ -12,7 +12,7 @@ import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
 import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
-import { HandGrid } from '../ui/HandGrid';
+import { HandRow } from '../ui/HandRow';
 import { LeaveConfirm, Panel, PassPhone, SUIT_SYMBOL, tableStyles } from '../ui/table';
 import { colors, deckTheme, fonts, MAX_WIDTH, radius } from '../ui/theme';
 import { useMatatuTable } from './useMatatuTable';
@@ -38,7 +38,6 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
   const [zoom, setZoom] = useState<ArtRef | null>(null);
   const [leaving, setLeaving] = useState(false);
   const [stageH, setStageH] = useState(0);
-  const [handBox, setHandBox] = useState({ w: 0, h: 0 });
 
   const n = config.seats.length;
   const deck = getDeck(config.deckId);
@@ -54,7 +53,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
   const W = Math.min(width, MAX_WIDTH);
   // Both piles side by side, as big as the measured middle allows. Besides the
   // piles it holds the chips under them (38), the status line (40) and gaps.
-  const pileW = Math.max(56, Math.min(136, (W - 32 - 40) / 2.4, stageH > 0 ? (stageH - 104) * CARD_RATIO : 100));
+  const pileW = Math.max(56, Math.min(150, (W - 32 - 28) / 2.2, stageH > 0 ? (stageH - 104) * CARD_RATIO : 100));
   const pileH = pileW / CARD_RATIO;
 
   const top = topCard(game);
@@ -175,20 +174,17 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
               {name(viewer)} · {t('cardsCount', { n: hand.length })}
             </Text>
           ) : null}
-          <View style={styles.handBox} onLayout={(e: LayoutChangeEvent) => setHandBox({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
-            <HandGrid
-              deckId={config.deckId}
-              cards={hand.map((c) => ({ id: c.id, label: label(c) }))}
-              width={handBox.w}
-              height={handBox.h}
-              maxCardWidth={104}
-              onPress={(id) => {
-                const c = hand.find((x) => x.id === id)!;
-                if (choosing && (game.phase === 'play' || game.phase === 'queen')) setPreview(c);
-                else setZoom(art(c));
-              }}
-            />
-          </View>
+          <HandRow
+            deckId={config.deckId}
+            cards={hand.map((c) => ({ id: c.id, label: label(c) }))}
+            width={W - 32}
+            ink={theme.onBase}
+            onPress={(id) => {
+              const c = hand.find((x) => x.id === id)!;
+              if (choosing && (game.phase === 'play' || game.phase === 'queen')) setPreview(c);
+              else setZoom(art(c));
+            }}
+          />
           <View style={styles.actions}>
             <Button
               variant="secondary"
@@ -320,9 +316,7 @@ const styles = StyleSheet.create({
   infoChipText: { fontFamily: fonts.bold, fontSize: 12, color: colors.ink },
   infoChipSuit: { fontFamily: fonts.display, fontSize: 16 },
   status: { fontFamily: fonts.bold, fontSize: 15, textAlign: 'center' },
-  // Shares the space below the chips with the piles.
-  handArea: { flex: 1.15, gap: 8, paddingBottom: 10 },
-  handBox: { flex: 1, justifyContent: 'center' },
+  handArea: { gap: 8, paddingBottom: 10 },
   handName: { fontFamily: fonts.semibold, fontSize: 13, textAlign: 'center', opacity: 0.85 },
   actions: { flexDirection: 'row', gap: 10 },
   wide: { flex: 1 },

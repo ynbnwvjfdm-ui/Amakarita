@@ -3,7 +3,7 @@ import { CARD_RATIO, getDeck } from '../decks';
 import { Category, Question, cardPoints } from '../game/quiz';
 import { useI18n } from '../i18n';
 import { SUIT_SYMBOL } from './table';
-import { colors, deckTheme, fonts, radius } from './theme';
+import { cardShadow, colors, deckTheme, fonts, radius } from './theme';
 
 interface Props {
   question: Question;
@@ -57,12 +57,12 @@ export function QuestionCard({ question, width, view, revealed, sort, doubled, s
   const size = (chars > 90 ? 16 : chars > 55 ? 19 : chars > 28 ? 23 : 29) * s;
 
   return (
-    <View testID="card" style={[styles.card, { width, height, backgroundColor: theme.face, borderRadius: 18 * s, padding: 16 * s }, style]}>
+    <View testID="card" style={[styles.card, { width, height, backgroundColor: theme.face, borderRadius: 18 * s, padding: 16 * s, boxShadow: cardShadow(width) }, style]}>
       <View style={styles.top}>
         {question.rank && question.suit ? (
           <View style={styles.cornerCol}>
             <Text style={[styles.rank, { fontSize: 34 * s, lineHeight: 36 * s, letterSpacing: -1.5 * s, color: red ? theme.accent : theme.ink }]}>{question.rank}</Text>
-            <Text style={[styles.rank, { fontSize: 24 * s, lineHeight: 26 * s, marginTop: -2, color: red ? theme.accent : theme.ink }]}>{SUIT_SYMBOL[question.suit]}</Text>
+            <Text style={[styles.rank, { fontSize: 24 * s, lineHeight: 26 * s, marginTop: 6 * s, color: red ? theme.accent : theme.ink }]}>{SUIT_SYMBOL[question.suit]}</Text>
           </View>
         ) : (
           <Text style={[styles.rank, { fontSize: 21 * s, letterSpacing: 1 * s, color: question.card.endsWith('joker2') ? theme.accent : theme.ink }]}>JOKER</Text>
@@ -117,14 +117,7 @@ export function QuestionCard({ question, width, view, revealed, sort, doubled, s
 }
 
 const styles = StyleSheet.create({
-  card: {
-    justifyContent: 'space-between',
-    shadowColor: '#000',
-    shadowOpacity: 0.18,
-    shadowRadius: 18,
-    shadowOffset: { width: 0, height: 10 },
-    elevation: 8,
-  },
+  card: { justifyContent: 'space-between' },
   top: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
   rank: { fontFamily: fonts.card },
   cornerCol: { alignItems: 'center' },

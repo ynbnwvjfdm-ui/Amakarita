@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Text } from 'react-native';
-import { QuizMode } from '../game/quiz';
+import { ATTEMPT_CHOICES, QuizMode } from '../game/quiz';
 import { useI18n } from '../i18n';
 import { SeatConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
@@ -9,7 +9,6 @@ import { Screen, formStyles } from '../ui/Screen';
 import { SeatEditor, defaultSeats } from '../ui/SeatEditor';
 import { Segmented } from '../ui/Segmented';
 
-const TARGETS = [50, 100, 150];
 
 export function QuizSetupScreen() {
   const { t } = useI18n();
@@ -17,7 +16,7 @@ export function QuizSetupScreen() {
   const [deckId, setDeckId] = useState('mix');
   const [mode, setMode] = useState<QuizMode>('phone');
   const [playerCount, setPlayerCount] = useState(2);
-  const [target, setTarget] = useState(100);
+  const [attempts, setAttempts] = useState(ATTEMPT_CHOICES[1]);
   const [seats, setSeats] = useState<SeatConfig[]>(defaultSeats);
 
   // Asking each other out loud needs people in every seat.
@@ -36,7 +35,7 @@ export function QuizSetupScreen() {
         <Button
           label={t('start')}
           disabled={!hasHuman}
-          onPress={() => nav.push({ name: 'quizGame', config: { deckId, mode, target, seats: active } })}
+          onPress={() => nav.push({ name: 'quizGame', config: { deckId, mode, attempts, seats: active } })}
         />
       }
     >
@@ -63,13 +62,14 @@ export function QuizSetupScreen() {
         label={(n) => `${n} ${t('players')}`}
       />
 
-      <Text style={formStyles.section}>{t('target')}</Text>
+      <Text style={formStyles.section}>{t('attempts')}</Text>
       <Segmented
-        options={TARGETS.map((n) => ({ value: n, label: String(n) }))}
-        value={target}
-        onChange={setTarget}
-        label={(n) => t('targetPoints', { n })}
+        options={ATTEMPT_CHOICES.map((n) => ({ value: n, label: String(n) }))}
+        value={attempts}
+        onChange={setAttempts}
+        label={(n) => t('attemptsN', { n })}
       />
+      <Text style={formStyles.note}>{t('attemptsNote')}</Text>
 
       <Text style={formStyles.section}>{t('whoPlays')}</Text>
       <SeatEditor seats={active} onChange={updateSeat} peopleOnly={mode === 'group'} />

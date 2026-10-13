@@ -1,6 +1,6 @@
 import { Image, ImageSourcePropType, StyleSheet, View, ViewStyle } from 'react-native';
 import { CARD_RATIO } from '../decks';
-import { radius } from './theme';
+import { cardShadow, radius } from './theme';
 
 interface Props {
   source: ImageSourcePropType;
@@ -13,19 +13,15 @@ export function CardImage({ source, width, style }: Props) {
   const height = width / CARD_RATIO;
   const r = Math.max(3, Math.round((radius.card * width) / 120));
   return (
-    <View testID="card" style={[styles.shadow, { width, height, borderRadius: r }, style]}>
-      <Image source={source} style={{ width, height, borderRadius: r }} resizeMode="cover" />
+    <View testID="card" style={[{ width, height, borderRadius: r, boxShadow: cardShadow(width) }, style]}>
+      {/* Clipped with no background of its own, so no light edge shows round the corners. */}
+      <View style={[styles.clip, { borderRadius: r }]}>
+        <Image source={source} style={{ width, height }} resizeMode="cover" />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  shadow: {
-    backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 3,
-  },
+  clip: { ...StyleSheet.absoluteFill, overflow: 'hidden' },
 });

@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { CARD_RATIO, DeckCard, getDeck, pageImage } from '../decks';
 import { SUIT_SYMBOL } from './table';
-import { deckTheme, fonts } from './theme';
+import { cardShadow, deckTheme, fonts } from './theme';
 
 /**
  * The part of a printed card that holds its words and pictures, as fractions
@@ -65,7 +65,7 @@ export function CardArt({ width, style, ...ref }: Props) {
 
   if (!redesign || !card) {
     return (
-      <View testID="card" style={[styles.shadow, { width, height, borderRadius: radius }, style]}>
+      <View testID="card" style={[{ width, height, borderRadius: radius, boxShadow: cardShadow(width) }, style]}>
         <View style={[styles.clip, { borderRadius: radius }]}>
           <Image source={source} style={{ width, height }} resizeMode="cover" />
         </View>
@@ -79,17 +79,20 @@ export function CardArt({ width, style, ...ref }: Props) {
   // The dark joker goes on black cards, the coloured one on red: show which is which.
   const cornerColor = joker ? (card.id.endsWith('joker2') ? theme.accent : theme.ink) : red ? theme.accent : theme.ink;
 
+  // Corners a little larger on small cards, so the number stays readable in a hand.
+  const c = s * (width < 200 ? 1.2 : 1);
   const corner = joker ? (
-    <Text style={[styles.joker, { color: cornerColor, fontSize: 21 * s, letterSpacing: 1 * s }]}>JOKER</Text>
+    <Text style={[styles.joker, { color: cornerColor, fontSize: 21 * c, letterSpacing: 1 * c }]}>JOKER</Text>
   ) : (
     <View style={styles.cornerCol}>
-      <Text style={[styles.rank, { color: cornerColor, fontSize: 34 * s, lineHeight: 36 * s, letterSpacing: -1.5 * s }]}>{card.rank}</Text>
-      <Text style={[styles.suit, { color: cornerColor, fontSize: 24 * s, lineHeight: 26 * s }]}>{SUIT_SYMBOL[card.suit!]}</Text>
+      <Text style={[styles.rank, { color: cornerColor, fontSize: 34 * c, lineHeight: 36 * c, letterSpacing: -1.5 * c }]}>{card.rank}</Text>
+      {/* A clear gap, so the suit never touches the number or letter above it. */}
+      <Text style={[styles.suit, { color: cornerColor, fontSize: 24 * c, lineHeight: 26 * c, marginTop: 6 * c }]}>{SUIT_SYMBOL[card.suit!]}</Text>
     </View>
   );
 
   return (
-    <View testID="card" style={[styles.shadow, { width, height, borderRadius: radius }, style]}>
+    <View testID="card" style={[{ width, height, borderRadius: radius, boxShadow: cardShadow(width) }, style]}>
       <View style={[styles.clip, { borderRadius: radius, backgroundColor: theme.face }]}>
       <View
         style={[
@@ -129,21 +132,13 @@ export function CardArt({ width, style, ...ref }: Props) {
 }
 
 const styles = StyleSheet.create({
-  shadow: {
-    backgroundColor: 'transparent',
-    shadowColor: '#000',
-    shadowOpacity: 0.22,
-    shadowRadius: 6,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 4,
-  },
   // Clips the face to the rounded corners; the shadow lives on the parent.
   clip: { ...StyleSheet.absoluteFill, overflow: 'hidden' },
   frame: { position: 'absolute' },
   corner: { position: 'absolute' },
   cornerCol: { alignItems: 'center' },
   rank: { fontFamily: fonts.display },
-  suit: { fontFamily: fonts.display, marginTop: -2 },
+  suit: { fontFamily: fonts.display },
   joker: { fontFamily: fonts.display },
   pill: { position: 'absolute', maxWidth: '52%' },
   pillText: { fontFamily: fonts.bold, letterSpacing: 0.4 },

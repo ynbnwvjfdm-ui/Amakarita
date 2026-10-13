@@ -6,8 +6,9 @@ The main goal is teaching the Kinyarwanda printed on every card; the games
 are how people practise it.
 
 - **Amakarita** (question game): draw a card, answer its question, score
-  the card's value. The phone checks the answer, or players ask each other
-  out loud. Rules at the top of `src/game/quiz.ts`.
+  the card's value. Each player gets 5, 10 or 15 attempts; the most points
+  wins. The phone checks the answer, or players ask each other out loud.
+  Rules at the top of `src/game/quiz.ts`.
 - **Matatu** (Amagande): 2–6 players, 4–7 cards each, rounds until one
   player is left. Rules at the top of `src/game/matatu.ts`.
 - **Card of the day** on the home screen, and every card's question in the

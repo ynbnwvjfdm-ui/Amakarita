@@ -25,7 +25,8 @@ export interface QuizConfig {
   /** A deck id, or 'mix' for all five suited decks. */
   deckId: string;
   mode: QuizMode;
-  target: number;
+  /** Attempts each player gets. */
+  attempts: number;
   seats: SeatConfig[];
 }
 

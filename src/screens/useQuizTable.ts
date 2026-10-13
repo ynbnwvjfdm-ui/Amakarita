@@ -21,7 +21,7 @@ export function useQuizTable(config: QuizConfig) {
       .map((q) => q.card);
   }, [config.deckId]);
 
-  const fresh = () => newQuiz(QUESTIONS, cardIds, n, config.mode, config.target, Math.random);
+  const fresh = () => newQuiz(QUESTIONS, cardIds, n, config.mode, config.attempts, Math.random);
   const [game, setGame] = useState<QuizState>(fresh);
   // Group mode: the reader has looked at the answer.
   const [revealed, setRevealed] = useState(false);

@@ -11,6 +11,7 @@ import {
   newQuiz,
   nextTurn,
   quizWinners,
+  attemptsLeft,
   stealTarget,
   applyJoker,
 } from '../quiz';
@@ -21,8 +22,8 @@ const rng = seededRng(3);
 const ids = (deck: string) => Object.keys(bank).filter((id) => bank[id].deck === deck);
 
 /** A game whose pile starts with the given cards. */
-function withPile(pile: string[], players = 2, mode: 'phone' | 'group' = 'phone', target = 100): QuizState {
-  return { ...newQuiz(bank, pile, players, mode, target, rng), pile };
+function withPile(pile: string[], players = 2, mode: 'phone' | 'group' = 'phone', attempts = 10): QuizState {
+  return { ...newQuiz(bank, pile, players, mode, attempts, rng), pile };
 }
 
 describe('question bank', () => {
@@ -74,11 +75,34 @@ describe('a turn in phone mode', () => {
     expect(s.result).toEqual({ correct: false, chosen: 'KAMENA', points: 0 });
     expect(s.missed).toEqual(['imvugo-8C']);
   });
-  it('first to the target wins', () => {
-    let s = draw(withPile(['imvugo-AC', 'imvugo-2C'], 2, 'phone', 15), bank, rng);
+  it('after everyone has used their attempts, the most points wins', () => {
+    // Two players, one attempt each.
+    let s = draw(withPile(['imvugo-AC', 'imvugo-2C', 'imvugo-3C'], 2, 'phone', 1), bank, rng);
+    expect(attemptsLeft(s, 0)).toBe(1);
     s = nextTurn(answer(s, 'UMUBYEYI'));
+    expect(s.phase).toBe('draw');
+    expect(attemptsLeft(s, 0)).toBe(0);
+    expect(attemptsLeft(s, 1)).toBe(1);
+    s = draw(s, bank, rng);
+    s = nextTurn(answer(s, 'NOPE'));
     expect(s.phase).toBe('over');
+    expect(s.taken).toEqual([1, 1]);
     expect(quizWinners(s)).toEqual([0]);
+  });
+  it('every player gets the same number of turns', () => {
+    const all = ids('imvugo');
+    let s = newQuiz(bank, all, 3, 'phone', 5, seededRng(5));
+    let turns = 0;
+    while (s.phase !== 'over') {
+      if (s.phase === 'draw') {
+        s = draw(s, bank, rng);
+        turns++;
+      } else if (s.phase === 'answer') s = answer(s, s.current!.options[0]);
+      else if (s.phase === 'joker') s = applyJoker(s, 'double');
+      else s = nextTurn(s);
+    }
+    expect(turns).toBe(15);
+    expect(s.taken).toEqual([5, 5, 5]);
   });
   it('the game ends when the cards run out', () => {
     let s = draw(withPile(['imvugo-2C']), bank, rng);
@@ -96,7 +120,7 @@ describe('group mode', () => {
   it('kirazira/indangagaciro: the statement read out comes with its right pile', () => {
     const r = seededRng(11);
     for (let i = 0; i < 20; i++) {
-      const s = draw({ ...newQuiz(bank, ['kirazira-5H'], 2, 'group', 100, r), pile: ['kirazira-5H'] }, bank, r);
+      const s = draw({ ...newQuiz(bank, ['kirazira-5H'], 2, 'group', 10, r), pile: ['kirazira-5H'] }, bank, r);
       const sort = s.current!.sort!;
       const truth = Object.values(bank).find((q) => q.statement === sort.statement)!.category;
       expect(sort.answer).toBe(truth);
@@ -138,7 +162,7 @@ describe('whole games', () => {
     for (let seed = 1; seed <= 20; seed++) {
       const r = seededRng(seed);
       const all = ['ntibavuga-bavuga', 'ikeshamvugo', 'imvugo', 'kirazira', 'indangagaciro'].flatMap(ids);
-      let s = newQuiz(bank, all, 1 + (seed % 6), mode, 100, r);
+      let s = newQuiz(bank, all, 1 + (seed % 6), mode, [5, 10, 15, 60][seed % 4], r);
       let steps = 0;
       while (s.phase !== 'over') {
         if (++steps > 5000) throw new Error('stuck');

@@ -75,5 +75,12 @@ export function playingCards(deckId: string): PlayingCard[] {
   );
 }
 
+/** Ids of the deck's two jokers: the one printed in the dark ink first, then the coloured one. */
+export function jokerIds(deckId: string): [string, string] {
+  const jokers = getDeck(deckId).cards.filter((c) => c.kind === 'joker');
+  if (jokers.length !== 2) throw new Error(`${deckId} has ${jokers.length} jokers`);
+  return [jokers[0].id, jokers[1].id];
+}
+
 /** Card image width / height, from the 820 x 1120 pt PDF pages. */
 export const CARD_RATIO = 820 / 1120;

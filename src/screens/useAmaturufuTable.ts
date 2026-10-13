@@ -30,7 +30,11 @@ export function useAmaturufuTable(config: AmaturufuConfig) {
   // Whose cards are face up at the bottom. With one person it is always them;
   // when people share the phone it changes only after a hand-over.
   const [viewer, setViewer] = useState<number | null>(shared ? null : humans[0]);
-  const [handoff, setHandoff] = useState<number | null>(null);
+  // A person's turn while someone else's cards are on show: hand the phone over first.
+  const handoff =
+    !spotlight && game.phase === 'playing' && config.seats[game.turn].kind === 'human' && game.turn !== viewer
+      ? game.turn
+      : null;
 
   const play = useCallback((seat: number, card: PlayingCard) => {
     setGame((g) => playCard(g, seat, card.id));
@@ -53,9 +57,8 @@ export function useAmaturufuTable(config: AmaturufuConfig) {
         const id = setTimeout(() => play(seat, chooseCard(game, seat)), BOT_DELAY);
         return () => clearTimeout(id);
       }
-      if (seat !== viewer) setHandoff(seat);
     }
-  }, [game, spotlight, handoff, viewer, config.seats, play]);
+  }, [game, spotlight, handoff, config.seats, play]);
 
   const myTurn =
     viewer !== null && game.phase === 'playing' && game.turn === viewer && !spotlight && handoff === null;
@@ -72,14 +75,10 @@ export function useAmaturufuTable(config: AmaturufuConfig) {
       if (myTurn && viewer !== null) play(viewer, card);
     },
     dismissSpotlight: () => setSpotlight(null),
-    acceptHandoff: () => {
-      setViewer(handoff);
-      setHandoff(null);
-    },
+    acceptHandoff: () => setViewer(handoff),
     playAgain: () => {
       setGame((g) => newGame((g.dealer + 1) % n));
       setSpotlight(null);
-      setHandoff(null);
       setViewer(shared ? null : humans[0]);
     },
   };

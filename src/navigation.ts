@@ -14,12 +14,20 @@ export interface AmaturufuConfig {
   seats: SeatConfig[];
 }
 
+export interface MatatuConfig {
+  deckId: string;
+  handSize: number;
+  seats: SeatConfig[];
+}
+
 export type Route =
   | { name: 'home' }
   | { name: 'decks' }
   | { name: 'deck'; deckId: string }
   | { name: 'amaturufuSetup' }
-  | { name: 'amaturufuGame'; config: AmaturufuConfig };
+  | { name: 'amaturufuGame'; config: AmaturufuConfig }
+  | { name: 'matatuSetup' }
+  | { name: 'matatuGame'; config: MatatuConfig };
 
 export interface Nav {
   push: (route: Route) => void;

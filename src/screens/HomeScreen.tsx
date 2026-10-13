@@ -41,13 +41,19 @@ export function HomeScreen() {
     <Screen title={t('appTitle')} right={<LanguageToggle />}>
       <Text style={styles.section}>{t('games')}</Text>
       <GameTile
+        title="Matatu"
+        tagline={t('matatuTagline')}
+        deckId="kirazira"
+        page={14}
+        onPress={() => nav.push({ name: 'matatuSetup' })}
+      />
+      <GameTile
         title="Amaturufu"
         tagline={t('amaturufuTagline')}
         deckId="ntibavuga-bavuga"
         page={27}
         onPress={() => nav.push({ name: 'amaturufuSetup' })}
       />
-      <GameTile title="Amagande" tagline={t('amagandeTagline')} deckId="kirazira" page={54} soonLabel={t('comingSoon')} />
       <GameTile title="Ibisakuzo" tagline={t('ibisakuzoTagline')} deckId="ibisakuzo" page={1} soonLabel={t('comingSoon')} />
 
       <View style={styles.sectionRow}>

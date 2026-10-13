@@ -46,3 +46,10 @@ const styles = StyleSheet.create({
   content: { padding: 16, paddingBottom: 32, gap: 16 },
   footer: { padding: 16, borderTopWidth: 1, borderTopColor: colors.line, backgroundColor: colors.bg },
 });
+
+/** Shared text styles for setup forms. */
+export const formStyles = StyleSheet.create({
+  section: { fontSize: 13, fontWeight: '700', color: colors.muted, textTransform: 'uppercase', letterSpacing: 1, marginTop: 4 },
+  note: { fontSize: 14, color: colors.muted, lineHeight: 20 },
+  warning: { fontSize: 14, color: colors.accent, textAlign: 'center' },
+});

@@ -1,20 +1,17 @@
 import { useState } from 'react';
-import { ImageSourcePropType, Modal, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { ImageSourcePropType, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { teamScores, trickWinner, winningTeams } from '../game/amaturufu';
-import { PlayingCard, Suit } from '../game/cards';
+import { PlayingCard } from '../game/cards';
 import { backImage, cardImage, pageImage, getDeck } from '../decks';
 import { useI18n } from '../i18n';
 import { AmaturufuConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
-import { colors, MAX_WIDTH, radius } from '../ui/theme';
+import { LeaveConfirm, Panel, PassPhone, SUIT_COLOR, SUIT_SYMBOL, tableStyles } from '../ui/table';
+import { colors, MAX_WIDTH } from '../ui/theme';
 import { useAmaturufuTable } from './useAmaturufuTable';
-
-// Text presentation selector (U+FE0E) keeps phones from drawing emoji hearts.
-const SUIT_SYMBOL: Record<Suit, string> = { spades: '♠\uFE0E', hearts: '♥\uFE0E', clubs: '♣\uFE0E', diamonds: '♦\uFE0E' };
-const SUIT_COLOR: Record<Suit, string> = { spades: '#FFFFFF', hearts: '#FF6B6B', clubs: '#FFFFFF', diamonds: '#FF6B6B' };
 
 export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
   const { t } = useI18n();
@@ -48,7 +45,8 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
 
   let status: string;
   if (game.phase === 'trickComplete') {
-    status = t('tookTrick', { name: name(trickWinner(game.trick, game.trumpSuit).seat) });
+    const taker = trickWinner(game.trick, game.trumpSuit).seat;
+    status = taker === soloHuman && config.seats[taker].name === null ? t('youTookTrick') : t('tookTrick', { name: name(taker) });
   } else if (game.turn === viewer) {
     status = myTurn ? `${t('yourTurn')} · ${t('tapToPlay')}` : t('yourTurn');
   } else {
@@ -62,12 +60,12 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
   };
 
   return (
-    <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
-      <View style={[styles.column, { width: W }]}>
+    <SafeAreaView style={tableStyles.safe} edges={['top', 'bottom']}>
+      <View style={[tableStyles.column, { width: W }]}>
         {/* Top bar: leave, trump, pile */}
-        <View style={styles.topBar}>
+        <View style={tableStyles.topBar}>
           <Pressable accessibilityRole="button" accessibilityLabel={t('leaveGame')} onPress={() => setLeaving(true)} hitSlop={12}>
-            <Text style={styles.close}>✕</Text>
+            <Text style={tableStyles.close}>✕</Text>
           </Pressable>
           <Pressable
             accessibilityRole="button"
@@ -77,8 +75,8 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
           >
             {game.stock.length > 0 ? <CardImage source={img(game.trumpCard)} width={40} /> : null}
             <View>
-              <Text style={styles.trumpLabel}>{t('trump')}</Text>
-              <Text style={[styles.trumpSuit, { color: SUIT_COLOR[game.trumpSuit] }]}>{SUIT_SYMBOL[game.trumpSuit]}</Text>
+              <Text style={tableStyles.label}>{t('trump')}</Text>
+              <Text style={[tableStyles.suit, { color: SUIT_COLOR[game.trumpSuit] }]}>{SUIT_SYMBOL[game.trumpSuit]}</Text>
             </View>
           </Pressable>
           <View style={styles.pile}>
@@ -88,14 +86,14 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
         </View>
 
         {/* Other players */}
-        <View style={styles.others}>
+        <View style={tableStyles.others}>
           {others.map((seat) => {
             const active = game.phase === 'playing' && game.turn === seat;
             return (
-              <View key={seat} style={[styles.badge, { width: badgeWidth }, active && styles.badgeActive]}>
-                <View style={styles.badgeHead}>
+              <View key={seat} style={[tableStyles.badge, { width: badgeWidth }, active && tableStyles.badgeActive]}>
+                <View style={tableStyles.badgeHead}>
                   {teamsMode ? <View style={[styles.dot, { backgroundColor: colors.teams[game.teams[seat]] }]} /> : null}
-                  <Text style={styles.badgeName} numberOfLines={1}>
+                  <Text style={tableStyles.badgeName} numberOfLines={1}>
                     {name(seat)}
                   </Text>
                 </View>
@@ -125,13 +123,13 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
               </Pressable>
             ))}
           </View>
-          <Text style={[styles.status, game.turn === viewer && game.phase === 'playing' && styles.statusMine]}>{status}</Text>
+          <Text style={[tableStyles.status, game.turn === viewer && game.phase === 'playing' && tableStyles.statusMine]}>{status}</Text>
         </View>
 
         {/* Cards of the person holding the phone */}
         <View style={styles.handArea}>
           {viewer !== null ? (
-            <Text style={styles.handName}>
+            <Text style={tableStyles.handName}>
               {teamsMode ? `${name(viewer)} · ${teamName(game.teams[viewer])}` : name(viewer)}
             </Text>
           ) : null}
@@ -180,21 +178,14 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
 
       <CardViewer source={zoom} onClose={() => setZoom(null)} />
 
-      {/* Pass the phone */}
-      <Modal visible={handoff !== null} animationType="fade" onRequestClose={() => setLeaving(true)}>
-        <SafeAreaView style={[styles.safe, styles.handoff]}>
-          <CardImage source={pageImage(config.deckId, deck.cover.page)} width={120} />
-          <Text style={styles.handoffTitle}>{handoff !== null ? t('passPhoneTo', { name: name(handoff) }) : ''}</Text>
-          <Text style={styles.handoffNote}>{t('dontLook')}</Text>
-          <Button label={handoff !== null ? t('showMyCards', { name: name(handoff) }) : ''} onPress={table.acceptHandoff} />
-        </SafeAreaView>
-      </Modal>
+      <PassPhone
+        name={handoff !== null ? name(handoff) : null}
+        cover={pageImage(config.deckId, deck.cover.page)}
+        onAccept={table.acceptHandoff}
+        onRequestClose={() => setLeaving(true)}
+      />
 
-      {/* Results */}
-      <Modal visible={game.phase === 'finished'} transparent animationType="fade">
-        <View style={styles.dim}>
-          <View style={styles.panel}>
-            <Text style={styles.panelTitle}>{t('gameOver')}</Text>
+      <Panel visible={game.phase === 'finished'} title={t('gameOver')}>
             <Results
               scores={teamScores(game)}
               winners={winningTeams(game)}
@@ -216,20 +207,9 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
             />
             <Button label={t('playAgain')} onPress={table.playAgain} />
             <Button label={t('home')} variant="secondary" onPress={nav.home} />
-          </View>
-        </View>
-      </Modal>
+      </Panel>
 
-      {/* Leave confirmation */}
-      <Modal visible={leaving} transparent animationType="fade" onRequestClose={() => setLeaving(false)}>
-        <View style={styles.dim}>
-          <View style={styles.panel}>
-            <Text style={styles.panelTitle}>{t('leaveConfirm')}</Text>
-            <Button label={t('yes')} onPress={nav.home} />
-            <Button label={t('no')} variant="secondary" onPress={() => setLeaving(false)} />
-          </View>
-        </View>
-      </Modal>
+      <LeaveConfirm visible={leaving} onLeave={nav.home} onStay={() => setLeaving(false)} />
     </SafeAreaView>
   );
 }
@@ -250,14 +230,14 @@ function Results({
   const order = scores.map((s, team) => ({ s, team })).sort((a, b) => b.s - a.s);
   return (
     <View style={{ gap: 10 }}>
-      <Text style={styles.headline}>{headline(winners)}</Text>
+      <Text style={tableStyles.headline}>{headline(winners)}</Text>
       {order.map(({ s, team }) => (
-        <View key={team} style={styles.scoreRow}>
-          <Text style={[styles.scoreName, winners.includes(team) && styles.scoreWinner]} numberOfLines={2}>
+        <View key={team} style={tableStyles.scoreRow}>
+          <Text style={[tableStyles.scoreName, winners.includes(team) && tableStyles.scoreHighlight]} numberOfLines={2}>
             {label(team)}
           </Text>
-          <Text style={[styles.scorePoints, winners.includes(team) && styles.scoreWinner]}>
-            {s} <Text style={styles.scoreUnit}>{pointsLabel.toLowerCase()}</Text>
+          <Text style={[tableStyles.scorePoints, winners.includes(team) && tableStyles.scoreHighlight]}>
+            {s} <Text style={tableStyles.scoreUnit}>{pointsLabel.toLowerCase()}</Text>
           </Text>
         </View>
       ))}
@@ -266,43 +246,17 @@ function Results({
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: colors.table },
-  column: { flex: 1, alignSelf: 'center', paddingHorizontal: 16 },
-  topBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 8 },
-  close: { fontSize: 22, color: colors.tableInk, paddingHorizontal: 4 },
   trump: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  trumpLabel: { fontSize: 12, fontWeight: '700', color: colors.tableMuted, textTransform: 'uppercase' },
-  trumpSuit: { fontSize: 24, fontWeight: '800' },
   pile: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   pileText: { fontSize: 13, color: colors.tableMuted, fontWeight: '600' },
-  others: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 4 },
-  badge: { padding: 6, borderRadius: radius.button, backgroundColor: 'rgba(255,255,255,0.08)', borderWidth: 2, borderColor: 'transparent', gap: 6 },
-  badgeActive: { borderColor: colors.highlight },
-  badgeHead: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   dot: { width: 10, height: 10, borderRadius: 5 },
-  badgeName: { flex: 1, fontSize: 12, fontWeight: '700', color: colors.tableInk },
   backs: { flexDirection: 'row', gap: 3, minHeight: 22 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 16 },
   trick: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 10, minHeight: 120 },
   played: { alignItems: 'center', gap: 4 },
   playedName: { fontSize: 12, color: colors.tableMuted, maxWidth: 92 },
   winnerCard: { borderWidth: 3, borderColor: colors.highlight },
-  status: { fontSize: 16, fontWeight: '600', color: colors.tableInk, textAlign: 'center' },
-  statusMine: { color: colors.highlight },
   handArea: { paddingBottom: 12, gap: 8 },
-  handName: { fontSize: 14, fontWeight: '700', color: colors.tableMuted, textAlign: 'center' },
   hand: { flexDirection: 'row', justifyContent: 'center', gap: 12, minHeight: 150 },
   playable: { transform: [{ translateY: -6 }] },
-  handoff: { alignItems: 'center', justifyContent: 'center', gap: 20, padding: 24 },
-  handoffTitle: { fontSize: 26, fontWeight: '800', color: colors.tableInk, textAlign: 'center' },
-  handoffNote: { fontSize: 16, color: colors.tableMuted, textAlign: 'center' },
-  dim: { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', alignItems: 'center', justifyContent: 'center', padding: 24 },
-  panel: { width: '100%', maxWidth: 400, backgroundColor: colors.bg, borderRadius: radius.panel, padding: 20, gap: 12 },
-  panelTitle: { fontSize: 22, fontWeight: '800', color: colors.ink, textAlign: 'center' },
-  headline: { fontSize: 18, fontWeight: '700', color: colors.accent, textAlign: 'center' },
-  scoreRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 12 },
-  scoreName: { flex: 1, fontSize: 15, color: colors.ink },
-  scorePoints: { fontSize: 20, fontWeight: '800', color: colors.ink },
-  scoreUnit: { fontSize: 12, fontWeight: '600', color: colors.muted },
-  scoreWinner: { color: colors.accent },
 });

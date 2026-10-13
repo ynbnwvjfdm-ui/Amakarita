@@ -10,6 +10,8 @@ import { DeckListScreen } from './src/screens/DeckListScreen';
 import { DeckScreen } from './src/screens/DeckScreen';
 import { AmaturufuSetupScreen } from './src/screens/AmaturufuSetupScreen';
 import { AmaturufuGameScreen } from './src/screens/AmaturufuGameScreen';
+import { MatatuSetupScreen } from './src/screens/MatatuSetupScreen';
+import { MatatuGameScreen } from './src/screens/MatatuGameScreen';
 
 function CurrentScreen({ route }: { route: Route }) {
   switch (route.name) {
@@ -23,6 +25,10 @@ function CurrentScreen({ route }: { route: Route }) {
       return <AmaturufuSetupScreen />;
     case 'amaturufuGame':
       return <AmaturufuGameScreen config={route.config} />;
+    case 'matatuSetup':
+      return <MatatuSetupScreen />;
+    case 'matatuGame':
+      return <MatatuGameScreen config={route.config} />;
   }
 }
 
@@ -54,7 +60,7 @@ export default function App() {
     <SafeAreaProvider>
       <I18nProvider>
         <NavContext.Provider value={nav}>
-          <StatusBar style={route.name === 'amaturufuGame' ? 'light' : 'dark'} />
+          <StatusBar style={route.name === 'amaturufuGame' || route.name === 'matatuGame' ? 'light' : 'dark'} />
           <CurrentScreen route={route} />
         </NavContext.Provider>
       </I18nProvider>

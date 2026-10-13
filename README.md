@@ -2,8 +2,14 @@
 
 Mobile app for traditional Rwandan card decks, built with Expo (React Native).
 
-Playable now: **Amaturufu** for 2, 4 or 6 players, against the phone or
-passing one phone around. Amagande and Ibisakuzo are coming next.
+Playable now, against the phone or passing one phone around:
+
+- **Matatu** (Amagande): 2–6 players, 4–7 cards each, rounds until one
+  player is left. Rules as given by the deck's author are written out at the
+  top of `src/game/matatu.ts`.
+- **Amaturufu**: 2, 4 or 6 players; rules at the top of `src/game/amaturufu.ts`.
+
+Ibisakuzo (riddles) comes later.
 
 ## Running the app
 
@@ -12,16 +18,20 @@ npm install
 npx expo start          # scan the QR code with Expo Go on a phone
 npm test                # game-rule tests
 npm run typecheck
+npm run lint
 npm run export:web      # browser build in dist/
 ```
 
 ## Code
 
-- `src/game/` — game rules, with no screen code: `amaturufu.ts` (rules),
-  `amaturufuBot.ts` (computer player), tests in `__tests__/`.
-- `src/screens/` — the app's screens; `useAmaturufuTable.ts` runs a game
-  (computer turns, pauses, passing the phone).
-- `src/ui/` — shared building blocks (buttons, card images, theme).
+- `src/game/` — game rules, with no screen code: one file per game
+  (`matatu.ts`, `amaturufu.ts`), a computer player for each (`*Bot.ts`),
+  tests in `__tests__/`.
+- `src/screens/` — the app's screens; `useMatatuTable.ts` and
+  `useAmaturufuTable.ts` run a game (computer turns, pauses, passing the
+  phone, Matatu's hidden 10-second "Warning!" timer).
+- `src/ui/` — shared building blocks (buttons, card images, setup form
+  pieces, table modals, theme).
 - `src/i18n.tsx` — every piece of on-screen text in Kinyarwanda and English.
 - `src/decks.ts` — loads the deck data and card images.
 

@@ -23,7 +23,7 @@ export function GameTickets() {
     { key: 'quiz', title: 'Amakarita', tagline: t('quizTagline'), big: '270', bigLabel: t('questionsCount'), color: colors.lime, onPress: () => nav.push({ name: 'quizSetup' }) },
     { key: 'matatu', title: 'Matatu', tagline: t('matatuTicket'), big: '2–6', bigLabel: t('playersWord'), color: colors.sky, onPress: () => nav.push({ name: 'matatuSetup' }) },
     { key: 'amaturufu', title: 'Amaturufu', tagline: t('amaturufuTagline'), big: '120', bigLabel: t('points').toLowerCase(), color: colors.pink },
-    { key: 'ibisakuzo', title: 'Ibisakuzo', tagline: t('ibisakuzoTagline'), big: '54', bigLabel: t('questionsCount'), color: colors.mint },
+    { key: 'ibisakuzo', title: 'Ibisakuzo', tagline: t('ibisakuzoTagline'), big: '54', bigLabel: t('riddlesWord'), color: colors.mint, onPress: () => nav.push({ name: 'ibisakuzoSetup' }) },
   ];
 
   return (

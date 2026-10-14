@@ -8,7 +8,7 @@ import { CardArt } from './CardArt';
 import { Overlay } from './Overlay';
 import { colors, fonts, MAX_WIDTH, radius } from './theme';
 
-export type GuideGame = 'matatu' | 'quiz';
+export type GuideGame = 'matatu' | 'quiz' | 'ibisakuzo';
 
 interface Page {
   title: StringKey;
@@ -32,6 +32,12 @@ const PAGES: Record<GuideGame, Page[]> = {
     { title: 'gQuizJokerT', body: 'gQuizJoker', cards: ['joker2'] },
     { title: 'gQuizWinT', body: 'gQuizWin', cards: [] },
     { title: 'gQuizLearnT', body: 'gQuizLearn', cards: [] },
+  ],
+  ibisakuzo: [
+    { title: 'gRidGoalT', body: 'gRidGoal', cards: [] },
+    { title: 'gRidSakweT', body: 'gRidSakwe', cards: ['02'] },
+    { title: 'gRidAnswerT', body: 'gRidAnswer', cards: [] },
+    { title: 'gRidWinT', body: 'gRidWin', cards: [] },
   ],
 };
 

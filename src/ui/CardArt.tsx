@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Image, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { CARD_RATIO, DeckCard, getDeck, pageEdge, pageImage } from '../decks';
 import { SUIT_SYMBOL } from './table';
@@ -37,6 +38,8 @@ export interface ArtRef {
 interface Props extends ArtRef {
   width: number;
   style?: ViewStyle;
+  /** Drawn over the face, inside its rounded edge (e.g. a flap hiding a riddle's answer). */
+  children?: ReactNode;
 }
 
 function findCard(ref: ArtRef): { card: DeckCard | undefined; page: number } {
@@ -55,7 +58,7 @@ function withAlpha(hex: string, alpha: number): string {
  * around their original centre; covers, backs and riddle cards are shown as
  * printed.
  */
-export function CardArt({ width, style, ...ref }: Props) {
+export function CardArt({ width, style, children, ...ref }: Props) {
   const { card, page } = findCard(ref);
   const height = width / CARD_RATIO;
   const s = width / 300;
@@ -68,6 +71,7 @@ export function CardArt({ width, style, ...ref }: Props) {
       <View testID="card" style={[{ width, height, borderRadius: radius }, cardShadowStyle(width, pageEdge(ref.deckId, page)), style]}>
         <View style={[styles.clip, { borderRadius: radius }]}>
           <Image source={source} style={{ width, height }} resizeMode="cover" />
+          {children}
         </View>
       </View>
     );
@@ -126,6 +130,7 @@ export function CardArt({ width, style, ...ref }: Props) {
       <Text style={[styles.label, { bottom: 20 * s, left: 18 * s, fontSize: 7.5 * s, letterSpacing: 1.2 * s, color: withAlpha(theme.ink, 0.55) }]} numberOfLines={1}>
         {SIDE_LABEL[ref.deckId]}
       </Text>
+      {children}
       </View>
     </View>
   );

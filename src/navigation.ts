@@ -32,6 +32,13 @@ export interface QuizConfig {
   seats: SeatConfig[];
 }
 
+export interface IbisakuzoConfig {
+  /** Riddles each player answers. */
+  attempts: number;
+  /** Two people: the first asks first. */
+  seats: SeatConfig[];
+}
+
 /** The screens reached from the tab bar. */
 export type TabName = 'home' | 'decks' | 'games';
 
@@ -45,7 +52,9 @@ export type Route =
   | { name: 'amaturufuSetup' }
   | { name: 'amaturufuGame'; config: AmaturufuConfig }
   | { name: 'matatuSetup' }
-  | { name: 'matatuGame'; config: MatatuConfig };
+  | { name: 'matatuGame'; config: MatatuConfig }
+  | { name: 'ibisakuzoSetup' }
+  | { name: 'ibisakuzoGame'; config: IbisakuzoConfig };
 
 export interface Nav {
   push: (route: Route) => void;

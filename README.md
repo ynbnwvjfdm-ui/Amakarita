@@ -18,8 +18,12 @@ are how people practise it.
   a playing card — the streak in the corners, points (each right answer worth
   its card's value), a medal per deck — and opens the share sheet
   (`src/ui/ShareCard.tsx`). From a card in the deck browser, that card is on it too.
-- Amaturufu (rules in `src/game/amaturufu.ts`) and Ibisakuzo are switched
-  off for now.
+- **Ibisakuzo** (riddles), two people on one phone: one asks ("Sakwe sakwe!" —
+  "Soma!") and reads the riddle at the top of the printed card; the answer at
+  the bottom stays under a flap until the asker uncovers it and says whether
+  the other got it (one point). Then they swap; 5/10/15 riddles each, most
+  points wins. Rules at the top of `src/game/ibisakuzo.ts`.
+- Amaturufu (rules in `src/game/amaturufu.ts`) is switched off for now.
 
 ## Questions
 

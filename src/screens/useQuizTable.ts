@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { drawWeight, weightedOrder } from '../game/progress';
+import { countKnown, drawWeight, weightedOrder } from '../game/progress';
 import { QuizState, answer, applyJoker, draw, judge, newQuiz, nextTurn, stealTarget } from '../game/quiz';
 import { useProgress } from '../progressStore';
 import { SUITED_DECKS } from '../decks';
@@ -12,6 +12,9 @@ export const BOT_THINK = 1400;
 export const BOT_NEXT = 2600;
 /** How often a computer player knows the answer. */
 export const BOT_KNOWS = 0.65;
+
+/** The question cards of one deck. */
+export const deckCards = (deckId: string) => Object.values(QUESTIONS).filter((q) => q.deck === deckId).map((q) => q.card);
 
 /** Runs one game of "Amakarita": drawing, answering, jokers and computer turns. */
 export function useQuizTable(config: QuizConfig) {
@@ -43,6 +46,11 @@ export function useQuizTable(config: QuizConfig) {
     return g;
   };
   const [game, setGame] = useState<QuizState>(fresh);
+  // What each learner knew per deck when the game started, to spot new medals at the end.
+  const decksInGame = useMemo(() => [...new Set(cardIds.map((id) => QUESTIONS[id].deck))], [cardIds]);
+  const snapshot = () =>
+    Object.fromEntries(learners.map((id) => [id, Object.fromEntries(decksInGame.map((d) => [d, countKnown(progressOf(id), deckCards(d))]))]));
+  const [knownAtStart, setKnownAtStart] = useState<Record<string, Record<string, number>>>(snapshot);
   // Group mode: the reader has looked at the answer.
   const [revealed, setRevealed] = useState(false);
   const bot = config.seats[game.turn]?.kind === 'bot';
@@ -97,7 +105,11 @@ export function useQuizTable(config: QuizConfig) {
     },
     playAgain: () => {
       setRevealed(false);
+      setKnownAtStart(snapshot());
       setGame(fresh());
     },
+    learners,
+    decksInGame,
+    knownAtStart,
   };
 }

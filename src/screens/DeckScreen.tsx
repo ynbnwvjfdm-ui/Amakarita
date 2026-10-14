@@ -5,12 +5,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { getDeck, pageImage } from '../decks';
 import { useI18n } from '../i18n';
 import { useNav } from '../navigation';
-import { CardStatus, cardStatus, countKnown } from '../game/progress';
+import { CardStatus, cardStatus, countKnown, medalFor, nextMedal } from '../game/progress';
 import { useProgress } from '../progressStore';
 import { QUESTIONS, questionFor } from '../questions';
 import { CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
+import { Button } from '../ui/Button';
 import { CardViewer } from '../ui/CardViewer';
+import { MEDAL_KEY, MedalIcon } from '../ui/Medal';
+import { shareText } from '../ui/share';
 import { QuestionReview } from '../ui/QuestionReview';
 import { colors, deckTheme, fonts, MAX_WIDTH, radius } from '../ui/theme';
 
@@ -32,6 +35,9 @@ export function DeckScreen({ deckId }: { deckId: string }) {
   const titleSize = Math.min(34, titleRoom / (longest * 0.58));
   const { progress } = useProgress();
   const asked = deck.cards.filter((c) => QUESTIONS[c.id]).map((c) => c.id);
+  const known = countKnown(progress, asked);
+  const medal = asked.length ? medalFor(known, asked.length) : null;
+  const next = asked.length ? nextMedal(known, asked.length) : null;
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
@@ -50,10 +56,19 @@ export function DeckScreen({ deckId }: { deckId: string }) {
                 </View>
                 {asked.length ? (
                   <View style={[styles.chip, styles.chipLight]}>
-                    <Text style={styles.chipText}>{t('knownOf', { n: countKnown(progress, asked), total: asked.length })}</Text>
+                    <Text style={styles.chipText}>{t('knownOf', { n: known, total: asked.length })}</Text>
+                  </View>
+                ) : null}
+                {medal ? (
+                  <View style={[styles.chip, styles.chipLight, styles.chipRow]}>
+                    <MedalIcon medal={medal} size={14} />
+                    <Text style={styles.chipText}>{t(MEDAL_KEY[medal])}</Text>
                   </View>
                 ) : null}
               </View>
+              {next ? (
+                <Text style={[styles.hint, { color: theme.onBase }]}>{t('nextMedal', { n: next.more, medal: t(MEDAL_KEY[next.medal]) })}</Text>
+              ) : null}
             </View>
             <CardImage source={pageImage(deckId, deck.cover.page)} width={92} style={{ transform: [{ rotate: '6deg' }] }} />
           </View>
@@ -74,6 +89,15 @@ export function DeckScreen({ deckId }: { deckId: string }) {
       <CardViewer
         art={open !== null ? { deckId, page: open } : null}
         onClose={() => setOpen(null)}
+        actions={
+          openCard?.text ? (
+            <Button
+              variant="secondary"
+              label={t('shareCard')}
+              onPress={() => shareText(`${deck.title}\n\n${openCard.text}\n\n— Amakarita`)}
+            />
+          ) : undefined
+        }
         footer={openCard ? <QuestionReview question={questionFor(openCard.id)} /> : undefined}
       />
     </SafeAreaView>
@@ -109,6 +133,8 @@ const styles = StyleSheet.create({
   sub: { fontFamily: fonts.semibold, fontSize: 15, opacity: 0.85 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 6 },
   chipLight: { backgroundColor: '#FFFFFF' },
+  chipRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  hint: { fontFamily: fonts.semibold, fontSize: 12, opacity: 0.85, marginTop: 4 },
   cell: { gap: 4 },
   status: { flexDirection: 'row', alignItems: 'center', gap: 5, height: 16, paddingLeft: 2 },
   dot: { width: 8, height: 8, borderRadius: 4 },

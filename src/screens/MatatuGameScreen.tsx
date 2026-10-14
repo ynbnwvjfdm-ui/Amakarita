@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { LayoutChangeEvent, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Animated, LayoutChangeEvent, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MatatuCard, matchWinner, topCard } from '../game/matatu';
@@ -14,6 +14,7 @@ import { CardViewer } from '../ui/CardViewer';
 import { FitScroll } from '../ui/FitScroll';
 import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
 import { HandRow } from '../ui/HandRow';
+import { feel, PopIn, useShake } from '../ui/motion';
 import { LeaveConfirm, Panel, PassPhone, SUIT_SYMBOL, tableStyles } from '../ui/table';
 import { colors, deckTheme, fonts, MAX_WIDTH, radius } from '../ui/theme';
 import { useMatatuTable } from './useMatatuTable';
@@ -46,6 +47,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
   const [zoom, setZoom] = useState<ArtRef | null>(null);
   const [leaving, setLeaving] = useState(false);
   const [stageH, setStageH] = useState(0);
+  const [shakeStyle, shake] = useShake();
 
   const n = config.seats.length;
   const deck = getDeck(config.deckId);
@@ -94,6 +96,14 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
         : isYou(notice.seat)
           ? t('youWrongCard', { n: 1 })
           : t('wrongCard', { name: name(notice.seat), n: 1 });
+
+  // A wrong card by the person holding the phone: shake the hand and buzz.
+  useEffect(() => {
+    if (notice?.kind === 'wrong' && notice.seat === viewer) {
+      shake();
+      feel.wrong();
+    }
+  }, [notice, viewer, shake]);
 
   const result = game.roundResult;
   const winner = matchWinner(game);
@@ -148,9 +158,12 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
             </View>
             <View style={styles.pileCol}>
               {top ? (
-                <Pressable accessibilityRole="button" accessibilityLabel={label(top)} onPress={() => setZoom(art(top))}>
-                  <CardArt {...art(top)} width={pileW} />
-                </Pressable>
+                // Each new top card lands on the pile, whoever played it.
+                <PopIn key={top.id}>
+                  <Pressable accessibilityRole="button" accessibilityLabel={label(top)} onPress={() => setZoom(art(top))}>
+                    <CardArt {...art(top)} width={pileW} />
+                  </Pressable>
+                </PopIn>
               ) : (
                 <View style={[styles.empty, { width: pileW, height: pileH }]} />
               )}
@@ -177,8 +190,8 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
           </View>
         </View>
 
-        {/* The hand of the person holding the phone */}
-        <View style={styles.handArea}>
+        {/* The hand of the person holding the phone; it shakes on a wrong card. */}
+        <Animated.View style={[styles.handArea, shakeStyle]}>
           {owed && owed.seat === viewer ? <Button variant="lime" label={t(owed.word)} onPress={table.sayIt} style={styles.wide} /> : null}
           {viewer !== null ? (
             <Text style={[styles.handName, { color: theme.onBase }]}>
@@ -200,12 +213,15 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
             <Button
               variant="secondary"
               label={game.pickup && game.phase === 'play' ? t('pickN', { n: game.pickup.total }) : t('pickCard')}
-              onPress={table.pick}
+              onPress={() => {
+                feel.tap();
+                table.pick();
+              }}
               disabled={!canPick}
               style={styles.wide}
             />
           </View>
-        </View>
+        </Animated.View>
       </View>
       </FitScroll>
 
@@ -221,7 +237,10 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
               variant="lime"
               label={t('playThisCard')}
               onPress={() => {
-                if (preview) table.play(preview);
+                if (preview) {
+                  feel.play();
+                  table.play(preview);
+                }
                 setPreview(null);
               }}
             />
@@ -239,7 +258,15 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
         actions={
           <>
             <Button label={t('keepIt')} variant="secondary" onPress={table.keep} />
-            <Button variant="lime" label={t('playIt')} onPress={() => game.drawn && table.play(game.drawn)} />
+            <Button
+              variant="lime"
+              label={t('playIt')}
+              onPress={() => {
+                if (!game.drawn) return;
+                feel.play();
+                table.play(game.drawn);
+              }}
+            />
           </>
         }
       />

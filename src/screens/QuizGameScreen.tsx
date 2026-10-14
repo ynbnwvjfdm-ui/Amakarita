@@ -4,7 +4,10 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CARD_RATIO, getDeck, pageImage } from '../decks';
 import { QUESTIONS } from '../questions';
+import { DAILY_GOAL, answeredOn, countKnown, medalFor } from '../game/progress';
 import { attemptsLeft, quizWinners, stealTarget, STEAL } from '../game/quiz';
+import { dayNumber } from '../dates';
+import { useProgress } from '../progressStore';
 import { useI18n } from '../i18n';
 import { QuizConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
@@ -12,12 +15,15 @@ import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
 import { FitScroll } from '../ui/FitScroll';
+import { feel } from '../ui/motion';
+import { MEDAL_KEY, MedalIcon } from '../ui/Medal';
+import { Avatar } from '../ui/Profiles';
 import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
 import { FlipCard } from '../ui/FlipCard';
 import { QuestionCard } from '../ui/QuestionCard';
 import { LeaveConfirm, Panel } from '../ui/table';
 import { colors, deckTheme, fonts, MAX_WIDTH, MIX_THEME, radius } from '../ui/theme';
-import { useQuizTable } from './useQuizTable';
+import { deckCards, useQuizTable } from './useQuizTable';
 
 /** The question card never gets narrower than this. */
 const MIN_CARD_W = 120;
@@ -27,6 +33,14 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
   const nav = useNav();
   const table = useQuizTable(config);
   const { game, bot, revealed } = table;
+  const { profiles, progressOf } = useProgress();
+
+  // A buzz for the person who just answered: a happy one when right.
+  useEffect(() => {
+    if (bot || !game.result || game.result.correct === null) return;
+    if (game.result.correct) feel.right();
+    else feel.wrong();
+  }, [game.result, bot]);
   const { width } = useWindowDimensions();
   const [leaving, setLeaving] = useState(false);
   const [zoom, setZoom] = useState<ArtRef | null>(null);
@@ -232,6 +246,41 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
             </View>
           ))}
         <Text style={styles.learned}>{t('learnedN', { n: game.learned.length })}</Text>
+        {/* For each learner at the table: today's goal and any medal won in this game. */}
+        {table.learners.map((id) => {
+          const who = profiles.find((p) => p.id === id);
+          if (!who) return null;
+          const prog = progressOf(id);
+          const done = Math.min(DAILY_GOAL, answeredOn(prog, dayNumber(new Date())));
+          const won = table.decksInGame.flatMap((d) => {
+            const ids = deckCards(d);
+            const before = medalFor(table.knownAtStart[id]?.[d] ?? 0, ids.length);
+            const now = medalFor(countKnown(prog, ids), ids.length);
+            return now && now !== before ? [{ d, medal: now }] : [];
+          });
+          return (
+            <View key={id} style={styles.reward}>
+              <View style={styles.rewardHead}>
+                <Avatar profile={who} size={28} />
+                <Text style={styles.rewardName} numberOfLines={1}>
+                  {who.name ?? t('you')}
+                </Text>
+                <Text style={styles.rewardGoal}>
+                  {t('dailyGoal')}: {done}/{DAILY_GOAL}
+                </Text>
+                {done >= DAILY_GOAL ? <Ionicons name="checkmark-circle" size={18} color={colors.ink} /> : null}
+              </View>
+              {won.map(({ d, medal }) => (
+                <View key={d} style={styles.rewardMedal}>
+                  <MedalIcon medal={medal} size={22} />
+                  <Text style={styles.rewardMedalText}>
+                    {t('newMedal')}: {getDeck(d).title} · {t(MEDAL_KEY[medal])}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          );
+        })}
         {game.missed.length ? (
           <>
             <Text style={styles.reviewTitle}>{t('toReview')}</Text>
@@ -257,6 +306,12 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
 const styles = StyleSheet.create({
   safe: { flex: 1 },
   column: { flex: 1, alignSelf: 'center', paddingHorizontal: 16 },
+  reward: { gap: 6, backgroundColor: colors.surface, borderRadius: 16, padding: 10 },
+  rewardHead: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  rewardName: { flex: 1, fontFamily: fonts.bold, fontSize: 15, color: colors.ink },
+  rewardGoal: { fontFamily: fonts.semibold, fontSize: 13, color: colors.muted },
+  rewardMedal: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  rewardMedalText: { flex: 1, fontFamily: fonts.semibold, fontSize: 14, color: colors.ink },
   missed: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   // Never shorter than the smallest card, so a very short screen scrolls instead of overlapping.
   stage: { flex: 1, minHeight: MIN_CARD_W / CARD_RATIO + 24, alignItems: 'center', justifyContent: 'center' },

@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Bump } from './motion';
 import { colors, fonts, radius } from './theme';
 
 /** Close button on the left, pills in the middle and on the right, all one height. */
@@ -73,9 +74,11 @@ export function PlayerChip({ name, value, active, dim, badge, state, compact, wi
           {name}
         </Text>
         <View style={styles.chipHead}>
-          <Text style={[state ? styles.chipStateCompact : styles.chipValueCompact, active && styles.chipValueOn]} numberOfLines={1}>
-            {state ?? value}
-          </Text>
+          <Bump value={state ?? value}>
+            <Text style={[state ? styles.chipStateCompact : styles.chipValueCompact, active && styles.chipValueOn]} numberOfLines={1}>
+              {state ?? value}
+            </Text>
+          </Bump>
           {badge ? <Text style={styles.badge}>{badge}</Text> : null}
         </View>
       </View>
@@ -92,7 +95,9 @@ export function PlayerChip({ name, value, active, dim, badge, state, compact, wi
       {state ? (
         <Text style={[styles.chipState, active && styles.chipNameOn]}>{state}</Text>
       ) : (
-        <Text style={[styles.chipValue, active && styles.chipValueOn]}>{value}</Text>
+        <Bump value={value} style={styles.bumpLeft}>
+          <Text style={[styles.chipValue, active && styles.chipValueOn]}>{value}</Text>
+        </Bump>
       )}
     </View>
   );
@@ -118,6 +123,7 @@ const styles = StyleSheet.create({
   chipValueCompact: { fontFamily: fonts.display, fontSize: 18, lineHeight: 22, color: colors.surface },
   chipStateCompact: { fontFamily: fonts.bold, fontSize: 12, lineHeight: 22, color: 'rgba(255,255,255,0.85)' },
   chipNameOn: { color: colors.ink },
+  bumpLeft: { alignSelf: 'flex-start' },
   chipValue: { fontFamily: fonts.display, fontSize: 28, lineHeight: 32, color: colors.surface, letterSpacing: -0.5 },
   chipValueOn: { color: colors.ink },
   chipState: { fontFamily: fonts.bold, fontSize: 14, lineHeight: 32, color: 'rgba(255,255,255,0.85)' },

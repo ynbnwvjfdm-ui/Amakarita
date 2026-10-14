@@ -3,6 +3,7 @@ import { NativeScrollEvent, NativeSyntheticEvent, Platform, Pressable, ScrollVie
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useI18n } from '../i18n';
 import { CardArt } from './CardArt';
+import { feel, PopIn } from './motion';
 import { colors, fonts, radius } from './theme';
 
 interface Props {
@@ -37,10 +38,21 @@ export function HandRow({ deckId, cards, width, onPress, ink = colors.surface }:
   const lastFirst = Math.max(0, n - PER_VIEW);
   const first = Math.min(lastFirst, Math.max(0, Math.round(offset / step)));
 
-  const card = (c: { id: string; label: string }) => (
-    <Pressable key={c.id} accessibilityRole="button" accessibilityLabel={c.label} onPress={() => onPress(c.id)} style={({ pressed }) => pressed && styles.pressed}>
-      <CardArt deckId={deckId} cardId={c.id} width={cardW} />
-    </Pressable>
+  // Each card comes in when it first appears: dealt one after another, or picked from the pile.
+  const card = (c: { id: string; label: string }, i: number) => (
+    <PopIn key={c.id} delay={Math.min(i, 6) * 60}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={c.label}
+        onPress={() => {
+          feel.tap();
+          onPress(c.id);
+        }}
+        style={({ pressed }) => pressed && styles.pressed}
+      >
+        <CardArt deckId={deckId} cardId={c.id} width={cardW} />
+      </Pressable>
+    </PopIn>
   );
 
   if (n <= PER_VIEW) {

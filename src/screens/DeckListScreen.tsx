@@ -1,13 +1,14 @@
 import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { DECKS, pageImage } from '../decks';
 import { useI18n } from '../i18n';
-import { countKnown } from '../game/progress';
+import { countKnown, medalFor } from '../game/progress';
 import { useNav } from '../navigation';
 import { useProgress } from '../progressStore';
 import { QUESTIONS } from '../questions';
 import { CardImage } from '../ui/CardImage';
 import { Screen } from '../ui/Screen';
 import { deckTheme, fonts, MAX_WIDTH } from '../ui/theme';
+import { MedalIcon } from '../ui/Medal';
 import { HeaderActions } from '../ui/Profiles';
 
 /** The six decks, each on a block of its own colour. */
@@ -46,6 +47,7 @@ export function DeckListScreen() {
                     <Text style={[styles.progressText, { color: theme.onBase }]}>
                       {known}/{asked.length}
                     </Text>
+                    {medalFor(known, asked.length) ? <MedalIcon medal={medalFor(known, asked.length)} size={16} /> : null}
                   </>
                 ) : null}
               </View>

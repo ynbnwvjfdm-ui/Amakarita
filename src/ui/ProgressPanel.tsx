@@ -2,10 +2,12 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { dayNumber } from '../dates';
 import { SUITED_DECKS } from '../decks';
-import { countKnown, streak } from '../game/progress';
+import { DAILY_GOAL, answeredOn, countKnown, medalFor, streak } from '../game/progress';
 import { useI18n } from '../i18n';
 import { useProgress } from '../progressStore';
 import { QUESTIONS } from '../questions';
+import { MedalIcon } from './Medal';
+import { shareText } from './share';
 import { colors, deckTheme, fonts, radius } from './theme';
 
 const cardsOf = (deckId: string) => Object.values(QUESTIONS).filter((q) => q.deck === deckId).map((q) => q.card);
@@ -20,19 +22,43 @@ export function ProgressPanel({ onOpenDeck }: { onOpenDeck: (deckId: string) => 
   });
   const known = decks.reduce((n, d) => n + d.known, 0);
   const total = decks.reduce((n, d) => n + d.total, 0);
-  const days = streak(progress, dayNumber(new Date()));
+  const today = dayNumber(new Date());
+  const days = streak(progress, today);
+  const done = Math.min(DAILY_GOAL, answeredOn(progress, today));
   const started = Object.keys(progress.cards).length > 0;
 
   return (
     <View style={styles.panel}>
       <View style={styles.head}>
         <Text style={styles.title}>{t('progressTitle')}</Text>
-        {days > 0 ? (
-          <View style={styles.streak}>
-            <Ionicons name="flame" size={14} color={colors.coral} />
-            <Text style={styles.streakText}>{t('streakDays', { n: days })}</Text>
-          </View>
-        ) : null}
+        <View style={styles.headRight}>
+          {days > 0 ? (
+            <View style={styles.streak}>
+              <Ionicons name="flame" size={14} color={colors.coral} />
+              <Text style={styles.streakText}>{t('streakDays', { n: days })}</Text>
+            </View>
+          ) : null}
+          {started ? (
+            <Pressable accessibilityRole="button" onPress={() => shareText(t('shareProgress', { n: known, total }))} style={styles.shareBtn} hitSlop={6}>
+              <Ionicons name="share-social-outline" size={15} color={colors.ink} />
+              <Text style={styles.streakText}>{t('share')}</Text>
+            </Pressable>
+          ) : null}
+        </View>
+      </View>
+      {/* Today's goal: answering this many cards keeps the streak going. */}
+      <View style={styles.goal}>
+        <View style={styles.goalHead}>
+          <Text style={styles.goalLabel}>{t('dailyGoal')}</Text>
+          <Text style={styles.goalCount}>
+            {done}/{DAILY_GOAL}
+          </Text>
+          {done >= DAILY_GOAL ? <Ionicons name="checkmark-circle" size={18} color={colors.ink} /> : null}
+        </View>
+        <View style={styles.goalTrack}>
+          <View style={[styles.goalFill, { width: `${(done / DAILY_GOAL) * 100}%` }]} />
+        </View>
+        {done >= DAILY_GOAL ? <Text style={styles.goalDone}>{t('goalReached')}</Text> : null}
       </View>
       <View style={styles.big}>
         <Text style={styles.bigNumber}>{known}</Text>
@@ -52,6 +78,7 @@ export function ProgressPanel({ onOpenDeck }: { onOpenDeck: (deckId: string) => 
             <Text style={styles.deckCount}>
               {k}/{n}
             </Text>
+            <MedalIcon medal={medalFor(k, n)} />
           </Pressable>
         ))}
       </View>
@@ -63,7 +90,16 @@ const styles = StyleSheet.create({
   panel: { backgroundColor: colors.surface, borderRadius: 28, padding: 16, gap: 10 },
   head: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 },
   title: { fontFamily: fonts.display, fontSize: 22, color: colors.ink },
+  headRight: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   streak: { flexDirection: 'row', alignItems: 'center', gap: 5, backgroundColor: colors.bg, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 5 },
+  shareBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, borderWidth: 1, borderColor: colors.line, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 4 },
+  goal: { gap: 6, backgroundColor: colors.bg, borderRadius: 18, padding: 12 },
+  goalHead: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  goalLabel: { flex: 1, fontFamily: fonts.semibold, fontSize: 14, color: colors.ink },
+  goalCount: { fontFamily: fonts.display, fontSize: 16, color: colors.ink },
+  goalTrack: { height: 10, borderRadius: 5, backgroundColor: colors.surface, overflow: 'hidden' },
+  goalFill: { height: '100%', borderRadius: 5, backgroundColor: colors.lime },
+  goalDone: { fontFamily: fonts.semibold, fontSize: 13, color: colors.ink },
   streakText: { fontFamily: fonts.semibold, fontSize: 12, color: colors.ink },
   big: { flexDirection: 'row', alignItems: 'baseline', flexWrap: 'wrap', columnGap: 4 },
   bigNumber: { fontFamily: fonts.display, fontSize: 40, lineHeight: 44, color: colors.ink, letterSpacing: -1 },
@@ -72,8 +108,8 @@ const styles = StyleSheet.create({
   empty: { fontFamily: fonts.body, fontSize: 14, color: colors.muted, lineHeight: 20 },
   decks: { gap: 8 },
   deckRow: { flexDirection: 'row', alignItems: 'center', gap: 10, minHeight: 28 },
-  deckName: { width: 112, fontFamily: fonts.semibold, fontSize: 13, color: colors.ink },
+  deckName: { width: 104, fontFamily: fonts.semibold, fontSize: 13, color: colors.ink },
   track: { flex: 1, height: 8, borderRadius: 4, backgroundColor: colors.bg, overflow: 'hidden' },
   fill: { height: '100%', borderRadius: 4 },
-  deckCount: { width: 44, textAlign: 'right', fontFamily: fonts.bold, fontSize: 13, color: colors.ink },
+  deckCount: { width: 40, textAlign: 'right', fontFamily: fonts.bold, fontSize: 13, color: colors.ink },
 });

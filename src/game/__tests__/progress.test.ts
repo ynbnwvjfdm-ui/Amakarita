@@ -1,11 +1,15 @@
 import { describe, expect, it } from '@jest/globals';
 import { seededRng } from '../cards';
 import {
+  DAILY_GOAL,
   KNOWN_BOX,
+  answeredOn,
   cardStatus,
   countKnown,
   drawWeight,
   emptyProgress,
+  medalFor,
+  nextMedal,
   parseProgress,
   recordAnswer,
   streak,
@@ -42,19 +46,50 @@ describe('card progress', () => {
   });
 });
 
-describe('streak', () => {
-  it('counts days in a row up to today, or yesterday when nothing yet today', () => {
+describe('daily goal and streak', () => {
+  const answer = (p: ReturnType<typeof emptyProgress>, day: number, times: number) => {
+    for (let i = 0; i < times; i++) p = recordAnswer(p, `c${day}-${i}`, true, day);
+    return p;
+  };
+  it('counts answers per day', () => {
+    const p = answer(answer(emptyProgress(), 5, 3), 6, 2);
+    expect([answeredOn(p, 5), answeredOn(p, 6), answeredOn(p, 7)]).toEqual([3, 2, 0]);
+  });
+  it('a streak counts days in a row with the daily goal reached', () => {
     let p = emptyProgress();
-    for (const d of [10, 12, 13, 14]) p = recordAnswer(p, 'x', true, d);
+    for (const d of [10, 12, 13]) p = answer(p, d, DAILY_GOAL);
+    p = answer(p, 14, DAILY_GOAL - 1); // today, goal not yet reached
+    expect(streak(p, 14)).toBe(2); // 12 and 13
+    p = answer(p, 14, 1);
     expect(streak(p, 14)).toBe(3);
-    expect(streak(p, 15)).toBe(3);
     expect(streak(p, 16)).toBe(0);
   });
-  it('records each day once', () => {
+  it('records each day once in the list of days played', () => {
     let p = emptyProgress();
     p = recordAnswer(p, 'a', true, 5);
     p = recordAnswer(p, 'b', false, 5);
     expect(p.days).toEqual([5]);
+  });
+  it('keeps about two months of daily counts', () => {
+    let p = emptyProgress();
+    for (let d = 1; d <= 100; d++) p = recordAnswer(p, 'x', true, d);
+    expect(Object.keys(p.daily!).length).toBeLessThanOrEqual(60);
+    expect(answeredOn(p, 100)).toBe(1);
+  });
+});
+
+describe('medals', () => {
+  it('bronze at a quarter of a deck, silver at 60%, gold when all are known', () => {
+    expect(medalFor(13, 54)).toBeNull();
+    expect(medalFor(14, 54)).toBe('bronze');
+    expect(medalFor(33, 54)).toBe('silver');
+    expect(medalFor(53, 54)).toBe('silver');
+    expect(medalFor(54, 54)).toBe('gold');
+  });
+  it('says what the next medal needs', () => {
+    expect(nextMedal(10, 54)).toEqual({ medal: 'bronze', more: 4 });
+    expect(nextMedal(40, 54)).toEqual({ medal: 'gold', more: 14 });
+    expect(nextMedal(54, 54)).toBeNull();
   });
 });
 

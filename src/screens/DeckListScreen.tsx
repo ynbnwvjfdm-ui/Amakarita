@@ -6,9 +6,9 @@ import { useNav } from '../navigation';
 import { useProgress } from '../progressStore';
 import { QUESTIONS } from '../questions';
 import { CardImage } from '../ui/CardImage';
-import { LanguageToggle } from '../ui/LanguageToggle';
 import { Screen } from '../ui/Screen';
 import { deckTheme, fonts, MAX_WIDTH } from '../ui/theme';
+import { HeaderActions } from '../ui/Profiles';
 
 /** The six decks, each on a block of its own colour. */
 export function DeckListScreen() {
@@ -18,7 +18,7 @@ export function DeckListScreen() {
   const tile = (Math.min(width, MAX_WIDTH) - 32 - 12) / 2;
   const { progress } = useProgress();
   return (
-    <Screen tabbed title={t('tabDecks')} right={<LanguageToggle />}>
+    <Screen tabbed title={t('tabDecks')} right={<HeaderActions />}>
       <View style={styles.grid}>
         {DECKS.map((d) => {
           const theme = deckTheme(d.id);

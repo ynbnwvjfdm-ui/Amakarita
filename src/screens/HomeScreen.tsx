@@ -6,10 +6,10 @@ import { useNav } from '../navigation';
 import { CardOfDay } from '../ui/CardOfDay';
 import { DeckCarousel } from '../ui/DeckCarousel';
 import { GameTickets } from '../ui/GameTickets';
-import { LanguageToggle } from '../ui/LanguageToggle';
 import { ProgressPanel } from '../ui/ProgressPanel';
 import { Screen, formStyles } from '../ui/Screen';
 import { colors, fonts, MAX_WIDTH } from '../ui/theme';
+import { HeaderActions } from '../ui/Profiles';
 
 export function HomeScreen() {
   const { t } = useI18n();
@@ -19,7 +19,7 @@ export function HomeScreen() {
   const W = Math.min(width, MAX_WIDTH) - 32;
 
   return (
-    <Screen tabbed eyebrow={t(greetingKey(now))} title={t('appTitle')} right={<LanguageToggle />}>
+    <Screen tabbed eyebrow={t(greetingKey(now))} title={t('appTitle')} right={<HeaderActions />}>
       <Text style={styles.tagline}>{t('homeTagline')}</Text>
       <DeckCarousel width={W} onOpen={(deckId) => nav.push({ name: 'deck', deckId })} />
       <ProgressPanel onOpenDeck={(deckId) => nav.push({ name: 'deck', deckId })} />

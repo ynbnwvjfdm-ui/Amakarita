@@ -7,8 +7,8 @@ import { SeatConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
 import { DeckPicker } from '../ui/DeckPicker';
 import { Screen, formStyles } from '../ui/Screen';
-import { SeatChips } from '../ui/SeatChips';
-import { defaultSeats } from '../ui/SeatEditor';
+import { useProgress } from '../progressStore';
+import { SeatChips, seatsFor } from '../ui/SeatChips';
 import { Segmented } from '../ui/Segmented';
 import { MAX_WIDTH } from '../ui/theme';
 
@@ -23,7 +23,9 @@ export function MatatuSetupScreen() {
   const [deckId, setDeckId] = useState(SUITED_DECKS[0].id);
   const [playerCount, setPlayerCount] = useState(2);
   const [handSize, setHandSize] = useState<number>(7);
-  const [seats, setSeats] = useState<SeatConfig[]>(defaultSeats);
+  // The first seat starts as the person whose profile is active.
+  const { active: me } = useProgress();
+  const [seats, setSeats] = useState<SeatConfig[]>(() => seatsFor(me));
 
   const active = seats.slice(0, playerCount);
   const hasHuman = active.some((s) => s.kind === 'human');

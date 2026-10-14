@@ -6,6 +6,8 @@ export interface SeatConfig {
   kind: 'human' | 'bot';
   /** null: use the default "Player N" name in the current language. */
   name: string | null;
+  /** The learner profile this seat plays as; their answers count for that profile. */
+  profileId?: string | null;
 }
 
 export interface AmaturufuConfig {

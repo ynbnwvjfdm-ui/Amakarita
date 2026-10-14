@@ -23,14 +23,23 @@ export function useQuizTable(config: QuizConfig) {
       .map((q) => q.card);
   }, [config.deckId]);
 
-  const { progress, record } = useProgress();
-  // Progress belongs to the one person learning on this phone: games with several people don't count.
-  const learner = config.seats.filter((s) => s.kind === 'human').length === 1;
-  // Cards this learner keeps missing come up earlier.
+  const { active, progressOf, record } = useProgress();
+  const humans = config.seats.filter((s) => s.kind === 'human').length;
+  // Whose progress a seat's answers count for: the profile chosen for it, or
+  // the active profile when one person plays alone. Guests count for nobody.
+  const learnerOf = (seat: number): string | null => {
+    const s = config.seats[seat];
+    if (!s || s.kind !== 'human') return null;
+    return s.profileId ?? (humans === 1 ? active.id : null);
+  };
+  const learners = [...new Set(config.seats.map((_, i) => learnerOf(i)).filter((id): id is string => id !== null))];
+  // Cards these learners keep missing come up earlier.
+  const weight = (cardId: string) => Math.max(...learners.map((id) => drawWeight(progressOf(id), cardId)));
   const fresh = () =>
-    newQuiz(QUESTIONS, cardIds, n, config.mode, config.attempts, Math.random, learner ? (ids, rng) => weightedOrder(ids, (id) => drawWeight(progress, id), rng) : undefined);
+    newQuiz(QUESTIONS, cardIds, n, config.mode, config.attempts, Math.random, learners.length ? (ids, rng) => weightedOrder(ids, weight, rng) : undefined);
   const keep = (g: QuizState) => {
-    if (learner && g.current && g.result && g.result.correct !== null) record(g.current.sort?.card ?? g.current.question.card, g.result.correct);
+    const id = learnerOf(g.turn);
+    if (id && g.current && g.result && g.result.correct !== null) record(id, g.current.sort?.card ?? g.current.question.card, g.result.correct);
     return g;
   };
   const [game, setGame] = useState<QuizState>(fresh);
@@ -78,7 +87,7 @@ export function useQuizTable(config: QuizConfig) {
     reveal: () => setRevealed(true),
     judge: (correct: boolean) => {
       if (game.phase !== 'answer') return;
-      setGame(config.seats[game.turn]?.kind === 'human' ? keep(judge(game, correct)) : judge(game, correct));
+      setGame(keep(judge(game, correct)));
     },
     joker: (power: 'steal' | 'double') => humanTurn && game.phase === 'joker' && setGame(applyJoker(game, power)),
     next: () => {

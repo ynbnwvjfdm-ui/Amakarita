@@ -7,6 +7,7 @@ import { Button } from '../ui/Button';
 import { DeckPicker } from '../ui/DeckPicker';
 import { Screen, formStyles } from '../ui/Screen';
 import { useProgress } from '../progressStore';
+import { HelpButton, HowToPlay, useGuide } from '../ui/HowToPlay';
 import { SeatChips, seatsFor } from '../ui/SeatChips';
 import { Segmented } from '../ui/Segmented';
 import { MAX_WIDTH } from '../ui/theme';
@@ -30,10 +31,18 @@ export function QuizSetupScreen() {
   const hasHuman = active.some((s) => s.kind === 'human');
   const updateSeat = (i: number, patch: Partial<SeatConfig>) =>
     setSeats((all) => all.map((s, j) => (j === i ? { ...s, ...patch } : s)));
+  const guide = useGuide('quiz');
+  // The "?" button, and the guide itself (it opens by itself the first time).
+  const help = (
+    <>
+      <HelpButton onPress={guide.open} />
+      <HowToPlay game="quiz" deckId={deckId} visible={guide.visible} onClose={guide.close} />
+    </>
+  );
 
   if (step === 1) {
     return (
-      <Screen key="deck" compact title="Amakarita" onBack={nav.pop} backLabel={t('back')} footer={<Button label={t('continue')} onPress={() => setStep(2)} />}>
+      <Screen key="deck" compact right={help} title="Amakarita" onBack={nav.pop} backLabel={t('back')} footer={<Button label={t('continue')} onPress={() => setStep(2)} />}>
         <Text style={formStyles.section}>{t('chooseDeck')}</Text>
         <DeckPicker value={deckId} onChange={setDeckId} mixTitle={t('mix')} />
       </Screen>
@@ -42,7 +51,7 @@ export function QuizSetupScreen() {
 
   if (step === 2) {
     return (
-      <Screen key="how" compact title="Amakarita" onBack={() => setStep(1)} backLabel={t('back')} footer={<Button label={t('continue')} onPress={() => setStep(3)} />}>
+      <Screen key="how" compact right={help} title="Amakarita" onBack={() => setStep(1)} backLabel={t('back')} footer={<Button label={t('continue')} onPress={() => setStep(3)} />}>
         <View style={formStyles.group}>
           <Text style={formStyles.sectionTight}>{t('howToAnswer')}</Text>
           <Segmented
@@ -75,6 +84,7 @@ export function QuizSetupScreen() {
     <Screen
       key="players"
       compact
+      right={help}
       title="Amakarita"
       onBack={() => setStep(2)}
       backLabel={t('back')}

@@ -14,6 +14,7 @@ import { CardViewer } from '../ui/CardViewer';
 import { FitScroll } from '../ui/FitScroll';
 import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
 import { HandRow } from '../ui/HandRow';
+import { HelpButton, HowToPlay, useGuide } from '../ui/HowToPlay';
 import { feel, PopIn, useShake } from '../ui/motion';
 import { LeaveConfirm, Panel, PassPhone, SUIT_SYMBOL, tableStyles } from '../ui/table';
 import { colors, deckTheme, fonts, MAX_WIDTH, radius } from '../ui/theme';
@@ -48,6 +49,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
   const [leaving, setLeaving] = useState(false);
   const [stageH, setStageH] = useState(0);
   const [shakeStyle, shake] = useShake();
+  const guide = useGuide('matatu');
 
   const n = config.seats.length;
   const deck = getDeck(config.deckId);
@@ -125,6 +127,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
               </InfoPill>
             </Pressable>
           }
+          right={<HelpButton onPress={guide.open} />}
         />
 
         <PlayerChips
@@ -336,6 +339,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
       </Panel>
 
       <LeaveConfirm visible={leaving} onLeave={nav.home} onStay={() => setLeaving(false)} />
+      <HowToPlay game="matatu" deckId={config.deckId} visible={guide.visible} onClose={guide.close} />
     </SafeAreaView>
   );
 }

@@ -39,6 +39,7 @@ export function Screen({ title, eyebrow, onBack, backLabel, right, children, foo
               <Text style={styles.compactTitle} numberOfLines={1}>
                 {title}
               </Text>
+              {right}
             </View>
           ) : (
           <View style={styles.header}>

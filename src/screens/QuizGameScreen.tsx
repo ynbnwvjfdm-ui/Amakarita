@@ -15,6 +15,7 @@ import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
 import { FitScroll } from '../ui/FitScroll';
+import { HowToPlay, useGuide } from '../ui/HowToPlay';
 import { feel } from '../ui/motion';
 import { MEDAL_KEY, MedalIcon } from '../ui/Medal';
 import { Avatar } from '../ui/Profiles';
@@ -34,6 +35,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
   const table = useQuizTable(config);
   const { game, bot, revealed } = table;
   const { profiles, progressOf } = useProgress();
+  const guide = useGuide('quiz');
 
   // A buzz for the person who just answered: a happy one when right.
   useEffect(() => {
@@ -299,6 +301,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
 
       <CardViewer art={zoom} onClose={() => setZoom(null)} />
       <LeaveConfirm visible={leaving} onLeave={nav.home} onStay={() => setLeaving(false)} />
+      <HowToPlay game="quiz" deckId={config.deckId} visible={guide.visible} onClose={guide.close} />
     </SafeAreaView>
   );
 }

@@ -8,6 +8,7 @@ import { Button } from '../ui/Button';
 import { DeckPicker } from '../ui/DeckPicker';
 import { Screen, formStyles } from '../ui/Screen';
 import { useProgress } from '../progressStore';
+import { HelpButton, HowToPlay, useGuide } from '../ui/HowToPlay';
 import { SeatChips, seatsFor } from '../ui/SeatChips';
 import { Segmented } from '../ui/Segmented';
 import { MAX_WIDTH } from '../ui/theme';
@@ -31,10 +32,18 @@ export function MatatuSetupScreen() {
   const hasHuman = active.some((s) => s.kind === 'human');
   const updateSeat = (i: number, patch: Partial<SeatConfig>) =>
     setSeats((all) => all.map((s, j) => (j === i ? { ...s, ...patch } : s)));
+  const guide = useGuide('matatu');
+  // The "?" button, and the guide itself (it opens by itself the first time).
+  const help = (
+    <>
+      <HelpButton onPress={guide.open} />
+      <HowToPlay game="matatu" deckId={deckId} visible={guide.visible} onClose={guide.close} />
+    </>
+  );
 
   if (step === 1) {
     return (
-      <Screen key="deck" compact title="Matatu" onBack={nav.pop} backLabel={t('back')} footer={<Button label={t('continue')} onPress={() => setStep(2)} />}>
+      <Screen key="deck" compact right={help} title="Matatu" onBack={nav.pop} backLabel={t('back')} footer={<Button label={t('continue')} onPress={() => setStep(2)} />}>
         <Text style={formStyles.section}>{t('chooseDeck')}</Text>
         <DeckPicker value={deckId} onChange={setDeckId} />
       </Screen>
@@ -45,6 +54,7 @@ export function MatatuSetupScreen() {
     <Screen
       key="settings"
       compact
+      right={help}
       title="Matatu"
       onBack={() => setStep(1)}
       backLabel={t('back')}

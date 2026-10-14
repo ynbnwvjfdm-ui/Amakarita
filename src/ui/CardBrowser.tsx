@@ -16,7 +16,7 @@ import { feel } from './motion';
 import { Overlay } from './Overlay';
 import { QuestionCard } from './QuestionCard';
 import { QuestionPlay } from './QuestionPlay';
-import { shareText } from './share';
+import { ShareSheet } from './ShareSheet';
 import { colors, fonts, MAX_WIDTH, radius } from './theme';
 
 interface Props {
@@ -88,7 +88,7 @@ function Pages({ deckId, start, onClose }: { deckId: string; start: number; onCl
     if (i >= 0 && i < pages.length) setIndex(i);
   };
 
-  const current = deck.cards.find((c) => c.page === pages[index]);
+  const [sharing, setSharing] = useState(false);
 
   return (
     <View style={styles.backdrop}>
@@ -97,18 +97,10 @@ function Pages({ deckId, start, onClose }: { deckId: string; start: number; onCl
           {index + 1} / {pages.length}
         </Text>
         <View style={styles.topRight}>
-          {current?.text ? (
-            <Pressable
-              accessibilityRole="button"
-              accessibilityLabel={t('shareCard')}
-              onPress={() => shareText(`${deck.title}\n\n${current.text}\n\n— Amakarita`)}
-              hitSlop={6}
-              style={styles.share}
-            >
-              <Ionicons name="share-outline" size={20} color={colors.ink} />
-              <Text style={styles.shareText}>{t('shareShort')}</Text>
-            </Pressable>
-          ) : null}
+          <Pressable accessibilityRole="button" accessibilityLabel={t('shareCard')} onPress={() => setSharing(true)} hitSlop={6} style={styles.share}>
+            <Ionicons name="share-outline" size={20} color={colors.ink} />
+            <Text style={styles.shareText}>{t('shareShort')}</Text>
+          </Pressable>
           <Pressable accessibilityRole="button" accessibilityLabel="close" onPress={onClose} hitSlop={10} style={styles.close}>
             <Ionicons name="close" size={22} color={colors.ink} />
           </Pressable>
@@ -176,6 +168,8 @@ function Pages({ deckId, start, onClose }: { deckId: string; start: number; onCl
           );
         }}
       />
+      {/* Inside this layer, so on phones it opens on top of the cards. */}
+      <ShareSheet visible={sharing} featured={{ deckId, page: pages[index] }} onClose={() => setSharing(false)} />
     </View>
   );
 }

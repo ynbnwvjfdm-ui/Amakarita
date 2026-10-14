@@ -14,6 +14,10 @@ are how people practise it.
 - **Card of the day** on the home screen. In the deck browser, tap a card to
   answer its question (question side first, then the printed card); swipe
   for the next card. Answers count towards the daily goal.
+- **Share card**: "Sangiza" makes a picture of the learner's progress drawn as
+  a playing card — the streak in the corners, points (each right answer worth
+  its card's value), a medal per deck — and opens the share sheet
+  (`src/ui/ShareCard.tsx`). From a card in the deck browser, that card is on it too.
 - Amaturufu (rules in `src/game/amaturufu.ts`) and Ibisakuzo are switched
   off for now.
 

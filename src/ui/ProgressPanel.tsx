@@ -1,31 +1,27 @@
+import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { dayNumber } from '../dates';
-import { SUITED_DECKS } from '../decks';
-import { DAILY_GOAL, answeredOn, countKnown, medalFor, streak } from '../game/progress';
+import { DAILY_GOAL, answeredOn, streak } from '../game/progress';
 import { useI18n } from '../i18n';
 import { useProgress } from '../progressStore';
-import { QUESTIONS } from '../questions';
+import { deckStats } from '../stats';
 import { MedalIcon } from './Medal';
-import { shareText } from './share';
+import { ShareSheet } from './ShareSheet';
 import { colors, deckTheme, fonts, radius } from './theme';
-
-const cardsOf = (deckId: string) => Object.values(QUESTIONS).filter((q) => q.deck === deckId).map((q) => q.card);
 
 /** How much the learner knows: all decks together, the streak, and one bar per deck. */
 export function ProgressPanel({ onOpenDeck }: { onOpenDeck: (deckId: string) => void }) {
   const { t } = useI18n();
   const { progress } = useProgress();
-  const decks = SUITED_DECKS.map((d) => {
-    const ids = cardsOf(d.id);
-    return { deck: d, known: countKnown(progress, ids), total: ids.length };
-  });
+  const decks = deckStats(progress);
   const known = decks.reduce((n, d) => n + d.known, 0);
   const total = decks.reduce((n, d) => n + d.total, 0);
   const today = dayNumber(new Date());
   const days = streak(progress, today);
   const done = Math.min(DAILY_GOAL, answeredOn(progress, today));
   const started = Object.keys(progress.cards).length > 0;
+  const [sharing, setSharing] = useState(false);
 
   return (
     <View style={styles.panel}>
@@ -39,7 +35,7 @@ export function ProgressPanel({ onOpenDeck }: { onOpenDeck: (deckId: string) => 
             </View>
           ) : null}
           {started ? (
-            <Pressable accessibilityRole="button" onPress={() => shareText(t('shareProgress', { n: known, total }))} style={styles.shareBtn} hitSlop={6}>
+            <Pressable accessibilityRole="button" onPress={() => setSharing(true)} style={styles.shareBtn} hitSlop={6}>
               <Ionicons name="share-social-outline" size={15} color={colors.ink} />
               <Text style={styles.streakText}>{t('share')}</Text>
             </Pressable>
@@ -67,7 +63,7 @@ export function ProgressPanel({ onOpenDeck }: { onOpenDeck: (deckId: string) => 
       </View>
       {started ? null : <Text style={styles.empty}>{t('progressEmpty')}</Text>}
       <View style={styles.decks}>
-        {decks.map(({ deck, known: k, total: n }) => (
+        {decks.map(({ deck, known: k, total: n, medal }) => (
           <Pressable key={deck.id} accessibilityRole="button" accessibilityLabel={`${deck.title}: ${t('knownOf', { n: k, total: n })}`} onPress={() => onOpenDeck(deck.id)} style={styles.deckRow}>
             <Text style={styles.deckName} numberOfLines={1}>
               {deck.title}
@@ -78,10 +74,11 @@ export function ProgressPanel({ onOpenDeck }: { onOpenDeck: (deckId: string) => 
             <Text style={styles.deckCount}>
               {k}/{n}
             </Text>
-            <MedalIcon medal={medalFor(k, n)} />
+            <MedalIcon medal={medal} />
           </Pressable>
         ))}
       </View>
+      <ShareSheet visible={sharing} onClose={() => setSharing(false)} />
     </View>
   );
 }

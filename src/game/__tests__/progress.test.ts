@@ -13,9 +13,10 @@ import {
   parseProgress,
   recordAnswer,
   streak,
+  totalPoints,
   weightedOrder,
 } from '../progress';
-import { QuestionBank, newQuiz } from '../quiz';
+import { QuestionBank, cardPoints, newQuiz } from '../quiz';
 import bankJson from '../../data/questions.json';
 
 const bank = bankJson as unknown as QuestionBank;
@@ -90,6 +91,20 @@ describe('medals', () => {
     expect(nextMedal(10, 54)).toEqual({ medal: 'bronze', more: 4 });
     expect(nextMedal(40, 54)).toEqual({ medal: 'gold', more: 14 });
     expect(nextMedal(54, 54)).toBeNull();
+  });
+});
+
+describe('points', () => {
+  it('every right answer adds its card value; wrong answers and jokers add nothing', () => {
+    const value = (id: string) => (bank[id] ? cardPoints(bank[id]) : 0);
+    let p = emptyProgress();
+    p = recordAnswer(p, 'imvugo-6C', true, 1); // 6
+    p = recordAnswer(p, 'imvugo-6C', true, 2); // 6 again
+    p = recordAnswer(p, 'imvugo-AS', true, 2); // 15
+    p = recordAnswer(p, 'imvugo-KH', false, 2); // wrong: 0
+    p = recordAnswer(p, 'imvugo-joker1', true, 2); // joker: 0
+    expect(totalPoints(p, value)).toBe(27);
+    expect(totalPoints(emptyProgress(), value)).toBe(0);
   });
 });
 

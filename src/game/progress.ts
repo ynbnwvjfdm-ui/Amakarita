@@ -100,6 +100,16 @@ export function streak(p: Progress, today: number): number {
   return n;
 }
 
+/**
+ * Points earned so far: every right answer is worth its card's value (as in
+ * the question game: number cards their number, J 11, Q 12, K 13, A 15).
+ */
+export function totalPoints(p: Progress, value: (cardId: string) => number): number {
+  let sum = 0;
+  for (const [id, c] of Object.entries(p.cards)) sum += c.right * value(id);
+  return sum;
+}
+
 /** How strongly a card should come up early in a game. */
 export function drawWeight(p: Progress, cardId: string): number {
   const c = p.cards[cardId];

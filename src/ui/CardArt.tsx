@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View, ViewStyle } from 'react-native';
-import { CARD_RATIO, DeckCard, getDeck, pageImage } from '../decks';
+import { CARD_RATIO, DeckCard, getDeck, pageEdge, pageImage } from '../decks';
 import { SUIT_SYMBOL } from './table';
-import { cardShadow, deckTheme, fonts } from './theme';
+import { cardShadowStyle, deckTheme, fonts } from './theme';
 
 /**
  * The part of a printed card that holds its words and pictures, as fractions
@@ -65,7 +65,7 @@ export function CardArt({ width, style, ...ref }: Props) {
 
   if (!redesign || !card) {
     return (
-      <View testID="card" style={[{ width, height, borderRadius: radius, boxShadow: cardShadow(width) }, style]}>
+      <View testID="card" style={[{ width, height, borderRadius: radius }, cardShadowStyle(width, pageEdge(ref.deckId, page)), style]}>
         <View style={[styles.clip, { borderRadius: radius }]}>
           <Image source={source} style={{ width, height }} resizeMode="cover" />
         </View>
@@ -92,7 +92,7 @@ export function CardArt({ width, style, ...ref }: Props) {
   );
 
   return (
-    <View testID="card" style={[{ width, height, borderRadius: radius, boxShadow: cardShadow(width) }, style]}>
+    <View testID="card" style={[{ width, height, borderRadius: radius }, cardShadowStyle(width, theme.face), style]}>
       <View style={[styles.clip, { borderRadius: radius, backgroundColor: theme.face }]}>
       <View
         style={[

@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MatatuCard, matchWinner, topCard } from '../game/matatu';
 import { SUITS, Suit } from '../game/cards';
-import { CARD_RATIO, getDeck, pageImage } from '../decks';
+import { CARD_RATIO, getDeck } from '../decks';
 import { useI18n } from '../i18n';
 import { MatatuConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
@@ -154,7 +154,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
         <View style={styles.stage} onLayout={(e: LayoutChangeEvent) => setStageH(e.nativeEvent.layout.height)}>
           <View style={styles.stageRow}>
             <View style={styles.pileCol}>
-              {game.stock.length > 0 ? <CardImage source={pageImage(config.deckId, deck.cover.page)} width={pileW} /> : <View style={[styles.empty, { width: pileW, height: pileH }]} />}
+              {game.stock.length > 0 ? <CardImage deckId={config.deckId} page={deck.cover.page} width={pileW} /> : <View style={[styles.empty, { width: pileW, height: pileH }]} />}
               <Text style={[styles.pileLabel, { color: theme.onBase }]} numberOfLines={1}>
                 {t('pile', { n: game.stock.length })}
               </Text>
@@ -292,7 +292,7 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
 
       <PassPhone
         name={handoff !== null ? name(handoff) : null}
-        cover={pageImage(config.deckId, deck.cover.page)}
+        deckId={config.deckId}
         onAccept={table.acceptHandoff}
         onRequestClose={() => setLeaving(true)}
       >

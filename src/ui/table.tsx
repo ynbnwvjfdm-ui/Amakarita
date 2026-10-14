@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Overlay } from './Overlay';
+import { getDeck } from '../decks';
 import { Suit } from '../game/cards';
 import { useI18n } from '../i18n';
 import { Button } from './Button';
@@ -32,13 +33,14 @@ export function Panel({ visible, title, children, onRequestClose }: { visible: b
 /** Covers the table while the phone goes to the next person, so nobody sees another's cards. */
 export function PassPhone({
   name,
-  cover,
+  deckId,
   onAccept,
   onRequestClose,
   children,
 }: {
   name: string | null;
-  cover: number;
+  /** The deck whose cover is shown. */
+  deckId: string;
   onAccept: () => void;
   onRequestClose: () => void;
   children?: ReactNode;
@@ -47,7 +49,7 @@ export function PassPhone({
   return (
     <Overlay visible={name !== null} onRequestClose={onRequestClose}>
       <ScrollView style={styles.handoffScroll} contentContainerStyle={styles.handoff} bounces={false}>
-        <CardImage source={cover} width={120} />
+        <CardImage deckId={deckId} page={getDeck(deckId).cover.page} width={120} />
         <Text style={styles.handoffTitle}>{name !== null ? t('passPhoneTo', { name }) : ''}</Text>
         <Text style={styles.handoffNote}>{t('dontLook')}</Text>
         <Button variant="lime" label={name !== null ? t('showMyCards', { name }) : ''} onPress={onAccept} />

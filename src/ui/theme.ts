@@ -1,3 +1,5 @@
+import { Platform, ViewStyle } from 'react-native';
+
 /**
  * The app frame: a soft lavender-grey ground, white cards, near-black ink and
  * one violet accent, with each deck bringing its own colours (deckTheme).
@@ -47,10 +49,28 @@ export function cardShadow(width: number): string {
   const s = width / 300;
   const px = (v: number, min: number) => `${Math.max(min, Math.round(v * s))}px`;
   return [
-    `0 1px ${px(2, 1)} rgba(0,0,0,0.30)`,
+    `0 1px ${px(3, 2)} rgba(0,0,0,0.22)`,
     `0 ${px(5, 2)} ${px(12, 4)} rgba(0,0,0,0.24)`,
     `0 ${px(16, 4)} ${px(32, 8)} rgba(0,0,0,0.22)`,
   ].join(', ');
+}
+
+/**
+ * A card resting on the table. `edge` is the colour at the card's edge: it
+ * fills the rounded outline so no rim shows at the corners, and lets iOS
+ * draw its own soft shadow from that outline (box-shadow there can end in a
+ * hard line at the bottom).
+ */
+export function cardShadowStyle(width: number, edge: string): ViewStyle {
+  if (Platform.OS !== 'ios') return { backgroundColor: edge, boxShadow: cardShadow(width) };
+  const s = width / 300;
+  return {
+    backgroundColor: edge,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: Math.max(2, 7 * s) },
+    shadowOpacity: 0.3,
+    shadowRadius: Math.max(2.5, 11 * s),
+  };
 }
 
 export interface DeckTheme {

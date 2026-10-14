@@ -67,7 +67,7 @@ export function HandRow({ deckId, cards, width, onPress, ink = colors.surface }:
   const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => setOffset(e.nativeEvent.contentOffset.x);
 
   return (
-    <View style={styles.wrap}>
+    <View>
       <ScrollView
         ref={scroller}
         horizontal
@@ -97,9 +97,9 @@ export function HandRow({ deckId, cards, width, onPress, ink = colors.surface }:
 }
 
 const styles = StyleSheet.create({
-  wrap: { gap: 8 },
   row: { flexDirection: 'row', justifyContent: 'center', gap: GAP, alignSelf: 'center' },
-  content: { gap: GAP },
+  // Room under the cards inside the scroller, so their shadow isn't cut off; it replaces the gap above the arrows.
+  content: { gap: GAP, paddingBottom: 8 },
   pressed: { opacity: 0.75 },
   pager: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 16 },
   arrow: { width: 40, height: 40, borderRadius: radius.pill, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },

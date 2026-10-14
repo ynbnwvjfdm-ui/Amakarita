@@ -13,14 +13,12 @@ interface Props {
   onClose: () => void;
   /** Buttons shown under the card. Tapping outside the card closes. */
   actions?: ReactNode;
-  /** Extra content under the card (scrolls with it). */
-  footer?: ReactNode;
 }
 
 /** A card shown large over a dimmed background, so its words can be read. */
-export function CardViewer({ art, caption, onClose, actions, footer }: Props) {
+export function CardViewer({ art, caption, onClose, actions }: Props) {
   const { width, height } = useWindowDimensions();
-  const room = Math.min(width, MAX_WIDTH) * (footer ? 0.66 : 0.8);
+  const room = Math.min(width, MAX_WIDTH) * 0.8;
   const cardWidth = Math.min(room, (height - (actions ? 260 : 180)) * CARD_RATIO);
   const card = art ? <CardArt {...art} width={cardWidth} /> : null;
   return (
@@ -36,7 +34,6 @@ export function CardViewer({ art, caption, onClose, actions, footer }: Props) {
           {caption ? <Text style={styles.caption}>{caption}</Text> : null}
           <Pressable onPress={actions ? undefined : onClose}>{card}</Pressable>
           {actions ? <View style={styles.actions}>{actions}</View> : null}
-          {footer ? <View style={styles.footer}>{footer}</View> : null}
         </ScrollView>
       </View>
     </Overlay>
@@ -52,5 +49,4 @@ const styles = StyleSheet.create({
   scroll: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 4, paddingBottom: 28, paddingHorizontal: 16, gap: 16 },
   caption: { color: '#fff', fontSize: 18, fontFamily: fonts.bold, textAlign: 'center' },
   actions: { flexDirection: 'row', gap: 12, justifyContent: 'center', flexWrap: 'wrap' },
-  footer: { alignSelf: 'stretch' },
 });

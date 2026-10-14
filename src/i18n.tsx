@@ -58,6 +58,7 @@ const STRINGS = {
   newMedal: { rw: 'Umudari mushya', en: 'New medal' },
   share: { rw: 'Sangiza inshuti zawe', en: 'Share with friends' },
   shareCard: { rw: 'Sangiza iyi karita', en: 'Share this card' },
+  shareShort: { rw: 'Sangiza', en: 'Share' },
   shareProgress: { rw: 'Maze kumenya amakarita {n} kuri {total} muri Amakarita! Iga Ikinyarwanda ukina amakarita.', en: 'I know {n} of {total} cards in Amakarita! Learn Kinyarwanda by playing cards.' },
   profilesTitle: { rw: 'Abakinnyi', en: 'Players' },
   changePlayer: { rw: 'Hindura umukinnyi', en: 'Change player' },

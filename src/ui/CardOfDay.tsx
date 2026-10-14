@@ -10,7 +10,7 @@ import { FlipCard } from './FlipCard';
 import { QuestionCard } from './QuestionCard';
 import { colors, fonts, radius } from './theme';
 
-/** Today's card: the question side up; tap to turn it and see the printed card. */
+/** Today's card: the question side up. Tapping turns it to the printed card (left for people to discover). */
 export function CardOfDay({ width }: { width: number }) {
   const { t, lang } = useI18n();
   const [today] = useState(() => new Date());
@@ -42,10 +42,6 @@ export function CardOfDay({ width }: { width: number }) {
           back={<CardArt deckId={q.deck} cardId={q.card} width={cardW} />}
         />
       </Pressable>
-      <View style={styles.hint}>
-        <Ionicons name={flipped ? 'refresh' : 'hand-left-outline'} size={16} color={colors.muted} />
-        <Text style={styles.hintText}>{flipped ? t('tapToFlipBack') : t('tapToReveal')}</Text>
-      </View>
     </View>
   );
 }
@@ -57,6 +53,4 @@ const styles = StyleSheet.create({
   date: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: colors.lime, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 5 },
   dateText: { fontFamily: fonts.semibold, fontSize: 12, color: colors.ink },
   stage: { alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
-  hint: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 6, backgroundColor: 'rgba(255,255,255,0.9)', alignSelf: 'center', borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 6 },
-  hintText: { fontFamily: fonts.semibold, fontSize: 13, color: colors.ink },
 });

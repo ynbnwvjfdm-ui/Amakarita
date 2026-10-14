@@ -2,22 +2,19 @@ import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getDeck, pageImage } from '../decks';
+import { getDeck } from '../decks';
 import { useI18n } from '../i18n';
 import { useNav } from '../navigation';
 import { CardStatus, cardStatus, countKnown, medalFor, nextMedal } from '../game/progress';
 import { useProgress } from '../progressStore';
-import { QUESTIONS, questionFor } from '../questions';
+import { QUESTIONS } from '../questions';
 import { CardArt } from '../ui/CardArt';
 import { CardImage } from '../ui/CardImage';
-import { Button } from '../ui/Button';
-import { CardViewer } from '../ui/CardViewer';
+import { CardBrowser } from '../ui/CardBrowser';
 import { MEDAL_KEY, MedalIcon } from '../ui/Medal';
-import { shareText } from '../ui/share';
-import { QuestionReview } from '../ui/QuestionReview';
 import { colors, deckTheme, fonts, MAX_WIDTH, radius } from '../ui/theme';
 
-/** Every page of a deck, in print order. Tap a card to see it large with its question. */
+/** Every page of a deck, in print order. Tap a card to see it large and answer its question. */
 export function DeckScreen({ deckId }: { deckId: string }) {
   const { t } = useI18n();
   const nav = useNav();
@@ -28,7 +25,6 @@ export function DeckScreen({ deckId }: { deckId: string }) {
   const W = Math.min(width, MAX_WIDTH);
   const cardWidth = (W - 32 - 2 * 10) / 3;
   const pages = Array.from({ length: deck.pageCount }, (_, i) => i + 1);
-  const openCard = open !== null ? deck.cards.find((c) => c.page === open) : undefined;
   // Shrink the title so its longest word never breaks across lines.
   const titleRoom = W - 32 - 32 - 12 - 100;
   const longest = Math.max(...deck.title.split(' ').map((w) => w.length));
@@ -70,7 +66,7 @@ export function DeckScreen({ deckId }: { deckId: string }) {
                 <Text style={[styles.hint, { color: theme.onBase }]}>{t('nextMedal', { n: next.more, medal: t(MEDAL_KEY[next.medal]) })}</Text>
               ) : null}
             </View>
-            <CardImage source={pageImage(deckId, deck.cover.page)} width={92} style={{ transform: [{ rotate: '6deg' }] }} />
+            <CardImage deckId={deckId} page={deck.cover.page} width={92} style={{ transform: [{ rotate: '6deg' }] }} />
           </View>
         </View>
         <View style={styles.grid}>
@@ -86,20 +82,7 @@ export function DeckScreen({ deckId }: { deckId: string }) {
           })}
         </View>
       </ScrollView>
-      <CardViewer
-        art={open !== null ? { deckId, page: open } : null}
-        onClose={() => setOpen(null)}
-        actions={
-          openCard?.text ? (
-            <Button
-              variant="secondary"
-              label={t('shareCard')}
-              onPress={() => shareText(`${deck.title}\n\n${openCard.text}\n\n— Amakarita`)}
-            />
-          ) : undefined
-        }
-        footer={openCard ? <QuestionReview question={questionFor(openCard.id)} /> : undefined}
-      />
+      <CardBrowser deckId={deckId} start={open} onClose={() => setOpen(null)} />
     </SafeAreaView>
   );
 }

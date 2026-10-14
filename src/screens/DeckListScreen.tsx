@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
-import { DECKS, pageImage } from '../decks';
+import { DECKS } from '../decks';
 import { useI18n } from '../i18n';
 import { countKnown, medalFor } from '../game/progress';
 import { useNav } from '../navigation';
@@ -52,7 +52,7 @@ export function DeckListScreen() {
                 ) : null}
               </View>
               <View style={styles.cardWrap}>
-                <CardImage source={pageImage(d.id, d.cover.page)} width={tile * 0.56} />
+                <CardImage deckId={d.id} page={d.cover.page} width={tile * 0.56} />
               </View>
             </Pressable>
           );

@@ -11,8 +11,9 @@ are how people practise it.
   Rules at the top of `src/game/quiz.ts`.
 - **Matatu** (Amagande): 2–6 players, 4–7 cards each, rounds until one
   player is left. Rules at the top of `src/game/matatu.ts`.
-- **Card of the day** on the home screen, and every card's question in the
-  deck browser.
+- **Card of the day** on the home screen. In the deck browser, tap a card to
+  answer its question (question side first, then the printed card); swipe
+  for the next card. Answers count towards the daily goal.
 - Amaturufu (rules in `src/game/amaturufu.ts`) and Ibisakuzo are switched
   off for now.
 
@@ -66,6 +67,8 @@ Suited PDFs: page 1 cover, pages 2–53 ♠ ♥ ♣ ♦ (2 → A each), 54–55 
 - `assets/decks/<deck>/page-NN.webp` — every PDF page rendered at 1230×1680, lossless.
 - `src/data/decks/<deck>.json` — card data; `index.json` lists the decks.
 - `tools/extract_decks.py` — regenerates `assets/` and `src/data/` from `source/`.
+- `tools/page_edges.py` — writes `src/data/decks/edges.ts`, each page's edge colour
+  (put behind the rounded card so iOS draws a smooth shadow).
 
 ## Card data
 
@@ -98,6 +101,7 @@ colours, so treat them as approximate; the page images are authoritative.
 
 ```sh
 python3 -I tools/extract_decks.py   # needs pdfplumber, Pillow, poppler-utils
+python3 -I tools/page_edges.py      # needs Pillow
 ```
 
 The script checks every card's printed rank and suit colour against its

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { LayoutChangeEvent, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { CARD_RATIO, getDeck, pageImage } from '../decks';
+import { CARD_RATIO, getDeck } from '../decks';
 import { QUESTIONS } from '../questions';
 import { DAILY_GOAL, answeredOn, countKnown, medalFor } from '../game/progress';
 import { attemptsLeft, quizWinners, stealTarget, STEAL } from '../game/quiz';
@@ -118,7 +118,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
         <View style={styles.stage} onLayout={onStage}>
           {cardW === 0 ? null : game.phase === 'draw' && nextId ? (
             <Pressable accessibilityRole="button" accessibilityLabel={t('drawCard')} onPress={table.draw} disabled={bot} style={styles.drawWrap}>
-              <CardImage source={pageImage(QUESTIONS[nextId].deck, getDeck(QUESTIONS[nextId].deck).cover.page)} width={cardW} />
+              <CardImage deckId={QUESTIONS[nextId].deck} page={getDeck(QUESTIONS[nextId].deck).cover.page} width={cardW} />
             </Pressable>
           ) : current ? (
             <Pressable accessibilityRole="button" onPress={() => game.phase === 'result' && setPrintedFor((k) => (k === turnKey ? null : turnKey))}>

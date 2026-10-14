@@ -3,7 +3,7 @@ import { CARD_RATIO, getDeck } from '../decks';
 import { Category, Question, cardPoints } from '../game/quiz';
 import { useI18n } from '../i18n';
 import { SUIT_SYMBOL } from './table';
-import { cardShadow, colors, deckTheme, fonts, radius } from './theme';
+import { cardShadowStyle, colors, deckTheme, fonts, radius } from './theme';
 
 interface Props {
   question: Question;
@@ -57,7 +57,7 @@ export function QuestionCard({ question, width, view, revealed, sort, doubled, s
   const size = (chars > 90 ? 16 : chars > 55 ? 19 : chars > 28 ? 23 : 29) * s;
 
   return (
-    <View testID="card" style={[styles.card, { width, height, backgroundColor: theme.face, borderRadius: 18 * s, padding: 16 * s, boxShadow: cardShadow(width) }, style]}>
+    <View testID="card" style={[styles.card, { width, height, borderRadius: 18 * s, padding: 16 * s }, cardShadowStyle(width, theme.face), style]}>
       <View style={styles.top}>
         {question.rank && question.suit ? (
           <View style={styles.cornerCol}>

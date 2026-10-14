@@ -1,4 +1,5 @@
 import { PlayingCard, Rank, Suit } from './game/cards';
+import { pageEdges } from './data/decks/edges';
 import { deckPages } from './data/decks/images';
 
 import ntibavugaBavuga from './data/decks/ntibavuga-bavuga.json';
@@ -55,6 +56,11 @@ export function getDeck(id: string): Deck {
 /** Image source for a page of a deck's PDF (1-based). */
 export function pageImage(deckId: string, page: number): number {
   return deckPages[deckId][page - 1];
+}
+
+/** The flat colour at a page's edge, put behind the rounded card. */
+export function pageEdge(deckId: string, page: number): string {
+  return pageEdges[deckId]?.[page - 1] ?? '#000000';
 }
 
 export function cardImage(deckId: string, cardId: string): number {

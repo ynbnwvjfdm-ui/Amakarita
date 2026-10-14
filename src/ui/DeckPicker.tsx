@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
-import { CARD_RATIO, SUITED_DECKS, pageImage } from '../decks';
+import { CARD_RATIO, SUITED_DECKS } from '../decks';
 import { CardImage } from './CardImage';
 import { colors, fonts, MAX_WIDTH } from './theme';
 
@@ -33,7 +33,7 @@ export function DeckPicker({ value, onChange, mixTitle }: Props) {
             onPress={() => onChange(c.id)}
             style={[styles.deck, { width: cell }, on && styles.deckOn]}
           >
-            {c.id === 'mix' ? <AllDecks width={cardW} /> : <CardImage source={pageImage(c.id, SUITED_DECKS.find((d) => d.id === c.id)!.cover.page)} width={cardW} />}
+            {c.id === 'mix' ? <AllDecks width={cardW} /> : <CardImage deckId={c.id} page={SUITED_DECKS.find((d) => d.id === c.id)!.cover.page} width={cardW} />}
             <Text style={styles.deckTitle} numberOfLines={1}>
               {c.title}
             </Text>
@@ -51,7 +51,7 @@ function AllDecks({ width }: { width: number }) {
   return (
     <View style={[styles.all, { width, height: width / CARD_RATIO, gap }]}>
       {SUITED_DECKS.map((d) => (
-        <CardImage key={d.id} source={pageImage(d.id, d.cover.page)} width={mini} />
+        <CardImage key={d.id} deckId={d.id} page={d.cover.page} width={mini} />
       ))}
     </View>
   );

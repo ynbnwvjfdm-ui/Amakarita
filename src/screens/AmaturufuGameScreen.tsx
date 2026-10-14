@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-na
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { teamScores, trickWinner, winningTeams } from '../game/amaturufu';
 import { PlayingCard } from '../game/cards';
-import { backImage, pageImage, getDeck } from '../decks';
+import { getDeck } from '../decks';
 import { useI18n } from '../i18n';
 import { AmaturufuConfig, useNav } from '../navigation';
 import { Button } from '../ui/Button';
@@ -26,7 +26,6 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
 
   const n = config.playerCount;
   const teamsMode = config.teamMode === 'teams';
-  const deck = getDeck(config.deckId);
   const img = (c: PlayingCard): ArtRef => ({ deckId: config.deckId, cardId: c.id });
   const soloHuman = table.humans.length === 1 ? table.humans[0] : null;
   const name = (seat: number) =>
@@ -81,7 +80,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
             </View>
           </Pressable>
           <View style={styles.pile}>
-            {game.stock.length > 1 ? <CardImage source={backImage(config.deckId)} width={30} /> : null}
+            {game.stock.length > 1 ? <CardImage deckId={config.deckId} page={getDeck(config.deckId).cover.page} width={30} /> : null}
             <Text style={styles.pileText}>{t('pile', { n: game.stock.length })}</Text>
           </View>
         </View>
@@ -100,7 +99,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
                 </View>
                 <View style={styles.backs}>
                   {game.hands[seat].map((c) => (
-                    <CardImage key={c.id} source={backImage(config.deckId)} width={16} />
+                    <CardImage key={c.id} deckId={config.deckId} page={getDeck(config.deckId).cover.page} width={16} />
                   ))}
                 </View>
               </View>
@@ -181,7 +180,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
 
       <PassPhone
         name={handoff !== null ? name(handoff) : null}
-        cover={pageImage(config.deckId, deck.cover.page)}
+        deckId={config.deckId}
         onAccept={table.acceptHandoff}
         onRequestClose={() => setLeaving(true)}
       />

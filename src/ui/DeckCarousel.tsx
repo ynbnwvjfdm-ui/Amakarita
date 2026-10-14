@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { DECKS, pageImage } from '../decks';
+import { DECKS } from '../decks';
 import { useI18n } from '../i18n';
 import { CardImage } from './CardImage';
 import { colors, deckTheme, fonts, radius } from './theme';
@@ -54,7 +54,7 @@ export function DeckCarousel({ width, onOpen }: Props) {
           {DECKS.map((d) => (
             <View key={d.id} style={[styles.page, { width: pageW }]}>
               <Pressable accessibilityRole="button" accessibilityLabel={d.title} onPress={() => onOpen(d.id)}>
-                <CardImage source={pageImage(d.id, d.cover.page)} width={cardW} />
+                <CardImage deckId={d.id} page={d.cover.page} width={cardW} />
               </Pressable>
             </View>
           ))}

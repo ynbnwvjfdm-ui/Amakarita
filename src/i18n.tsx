@@ -23,7 +23,7 @@ const STRINGS = {
   everyoneAlone: { rw: 'Buri wese ku giti cye', en: 'Everyone for themselves' },
   teamsNote4: { rw: 'Abakinnyi 4 bakina mu makipe 2. Abo mukinana mwicarana muteganye.', en: '4 players play in 2 teams. Partners sit opposite each other.' },
   whoPlays: { rw: 'Ni nde ukina?', en: 'Who is playing?' },
-  writeNames: { rw: 'Andika amazina', en: 'Write names' },
+  writeNames: { rw: 'Andika amazina y’abakinnyi', en: 'Write the players’ names' },
   progressTitle: { rw: 'Aho ugeze', en: 'Your progress' },
   cardsKnown: { rw: 'Amakarita wamenye', en: 'Cards you know' },
   knownOf: { rw: 'Wamenye {n}/{total}', en: 'Known {n}/{total}' },

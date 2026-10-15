@@ -11,6 +11,10 @@ are how people practise it.
   Rules at the top of `src/game/quiz.ts`.
 - **Matatu** (Amagande): 2–6 players, 4–7 cards each, rounds until one
   player is left. Rules at the top of `src/game/matatu.ts`.
+- **Daily review** ("today's 10 cards"), started from the daily goal on the
+  home screen: the cards the learner keeps missing first, then half-learnt,
+  new and long-unseen known cards. A card missed comes back once at the end;
+  "10 more" carries on. Rules at the top of `src/game/review.ts`.
 - **Card of the day** on the home screen. In the deck browser, tap a card to
   answer its question (question side first, then the printed card); swipe
   for the next card. Answers count towards the daily goal.

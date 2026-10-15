@@ -54,7 +54,8 @@ export type Route =
   | { name: 'matatuSetup' }
   | { name: 'matatuGame'; config: MatatuConfig }
   | { name: 'ibisakuzoSetup' }
-  | { name: 'ibisakuzoGame'; config: IbisakuzoConfig };
+  | { name: 'ibisakuzoGame'; config: IbisakuzoConfig }
+  | { name: 'review' };
 
 export interface Nav {
   push: (route: Route) => void;

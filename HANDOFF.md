@@ -30,6 +30,7 @@ The README has the full list and the rules of each game. In short:
   - Points.
   - Answering cards in the deck browser.
   - Card of the day.
+  - Daily review: "today's 10 cards" from Home (built 15 October).
 - **Sharing:** "Sangiza" makes a picture of your progress drawn as a playing card.
 - **Look:** card-first design in Space Grotesk; motion and haptics; a how-to-play guide for each game.
 
@@ -59,11 +60,18 @@ The README has the full list and the rules of each game. In short:
   - Shared from a card, that card is shown in the app's lettering with the answer filled in.
 - **Shadows:** on iPhone, cards use the native soft shadow over a backing in each page's edge colour (`tools/page_edges.py`). Box-shadow there ended in a hard line.
 - **Setup screens:** one step per screen, never needing a scroll.
+- **Daily review** (author's answers, 15 October):
+  - Missed cards first, then half-learnt, then new, then known cards answered longest ago; all five decks; a new learner gets 10 new cards.
+  - A card answered wrong comes back once after the 10.
+  - The end screen offers "10 more" (never the same cards twice in one sitting).
+  - Started from a button in the daily goal box on Home ("Tangira isubiramo ry’uyu munsi"; "Andi makarita 10" once the goal is met).
+  - Every answer, second tries included, is saved like any other, so it counts for the goal, streak and points.
 
 ## Waiting on the author
 
 1. **Kinyarwanda review** of text written by Claude:
    - the guide pages (Matatu 6, question game 5, Ibisakuzo 4);
+   - the daily review lines: "Tangira isubiramo ry’uyu munsi", "Andi makarita 10", "Wongere ugerageze", "Isubiramo rirarangiye", "Ibisubizo by’ukuri ubwa mbere: {n}/{total}", "Wasubiyemo amakarita yose uyu munsi.";
    - the medal names, "Intego y'uyu munsi", "Bika / Siba", "Ongeraho umukinnyi", "Simbuka";
    - the Ibisakuzo lines: "{asker} arabaza, {name} arasubiza", "Soma igisakuzo mu ijwi, {name} agisubize", "Ibisakuzo mutabonye", "Buri wese asubiza ibisakuzo bingana…".
 2. **Ibisakuzo:**
@@ -73,14 +81,15 @@ The README has the full list and the rules of each game. In short:
 3. **Matatu:** the Joker's value when someone cuts (50) is a guess.
 4. **Final app name and icon.**
 5. **Merging** PRs #1 and #2 into `master`.
-6. **Next build, chosen by the author on 15 October: the daily review.** "Today's 10 cards" from Home, picked from the cards each person keeps missing, counting towards the daily goal, streak and points. Start with a round of questions to the author about it. Later options:
+6. **Next build: not chosen yet.** The daily review is done (15 October). Options mentioned before:
    - English meanings of each saying (the author must check every one);
    - finishing Amaturufu.
 7. **Live phone testing:** the tunnel from cloud chats can drop at any time (see "Test on the author's iPhone"). An Apple Developer account would allow a proper installed build.
 8. **Not yet seen on a real phone:**
    - the share picture (made by `react-native-view-shot`);
    - the riddle flap;
-   - the new shadows.
+   - the new shadows;
+   - the daily review.
 
 ## How to
 

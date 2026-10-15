@@ -22,7 +22,7 @@ export function HomeScreen() {
     <Screen tabbed eyebrow={t(greetingKey(now))} title={t('appTitle')} right={<HeaderActions />}>
       <Text style={styles.tagline}>{t('homeTagline')}</Text>
       <DeckCarousel width={W} onOpen={(deckId) => nav.push({ name: 'deck', deckId })} />
-      <ProgressPanel onOpenDeck={(deckId) => nav.push({ name: 'deck', deckId })} />
+      <ProgressPanel onOpenDeck={(deckId) => nav.push({ name: 'deck', deckId })} onReview={() => nav.push({ name: 'review' })} />
       <CardOfDay width={W} />
       <Text style={formStyles.section}>{t('games')}</Text>
       <GameTickets />

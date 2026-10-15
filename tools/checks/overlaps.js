@@ -54,7 +54,7 @@ const fits=async(name)=>{ const r=await p.evaluate(()=>[...document.querySelecto
 const top=async(loc)=>{ if(!(await loc.count())) return false; const h=await loc.first().elementHandle(); return await h.evaluate(e=>{const r=e.getBoundingClientRect(); const hit=document.elementFromPoint(r.left+r.width/2,r.top+Math.min(r.height/2,20)); return !!hit&&(e===hit||e.contains(hit));}); };
 const T=(rw,en)=>LANG==='en'?en:rw;
 const go=async()=>{ await p.goto(process.env.URL||'http://localhost:8765/'); await p.waitForTimeout(1300); if(LANG==='en'){ await p.getByText('EN',{exact:true}).first().click(); await p.waitForTimeout(300);} };
-const step=async(label,fn)=>{ try{ await fn(); }catch(e){ findings.push(`[${label}] STEP FAILED ${e.message.split('\n')[0].slice(0,120)}`);} };
+const step=async(label,fn)=>{ try{ await fn(); }catch(e){ findings.push(`[${label}] STEP FAILED ${e.message.split('\n')[0].slice(0,120)}`); await p.screenshot({path:`${OUT}/${TAG}-FAILED-${label}.png`}).catch(()=>{});} };
 
 await go(); await audit('home');
 await step('cod',async()=>{ await p.getByRole('button',{name:T('Kanda urebe igisubizo','Tap to see the answer')}).first().click({timeout:3000}); await p.waitForTimeout(700); await audit('home-cod'); });
@@ -120,6 +120,20 @@ await step('ibisakuzo',async()=>{ await go(); await p.getByRole('tab').nth(2).cl
   await round(true);
   for(let r=0;r<12;r++){ await p.getByRole('button',{name:T('Komeza','Continue')}).last().click(); await p.waitForTimeout(250); if(await p.getByText(T('Umukino warangiye','Game over')).count()) break; await round(false); }
   await audit('ibisakuzo-over');
+});
+await step('review',async()=>{ await go(); const start=p.getByRole('button',{name:new RegExp('^('+T('Tangira isubiramo ry’uyu munsi|Andi makarita 10','Start today’s review|10 more cards')+')$')}); /* the second once earlier steps met today's goal */ await start.scrollIntoViewIfNeeded(); await audit('home-review-button'); await start.click({timeout:3000}); await p.waitForTimeout(600); await audit('review-q');
+  const opts=()=>p.locator('[role="button"]').filter({hasText:/^[A-ZÀ-Ü’' ,()?\/0-9-]+$|^(Kirazira|Indangagaciro)$/});
+  await opts().first().click(); await p.waitForTimeout(900); await audit('review-result');
+  let again=false;
+  for(let i=0;i<90;i++){
+    if(await p.getByText(T('Isubiramo rirarangiye','Review finished')).count()){ await audit('review-over'); break; }
+    if(!again&&await p.getByText(T('Wongere ugerageze','One more try')).count()){ again=true; await audit('review-again'); }
+    const cont=p.getByRole('button',{name:T('Komeza','Continue')}); if(await cont.count()){ await cont.first().click(); await p.waitForTimeout(400); continue; }
+    if(await opts().count()){ await opts().nth(i%2).click().catch(()=>{}); await p.waitForTimeout(500); continue; }
+    await p.waitForTimeout(400);
+  }
+  await p.getByRole('button',{name:T('Andi makarita 10','10 more cards')}).click({timeout:3000}); await p.waitForTimeout(600); await audit('review-more');
+  await p.getByRole('button',{name:T('Subira inyuma','Back')}).first().click(); await p.waitForTimeout(500); await audit('home-after-review');
 });
 console.log(`== ${TAG} ${VW}x${VH} ${LANG}`); console.log(findings.join('\n')||'no findings'); console.log('errors',JSON.stringify(errs.slice(0,3)));
 await b.close();})();

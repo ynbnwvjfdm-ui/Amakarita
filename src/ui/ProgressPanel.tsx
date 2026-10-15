@@ -6,12 +6,13 @@ import { DAILY_GOAL, answeredOn, streak } from '../game/progress';
 import { useI18n } from '../i18n';
 import { useProgress } from '../progressStore';
 import { deckStats } from '../stats';
+import { Button } from './Button';
 import { MedalIcon } from './Medal';
 import { ShareSheet } from './ShareSheet';
 import { colors, deckTheme, fonts, radius } from './theme';
 
 /** How much the learner knows: all decks together, the streak, and one bar per deck. */
-export function ProgressPanel({ onOpenDeck }: { onOpenDeck: (deckId: string) => void }) {
+export function ProgressPanel({ onOpenDeck, onReview }: { onOpenDeck: (deckId: string) => void; onReview: () => void }) {
   const { t } = useI18n();
   const { progress } = useProgress();
   const decks = deckStats(progress);
@@ -55,6 +56,8 @@ export function ProgressPanel({ onOpenDeck }: { onOpenDeck: (deckId: string) => 
           <View style={[styles.goalFill, { width: `${(done / DAILY_GOAL) * 100}%` }]} />
         </View>
         {done >= DAILY_GOAL ? <Text style={styles.goalDone}>{t('goalReached')}</Text> : null}
+        {/* Today's 10 cards: the ones this person keeps missing come first. */}
+        <Button variant={done >= DAILY_GOAL ? 'secondary' : 'primary'} label={done >= DAILY_GOAL ? t('reviewMore') : t('reviewStart')} onPress={onReview} style={styles.reviewBtn} />
       </View>
       <View style={styles.big}>
         <Text style={styles.bigNumber}>{known}</Text>
@@ -96,6 +99,7 @@ const styles = StyleSheet.create({
   goalCount: { fontFamily: fonts.display, fontSize: 16, color: colors.ink },
   goalTrack: { height: 10, borderRadius: 5, backgroundColor: colors.surface, overflow: 'hidden' },
   goalFill: { height: '100%', borderRadius: 5, backgroundColor: colors.lime },
+  reviewBtn: { marginTop: 4 },
   goalDone: { fontFamily: fonts.semibold, fontSize: 13, color: colors.ink },
   streakText: { fontFamily: fonts.semibold, fontSize: 12, color: colors.ink },
   big: { flexDirection: 'row', alignItems: 'baseline', flexWrap: 'wrap', columnGap: 4 },

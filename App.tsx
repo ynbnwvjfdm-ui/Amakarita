@@ -24,11 +24,12 @@ import { MatatuSetupScreen } from './src/screens/MatatuSetupScreen';
 import { MatatuGameScreen } from './src/screens/MatatuGameScreen';
 import { IbisakuzoSetupScreen } from './src/screens/IbisakuzoSetupScreen';
 import { IbisakuzoGameScreen } from './src/screens/IbisakuzoGameScreen';
+import { ReviewScreen } from './src/screens/ReviewScreen';
 import { TabBar } from './src/ui/TabBar';
 import { colors } from './src/ui/theme';
 
 const TABS: TabName[] = ['home', 'decks', 'games'];
-const DARK_SCREENS: Route['name'][] = ['amaturufuGame', 'matatuGame', 'quizGame', 'ibisakuzoGame'];
+const DARK_SCREENS: Route['name'][] = ['amaturufuGame', 'matatuGame', 'quizGame', 'ibisakuzoGame', 'review'];
 
 function CurrentScreen({ route }: { route: Route }) {
   switch (route.name) {
@@ -56,6 +57,8 @@ function CurrentScreen({ route }: { route: Route }) {
       return <IbisakuzoSetupScreen />;
     case 'ibisakuzoGame':
       return <IbisakuzoGameScreen config={route.config} />;
+    case 'review':
+      return <ReviewScreen />;
   }
 }
 

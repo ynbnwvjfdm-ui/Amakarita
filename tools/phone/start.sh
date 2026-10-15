@@ -28,17 +28,38 @@ fi
 # Expo skips registering with the account (the "Development servers" list) when CI or EXPO_OFFLINE is set.
 unset CI EXPO_OFFLINE
 
-echo "Starting Expo with the tunnel; log: $LOG"
-NODE_OPTIONS="--require $PWD/tools/phone/ws-proxy.cjs ${NODE_OPTIONS:-}" \
-NODE_USE_ENV_PROXY=1 \
-EXPO_UNSTABLE_TUNNEL_V2=1 \
-DEBUG=expo:start:server:ws-tunnel,expo:start:server:developmentSession \
-  npx expo start --tunnel --port 8081 < /dev/null 2>&1 | while IFS= read -r line; do
-    printf '%s %s\n' "$(date -u +%H:%M:%S)" "$line"
-    case "$line" in
-      *"Development session ping"*url:*)
-        url="${line##*url: }"; url="${url%)}"
-        echo "READY: open Expo Go > Home > Development servers > Amakarita, or this link: $url"
-        ;;
-    esac
-  done | tee "$LOG"
+# The tunnel is a websocket, which the cloud proxy does not officially support:
+# it works, but can drop (seen after about 30 minutes), and Expo then exits. So
+# start it again after a pause long enough for Expo to free the old tunnel.
+# Each restart gets a new link; the "Development servers" entry follows it.
+run_expo() {
+  NODE_OPTIONS="--require $PWD/tools/phone/ws-proxy.cjs ${NODE_OPTIONS:-}" \
+  NODE_USE_ENV_PROXY=1 \
+  EXPO_UNSTABLE_TUNNEL_V2=1 \
+  DEBUG=expo:start:server:ws-tunnel,expo:start:server:developmentSession \
+    npx expo start --tunnel --port 8081 < /dev/null 2>&1 | while IFS= read -r line; do
+      printf '%s %s\n' "$(date -u +%H:%M:%S)" "$line"
+      case "$line" in
+        *"Development session ping"*url:*)
+          url="${line##*url: }"; url="${url%)}"
+          echo "READY: open Expo Go > Home > Development servers > Amakarita, or this link: $url"
+          ;;
+      esac
+    done | tee -a "$LOG" || true
+}
+
+: > "$LOG"
+quick=0
+while :; do
+  echo "Starting Expo with the tunnel; log: $LOG" | tee -a "$LOG"
+  started=$(date +%s)
+  run_expo
+  # Three failures in a row within a minute and a half each: something else is wrong (stop, see the log).
+  if [ $(( $(date +%s) - started )) -lt 90 ]; then quick=$((quick + 1)); else quick=0; fi
+  if [ "$quick" -ge 3 ]; then
+    echo "STOPPED: Expo failed to start three times in a row; see $LOG." | tee -a "$LOG"
+    exit 1
+  fi
+  echo "RESTARTING: the tunnel dropped; starting again in 30 seconds (the link will change)." | tee -a "$LOG"
+  sleep 30
+done

@@ -76,7 +76,8 @@ The README has the full list and the rules of each game. In short:
 6. **What to build next.** Claude's recommendation is a **daily review**: "today's 10 cards" from Home, picked from the cards each person keeps missing. Other options:
    - English meanings of each saying (the author must check every one);
    - finishing Amaturufu.
-7. **Not yet seen on a real phone:**
+7. **Live phone testing:** the tunnel from cloud chats can drop at any time (see "Test on the author's iPhone"). An Apple Developer account would allow a proper installed build.
+8. **Not yet seen on a real phone:**
    - the share picture (made by `react-native-view-shot`);
    - the riddle flap;
    - the new shadows.
@@ -92,11 +93,15 @@ Run `npm run phone` as a background job (in the Bash tool, `run_in_background`, 
   - the `EXPO_TOKEN` variable.
   - Never print or ask for the token.
 - **Why the script exists:** in a cloud session everything must go through the session's proxy. Expo's tunnel websocket ignores the proxy, so `tools/phone/ws-proxy.cjs` gives it one. Without it the tunnel fails with `getaddrinfo ENOTFOUND …on.expo.app`.
-- **Limits:**
+- **It is not reliable, by nature.** The cloud proxy's notes (`/root/.ccr/README.md`) list websockets as not supported. The tunnel works through it anyway, but it can drop. On 15 October it dropped after 29 minutes, and Expo then exited ("Unexpected server response: 409").
+  - The script starts Expo again 30 seconds after a drop. The link changes, and the "Development servers" entry follows it.
+  - After three failed starts in a row it stops (`STOPPED` in the log); start it again from a fresh shell.
+  - Tell the author it can drop. Don't promise a session will stay up.
+- **Other limits:**
   - Background jobs stop after 2 hours.
   - The cloud container stops a while after the chat goes quiet. When either happens, the app stops loading on the phone, and cards it hasn't fetched yet come out blank.
-  - Restart with `npm run phone`; the link changes, but the "Development servers" entry updates.
-  - An app that stays on the phone needs an Apple Developer account ($99/year) and an EAS build.
+  - Restart with `npm run phone`.
+- **The reliable route** is an installed build. That needs an Apple Developer account ($99/year), then an EAS development or preview build, with updates by `eas update`. No tunnel is involved, and the app keeps working with this chat closed.
 
 ### Update the author's preview
 

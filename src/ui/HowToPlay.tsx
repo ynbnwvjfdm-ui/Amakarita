@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { StringKey, useI18n } from '../i18n';
 import { Button } from './Button';
@@ -79,9 +80,9 @@ export function useGuide(game: GuideGame) {
 export function HelpButton({ onPress }: { onPress: () => void }) {
   const { t } = useI18n();
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={t('howToPlay')} onPress={onPress} hitSlop={6} style={styles.help}>
+    <Tap accessibilityRole="button" accessibilityLabel={t('howToPlay')} onPress={onPress} hitSlop={6} style={styles.help}>
       <Ionicons name="help" size={22} color={colors.ink} />
-    </Pressable>
+    </Tap>
   );
 }
 
@@ -124,9 +125,9 @@ export function HowToPlay({ game, deckId, visible, onClose }: { game: GuideGame;
           </View>
           <View style={styles.buttons}>
             {last ? null : (
-              <Pressable accessibilityRole="button" onPress={finish} style={styles.skip} hitSlop={6}>
+              <Tap accessibilityRole="button" onPress={finish} style={styles.skip} hitSlop={6}>
                 <Text style={styles.skipText}>{t('guideSkip')}</Text>
-              </Pressable>
+              </Tap>
             )}
             <Button variant="lime" label={last ? t('start') : t('continue')} onPress={() => (last ? finish() : setPage(page + 1))} style={styles.next} />
           </View>

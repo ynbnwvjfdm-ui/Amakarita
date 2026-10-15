@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Tap } from './fx';
 import { colors, radius, fonts } from './theme';
 
 interface Props<T extends string | number> {
@@ -16,7 +17,7 @@ export function Segmented<T extends string | number>({ options, value, onChange,
       {options.map((o) => {
         const on = o.value === value;
         return (
-          <Pressable
+          <Tap
             key={String(o.value)}
             accessibilityRole="radio"
             accessibilityState={{ selected: on }}
@@ -25,7 +26,7 @@ export function Segmented<T extends string | number>({ options, value, onChange,
             style={[styles.segment, on && styles.segmentOn]}
           >
             <Text style={[styles.segmentLabel, on && styles.segmentLabelOn]}>{o.label}</Text>
-          </Pressable>
+          </Tap>
         );
       })}
     </View>

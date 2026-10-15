@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors, fonts, MAX_WIDTH, radius } from './theme';
@@ -25,9 +26,9 @@ interface Props {
  */
 export function Screen({ title, eyebrow, onBack, backLabel, right, children, footer, tabbed, compact }: Props) {
   const back = onBack ? (
-    <Pressable accessibilityRole="button" accessibilityLabel={backLabel} onPress={onBack} hitSlop={12} style={styles.back}>
+    <Tap accessibilityRole="button" accessibilityLabel={backLabel} onPress={onBack} hitSlop={12} style={styles.back}>
       <Ionicons name="chevron-back" size={22} color={colors.ink} />
-    </Pressable>
+    </Tap>
   ) : null;
   return (
     <SafeAreaView style={styles.safe} edges={tabbed ? ['top'] : ['top', 'bottom']}>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Tap } from '../ui/fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getDeck } from '../decks';
@@ -39,9 +40,9 @@ export function DeckScreen({ deckId }: { deckId: string }) {
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
       <ScrollView contentContainerStyle={[styles.column, { width: W }]} showsVerticalScrollIndicator={false}>
         <View style={[styles.hero, { backgroundColor: theme.base }]}>
-          <Pressable accessibilityRole="button" accessibilityLabel={t('back')} onPress={nav.pop} hitSlop={12} style={styles.back}>
+          <Tap accessibilityRole="button" accessibilityLabel={t('back')} onPress={nav.pop} hitSlop={12} style={styles.back}>
             <Ionicons name="chevron-back" size={22} color={colors.ink} />
-          </Pressable>
+          </Tap>
           <View style={styles.heroRow}>
             <View style={{ flex: 1, gap: 4 }}>
               <Text style={[styles.title, { color: theme.onBase, fontSize: titleSize, lineHeight: titleSize * 1.12 }]}>{deck.title}</Text>
@@ -73,11 +74,11 @@ export function DeckScreen({ deckId }: { deckId: string }) {
           {pages.map((p) => {
             const card = deck.cards.find((c) => c.page === p);
             return (
-              <Pressable key={p} accessibilityRole="button" onPress={() => setOpen(p)} style={styles.cell}>
+              <Tap key={p} accessibilityRole="button" onPress={() => setOpen(p)} style={styles.cell}>
                 <CardArt deckId={deckId} page={p} width={cardWidth} />
                 {/* Where the learner stands with this card; an empty line keeps the rows even. */}
                 {asked.length ? <StatusLine status={card && QUESTIONS[card.id] ? cardStatus(progress, card.id) : null} /> : null}
-              </Pressable>
+              </Tap>
             );
           })}
         </View>

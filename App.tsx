@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import Animated, { FadeIn, FadeInLeft, FadeInRight } from 'react-native-reanimated';
 import { BackHandler, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -26,6 +27,7 @@ import { IbisakuzoSetupScreen } from './src/screens/IbisakuzoSetupScreen';
 import { IbisakuzoGameScreen } from './src/screens/IbisakuzoGameScreen';
 import { ReviewScreen } from './src/screens/ReviewScreen';
 import { TabBar } from './src/ui/TabBar';
+import { useReducedMotion } from './src/ui/motion';
 import { colors } from './src/ui/theme';
 
 const TABS: TabName[] = ['home', 'decks', 'games'];
@@ -70,14 +72,32 @@ export default function App() {
     SpaceGrotesk_700Bold,
   });
   const [stack, setStack] = useState<Route[]>([{ name: 'home' }]);
+  const reduced = useReducedMotion();
+  // Which way the last move went: a new screen comes in from the right, going back from the left, a tab fades.
+  const [way, setWay] = useState<'in' | 'back' | 'tab'>('tab');
 
   const nav = useMemo<Nav>(
     () => ({
-      push: (r) => setStack((s) => [...s, r]),
-      pop: () => setStack((s) => (s.length > 1 ? s.slice(0, -1) : s)),
-      replace: (r) => setStack((s) => [...s.slice(0, -1), r]),
-      home: () => setStack([{ name: 'home' }]),
-      tab: (name) => setStack([{ name }]),
+      push: (r) => {
+        setWay('in');
+        setStack((s) => [...s, r]);
+      },
+      pop: () => {
+        setWay('back');
+        setStack((s) => (s.length > 1 ? s.slice(0, -1) : s));
+      },
+      replace: (r) => {
+        setWay('in');
+        setStack((s) => [...s.slice(0, -1), r]);
+      },
+      home: () => {
+        setWay('back');
+        setStack([{ name: 'home' }]);
+      },
+      tab: (name) => {
+        setWay('tab');
+        setStack([{ name }]);
+      },
     }),
     [],
   );
@@ -103,7 +123,13 @@ export default function App() {
           <NavContext.Provider value={nav}>
             <StatusBar style={DARK_SCREENS.includes(route.name) ? 'light' : 'dark'} />
             <View style={{ flex: 1, backgroundColor: colors.bg }}>
-              <CurrentScreen route={route} />
+              <Animated.View
+                key={`${stack.length}:${route.name}`}
+                style={{ flex: 1 }}
+                entering={reduced ? undefined : way === 'tab' ? FadeIn.duration(200) : (way === 'in' ? FadeInRight : FadeInLeft).duration(280)}
+              >
+                <CurrentScreen route={route} />
+              </Animated.View>
               {tab ? <TabBar active={tab} onSelect={nav.tab} /> : null}
             </View>
           </NavContext.Provider>

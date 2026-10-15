@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Tap } from './fx';
 import { Lang, useI18n } from '../i18n';
 import { colors, fonts } from './theme';
 
@@ -14,7 +15,7 @@ export function LanguageToggle() {
       {OPTIONS.map((o) => {
         const on = o.lang === lang;
         return (
-          <Pressable
+          <Tap
             key={o.lang}
             accessibilityRole="radio"
             accessibilityState={{ selected: on }}
@@ -22,7 +23,7 @@ export function LanguageToggle() {
             style={[styles.option, on && styles.on]}
           >
             <Text style={[styles.label, on && styles.onLabel]}>{o.label}</Text>
-          </Pressable>
+          </Tap>
         );
       })}
     </View>

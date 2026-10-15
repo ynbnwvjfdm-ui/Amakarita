@@ -14,6 +14,7 @@ import { CardImage } from '../ui/CardImage';
 import { FitScroll } from '../ui/FitScroll';
 import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
 import { HelpButton, HowToPlay, useGuide } from '../ui/HowToPlay';
+import { Burst } from '../ui/fx';
 import { feel, PopIn } from '../ui/motion';
 import { Avatar } from '../ui/Profiles';
 import { RiddleCard } from '../ui/RiddleCard';
@@ -140,6 +141,7 @@ export function IbisakuzoGameScreen({ config }: { config: IbisakuzoConfig }) {
                   <View style={[styles.verdict, { backgroundColor: game.correct ? colors.lime : colors.coral }]}>
                     <Text style={styles.verdictText}>{game.correct ? t('correct') : t('notQuite')}</Text>
                     {game.correct ? <Text style={styles.verdictPoints}>+{RIDDLE_POINTS}</Text> : null}
+                    <Burst trigger={game.correct ? `${card.id}:${game.turn}` : null} />
                   </View>
                 </PopIn>
                 {game.correct ? null : (

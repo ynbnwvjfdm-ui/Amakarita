@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Tap } from '../ui/fx';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { teamScores, trickWinner, winningTeams } from '../game/amaturufu';
 import { PlayingCard } from '../game/cards';
@@ -64,10 +65,10 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
       <View style={[tableStyles.column, { width: W }]}>
         {/* Top bar: leave, trump, pile */}
         <View style={tableStyles.topBar}>
-          <Pressable accessibilityRole="button" accessibilityLabel={t('leaveGame')} onPress={() => setLeaving(true)} hitSlop={12}>
+          <Tap accessibilityRole="button" accessibilityLabel={t('leaveGame')} onPress={() => setLeaving(true)} hitSlop={12}>
             <Text style={tableStyles.close}>✕</Text>
-          </Pressable>
-          <Pressable
+          </Tap>
+          <Tap
             accessibilityRole="button"
             accessibilityLabel={`${t('trump')} ${SUIT_SYMBOL[game.trumpSuit]}`}
             onPress={() => setZoom(img(game.trumpCard))}
@@ -78,7 +79,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
               <Text style={tableStyles.label}>{t('trump')}</Text>
               <Text style={[tableStyles.suit, { color: SUIT_COLOR[game.trumpSuit] }]}>{SUIT_SYMBOL[game.trumpSuit]}</Text>
             </View>
-          </Pressable>
+          </Tap>
           <View style={styles.pile}>
             {game.stock.length > 1 ? <CardImage deckId={config.deckId} page={getDeck(config.deckId).cover.page} width={30} /> : null}
             <Text style={styles.pileText}>{t('pile', { n: game.stock.length })}</Text>
@@ -111,7 +112,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
         <View style={styles.center}>
           <View style={styles.trick}>
             {game.trick.map((p) => (
-              <Pressable key={p.card.id} accessibilityRole="button" onPress={() => setZoom(img(p.card))} style={styles.played}>
+              <Tap key={p.card.id} accessibilityRole="button" onPress={() => setZoom(img(p.card))} style={styles.played}>
                 <CardArt
                   {...img(p.card)}
                   width={trickWidth}
@@ -120,7 +121,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
                 <Text style={styles.playedName} numberOfLines={1}>
                   {name(p.seat)}
                 </Text>
-              </Pressable>
+              </Tap>
             ))}
           </View>
           <Text style={[tableStyles.status, game.turn === viewer && game.phase === 'playing' && tableStyles.statusMine]}>{status}</Text>
@@ -136,7 +137,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
           <View style={styles.hand}>
             {viewer !== null
               ? game.hands[viewer].map((c) => (
-                  <Pressable
+                  <Tap
                     key={c.id}
                     accessibilityRole="button"
                     accessibilityLabel={`${c.rank} ${SUIT_SYMBOL[c.suit]}`}
@@ -144,7 +145,7 @@ export function AmaturufuGameScreen({ config }: { config: AmaturufuConfig }) {
                     style={({ pressed }) => [myTurn && styles.playable, pressed && { opacity: 0.85 }]}
                   >
                     <CardArt {...img(c)} width={handWidth} />
-                  </Pressable>
+                  </Tap>
                 ))
               : null}
           </View>

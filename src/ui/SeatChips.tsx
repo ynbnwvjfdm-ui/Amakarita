@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Profile } from '../game/profiles';
 import { useI18n } from '../i18n';
@@ -49,17 +50,17 @@ export function SeatChips({ seats, onChange, width, peopleOnly, title }: Props) 
         <Text style={[formStyles.sectionTight, styles.title]} numberOfLines={1}>
           {title}
         </Text>
-        <Pressable accessibilityRole="button" onPress={() => setNaming(true)} style={styles.namesButton} hitSlop={8}>
+        <Tap accessibilityRole="button" onPress={() => setNaming(true)} style={styles.namesButton} hitSlop={8}>
           <Ionicons name="create-outline" size={16} color={colors.ink} />
           <Text style={styles.namesText}>{t('writeNames')}</Text>
-        </Pressable>
+        </Tap>
       </View>
       <View style={styles.grid}>
         {seats.map((seat, i) => {
           const human = peopleOnly || seat.kind === 'human';
           const name = seat.name ?? t('playerN', { n: i + 1 });
           return (
-            <Pressable
+            <Tap
               key={i}
               accessibilityRole="button"
               accessibilityLabel={`${name}: ${human ? t('person') : t('phone')}`}
@@ -80,7 +81,7 @@ export function SeatChips({ seats, onChange, width, peopleOnly, title }: Props) 
                   {peopleOnly ? t('person') : kindLabel(seat)}
                 </Text>
               </View>
-            </Pressable>
+            </Tap>
           );
         })}
       </View>
@@ -95,7 +96,7 @@ export function SeatChips({ seats, onChange, width, peopleOnly, title }: Props) 
                   const on = seat.profileId === p.id;
                   const takenElsewhere = seats.some((s, j) => j !== i && s.profileId === p.id);
                   return (
-                    <Pressable
+                    <Tap
                       key={p.id}
                       accessibilityRole="radio"
                       accessibilityState={{ selected: on, disabled: takenElsewhere }}
@@ -108,7 +109,7 @@ export function SeatChips({ seats, onChange, width, peopleOnly, title }: Props) 
                       <Text style={[styles.profileChipText, on && styles.profileChipTextOn]} numberOfLines={1}>
                         {p.name ?? t('you')}
                       </Text>
-                    </Pressable>
+                    </Tap>
                   );
                 })}
               </View>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { dayNumber } from '../dates';
 import { DAILY_GOAL, answeredOn, streak } from '../game/progress';
@@ -7,6 +7,7 @@ import { useI18n } from '../i18n';
 import { useProgress } from '../progressStore';
 import { deckStats } from '../stats';
 import { Button } from './Button';
+import { CountUp, FillBar, Pulse, Tap } from './fx';
 import { MedalIcon } from './Medal';
 import { ShareSheet } from './ShareSheet';
 import { colors, deckTheme, fonts, radius } from './theme';
@@ -31,15 +32,17 @@ export function ProgressPanel({ onOpenDeck, onReview }: { onOpenDeck: (deckId: s
         <View style={styles.headRight}>
           {days > 0 ? (
             <View style={styles.streak}>
-              <Ionicons name="flame" size={14} color={colors.coral} />
+              <Pulse>
+                <Ionicons name="flame" size={14} color={colors.coral} />
+              </Pulse>
               <Text style={styles.streakText}>{t('streakDays', { n: days })}</Text>
             </View>
           ) : null}
           {started ? (
-            <Pressable accessibilityRole="button" onPress={() => setSharing(true)} style={styles.shareBtn} hitSlop={6}>
+            <Tap accessibilityRole="button" onPress={() => setSharing(true)} style={styles.shareBtn} hitSlop={6}>
               <Ionicons name="share-social-outline" size={15} color={colors.ink} />
               <Text style={styles.streakText}>{t('share')}</Text>
-            </Pressable>
+            </Tap>
           ) : null}
         </View>
       </View>
@@ -53,32 +56,32 @@ export function ProgressPanel({ onOpenDeck, onReview }: { onOpenDeck: (deckId: s
           {done >= DAILY_GOAL ? <Ionicons name="checkmark-circle" size={18} color={colors.ink} /> : null}
         </View>
         <View style={styles.goalTrack}>
-          <View style={[styles.goalFill, { width: `${(done / DAILY_GOAL) * 100}%` }]} />
+          <FillBar share={done / DAILY_GOAL} style={styles.goalFill} />
         </View>
         {done >= DAILY_GOAL ? <Text style={styles.goalDone}>{t('goalReached')}</Text> : null}
         {/* Today's 10 cards: the ones this person keeps missing come first. */}
         <Button variant={done >= DAILY_GOAL ? 'secondary' : 'primary'} label={done >= DAILY_GOAL ? t('reviewMore') : t('reviewStart')} onPress={onReview} style={styles.reviewBtn} />
       </View>
       <View style={styles.big}>
-        <Text style={styles.bigNumber}>{known}</Text>
+        <CountUp value={known} style={styles.bigNumber} />
         <Text style={styles.bigTotal}>/{total}</Text>
         <Text style={styles.bigLabel}>{t('cardsKnown')}</Text>
       </View>
       {started ? null : <Text style={styles.empty}>{t('progressEmpty')}</Text>}
       <View style={styles.decks}>
-        {decks.map(({ deck, known: k, total: n, medal }) => (
-          <Pressable key={deck.id} accessibilityRole="button" accessibilityLabel={`${deck.title}: ${t('knownOf', { n: k, total: n })}`} onPress={() => onOpenDeck(deck.id)} style={styles.deckRow}>
+        {decks.map(({ deck, known: k, total: n, medal }, i) => (
+          <Tap key={deck.id} accessibilityRole="button" accessibilityLabel={`${deck.title}: ${t('knownOf', { n: k, total: n })}`} onPress={() => onOpenDeck(deck.id)} style={styles.deckRow}>
             <Text style={styles.deckName} numberOfLines={1}>
               {deck.title}
             </Text>
             <View style={styles.track}>
-              <View style={[styles.fill, { width: `${n ? (k / n) * 100 : 0}%`, backgroundColor: deckTheme(deck.id).base }]} />
+              <FillBar share={n ? k / n : 0} delay={80 * i} style={[styles.fill, { backgroundColor: deckTheme(deck.id).base }]} />
             </View>
             <Text style={styles.deckCount}>
               {k}/{n}
             </Text>
             <MedalIcon medal={medal} />
-          </Pressable>
+          </Tap>
         ))}
       </View>
       <ShareSheet visible={sharing} onClose={() => setSharing(false)} />

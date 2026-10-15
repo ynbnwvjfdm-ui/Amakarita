@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { FlatList, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { FlatList, NativeScrollEvent, NativeSyntheticEvent, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { dayNumber } from '../dates';
@@ -97,13 +98,13 @@ function Pages({ deckId, start, onClose }: { deckId: string; start: number; onCl
           {index + 1} / {pages.length}
         </Text>
         <View style={styles.topRight}>
-          <Pressable accessibilityRole="button" accessibilityLabel={t('shareCard')} onPress={() => setSharing(true)} hitSlop={6} style={styles.share}>
+          <Tap accessibilityRole="button" accessibilityLabel={t('shareCard')} onPress={() => setSharing(true)} hitSlop={6} style={styles.share}>
             <Ionicons name="share-outline" size={20} color={colors.ink} />
             <Text style={styles.shareText}>{t('shareShort')}</Text>
-          </Pressable>
-          <Pressable accessibilityRole="button" accessibilityLabel="close" onPress={onClose} hitSlop={10} style={styles.close}>
+          </Tap>
+          <Tap accessibilityRole="button" accessibilityLabel="close" onPress={onClose} hitSlop={10} style={styles.close}>
             <Ionicons name="close" size={22} color={colors.ink} />
-          </Pressable>
+          </Tap>
         </View>
       </View>
       <FlatList
@@ -137,7 +138,7 @@ function Pages({ deckId, start, onClose }: { deckId: string; start: number; onCl
                 <View style={styles.cardRow}>
                   {ask ? (
                     // Tapping turns the card too; nothing on screen says so, but screen readers do.
-                    <Pressable
+                    <Tap
                       accessibilityRole="button"
                       accessibilityLabel={turned[ask.card] ? t('tapToFlipBack') : t('tapToReveal')}
                       onPress={() => setTurned((v) => ({ ...v, [ask.card]: !v[ask.card] }))}
@@ -149,7 +150,7 @@ function Pages({ deckId, start, onClose }: { deckId: string; start: number; onCl
                         front={<QuestionCard question={ask} width={w} view="quiz" />}
                         back={<CardArt deckId={deckId} page={page} width={w} />}
                       />
-                    </Pressable>
+                    </Tap>
                   ) : (
                     <CardArt deckId={deckId} page={page} width={w} />
                   )}

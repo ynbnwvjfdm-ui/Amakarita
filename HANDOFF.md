@@ -33,6 +33,7 @@ The README has the full list and the rules of each game. In short:
   - Daily review: "today's 10 cards" from Home (built 15 October).
 - **Sharing:** "Sangiza" makes a picture of your progress drawn as a playing card.
 - **Look:** card-first design in Space Grotesk; motion and haptics; a how-to-play guide for each game.
+- **Feel (round 1 of the "smooth and fun" work, 15 October):** see "Motion" below.
 
 ## Decisions already made (don't reopen without the author)
 
@@ -60,6 +61,13 @@ The README has the full list and the rules of each game. In short:
   - Shared from a card, that card is shown in the app's lettering with the answer filled in.
 - **Shadows:** on iPhone, cards use the native soft shadow over a backing in each page's edge colour (`tools/page_edges.py`). Box-shadow there ended in a hard line.
 - **Setup screens:** one step per screen, never needing a scroll.
+- **Motion** (author, 15 October: "everything must feel smooth, interactive and fun, for young people"). Done in rounds, each tried on the phone:
+  - Round 1, done: touch and rewards. Every tappable thing sinks and springs back with a light tick (`Tap` in `src/ui/fx.tsx`, used instead of `Pressable` everywhere). Right answers get a medium burst of coloured bits and the points rise ("medium" was the author's choice: no full-screen confetti). Meeting the daily goal or winning a medal gets a bigger burst; medals spin in; numbers count up; progress bars fill; the streak flame pulses. The tab bar's lit square slides to the tapped tab. New screens slide in from the right, going back from the left, tabs fade.
+  - Tabs stay tap-only (author's choice: no swiping between Ahabanza, Amakarita, Imikino).
+  - Uses `react-native-reanimated` (with `react-native-worklets`), approved by the author; it is in Expo Go. Write shared values with `.get()`/`.set()`, which the lint accepts.
+  - Floating effects carry `testID="fx"` so the overlap check skips them.
+  - Round 2, next: swiping and scrolling (between decks, between games, smoother scrolling), then more creative touches. Ask the author first.
+  - Everything honours the phone's "reduce motion" setting.
 - **Daily review** (author's answers, 15 October):
   - Missed cards first, then half-learnt, then new, then known cards answered longest ago; all five decks; a new learner gets 10 new cards.
   - A card answered wrong comes back once after the 10.
@@ -81,7 +89,7 @@ The README has the full list and the rules of each game. In short:
 3. **Matatu:** the Joker's value when someone cuts (50) is a guess.
 4. **Final app name and icon.**
 5. **Merging** PRs #1 and #2 into `master`.
-6. **Next build: not chosen yet.** The daily review is done (15 October). Options mentioned before:
+6. **Next build:** round 2 of the motion work (swiping between decks and games, smoother scrolling), after the author tries round 1 on the phone. Other options mentioned before:
    - English meanings of each saying (the author must check every one);
    - finishing Amaturufu.
 7. **Live phone testing:** the tunnel from cloud chats can drop at any time (see "Test on the author's iPhone"). An Apple Developer account would allow a proper installed build.
@@ -89,7 +97,8 @@ The README has the full list and the rules of each game. In short:
    - the share picture (made by `react-native-view-shot`);
    - the riddle flap;
    - the new shadows;
-   - the daily review.
+   - the daily review;
+   - all of the motion work (it can only be judged on the phone; the web preview is rougher).
 
 ## How to
 

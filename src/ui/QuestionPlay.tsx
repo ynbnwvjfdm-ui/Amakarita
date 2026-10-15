@@ -1,7 +1,8 @@
-import { Animated, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Animated, StyleSheet, Text, View } from 'react-native';
+import { Burst, FloatUp, Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { DAILY_GOAL } from '../game/progress';
-import { Question } from '../game/quiz';
+import { Question, cardPoints } from '../game/quiz';
 import { useI18n } from '../i18n';
 import { PopIn, useShake } from './motion';
 import { colors, fonts, radius } from './theme';
@@ -41,7 +42,7 @@ export function QuestionPlay({ question, options, chosen, onChoose, today }: Pro
           const look = !answered ? null : isAnswer ? styles.optionRight : isChosen ? styles.optionWrong : styles.optionFaded;
           const icon = !answered ? null : isAnswer ? 'checkmark-circle' : isChosen ? 'close-circle' : null;
           return (
-            <Pressable
+            <Tap
               key={o}
               accessibilityRole="button"
               accessibilityState={{ disabled: answered, selected: isChosen }}
@@ -51,7 +52,7 @@ export function QuestionPlay({ question, options, chosen, onChoose, today }: Pro
             >
               {icon ? <Ionicons name={icon} size={20} color={colors.ink} /> : null}
               <Text style={styles.optionText}>{o}</Text>
-            </Pressable>
+            </Tap>
           );
         })}
       </Animated.View>
@@ -61,6 +62,9 @@ export function QuestionPlay({ question, options, chosen, onChoose, today }: Pro
           <View style={[styles.verdict, { backgroundColor: right ? colors.lime : colors.coral }]}>
             <Ionicons name={right ? 'checkmark' : 'close'} size={20} color={colors.ink} />
             <Text style={styles.verdictText}>{right ? t('correct') : t('notQuite')}</Text>
+            {/* A right answer bursts and its points rise; the answer that meets today's goal bursts bigger. */}
+            <Burst trigger={right ? question.card : null} big={today === DAILY_GOAL} />
+            {right && cardPoints(question) > 0 ? <FloatUp trigger={question.card} text={`+${cardPoints(question)}`} /> : null}
           </View>
           <Text style={styles.goal}>{today >= DAILY_GOAL ? t('goalReached') : `${t('dailyGoal')}: ${today}/${DAILY_GOAL}`}</Text>
         </PopIn>

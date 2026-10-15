@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Tap } from './fx';
 import { CARD_RATIO } from '../decks';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { ArtRef, CardArt } from './CardArt';
@@ -24,15 +25,15 @@ export function CardViewer({ art, caption, onClose, actions }: Props) {
   return (
     <Overlay visible={art !== null} onRequestClose={onClose}>
       <View style={styles.backdrop}>
-        <Pressable style={StyleSheet.absoluteFill} onPress={onClose} accessibilityLabel="close" />
+        <Tap pressScale={1} haptic={false} style={StyleSheet.absoluteFill} onPress={onClose} accessibilityLabel="close" />
         <View style={styles.top}>
-          <Pressable accessibilityRole="button" accessibilityLabel="close" onPress={onClose} hitSlop={10} style={styles.close}>
+          <Tap accessibilityRole="button" accessibilityLabel="close" onPress={onClose} hitSlop={10} style={styles.close}>
             <Ionicons name="close" size={22} color={colors.ink} />
-          </Pressable>
+          </Tap>
         </View>
         <ScrollView contentContainerStyle={styles.scroll} style={styles.column} showsVerticalScrollIndicator={false}>
           {caption ? <Text style={styles.caption}>{caption}</Text> : null}
-          <Pressable onPress={actions ? undefined : onClose}>{card}</Pressable>
+          <Tap onPress={actions ? undefined : onClose}>{card}</Tap>
           {actions ? <View style={styles.actions}>{actions}</View> : null}
         </ScrollView>
       </View>

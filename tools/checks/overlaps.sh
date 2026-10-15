@@ -15,7 +15,7 @@ mkdir -p "$OUT"
 EXPO_OFFLINE=1 CI=1 npx expo export --platform web > "$OUT/export.log" 2>&1
 python3 -m http.server "$PORT" --directory dist > /dev/null 2>&1 &
 SERVER=$!
-trap 'kill $SERVER 2>/dev/null' EXIT
+trap 'kill $SERVER 2>/dev/null || true' EXIT
 sleep 1
 
 # Playwright comes with the cloud session's global tools (Chromium is preinstalled).

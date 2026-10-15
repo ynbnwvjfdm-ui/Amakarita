@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { countKnown } from '../game/progress';
 import { MAX_PROFILES, PROFILE_COLORS, Profile } from '../game/profiles';
@@ -74,7 +75,7 @@ export function ProfileButton() {
         />
         <View style={styles.swatches}>
           {PROFILE_COLORS.map((c) => (
-            <Pressable
+            <Tap
               key={c}
               accessibilityRole="radio"
               accessibilityState={{ selected: c === mode.color }}
@@ -87,10 +88,10 @@ export function ProfileButton() {
         <Button variant="lime" label={t('save')} onPress={save} />
         <Button variant="secondary" label={t('cancel')} onPress={() => setMode({ kind: 'list' })} />
         {mode.id && profiles.length > 1 ? (
-          <Pressable accessibilityRole="button" onPress={() => setMode({ kind: 'confirm', id: mode.id! })} style={styles.removeLink}>
+          <Tap accessibilityRole="button" onPress={() => setMode({ kind: 'confirm', id: mode.id! })} style={styles.removeLink}>
             <Ionicons name="trash-outline" size={16} color={colors.coral} />
             <Text style={styles.removeText}>{t('remove')}</Text>
-          </Pressable>
+          </Tap>
         ) : null}
       </>
     );
@@ -116,7 +117,7 @@ export function ProfileButton() {
           const on = p.id === active.id;
           return (
             <View key={p.id} style={[styles.row, on && styles.rowOn]}>
-              <Pressable
+              <Tap
                 accessibilityRole="button"
                 accessibilityState={{ selected: on }}
                 accessibilityLabel={label(p)}
@@ -134,8 +135,8 @@ export function ProfileButton() {
                   <Text style={styles.rowSub}>{t('knownOf', { n: countKnown(progressOf(p.id), ALL_CARDS), total: ALL_CARDS.length })}</Text>
                 </View>
                 {on ? <Ionicons name="checkmark-circle" size={22} color={colors.ink} /> : null}
-              </Pressable>
-              <Pressable
+              </Tap>
+              <Tap
                 accessibilityRole="button"
                 accessibilityLabel={`${t('nameLabel')}: ${label(p)}`}
                 onPress={() => setMode({ kind: 'edit', id: p.id, name: p.name ?? '', color: p.color })}
@@ -143,7 +144,7 @@ export function ProfileButton() {
                 hitSlop={6}
               >
                 <Ionicons name="create-outline" size={20} color={colors.ink} />
-              </Pressable>
+              </Tap>
             </View>
           );
         })}
@@ -156,9 +157,9 @@ export function ProfileButton() {
 
   return (
     <>
-      <Pressable accessibilityRole="button" accessibilityLabel={`${t('changePlayer')}: ${label(active)}`} onPress={() => setOpen(true)} hitSlop={6}>
+      <Tap accessibilityRole="button" accessibilityLabel={`${t('changePlayer')}: ${label(active)}`} onPress={() => setOpen(true)} hitSlop={6}>
         <Avatar profile={active} />
-      </Pressable>
+      </Tap>
       <Panel visible={open} title={mode.kind === 'edit' && !mode.id ? t('addProfile') : t('profilesTitle')} onRequestClose={close}>
         {body}
         {mode.kind === 'list' ? <Button variant="secondary" label={t('continue')} onPress={close} /> : null}

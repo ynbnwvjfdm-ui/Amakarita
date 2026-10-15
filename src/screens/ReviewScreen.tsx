@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Burst, CountUp, FillBar, Pulse, SpinIn, Tap } from '../ui/fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { dayNumber } from '../dates';
@@ -11,12 +12,14 @@ import { Review, answerReview, currentTurn, newReview, nextReview, pickReview, r
 import { useI18n } from '../i18n';
 import { useNav } from '../navigation';
 import { useProgress } from '../progressStore';
+import { deckStats } from '../stats';
 import { QUESTIONS, REVIEWABLE } from '../questions';
 import { Button } from '../ui/Button';
 import { ArtRef, CardArt } from '../ui/CardArt';
 import { CardViewer } from '../ui/CardViewer';
 import { FlipCard } from '../ui/FlipCard';
 import { GameTopBar, InfoPill, PillText } from '../ui/GameChrome';
+import { MEDAL_KEY, MedalIcon } from '../ui/Medal';
 import { feel, PopIn } from '../ui/motion';
 import { QuestionCard } from '../ui/QuestionCard';
 import { QuestionPlay } from '../ui/QuestionPlay';
@@ -46,6 +49,8 @@ export function ReviewScreen() {
   const [chosen, setChosen] = useState<string | null>(null);
   const [turned, setTurned] = useState(false);
   const [zoom, setZoom] = useState<ArtRef | null>(null);
+  // Where things stood when the screen opened, to celebrate a goal met or a medal won here.
+  const [start] = useState(() => ({ done: answeredOn(progress, dayNumber(new Date())), medals: deckStats(progress).map((d) => d.medal) }));
 
   const W = Math.min(width, MAX_WIDTH);
   const free = height - insets.top - insets.bottom - TOP_BAR;
@@ -89,6 +94,8 @@ export function ReviewScreen() {
     const done = Math.min(DAILY_GOAL, answeredOn(progress, today));
     const days = streak(progress, today);
     const left = REVIEWABLE.length - seen.length;
+    const goalNow = done >= DAILY_GOAL && start.done < DAILY_GOAL;
+    const won = deckStats(progress).filter((d, i) => d.medal && d.medal !== start.medals[i]);
     return (
       <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
         <ScrollView contentContainerStyle={styles.endPage} bounces={false} showsVerticalScrollIndicator={false}>
@@ -97,7 +104,8 @@ export function ReviewScreen() {
             {summary.total > 0 ? (
               <>
                 <View style={styles.endPoints}>
-                  <Text style={styles.endBig}>+{points}</Text>
+                  <Text style={styles.endBig}>+</Text>
+                  <CountUp value={points} duration={900} style={[styles.endBig, styles.endBigNumber]} />
                   <Text style={styles.endLabel}>{t('points')}</Text>
                 </View>
                 <Text style={styles.endLine}>{t('reviewRight', { n: summary.rightFirst, total: summary.total })}</Text>
@@ -109,26 +117,45 @@ export function ReviewScreen() {
                 <Text style={styles.goalCount}>
                   {done}/{DAILY_GOAL}
                 </Text>
-                {done >= DAILY_GOAL ? <Ionicons name="checkmark-circle" size={18} color={colors.ink} /> : null}
+                {done >= DAILY_GOAL ? (
+                  <SpinIn delay={500}>
+                    <Ionicons name="checkmark-circle" size={18} color={colors.ink} />
+                  </SpinIn>
+                ) : null}
               </View>
               <View style={styles.goalTrack}>
-                <View style={[styles.goalFill, { width: `${(done / DAILY_GOAL) * 100}%` }]} />
+                <FillBar share={done / DAILY_GOAL} delay={250} style={styles.goalFill} />
               </View>
+              {/* Meeting today's goal in this review gets the big burst. */}
+              <Burst trigger={goalNow ? 'goal' : null} big />
               {days > 0 ? (
                 <View style={styles.streak}>
-                  <Ionicons name="flame" size={14} color={colors.coral} />
+                  <Pulse>
+                    <Ionicons name="flame" size={14} color={colors.coral} />
+                  </Pulse>
                   <Text style={styles.streakText}>{t('streakDays', { n: days })}</Text>
                 </View>
               ) : null}
             </View>
+            {won.map(({ deck, medal }, i) => (
+              <View key={deck.id} style={styles.medalRow}>
+                <SpinIn delay={600 + 250 * i}>
+                  <MedalIcon medal={medal} size={30} />
+                </SpinIn>
+                <Text style={styles.medalText}>
+                  {t('newMedal')}: {deck.title} · {t(MEDAL_KEY[medal!])}
+                </Text>
+                <Burst trigger={`medal-${deck.id}`} big />
+              </View>
+            ))}
             {summary.missed.length ? (
               <>
                 <Text style={styles.reviewTitle}>{t('toReview')}</Text>
                 <View style={styles.missed}>
                   {summary.missed.map((id) => (
-                    <Pressable key={id} accessibilityRole="button" onPress={() => setZoom({ deckId: QUESTIONS[id].deck, cardId: id })}>
+                    <Tap key={id} accessibilityRole="button" onPress={() => setZoom({ deckId: QUESTIONS[id].deck, cardId: id })}>
                       <CardArt deckId={QUESTIONS[id].deck} cardId={id} width={56} />
-                    </Pressable>
+                    </Tap>
                   ))}
                 </View>
               </>
@@ -168,7 +195,7 @@ export function ReviewScreen() {
           <View key={review.pos} style={[styles.pageColumn, { width: W - 32 }]}>
             <View style={styles.cardRow}>
               {/* Tapping turns the card too, as in the deck browser; nothing on screen says so. */}
-              <Pressable
+              <Tap
                 accessibilityRole="button"
                 accessibilityLabel={turned ? t('tapToFlipBack') : t('tapToReveal')}
                 onPress={() => setTurned((v) => !v)}
@@ -180,7 +207,7 @@ export function ReviewScreen() {
                   front={<QuestionCard question={q} width={cardW} view="quiz" />}
                   back={<CardArt deckId={q.deck} cardId={q.card} width={cardW} />}
                 />
-              </Pressable>
+              </Tap>
             </View>
             <QuestionPlay question={q} options={options} chosen={chosen} onChoose={choose} today={answeredOn(progress, today)} />
             {chosen !== null ? <Button variant="lime" label={t('continue')} onPress={next} /> : null}
@@ -208,8 +235,11 @@ const styles = StyleSheet.create({
   endPage: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 20 },
   end: { backgroundColor: colors.surface, borderRadius: 28, padding: 18, gap: 12 },
   endTitle: { fontFamily: fonts.display, fontSize: 26, color: colors.ink, textAlign: 'center', letterSpacing: -0.5 },
-  endPoints: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'center', gap: 8 },
+  endPoints: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'center', gap: 2 },
   endBig: { fontFamily: fonts.display, fontSize: 44, lineHeight: 50, color: colors.ink, letterSpacing: -1 },
+  endBigNumber: { minWidth: 30 },
+  medalRow: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: colors.bg, borderRadius: 18, padding: 10 },
+  medalText: { flex: 1, fontFamily: fonts.semibold, fontSize: 14, color: colors.ink },
   endLabel: { fontFamily: fonts.semibold, fontSize: 15, color: colors.muted },
   endLine: { fontFamily: fonts.semibold, fontSize: 15, color: colors.ink, textAlign: 'center' },
   goal: { gap: 6, backgroundColor: colors.bg, borderRadius: 18, padding: 12 },

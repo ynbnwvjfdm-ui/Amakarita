@@ -59,7 +59,7 @@ HANDOFF.md has where the work stands, decisions made, open questions and how-tos
 - `src/screens/` — the app's screens; `useMatatuTable.ts` and
   `useAmaturufuTable.ts` run a game (computer turns, pauses, passing the
   phone, Matatu's hidden 10-second "Warning!" timer).
-- `src/ui/` — shared building blocks: theme (colours, fonts, each deck's
+- `src/ui/` — shared building blocks: `fx.tsx` (springy taps, reward bursts, count-ups), theme (colours, fonts, each deck's
   colours), question card, flip card, deck carousel, game tickets, tab bar.
 - `src/i18n.tsx` — every piece of on-screen text in Kinyarwanda and English.
 - `src/decks.ts` — loads the deck data and card images.

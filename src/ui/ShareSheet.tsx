@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
-import { Pressable, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { StyleSheet, useWindowDimensions, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { dayNumber } from '../dates';
 import { CARD_RATIO } from '../decks';
@@ -62,11 +63,11 @@ function Sheet({ featured, onClose }: { featured?: ArtRef; onClose: () => void }
 
   return (
     <View style={styles.dim}>
-      <Pressable style={StyleSheet.absoluteFill} onPress={onClose} accessibilityLabel="close" />
+      <Tap pressScale={1} haptic={false} style={StyleSheet.absoluteFill} onPress={onClose} accessibilityLabel="close" />
       <View style={styles.top}>
-        <Pressable accessibilityRole="button" accessibilityLabel="close" onPress={onClose} hitSlop={10} style={styles.close}>
+        <Tap accessibilityRole="button" accessibilityLabel="close" onPress={onClose} hitSlop={10} style={styles.close}>
           <Ionicons name="close" size={22} color={colors.ink} />
-        </Pressable>
+        </Tap>
       </View>
       <View style={styles.middle} pointerEvents="box-none">
         <PopIn from="grow">

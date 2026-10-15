@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CARD_RATIO } from '../decks';
 import { longDate } from '../dates';
@@ -28,7 +29,7 @@ export function CardOfDay({ width }: { width: number }) {
           <Text style={styles.dateText}>{longDate(today, lang)}</Text>
         </View>
       </View>
-      <Pressable
+      <Tap
         accessibilityRole="button"
         accessibilityLabel={flipped ? t('tapToFlipBack') : t('tapToReveal')}
         onPress={() => setFlipped((f) => !f)}
@@ -41,7 +42,7 @@ export function CardOfDay({ width }: { width: number }) {
           front={<QuestionCard question={q} width={cardW} view="read" />}
           back={<CardArt deckId={q.deck} cardId={q.card} width={cardW} />}
         />
-      </Pressable>
+      </Tap>
     </View>
   );
 }

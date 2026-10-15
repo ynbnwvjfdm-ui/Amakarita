@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
-import { NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { NativeScrollEvent, NativeSyntheticEvent, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { DECKS } from '../decks';
 import { useI18n } from '../i18n';
@@ -38,9 +39,9 @@ export function DeckCarousel({ width, onOpen }: Props) {
   return (
     <View style={{ gap: 14 }}>
       <View style={styles.row}>
-        <Pressable accessibilityRole="button" accessibilityLabel={t('previous')} onPress={() => goTo(index - 1)} style={styles.arrow}>
+        <Tap accessibilityRole="button" accessibilityLabel={t('previous')} onPress={() => goTo(index - 1)} style={styles.arrow}>
           <Ionicons name="chevron-back" size={22} color={colors.ink} />
-        </Pressable>
+        </Tap>
         <ScrollView
           ref={scroller}
           horizontal
@@ -53,18 +54,18 @@ export function DeckCarousel({ width, onOpen }: Props) {
         >
           {DECKS.map((d) => (
             <View key={d.id} style={[styles.page, { width: pageW }]}>
-              <Pressable accessibilityRole="button" accessibilityLabel={d.title} onPress={() => onOpen(d.id)}>
+              <Tap accessibilityRole="button" accessibilityLabel={d.title} onPress={() => onOpen(d.id)}>
                 <CardImage deckId={d.id} page={d.cover.page} width={cardW} />
-              </Pressable>
+              </Tap>
             </View>
           ))}
         </ScrollView>
-        <Pressable accessibilityRole="button" accessibilityLabel={t('next')} onPress={() => goTo(index + 1)} style={styles.arrow}>
+        <Tap accessibilityRole="button" accessibilityLabel={t('next')} onPress={() => goTo(index + 1)} style={styles.arrow}>
           <Ionicons name="chevron-forward" size={22} color={colors.ink} />
-        </Pressable>
+        </Tap>
       </View>
 
-      <Pressable accessibilityRole="button" onPress={() => onOpen(deck.id)} style={styles.caption}>
+      <Tap accessibilityRole="button" onPress={() => onOpen(deck.id)} style={styles.caption}>
         <View style={[styles.swatch, { backgroundColor: theme.base }]} />
         <View style={{ flex: 1 }}>
           <Text style={styles.title}>{deck.title}</Text>
@@ -76,7 +77,7 @@ export function DeckCarousel({ width, onOpen }: Props) {
         <View style={styles.open}>
           <Text style={styles.openText}>›</Text>
         </View>
-      </Pressable>
+      </Tap>
 
       <View style={styles.dots}>
         {DECKS.map((d, i) => (

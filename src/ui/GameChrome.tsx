@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Bump } from './motion';
 import { colors, fonts, radius } from './theme';
@@ -8,9 +9,9 @@ import { colors, fonts, radius } from './theme';
 export function GameTopBar({ onLeave, leaveLabel, center, right }: { onLeave: () => void; leaveLabel: string; center: ReactNode; right?: ReactNode }) {
   return (
     <View style={styles.topBar}>
-      <Pressable accessibilityRole="button" accessibilityLabel={leaveLabel} onPress={onLeave} style={styles.round}>
+      <Tap accessibilityRole="button" accessibilityLabel={leaveLabel} onPress={onLeave} style={styles.round}>
         <Ionicons name="close" size={22} color={colors.ink} />
-      </Pressable>
+      </Tap>
       <View style={styles.center}>{center}</View>
       {right ?? <View style={styles.spacer} />}
     </View>

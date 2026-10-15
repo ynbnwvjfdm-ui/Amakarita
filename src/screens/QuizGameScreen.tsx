@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { LayoutChangeEvent, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { LayoutChangeEvent, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Burst, CountUp, SpinIn, Tap } from '../ui/fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CARD_RATIO, getDeck } from '../decks';
@@ -16,7 +17,7 @@ import { CardImage } from '../ui/CardImage';
 import { CardViewer } from '../ui/CardViewer';
 import { FitScroll } from '../ui/FitScroll';
 import { HowToPlay, useGuide } from '../ui/HowToPlay';
-import { feel } from '../ui/motion';
+import { feel, PopIn } from '../ui/motion';
 import { MEDAL_KEY, MedalIcon } from '../ui/Medal';
 import { Avatar } from '../ui/Profiles';
 import { GameTopBar, InfoPill, PillText, PlayerChips } from '../ui/GameChrome';
@@ -117,11 +118,11 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
         {/* The card, as large as the space between scores and buttons allows */}
         <View style={styles.stage} onLayout={onStage}>
           {cardW === 0 ? null : game.phase === 'draw' && nextId ? (
-            <Pressable accessibilityRole="button" accessibilityLabel={t('drawCard')} onPress={table.draw} disabled={bot} style={styles.drawWrap}>
+            <Tap accessibilityRole="button" accessibilityLabel={t('drawCard')} onPress={table.draw} disabled={bot} style={styles.drawWrap}>
               <CardImage deckId={QUESTIONS[nextId].deck} page={getDeck(QUESTIONS[nextId].deck).cover.page} width={cardW} />
-            </Pressable>
+            </Tap>
           ) : current ? (
-            <Pressable accessibilityRole="button" onPress={() => game.phase === 'result' && setPrintedFor((k) => (k === turnKey ? null : turnKey))}>
+            <Tap accessibilityRole="button" onPress={() => game.phase === 'result' && setPrintedFor((k) => (k === turnKey ? null : turnKey))}>
               <FlipCard
                 flipped={showPrinted}
                 width={cardW}
@@ -144,7 +145,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
                   />
                 }
               />
-            </Pressable>
+            </Tap>
           ) : null}
         </View>
 
@@ -165,7 +166,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
           {game.phase === 'answer' && config.mode === 'phone' && current ? (
             <View style={styles.options}>
               {current.options.map((o) => (
-                <Pressable
+                <Tap
                   key={o}
                   accessibilityRole="button"
                   disabled={bot}
@@ -173,7 +174,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
                   style={({ pressed }) => [styles.option, pressed && styles.optionPressed]}
                 >
                   <Text style={styles.optionText}>{o}</Text>
-                </Pressable>
+                </Tap>
               ))}
             </View>
           ) : null}
@@ -212,12 +213,15 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
 
           {game.phase === 'result' && result ? (
             <>
-              <View style={[styles.verdict, { backgroundColor: result.correct === false ? colors.coral : colors.lime }]}>
-                <Text style={styles.verdictText}>
-                  {result.correct === null ? t('readCard') : result.correct ? t('correct') : t('notQuite')}
-                </Text>
-                {result.points > 0 ? <Text style={styles.verdictPoints}>+{result.points}</Text> : null}
-              </View>
+              <PopIn from="grow">
+                <View style={[styles.verdict, { backgroundColor: result.correct === false ? colors.coral : colors.lime }]}>
+                  <Text style={styles.verdictText}>
+                    {result.correct === null ? t('readCard') : result.correct ? t('correct') : t('notQuite')}
+                  </Text>
+                  {result.points > 0 ? <CountUp value={result.points} duration={500} style={styles.verdictPoints} /> : null}
+                  <Burst trigger={result.correct ? turnKey : null} />
+                </View>
+              </PopIn>
               {result.correct === false && current?.question.answer ? (
                 <Text style={[styles.hint, { color: theme.onBase }]}>
                   {t('answerIs')}: {current.sort ? (current.sort.answer === 'kirazira' ? t('kirazira') : t('indangagaciro')) : current.question.answer}
@@ -244,7 +248,7 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
           .map(({ s, seat }) => (
             <View key={seat} style={styles.finalRow}>
               <Text style={styles.finalName}>{name(seat)}</Text>
-              <Text style={styles.finalScore}>{s}</Text>
+              <CountUp value={s} style={styles.finalScore} />
             </View>
           ))}
         <Text style={styles.learned}>{t('learnedN', { n: game.learned.length })}</Text>
@@ -274,7 +278,9 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
               </View>
               {won.map(({ d, medal }) => (
                 <View key={d} style={styles.rewardMedal}>
-                  <MedalIcon medal={medal} size={22} />
+                  <SpinIn delay={300}>
+                    <MedalIcon medal={medal} size={22} />
+                  </SpinIn>
                   <Text style={styles.rewardMedalText}>
                     {t('newMedal')}: {getDeck(d).title} · {t(MEDAL_KEY[medal])}
                   </Text>
@@ -288,9 +294,9 @@ export function QuizGameScreen({ config }: { config: QuizConfig }) {
             <Text style={styles.reviewTitle}>{t('toReview')}</Text>
             <View style={styles.missed}>
               {game.missed.map((id) => (
-                <Pressable key={id} accessibilityRole="button" onPress={() => setZoom({ deckId: QUESTIONS[id].deck, cardId: id })}>
+                <Tap key={id} accessibilityRole="button" onPress={() => setZoom({ deckId: QUESTIONS[id].deck, cardId: id })}>
                   <CardArt deckId={QUESTIONS[id].deck} cardId={id} width={64} />
-                </Pressable>
+                </Tap>
               ))}
             </View>
           </>

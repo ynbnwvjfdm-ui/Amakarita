@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Animated, Easing, Pressable, StyleSheet, Text } from 'react-native';
+import { Animated, Easing, StyleSheet, Text } from 'react-native';
+import { Tap } from './fx';
 import { CARD_RATIO } from '../decks';
 import { useI18n } from '../i18n';
 import { CardArt } from './CardArt';
@@ -46,7 +47,7 @@ export function RiddleCard({ page, width, covered, onUncover }: Props) {
         pointerEvents={covered ? 'auto' : 'none'}
         style={[styles.flap, { top: height * FLAP_TOP, transform: [{ translateY: shut.interpolate({ inputRange: [0, 1], outputRange: [flapH, 0] }) }] }]}
       >
-        <Pressable
+        <Tap
           accessibilityRole="button"
           accessibilityLabel={t('showAnswer')}
           disabled={!onUncover}
@@ -55,7 +56,7 @@ export function RiddleCard({ page, width, covered, onUncover }: Props) {
         >
           <Text style={[styles.mark, { fontSize: 54 * s, lineHeight: 60 * s }]}>?</Text>
           <Text style={[styles.label, { fontSize: 11 * s, letterSpacing: 2.4 * s }]}>{t('answerIs').toUpperCase()}</Text>
-        </Pressable>
+        </Tap>
       </Animated.View>
     </CardArt>
   );

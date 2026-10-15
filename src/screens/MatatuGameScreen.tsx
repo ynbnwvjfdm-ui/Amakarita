@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Animated, LayoutChangeEvent, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Animated, LayoutChangeEvent, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Tap } from '../ui/fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MatatuCard, matchWinner, topCard } from '../game/matatu';
@@ -118,14 +119,14 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
           onLeave={() => setLeaving(true)}
           leaveLabel={t('leaveGame')}
           center={
-            <Pressable accessibilityRole="button" onPress={() => setZoom(art(game.cutCard))}>
+            <Tap accessibilityRole="button" onPress={() => setZoom(art(game.cutCard))}>
               <InfoPill label={`${t('cut')} ${SUIT_SYMBOL[game.cutSuit]}`}>
                 <Ionicons name="cut-outline" size={16} color={colors.ink} />
                 {/* Names the card that cuts, not just its suit. */}
                 <PillText>{t('cut')}:</PillText>
                 <PillText color={SUIT_INK[game.cutSuit]}>7{SUIT_SYMBOL[game.cutSuit]}</PillText>
               </InfoPill>
-            </Pressable>
+            </Tap>
           }
           right={<HelpButton onPress={guide.open} />}
         />
@@ -163,9 +164,9 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
               {top ? (
                 // Each new top card lands on the pile, whoever played it.
                 <PopIn key={top.id}>
-                  <Pressable accessibilityRole="button" accessibilityLabel={label(top)} onPress={() => setZoom(art(top))}>
+                  <Tap accessibilityRole="button" accessibilityLabel={label(top)} onPress={() => setZoom(art(top))}>
                     <CardArt {...art(top)} width={pileW} />
-                  </Pressable>
+                  </Tap>
                 </PopIn>
               ) : (
                 <View style={[styles.empty, { width: pileW, height: pileH }]} />
@@ -277,9 +278,9 @@ export function MatatuGameScreen({ config }: { config: MatatuConfig }) {
       <Panel visible={choosing && game.phase === 'chooseSuit'} title={t('chooseSuit')}>
         <View style={styles.suits}>
           {SUITS.map((s) => (
-            <Pressable key={s} accessibilityRole="button" accessibilityLabel={s} onPress={() => table.choose(s)} style={styles.suitButton}>
+            <Tap key={s} accessibilityRole="button" accessibilityLabel={s} onPress={() => table.choose(s)} style={styles.suitButton}>
               <Text style={[styles.suitButtonText, { color: SUIT_INK[s] }]}>{SUIT_SYMBOL[s]}</Text>
-            </Pressable>
+            </Tap>
           ))}
         </View>
       </Panel>

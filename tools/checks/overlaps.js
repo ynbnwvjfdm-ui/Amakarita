@@ -23,6 +23,7 @@ const audit=async(name)=>{
     const items=[];
     for(const e of root.querySelectorAll('[data-testid="card"],[role="button"],[role="radio"],[role="tab"],[role="switch"],[role="checkbox"]')){
       if(e.closest('[data-testid="card"]')!==e && e.closest('[data-testid="card"]')) continue; // things drawn inside a card
+      if(e.closest('[data-testid="fx"]')) continue; // bursts and rising points float over things on purpose
       if(e.getAttribute('data-testid')==='card' && e.parentElement.closest('[role="button"],[role="radio"]')) continue; // the button stands for its card
       const r=vis(e); if(r) items.push({e,r,kind:'box'});
     }
@@ -30,7 +31,7 @@ const audit=async(name)=>{
     const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
     const seen=new Set();
     while(walker.nextNode()){const t=walker.currentNode; if(!t.textContent.trim()) continue; const e=t.parentElement; if(seen.has(e)) continue; seen.add(e);
-      if(e.closest('[data-testid="card"],[role="button"],[role="radio"],[role="tab"],[role="switch"],[role="checkbox"]')) continue;
+      if(e.closest('[data-testid="card"],[data-testid="fx"],[role="button"],[role="radio"],[role="tab"],[role="switch"],[role="checkbox"]')) continue;
       const rg=document.createRange(); rg.selectNodeContents(e); const r=clipRect(e,rg.getBoundingClientRect(),true); /* text cut short with … is clipped by its own box */ if(r.width<4||r.height<4) continue; items.push({e,r,kind:'text'});}
     const out=[];
     for(let i=0;i<items.length;i++) for(let j=i+1;j<items.length;j++){

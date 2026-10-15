@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
-import { NativeScrollEvent, NativeSyntheticEvent, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { NativeScrollEvent, NativeSyntheticEvent, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useI18n } from '../i18n';
 import { CardArt } from './CardArt';
@@ -41,7 +42,7 @@ export function HandRow({ deckId, cards, width, onPress, ink = colors.surface }:
   // Each card comes in when it first appears: dealt one after another, or picked from the pile.
   const card = (c: { id: string; label: string }, i: number) => (
     <PopIn key={c.id} delay={Math.min(i, 6) * 60}>
-      <Pressable
+      <Tap
         accessibilityRole="button"
         accessibilityLabel={c.label}
         onPress={() => {
@@ -51,7 +52,7 @@ export function HandRow({ deckId, cards, width, onPress, ink = colors.surface }:
         style={({ pressed }) => pressed && styles.pressed}
       >
         <CardArt deckId={deckId} cardId={c.id} width={cardW} />
-      </Pressable>
+      </Tap>
     </PopIn>
   );
 
@@ -82,15 +83,15 @@ export function HandRow({ deckId, cards, width, onPress, ink = colors.surface }:
         {cards.map(card)}
       </ScrollView>
       <View style={styles.pager}>
-        <Pressable accessibilityRole="button" accessibilityLabel={t('previous')} disabled={first === 0} onPress={() => goTo(first - PER_VIEW)} style={[styles.arrow, first === 0 && styles.arrowOff]}>
+        <Tap accessibilityRole="button" accessibilityLabel={t('previous')} disabled={first === 0} onPress={() => goTo(first - PER_VIEW)} style={[styles.arrow, first === 0 && styles.arrowOff]}>
           <Ionicons name="chevron-back" size={20} color={colors.ink} />
-        </Pressable>
+        </Tap>
         <Text style={[styles.count, { color: ink }]}>
           {first + 1}–{Math.min(n, first + PER_VIEW)} / {n}
         </Text>
-        <Pressable accessibilityRole="button" accessibilityLabel={t('next')} disabled={first >= lastFirst} onPress={() => goTo(first + PER_VIEW)} style={[styles.arrow, first >= lastFirst && styles.arrowOff]}>
+        <Tap accessibilityRole="button" accessibilityLabel={t('next')} disabled={first >= lastFirst} onPress={() => goTo(first + PER_VIEW)} style={[styles.arrow, first >= lastFirst && styles.arrowOff]}>
           <Ionicons name="chevron-forward" size={20} color={colors.ink} />
-        </Pressable>
+        </Tap>
       </View>
     </View>
   );

@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
+import { StyleSheet, Text, ViewStyle } from 'react-native';
+import { Tap } from './fx';
 import { colors, fonts, radius } from './theme';
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
 /** Pill-shaped button. */
 export function Button({ label, onPress, variant = 'primary', disabled, style }: Props) {
   return (
-    <Pressable
+    <Tap
       accessibilityRole="button"
       onPress={onPress}
       disabled={disabled}
@@ -25,7 +26,7 @@ export function Button({ label, onPress, variant = 'primary', disabled, style }:
       ]}
     >
       <Text style={[styles.label, variant === 'primary' ? styles.primaryLabel : styles.otherLabel]}>{label}</Text>
-    </Pressable>
+    </Tap>
   );
 }
 

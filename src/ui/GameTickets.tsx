@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Tap } from './fx';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useI18n } from '../i18n';
 import { useNav } from '../navigation';
@@ -31,7 +32,7 @@ export function GameTickets() {
       {tickets.map((tk, i) => (
         <Fragment key={tk.key}>
           {i > 0 ? <View style={styles.seam} /> : null}
-          <Pressable
+          <Tap
             accessibilityRole="button"
             accessibilityLabel={tk.title}
             disabled={!tk.onPress}
@@ -61,7 +62,7 @@ export function GameTickets() {
                 </View>
               )}
             </View>
-          </Pressable>
+          </Tap>
         </Fragment>
       ))}
     </View>

@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Tap } from './fx';
 import { CARD_RATIO, SUITED_DECKS } from '../decks';
 import { CardImage } from './CardImage';
 import { colors, fonts, MAX_WIDTH } from './theme';
@@ -25,7 +26,7 @@ export function DeckPicker({ value, onChange, mixTitle }: Props) {
       {choices.map((c) => {
         const on = c.id === value;
         return (
-          <Pressable
+          <Tap
             key={c.id}
             accessibilityRole="radio"
             accessibilityState={{ selected: on }}
@@ -37,7 +38,7 @@ export function DeckPicker({ value, onChange, mixTitle }: Props) {
             <Text style={styles.deckTitle} numberOfLines={1}>
               {c.title}
             </Text>
-          </Pressable>
+          </Tap>
         );
       })}
     </View>

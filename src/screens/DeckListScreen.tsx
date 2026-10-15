@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Tap } from '../ui/fx';
 import { DECKS } from '../decks';
 import { useI18n } from '../i18n';
 import { countKnown, medalFor } from '../game/progress';
@@ -26,7 +27,7 @@ export function DeckListScreen() {
           const asked = d.cards.filter((c) => QUESTIONS[c.id]).map((c) => c.id);
           const known = countKnown(progress, asked);
           return (
-            <Pressable
+            <Tap
               key={d.id}
               accessibilityRole="button"
               accessibilityLabel={d.title}
@@ -54,7 +55,7 @@ export function DeckListScreen() {
               <View style={styles.cardWrap}>
                 <CardImage deckId={d.id} page={d.cover.page} width={tile * 0.56} />
               </View>
-            </Pressable>
+            </Tap>
           );
         })}
       </View>

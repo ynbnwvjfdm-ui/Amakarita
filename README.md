@@ -1,7 +1,68 @@
 # Amakarita
 
-Mobile app for traditional Rwandan card decks. The app itself is not built yet;
-this repository currently holds the six decks, taken in exactly as designed.
+Mobile app for traditional Rwandan card decks, built with Expo (React Native).
+
+The main goal is teaching the Kinyarwanda printed on every card; the games
+are how people practise it.
+
+- **Amakarita** (question game): draw a card, answer its question, score
+  the card's value. Each player gets 5, 10 or 15 attempts; the most points
+  wins. The phone checks the answer, or players ask each other out loud.
+  Rules at the top of `src/game/quiz.ts`.
+- **Matatu** (Amagande): 2–6 players, 4–7 cards each, rounds until one
+  player is left. Rules at the top of `src/game/matatu.ts`.
+- **Daily review** ("today's 10 cards"), started from the daily goal on the
+  home screen: the cards the learner keeps missing first, then half-learnt,
+  new and long-unseen known cards. A card missed comes back once at the end;
+  "10 more" carries on. Rules at the top of `src/game/review.ts`.
+- **Card of the day** on the home screen. In the deck browser, tap a card to
+  answer its question (question side first, then the printed card); swipe
+  for the next card. Answers count towards the daily goal.
+- **Share card**: "Sangiza" makes a picture of the learner's progress drawn as
+  a playing card — the streak in the corners, points (each right answer worth
+  its card's value), a medal per deck — and opens the share sheet
+  (`src/ui/ShareCard.tsx`). From a card in the deck browser, that card is on it too.
+- **Ibisakuzo** (riddles), two people on one phone: one asks ("Sakwe sakwe!" —
+  "Soma!") and reads the riddle at the top of the printed card; the answer at
+  the bottom stays under a flap until the asker uncovers it and says whether
+  the other got it (one point). Then they swap; 5/10/15 riddles each, most
+  points wins. Rules at the top of `src/game/ibisakuzo.ts`.
+- Amaturufu (rules in `src/game/amaturufu.ts`) is switched off for now.
+
+## Questions
+
+`tools/make_questions.py` turns every card into a question using the card's
+own words with the answer left blank, and writes `src/data/questions.json`.
+Corrections from the deck's author go into its `OVERRIDES`.
+
+## Running the app
+
+```sh
+npm install
+npx expo start          # scan the QR code with Expo Go on a phone
+npm test                # game-rule tests
+npm run typecheck
+npm run lint
+npm run export:web      # browser build in dist/
+npm run phone           # run on a phone in Expo Go from a cloud session (HANDOFF.md)
+npm run preview         # package the browser build as the claude.ai preview
+npm run check:overlaps  # walk every screen at four phone sizes for overlaps
+```
+
+HANDOFF.md has where the work stands, decisions made, open questions and how-tos.
+
+## Code
+
+- `src/game/` — game rules, with no screen code: one file per game
+  (`matatu.ts`, `amaturufu.ts`), a computer player for each (`*Bot.ts`),
+  tests in `__tests__/`.
+- `src/screens/` — the app's screens; `useMatatuTable.ts` and
+  `useAmaturufuTable.ts` run a game (computer turns, pauses, passing the
+  phone, Matatu's hidden 10-second "Warning!" timer).
+- `src/ui/` — shared building blocks: `fx.tsx` (springy taps, reward bursts, count-ups), theme (colours, fonts, each deck's
+  colours), question card, flip card, deck carousel, game tickets, tab bar.
+- `src/i18n.tsx` — every piece of on-screen text in Kinyarwanda and English.
+- `src/decks.ts` — loads the deck data and card images.
 
 ## Decks
 
@@ -23,6 +84,11 @@ Suited PDFs: page 1 cover, pages 2–53 ♠ ♥ ♣ ♦ (2 → A each), 54–55 
 - `assets/decks/<deck>/page-NN.webp` — every PDF page rendered at 1230×1680, lossless.
 - `src/data/decks/<deck>.json` — card data; `index.json` lists the decks.
 - `tools/extract_decks.py` — regenerates `assets/` and `src/data/` from `source/`.
+- `tools/page_edges.py` — writes `src/data/decks/edges.ts`, each page's edge colour
+  (put behind the rounded card so iOS draws a smooth shadow).
+- `tools/phone/` — `npm run phone`: Expo's tunnel through a cloud session's proxy.
+- `tools/preview/` — `npm run preview`: the claude.ai preview page.
+- `tools/checks/` — `npm run check:overlaps`: the no-overlap check.
 
 ## Card data
 
@@ -55,12 +121,17 @@ colours, so treat them as approximate; the page images are authoritative.
 
 ```sh
 python3 -I tools/extract_decks.py   # needs pdfplumber, Pillow, poppler-utils
+python3 -I tools/page_edges.py      # needs Pillow
 ```
 
 The script checks every card's printed rank and suit colour against its
 expected position and fails if anything is out of place.
 
 ## Fonts
+
+The app's own text uses Space Grotesk (Open Font Licence, bundled from
+Google Fonts), chosen by the deck's author. The card designs themselves stay
+images.
 
 The designs use Bebas, Futura, Futura Book, Sink and Wosker (suited decks), and
 Futura, KorpenTag (personal-use edition), Krunc and Parslay (Ibisakuzo). Fonts are

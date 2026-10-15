@@ -1,0 +1,30 @@
+<title>Amakarita</title>
+<style>
+  /* Single look on purpose: the app's own cream and card-table colours in every theme. */
+  :root { --bg: #F4EFE6; --fg: #1E1B18; color-scheme: light; }
+  html, body { height: 100%; }
+  body { background: var(--bg); color: var(--fg); overflow: hidden; }
+  #root { display: flex; height: 100%; flex: 1; }
+</style>
+<noscript>Amakarita needs JavaScript to run.</noscript>
+<div id="root"></div>
+<script>
+  // Preview only. The page runs in a sandbox that blocks direct downloads, so
+  // when the app saves its share picture, offer it through the viewer's save
+  // prompt instead (on iPhone that opens the share sheet).
+  (function () {
+    var click = HTMLAnchorElement.prototype.click;
+    HTMLAnchorElement.prototype.click = function () {
+      var a = this, href = a.href, name = a.getAttribute('download');
+      if (!name || !/^(data|blob):/.test(href) || !window.claude || !window.claude.use) return click.call(a);
+      window.claude.use('downloads').then(function (downloads) {
+        if (!downloads) return click.call(a);
+        return fetch(href)
+          .then(function (r) { return r.blob(); })
+          .then(function (blob) { return downloads.save({ filename: name, data: blob }); })
+          .catch(function () { /* declined or unavailable: nothing to do */ });
+      });
+    };
+  })();
+</script>
+<script src="./app.js" defer></script>

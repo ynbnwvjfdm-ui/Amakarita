@@ -1,0 +1,4413 @@
+{
+ "ntibavuga-bavuga-2S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-2S",
+  "rank": "2",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA CYAZE CYANGWA CYAKOZE",
+   "BAVUGA ___"
+  ],
+  "answer": "ICYAKORA",
+  "wrong": [
+   "CYAZE",
+   "CYAKOZE"
+  ],
+  "options": [
+   "ICYAKORA",
+   "CYAZE",
+   "CYAKOZE"
+  ]
+ },
+ "ntibavuga-bavuga-3S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-3S",
+  "rank": "3",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA NUMVISHE",
+   "BAVUGA ___"
+  ],
+  "answer": "NUMVISE",
+  "wrong": [
+   "NUMVISHE"
+  ],
+  "options": [
+   "NUMVISE",
+   "NUMVISHE"
+  ]
+ },
+ "ntibavuga-bavuga-4S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-4S",
+  "rank": "4",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA JENOSIDE YO MU RWANDA CYANGWA INTAMBARA YO MU RWANDA CYANGWA JENOSIDE YAKOREWE ABANYARWANDA",
+   "BAVUGA ___"
+  ],
+  "answer": "JENOSIDE YAKOREWE ABATUTSI MURI 1994",
+  "wrong": [
+   "JENOSIDE YO MU RWANDA",
+   "INTAMBARA YO MU RWANDA",
+   "JENOSIDE YAKOREWE ABANYARWANDA"
+  ],
+  "options": [
+   "JENOSIDE YAKOREWE ABATUTSI MURI 1994",
+   "JENOSIDE YO MU RWANDA",
+   "INTAMBARA YO MU RWANDA",
+   "JENOSIDE YAKOREWE ABANYARWANDA"
+  ]
+ },
+ "ntibavuga-bavuga-5S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-5S",
+  "rank": "5",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA SINZI CYANGWA NTAGO MBIZI",
+   "BAVUGA ___"
+  ],
+  "answer": "NTABWO MBIZI",
+  "wrong": [
+   "SINZI",
+   "NTAGO MBIZI"
+  ],
+  "options": [
+   "NTABWO MBIZI",
+   "SINZI",
+   "NTAGO MBIZI"
+  ]
+ },
+ "ntibavuga-bavuga-6S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-6S",
+  "rank": "6",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA NJYEWE CYANGWA NGE",
+   "BAVUGA ___"
+  ],
+  "answer": "JYEWE",
+  "wrong": [
+   "NJYEWE",
+   "NGE"
+  ],
+  "options": [
+   "JYEWE",
+   "NJYEWE",
+   "NGE"
+  ]
+ },
+ "ntibavuga-bavuga-7S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-7S",
+  "rank": "7",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA WARI WAKUBITWAHO ?",
+   "BAVUGA ___"
+  ],
+  "answer": "WARI WAKUBITWA ?",
+  "wrong": [
+   "WARI WAKUBITWAHO ?"
+  ],
+  "options": [
+   "WARI WAKUBITWA ?",
+   "WARI WAKUBITWAHO ?"
+  ]
+ },
+ "ntibavuga-bavuga-8S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-8S",
+  "rank": "8",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA SIWUMVA ?",
+   "BAVUGA ___"
+  ],
+  "answer": "NTIWUMVA ?",
+  "wrong": [
+   "SIWUMVA ?"
+  ],
+  "options": [
+   "NTIWUMVA ?",
+   "SIWUMVA ?"
+  ]
+ },
+ "ntibavuga-bavuga-9S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-9S",
+  "rank": "9",
+  "suit": "spades",
+  "kind": "read",
+  "review": "Igisubizo cy'indamukanyo 'Amashyo' ntikiri ku ikarita."
+ },
+ "ntibavuga-bavuga-10S": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-10S",
+  "rank": "10",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA BATI IMANA IBAHEREZE UMUGISHA",
+   "BAVUGA ___"
+  ],
+  "answer": "BATI IMANA IBAHE UMUGISHA",
+  "wrong": [
+   "BATI IMANA IBAHEREZE UMUGISHA"
+  ],
+  "options": [
+   "BATI IMANA IBAHE UMUGISHA",
+   "BATI IMANA IBAHEREZE UMUGISHA"
+  ]
+ },
+ "ntibavuga-bavuga-JS": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-JS",
+  "rank": "J",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA INKA NYINSHI",
+   "BAVUGA ___"
+  ],
+  "answer": "ISHYO",
+  "wrong": [
+   "INKA NYINSHI"
+  ],
+  "options": [
+   "ISHYO",
+   "INKA NYINSHI"
+  ]
+ },
+ "ntibavuga-bavuga-QS": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-QS",
+  "rank": "Q",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AMAGO",
+   "BAVUGA ___"
+  ],
+  "answer": "INGO",
+  "wrong": [
+   "AMAGO"
+  ],
+  "options": [
+   "INGO",
+   "AMAGO"
+  ]
+ },
+ "ntibavuga-bavuga-KS": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-KS",
+  "rank": "K",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AMAKWE",
+   "BAVUGA ___"
+  ],
+  "answer": "UBUKWE",
+  "wrong": [
+   "AMAKWE"
+  ],
+  "options": [
+   "UBUKWE",
+   "AMAKWE"
+  ]
+ },
+ "ntibavuga-bavuga-AS": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-AS",
+  "rank": "A",
+  "suit": "spades",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AMANAMA",
+   "BAVUGA ___"
+  ],
+  "answer": "INAMA",
+  "wrong": [
+   "AMANAMA"
+  ],
+  "options": [
+   "INAMA",
+   "AMANAMA"
+  ]
+ },
+ "ntibavuga-bavuga-2H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-2H",
+  "rank": "2",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA YAVUZE UTI",
+   "BAVUGA ___"
+  ],
+  "answer": "YAVUZE ATI",
+  "wrong": [
+   "YAVUZE UTI"
+  ],
+  "options": [
+   "YAVUZE ATI",
+   "YAVUZE UTI"
+  ]
+ },
+ "ntibavuga-bavuga-3H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-3H",
+  "rank": "3",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AGASAKU",
+   "BAVUGA ___"
+  ],
+  "answer": "URUSAKU",
+  "wrong": [
+   "AGASAKU"
+  ],
+  "options": [
+   "URUSAKU",
+   "AGASAKU"
+  ]
+ },
+ "ntibavuga-bavuga-4H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-4H",
+  "rank": "4",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA YAVUZE YUKO ARI BUZE",
+   "BAVUGA ___"
+  ],
+  "answer": "YAVUZE KO ARI BUZE",
+  "wrong": [
+   "YAVUZE YUKO ARI BUZE"
+  ],
+  "options": [
+   "YAVUZE KO ARI BUZE",
+   "YAVUZE YUKO ARI BUZE"
+  ]
+ },
+ "ntibavuga-bavuga-5H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-5H",
+  "rank": "5",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA MUKURU/MURUMUNA WA PAPA",
+   "BAVUGA ___"
+  ],
+  "answer": "DATA WACU",
+  "wrong": [
+   "MUKURU/MURUMUNA WA PAPA"
+  ],
+  "options": [
+   "DATA WACU",
+   "MUKURU/MURUMUNA WA PAPA"
+  ]
+ },
+ "ntibavuga-bavuga-6H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-6H",
+  "rank": "6",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA YANKWEYE AMAZI",
+   "BAVUGA ___"
+  ],
+  "answer": "YANYOYE AMAZI",
+  "wrong": [
+   "YANKWEYE AMAZI"
+  ],
+  "options": [
+   "YANYOYE AMAZI",
+   "YANKWEYE AMAZI"
+  ]
+ },
+ "ntibavuga-bavuga-7H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-7H",
+  "rank": "7",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AMAGO",
+   "BAVUGA ___"
+  ],
+  "answer": "INGO",
+  "wrong": [
+   "AMAGO"
+  ],
+  "options": [
+   "INGO",
+   "AMAGO"
+  ]
+ },
+ "ntibavuga-bavuga-8H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-8H",
+  "rank": "8",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AMAMODOKA",
+   "BAVUGA ___"
+  ],
+  "answer": "IMODOKA",
+  "wrong": [
+   "AMAMODOKA"
+  ],
+  "options": [
+   "IMODOKA",
+   "AMAMODOKA"
+  ]
+ },
+ "ntibavuga-bavuga-9H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-9H",
+  "rank": "9",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AMAZU",
+   "BAVUGA ___"
+  ],
+  "answer": "INZU",
+  "wrong": [
+   "AMAZU"
+  ],
+  "options": [
+   "INZU",
+   "AMAZU"
+  ]
+ },
+ "ntibavuga-bavuga-10H": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-10H",
+  "rank": "10",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA KU GITI CYANGE",
+   "BAVUGA ___"
+  ],
+  "answer": "KU BWANGE",
+  "wrong": [
+   "KU GITI CYANGE"
+  ],
+  "options": [
+   "KU BWANGE",
+   "KU GITI CYANGE"
+  ]
+ },
+ "ntibavuga-bavuga-JH": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-JH",
+  "rank": "J",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA ABASHUTI BANGE",
+   "BAVUGA ___"
+  ],
+  "answer": "INSHUTI ZANGE",
+  "wrong": [
+   "ABASHUTI BANGE"
+  ],
+  "options": [
+   "INSHUTI ZANGE",
+   "ABASHUTI BANGE"
+  ]
+ },
+ "ntibavuga-bavuga-QH": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-QH",
+  "rank": "Q",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA YABASHIJE GUTSINDA",
+   "BAVUGA ___"
+  ],
+  "answer": "YATSINZE",
+  "wrong": [
+   "YABASHIJE GUTSINDA"
+  ],
+  "options": [
+   "YATSINZE",
+   "YABASHIJE GUTSINDA"
+  ]
+ },
+ "ntibavuga-bavuga-KH": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-KH",
+  "rank": "K",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA MUBIGENZE UTYO",
+   "BAVUGA ___"
+  ],
+  "answer": "MUBIGENZE GUTYO/MUTYO",
+  "wrong": [
+   "MUBIGENZE UTYO"
+  ],
+  "options": [
+   "MUBIGENZE GUTYO/MUTYO",
+   "MUBIGENZE UTYO"
+  ]
+ },
+ "ntibavuga-bavuga-AH": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-AH",
+  "rank": "A",
+  "suit": "hearts",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA NDAVUZE ATI",
+   "BAVUGA ___"
+  ],
+  "answer": "NDAVUZE NTI",
+  "wrong": [
+   "NDAVUZE ATI"
+  ],
+  "options": [
+   "NDAVUZE NTI",
+   "NDAVUZE ATI"
+  ]
+ },
+ "ntibavuga-bavuga-2C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-2C",
+  "rank": "2",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA MWABIGENZA UTE",
+   "BAVUGA ___"
+  ],
+  "answer": "MWABIGENZA MUTE",
+  "wrong": [
+   "MWABIGENZA UTE"
+  ],
+  "options": [
+   "MWABIGENZA MUTE",
+   "MWABIGENZA UTE"
+  ]
+ },
+ "ntibavuga-bavuga-3C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-3C",
+  "rank": "3",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA SIYAJE",
+   "BAVUGA ___"
+  ],
+  "answer": "NTIYAJE",
+  "wrong": [
+   "SIYAJE"
+  ],
+  "options": [
+   "NTIYAJE",
+   "SIYAJE"
+  ]
+ },
+ "ntibavuga-bavuga-4C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-4C",
+  "rank": "4",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA SUBONA KO ARI BYIZA ?",
+   "BAVUGA ___"
+  ],
+  "answer": "NTUBONA KO ARI BYIZA ?",
+  "wrong": [
+   "SUBONA KO ARI BYIZA ?"
+  ],
+  "options": [
+   "NTUBONA KO ARI BYIZA ?",
+   "SUBONA KO ARI BYIZA ?"
+  ]
+ },
+ "ntibavuga-bavuga-5C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-5C",
+  "rank": "5",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA NTIZA KU NTEBE",
+   "BAVUGA ___"
+  ],
+  "answer": "NTIZA INTEBE",
+  "wrong": [
+   "NTIZA KU NTEBE"
+  ],
+  "options": [
+   "NTIZA INTEBE",
+   "NTIZA KU NTEBE"
+  ]
+ },
+ "ntibavuga-bavuga-6C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-6C",
+  "rank": "6",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA MPA KURI UWO MWENDA",
+   "BAVUGA ___"
+  ],
+  "answer": "MPA UWO MWENDA",
+  "wrong": [
+   "MPA KURI UWO MWENDA"
+  ],
+  "options": [
+   "MPA UWO MWENDA",
+   "MPA KURI UWO MWENDA"
+  ]
+ },
+ "ntibavuga-bavuga-7C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-7C",
+  "rank": "7",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA GUHANAHANA AMAKURU",
+   "BAVUGA ___"
+  ],
+  "answer": "GUTANGA AMAKURU",
+  "wrong": [
+   "GUHANAHANA AMAKURU"
+  ],
+  "options": [
+   "GUTANGA AMAKURU",
+   "GUHANAHANA AMAKURU"
+  ]
+ },
+ "ntibavuga-bavuga-8C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-8C",
+  "rank": "8",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA UBUSOBANURO",
+   "BAVUGA ___"
+  ],
+  "answer": "IBISOBANURO",
+  "wrong": [
+   "UBUSOBANURO"
+  ],
+  "options": [
+   "IBISOBANURO",
+   "UBUSOBANURO"
+  ]
+ },
+ "ntibavuga-bavuga-9C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-9C",
+  "rank": "9",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA MU GATONDO",
+   "BAVUGA ___"
+  ],
+  "answer": "MU GITONDO",
+  "wrong": [
+   "MU GATONDO"
+  ],
+  "options": [
+   "MU GITONDO",
+   "MU GATONDO"
+  ]
+ },
+ "ntibavuga-bavuga-10C": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-10C",
+  "rank": "10",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AMABWIRIZWA",
+   "BAVUGA ___"
+  ],
+  "answer": "AMABWIRIZA",
+  "wrong": [
+   "AMABWIRIZWA"
+  ],
+  "options": [
+   "AMABWIRIZA",
+   "AMABWIRIZWA"
+  ]
+ },
+ "ntibavuga-bavuga-JC": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-JC",
+  "rank": "J",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA NIBATARARA BAMBWIYE",
+   "BAVUGA ___"
+  ],
+  "answer": "NIBARARA BATAMBWIYE",
+  "wrong": [
+   "NIBATARARA BAMBWIYE"
+  ],
+  "options": [
+   "NIBARARA BATAMBWIYE",
+   "NIBATARARA BAMBWIYE"
+  ]
+ },
+ "ntibavuga-bavuga-QC": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-QC",
+  "rank": "Q",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA IGO/EGO/INGO",
+   "BAVUGA ___"
+  ],
+  "answer": "YEGO",
+  "wrong": [
+   "IGO/EGO/INGO"
+  ],
+  "options": [
+   "YEGO",
+   "IGO/EGO/INGO"
+  ]
+ },
+ "ntibavuga-bavuga-KC": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-KC",
+  "rank": "K",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA AMAKA MENSHI",
+   "BAVUGA ___"
+  ],
+  "answer": "INKA NYINSHI",
+  "wrong": [
+   "AMAKA MENSHI"
+  ],
+  "options": [
+   "INKA NYINSHI",
+   "AMAKA MENSHI"
+  ]
+ },
+ "ntibavuga-bavuga-AC": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-AC",
+  "rank": "A",
+  "suit": "clubs",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA UMUTICA WACU",
+   "BAVUGA ___"
+  ],
+  "answer": "UMWARIMU WACU",
+  "wrong": [
+   "UMUTICA WACU"
+  ],
+  "options": [
+   "UMWARIMU WACU",
+   "UMUTICA WACU"
+  ]
+ },
+ "ntibavuga-bavuga-2D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-2D",
+  "rank": "2",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA MURAMBWIYE ATI/UTI",
+   "BAVUGA ___"
+  ],
+  "answer": "MURATUBWIYE MUTI",
+  "wrong": [
+   "MURAMBWIYE ATI/UTI"
+  ],
+  "options": [
+   "MURATUBWIYE MUTI",
+   "MURAMBWIYE ATI/UTI"
+  ]
+ },
+ "ntibavuga-bavuga-3D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-3D",
+  "rank": "3",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA TURAVUZE ATI/UTI",
+   "BAVUGA ___"
+  ],
+  "answer": "TWE TURAVUZE TUTI",
+  "wrong": [
+   "TURAVUZE ATI/UTI"
+  ],
+  "options": [
+   "TWE TURAVUZE TUTI",
+   "TURAVUZE ATI/UTI"
+  ]
+ },
+ "ntibavuga-bavuga-4D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-4D",
+  "rank": "4",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA SINDAZA",
+   "BAVUGA ___"
+  ],
+  "answer": "NTABWO NDAZA",
+  "wrong": [
+   "SINDAZA"
+  ],
+  "options": [
+   "NTABWO NDAZA",
+   "SINDAZA"
+  ]
+ },
+ "ntibavuga-bavuga-5D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-5D",
+  "rank": "5",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA SINDAKAGENDA",
+   "BAVUGA ___"
+  ],
+  "answer": "NTABWO NDAGENDA",
+  "wrong": [
+   "SINDAKAGENDA"
+  ],
+  "options": [
+   "NTABWO NDAGENDA",
+   "SINDAKAGENDA"
+  ]
+ },
+ "ntibavuga-bavuga-6D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-6D",
+  "rank": "6",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA NAJE NATARIYE",
+   "BAVUGA ___"
+  ],
+  "answer": "NAJE NTARIYE",
+  "wrong": [
+   "NAJE NATARIYE"
+  ],
+  "options": [
+   "NAJE NTARIYE",
+   "NAJE NATARIYE"
+  ]
+ },
+ "ntibavuga-bavuga-7D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-7D",
+  "rank": "7",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA SINITABA",
+   "BAVUGA ___"
+  ],
+  "answer": "NTABWO NITABA",
+  "wrong": [
+   "SINITABA"
+  ],
+  "options": [
+   "NTABWO NITABA",
+   "SINITABA"
+  ]
+ },
+ "ntibavuga-bavuga-8D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-8D",
+  "rank": "8",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA ARIKO SE WANDEKA",
+   "BAVUGA ___"
+  ],
+  "answer": "ARIKO SE WANDETSE",
+  "wrong": [
+   "ARIKO SE WANDEKA"
+  ],
+  "options": [
+   "ARIKO SE WANDETSE",
+   "ARIKO SE WANDEKA"
+  ]
+ },
+ "ntibavuga-bavuga-9D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-9D",
+  "rank": "9",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA SHANGAZI",
+   "BAVUGA ___"
+  ],
+  "answer": "MASENGE",
+  "wrong": [
+   "SHANGAZI"
+  ],
+  "options": [
+   "MASENGE",
+   "SHANGAZI"
+  ]
+ },
+ "ntibavuga-bavuga-10D": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-10D",
+  "rank": "10",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA BYARI FEKE",
+   "BAVUGA ___"
+  ],
+  "answer": "NTA GACIRO BYARI BIFITE",
+  "wrong": [
+   "BYARI FEKE"
+  ],
+  "options": [
+   "NTA GACIRO BYARI BIFITE",
+   "BYARI FEKE"
+  ]
+ },
+ "ntibavuga-bavuga-JD": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-JD",
+  "rank": "J",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA IZI NKWETO NI PIRATE",
+   "BAVUGA ___"
+  ],
+  "answer": "IZI NKWETO SI UMWIMERERE",
+  "wrong": [
+   "IZI NKWETO NI PIRATE"
+  ],
+  "options": [
+   "IZI NKWETO SI UMWIMERERE",
+   "IZI NKWETO NI PIRATE"
+  ]
+ },
+ "ntibavuga-bavuga-QD": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-QD",
+  "rank": "Q",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA IBINTU NI DANJE",
+   "BAVUGA ___"
+  ],
+  "answer": "IBINTU BIRAKOMEYE",
+  "wrong": [
+   "IBINTU NI DANJE"
+  ],
+  "options": [
+   "IBINTU BIRAKOMEYE",
+   "IBINTU NI DANJE"
+  ]
+ },
+ "ntibavuga-bavuga-KD": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-KD",
+  "rank": "K",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA NDAZA KABISA",
+   "BAVUGA ___"
+  ],
+  "answer": "NDAZA RWOSE",
+  "wrong": [
+   "NDAZA KABISA"
+  ],
+  "options": [
+   "NDAZA RWOSE",
+   "NDAZA KABISA"
+  ]
+ },
+ "ntibavuga-bavuga-AD": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-AD",
+  "rank": "A",
+  "suit": "diamonds",
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA UMUJAMA WANGE",
+   "BAVUGA ___"
+  ],
+  "answer": "INSHUTI YANGE",
+  "wrong": [
+   "UMUJAMA WANGE"
+  ],
+  "options": [
+   "INSHUTI YANGE",
+   "UMUJAMA WANGE"
+  ]
+ },
+ "ntibavuga-bavuga-joker1": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-joker1",
+  "rank": null,
+  "suit": null,
+  "kind": "which",
+  "prompt": [
+   "IYO URI KWIVUGA,",
+   "NTAGO UVUGA UTI BANYITA KANAKA",
+   "UVUGA UTI ___"
+  ],
+  "answer": "NITWA KANAKA",
+  "wrong": [
+   "BANYITA KANAKA"
+  ],
+  "options": [
+   "NITWA KANAKA",
+   "BANYITA KANAKA"
+  ]
+ },
+ "ntibavuga-bavuga-joker2": {
+  "deck": "ntibavuga-bavuga",
+  "card": "ntibavuga-bavuga-joker2",
+  "rank": null,
+  "suit": null,
+  "kind": "which",
+  "prompt": [
+   "NTIBAVUGA IKIRIMI",
+   "BAVUGA ___"
+  ],
+  "answer": "URURIMI",
+  "wrong": [
+   "IKIRIMI"
+  ],
+  "options": [
+   "URURIMI",
+   "IKIRIMI"
+  ]
+ },
+ "ikeshamvugo-2S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-2S",
+  "rank": "2",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA AHO BASHYIRA AMATA",
+   "BAVUGA ___"
+  ],
+  "answer": "ICYANSI",
+  "options": [
+   "ICYANSI",
+   "KUZAHURA",
+   "GUTEKA"
+  ]
+ },
+ "ikeshamvugo-3S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-3S",
+  "rank": "3",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA GUSUKA AMATA",
+   "BAVUGA ___"
+  ],
+  "answer": "KUYABUGANIZA",
+  "options": [
+   "KUYABUGANIZA",
+   "KUYAGWIZAMO",
+   "KUYABOGORA"
+  ]
+ },
+ "ikeshamvugo-4S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-4S",
+  "rank": "4",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KURANGIZA GUKAMA",
+   "BAVUGA ___"
+  ],
+  "answer": "GUHUMUZA",
+  "options": [
+   "GUHUMUZA",
+   "AMIRIRE",
+   "GUTEKA"
+  ]
+ },
+ "ikeshamvugo-5S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-5S",
+  "rank": "5",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KUMENA AMATA UBISHATSE",
+   "BAVUGA ___"
+  ],
+  "answer": "KUYABYARIRA",
+  "options": [
+   "KUYABYARIRA",
+   "KUYABUGANIZA",
+   "KUYABOGORA"
+  ]
+ },
+ "ikeshamvugo-6S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-6S",
+  "rank": "6",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KUMENA AMATA UTABISHATSE",
+   "BAVUGA ___"
+  ],
+  "answer": "KUYABOGORA",
+  "options": [
+   "KUYABOGORA",
+   "KUYABUGANIZA",
+   "KUYAGWIZAMO"
+  ]
+ },
+ "ikeshamvugo-7S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-7S",
+  "rank": "7",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KUMARA AMATA MU KINTU",
+   "BAVUGA ___"
+  ],
+  "answer": "KUYAGWIZAMO",
+  "options": [
+   "KUYAGWIZAMO",
+   "KUYABOGORA",
+   "KUYABUGANIZA"
+  ]
+ },
+ "ikeshamvugo-8S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-8S",
+  "rank": "8",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KUREKERAHO GUKAMWA",
+   "BAVUGA ___"
+  ],
+  "answer": "GUTEKA",
+  "options": [
+   "GUTEKA",
+   "GUTURUKA KURE",
+   "UMWERERA"
+  ]
+ },
+ "ikeshamvugo-9S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-9S",
+  "rank": "9",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA AMATA Y’INKA IKIBYARA",
+   "BAVUGA ___"
+  ],
+  "answer": "UMUHONDO",
+  "options": [
+   "UMUHONDO",
+   "UMUBANJI",
+   "GUTEKA"
+  ]
+ },
+ "ikeshamvugo-10S": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-10S",
+  "rank": "10",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA AMATA Y’INKA IHAKA",
+   "BAVUGA ___"
+  ],
+  "answer": "AMASITU",
+  "options": [
+   "AMASITU",
+   "ICYANSI",
+   "UMUHONDO"
+  ]
+ },
+ "ikeshamvugo-JS": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-JS",
+  "rank": "J",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA AMATA YARAYE ATARAVURA",
+   "BAVUGA ___"
+  ],
+  "answer": "UMUBANJI",
+  "options": [
+   "UMUBANJI",
+   "UMUHONDO",
+   "KUZAHURA"
+  ]
+ },
+ "ikeshamvugo-QS": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-QS",
+  "rank": "Q",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA AMATA BAVANZE N’AMAZI",
+   "BAVUGA ___"
+  ],
+  "answer": "UMWERERA",
+  "options": [
+   "UMWERERA",
+   "GUTEKA",
+   "GUHUMUZA"
+  ]
+ },
+ "ikeshamvugo-KS": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-KS",
+  "rank": "K",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA AMATA YIRIWE",
+   "BAVUGA ___"
+  ],
+  "answer": "AMIRIRE",
+  "options": [
+   "AMIRIRE",
+   "UMWERERA",
+   "KUYABOGORA"
+  ]
+ },
+ "ikeshamvugo-AS": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-AS",
+  "rank": "A",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA AMATA AMAZE KUVURA",
+   "BAVUGA ___"
+  ],
+  "answer": "IKIVUGUTO",
+  "options": [
+   "IKIVUGUTO",
+   "GUTEKA",
+   "UMWERERA"
+  ]
+ },
+ "ikeshamvugo-2H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-2H",
+  "rank": "2",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "IYO BAGUHAYE AMATA CYANGWA SE BAKAGUHA ICYANSI BARIMO GUKAMIRAMO UGIRA UTI ___"
+  ],
+  "answer": "ZINGANA NYIRAZO",
+  "options": [
+   "ZINGANA NYIRAZO",
+   "INKA Y’UMURIRO",
+   "UMUNANI WUMANYE"
+  ]
+ },
+ "ikeshamvugo-3H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-3H",
+  "rank": "3",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA GUSUBIZA INYUMA INKA",
+   "BAVUGA ___"
+  ],
+  "answer": "GUKUMIRA",
+  "options": [
+   "GUKUMIRA",
+   "GUKAMA KERA",
+   "GUHUMUZA"
+  ]
+ },
+ "ikeshamvugo-4H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-4H",
+  "rank": "4",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KURANGIZA GUKAMA",
+   "BAVUGA ___"
+  ],
+  "answer": "GUHUMUZA",
+  "options": [
+   "GUHUMUZA",
+   "ICYANSI",
+   "GUKUMIRA"
+  ]
+ },
+ "ikeshamvugo-5H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-5H",
+  "rank": "5",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KURORERA GUKAMA",
+   "BAVUGA ___"
+  ],
+  "answer": "GUTEKA",
+  "options": [
+   "GUTEKA",
+   "GUTURUKA KURE",
+   "KUZAHURA"
+  ]
+ },
+ "ikeshamvugo-6H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-6H",
+  "rank": "6",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA GUKAMANA INGOGA",
+   "BAVUGA ___"
+  ],
+  "answer": "GUKAMA KERA",
+  "options": [
+   "GUKAMA KERA",
+   "GUKUMIRA",
+   "GUTURUKA KURE"
+  ]
+ },
+ "ikeshamvugo-7H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-7H",
+  "rank": "7",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INKA NTIKOMEREKA",
+   "INKA ___"
+  ],
+  "answer": "IRASARIKA",
+  "options": [
+   "IRASARIKA",
+   "IRAHAKA",
+   "ZIRARISHA"
+  ]
+ },
+ "ikeshamvugo-8H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-8H",
+  "rank": "8",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KUJYANA INKA KUZIRAGIRA",
+   "BAVUGA ___"
+  ],
+  "answer": "KUZAHURA",
+  "options": [
+   "KUZAHURA",
+   "KUZICYURA",
+   "KUYAGWIZAMO"
+  ]
+ },
+ "ikeshamvugo-9H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-9H",
+  "rank": "9",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INKA NTIZITOROKA",
+   "INKA ___"
+  ],
+  "answer": "ZIRAMENA",
+  "options": [
+   "ZIRAMENA",
+   "ZIRARISHA",
+   "IRASARIKA"
+  ]
+ },
+ "ikeshamvugo-10H": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-10H",
+  "rank": "10",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INKA NTIZIRYA",
+   "INKA ___"
+  ],
+  "answer": "ZIRARISHA",
+  "options": [
+   "ZIRARISHA",
+   "ZIRAMENA",
+   "IRAHAKA"
+  ]
+ },
+ "ikeshamvugo-JH": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-JH",
+  "rank": "J",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "AHO INKA ZIRISHIRIZA BAHITA ___"
+  ],
+  "answer": "URWURI",
+  "options": [
+   "URWURI",
+   "MU NGOMBE",
+   "MU ICUKIRO"
+  ]
+ },
+ "ikeshamvugo-QH": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-QH",
+  "rank": "Q",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KWAHURA KURE",
+   "BAVUGA ___"
+  ],
+  "answer": "GUTURUKA KURE",
+  "options": [
+   "GUTURUKA KURE",
+   "GUTEKA",
+   "GUKAMA KERA"
+  ]
+ },
+ "ikeshamvugo-KH": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-KH",
+  "rank": "K",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA KUGARURA INKA MU RUGO",
+   "BAVUGA ___"
+  ],
+  "answer": "KUZICYURA",
+  "options": [
+   "KUZICYURA",
+   "KUZAHURA",
+   "UMWERERA"
+  ]
+ },
+ "ikeshamvugo-AH": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-AH",
+  "rank": "A",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INKA UMUNANI ZIDAFITE IZAZO BAZITA ___"
+  ],
+  "answer": "UMUNANI WUMANYE",
+  "options": [
+   "UMUNANI WUMANYE",
+   "UMUNANI UKINZE",
+   "UMUBANJI"
+  ]
+ },
+ "ikeshamvugo-2C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-2C",
+  "rank": "2",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "KUVOMERA INKA BABYITA ___"
+  ],
+  "answer": "KUZIDAHIRIRA",
+  "options": [
+   "KUZIDAHIRIRA",
+   "KUZIHONORA",
+   "KUZIRONGORA"
+  ]
+ },
+ "ikeshamvugo-3C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-3C",
+  "rank": "3",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "KWENDA KWIMA INKA ZITARARINDA BABYITA ___"
+  ],
+  "answer": "KUBA MU BITWARIZI",
+  "options": [
+   "KUBA MU BITWARIZI",
+   "KUVURUGANYA",
+   "KURYOGOSHA"
+  ]
+ },
+ "ikeshamvugo-4C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-4C",
+  "rank": "4",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "GUHANAGURA INKA BABYITA ___"
+  ],
+  "answer": "KUZIHONORA",
+  "options": [
+   "KUZIHONORA",
+   "KUZIRONGORA",
+   "KUZIDAHIRIRA"
+  ]
+ },
+ "ikeshamvugo-5C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-5C",
+  "rank": "5",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "KWIRUKA INKA ZIGUSIGA BABYITA ___"
+  ],
+  "answer": "GUTARA",
+  "options": [
+   "GUTARA",
+   "KWINIKIZA",
+   "ICYARIRE"
+  ]
+ },
+ "ikeshamvugo-6C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-6C",
+  "rank": "6",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "IBYATSI BAHANAGUZA INKA BABYITA ___"
+  ],
+  "answer": "INKUYO",
+  "options": [
+   "INKUYO",
+   "KURUMANGA",
+   "GUSHORA"
+  ]
+ },
+ "ikeshamvugo-7C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-7C",
+  "rank": "7",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "INKONI BARAGIZA INKA BAYITA ___"
+  ],
+  "answer": "INSHYIMBO",
+  "options": [
+   "INSHYIMBO",
+   "KIRARO",
+   "URUHONGORE"
+  ]
+ },
+ "ikeshamvugo-8C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-8C",
+  "rank": "8",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "GUCA UBWATSI BW’INKA BABYITA ___"
+  ],
+  "answer": "KWAHIRA",
+  "options": [
+   "KWAHIRA",
+   "KWINIKIZA",
+   "KUZIHONORA"
+  ]
+ },
+ "ikeshamvugo-9C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-9C",
+  "rank": "9",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "KUJYANA INKA AHARI UBWATSI BABYITA ___"
+  ],
+  "answer": "KUGISHA",
+  "options": [
+   "KUGISHA",
+   "KUZIHONORA",
+   "ICYARIRE"
+  ]
+ },
+ "ikeshamvugo-10C": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-10C",
+  "rank": "10",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "KUJYANA INKA KU KIBUMBIRO BABYITA ___"
+  ],
+  "answer": "GUSHORA",
+  "options": [
+   "GUSHORA",
+   "GUSHANGUKA",
+   "KUZIHONORA"
+  ]
+ },
+ "ikeshamvugo-JC": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-JC",
+  "rank": "J",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "KUYOBORA INKA / GUSHORERA INKA BABYITA ___"
+  ],
+  "answer": "KUZIRONGORA",
+  "options": [
+   "KUZIRONGORA",
+   "KUZIHONORA",
+   "KUZIDAHIRIRA"
+  ]
+ },
+ "ikeshamvugo-QC": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-QC",
+  "rank": "Q",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "INKA NTITWITA",
+   "INKA ___"
+  ],
+  "answer": "IRAHAKA",
+  "options": [
+   "IRAHAKA",
+   "IRASARIKA",
+   "ZIRAMENA"
+  ]
+ },
+ "ikeshamvugo-KC": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-KC",
+  "rank": "K",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "GUSHYIRAHO INKA IYAYO BABYITA ___"
+  ],
+  "answer": "KWINIKIZA",
+  "options": [
+   "KWINIKIZA",
+   "KUGISHA",
+   "ICYARIRE"
+  ]
+ },
+ "ikeshamvugo-AC": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-AC",
+  "rank": "A",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "GUKAMISHA YOMBI BABYITA ___"
+  ],
+  "answer": "KUVURUGANYA",
+  "options": [
+   "KUVURUGANYA",
+   "KUZIRONGORA",
+   "ICYARIRE"
+  ]
+ },
+ "ikeshamvugo-2D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-2D",
+  "rank": "2",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "KUBURA AMAZI KW’INKA BABYITA ___"
+  ],
+  "answer": "KURUMANGA",
+  "options": [
+   "KURUMANGA",
+   "KURYOGOSHA",
+   "KUZIRONGORA"
+  ]
+ },
+ "ikeshamvugo-3D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-3D",
+  "rank": "3",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "GUCA INKA IBERE BABYITA ___"
+  ],
+  "answer": "KURYOGOSHA",
+  "options": [
+   "KURYOGOSHA",
+   "KURUMANGA",
+   "KUZIHONORA"
+  ]
+ },
+ "ikeshamvugo-4D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-4D",
+  "rank": "4",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "INZU Y’INYANA BAYITA ___"
+  ],
+  "answer": "URUHONGORE",
+  "options": [
+   "URUHONGORE",
+   "INSHYIMBO",
+   "IMYEZO"
+  ]
+ },
+ "ikeshamvugo-5D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-5D",
+  "rank": "5",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "INZU Y’INKA BAYITA ___"
+  ],
+  "answer": "KIRARO",
+  "options": [
+   "KIRARO",
+   "INSHYIMBO",
+   "IMYEZO"
+  ]
+ },
+ "ikeshamvugo-6D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-6D",
+  "rank": "6",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "AHO INKA ZIBYARIRA BAHITA ___"
+  ],
+  "answer": "MU NGOMBE",
+  "options": [
+   "MU NGOMBE",
+   "MU ICUKIRO",
+   "URWURI"
+  ]
+ },
+ "ikeshamvugo-7D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-7D",
+  "rank": "7",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "IBIKI BIKINGA IKIRARO BABYITA ___"
+  ],
+  "answer": "IBIHINDIZO",
+  "options": [
+   "IBIHINDIZO",
+   "GUSHANGUKA",
+   "KURYOGOSHA"
+  ]
+ },
+ "ikeshamvugo-8D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-8D",
+  "rank": "8",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "GUKURA AMASE MU KIRARO BABYITA ___"
+  ],
+  "answer": "GUKUKA",
+  "options": [
+   "GUKUKA",
+   "KWINIKIZA",
+   "KWAHIRA"
+  ]
+ },
+ "ikeshamvugo-9D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-9D",
+  "rank": "9",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "AHO BAMENA AMASE Y’INKA BAHITA ___"
+  ],
+  "answer": "MU ICUKIRO",
+  "options": [
+   "MU ICUKIRO",
+   "MU NGOMBE",
+   "URWURI"
+  ]
+ },
+ "ikeshamvugo-10D": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-10D",
+  "rank": "10",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "KUBORA KW’AMASE Y’INKA BABYITA ___"
+  ],
+  "answer": "GUSHANGUKA",
+  "options": [
+   "GUSHANGUKA",
+   "GUSHORA",
+   "KWAHIRA"
+  ]
+ },
+ "ikeshamvugo-JD": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-JD",
+  "rank": "J",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "INKA ITANGIRIRWAHO KORORA BAYITA ___"
+  ],
+  "answer": "INKA Y’UMURIRO",
+  "options": [
+   "INKA Y’UMURIRO",
+   "INSHYIMBO",
+   "URUHONGORE"
+  ]
+ },
+ "ikeshamvugo-QD": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-QD",
+  "rank": "Q",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "IBYATSI BASASIRA INKA BABYITA ___"
+  ],
+  "answer": "ICYARIRE",
+  "options": [
+   "ICYARIRE",
+   "KURYOGOSHA",
+   "GUSHORA"
+  ]
+ },
+ "ikeshamvugo-KD": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-KD",
+  "rank": "K",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UTUBERE TW’INKA TUDAKAMWA BATWITA ___"
+  ],
+  "answer": "INDOREREZI",
+  "options": [
+   "INDOREREZI",
+   "KUZAHURA",
+   "KUZIHONORA"
+  ]
+ },
+ "ikeshamvugo-AD": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-AD",
+  "rank": "A",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "INKA UMUNANI N’INYANA ZAZO BAZITA ___"
+  ],
+  "answer": "UMUNANI UKINZE",
+  "options": [
+   "UMUNANI UKINZE",
+   "UMUNANI WUMANYE",
+   "UMUBANJI"
+  ]
+ },
+ "ikeshamvugo-joker1": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-joker1",
+  "rank": null,
+  "suit": null,
+  "kind": "fill",
+  "prompt": [
+   "AGATI BAVURISHA AMATA BAKITA ___"
+  ],
+  "answer": "UMUTOZO",
+  "options": [
+   "UMUTOZO",
+   "UMUBANJI",
+   "UMUHONDO"
+  ]
+ },
+ "ikeshamvugo-joker2": {
+  "deck": "ikeshamvugo",
+  "card": "ikeshamvugo-joker2",
+  "rank": null,
+  "suit": null,
+  "kind": "fill",
+  "prompt": [
+   "AMATA Y’ABASHUMBA BAYITA ___"
+  ],
+  "answer": "IMYEZO",
+  "options": [
+   "IMYEZO",
+   "KIRARO",
+   "INSHYIMBO"
+  ]
+ },
+ "imvugo-2S": {
+  "deck": "imvugo",
+  "card": "imvugo-2S",
+  "rank": "2",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "UMWAMI NTABWO AGIRA UMUGORE",
+   "UMWAMI AGIRA ___"
+  ],
+  "answer": "UMWAMIKAZI",
+  "options": [
+   "UMWAMIKAZI",
+   "ARATANGA",
+   "IRAJWIGIRA"
+  ]
+ },
+ "imvugo-3S": {
+  "deck": "imvugo",
+  "card": "imvugo-3S",
+  "rank": "3",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA NYINA W’UMWAMI",
+   "BAVUGA ___"
+  ],
+  "answer": "UMUGABEKAZI",
+  "options": [
+   "UMUGABEKAZI",
+   "GASHYANTARE",
+   "MUKADATA"
+  ]
+ },
+ "imvugo-4S": {
+  "deck": "imvugo",
+  "card": "imvugo-4S",
+  "rank": "4",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA ABANA B’UMWAMI",
+   "BAVUGA ___"
+  ],
+  "answer": "IBIKOMANGOMA",
+  "options": [
+   "IBIKOMANGOMA",
+   "UGUSHYINGO",
+   "UMUGABEKAZI"
+  ]
+ },
+ "imvugo-5S": {
+  "deck": "imvugo",
+  "card": "imvugo-5S",
+  "rank": "5",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "IMPYISI NTIVUGA",
+   "IMPISI ___"
+  ],
+  "answer": "IRAHUMA",
+  "options": [
+   "IRAHUMA",
+   "IRAJWIGIRA",
+   "IRAMOKA"
+  ]
+ },
+ "imvugo-6S": {
+  "deck": "imvugo",
+  "card": "imvugo-6S",
+  "rank": "6",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "INTARE NTIVUGA",
+   "INTARE ___"
+  ],
+  "answer": "IRATONTOMA",
+  "options": [
+   "IRATONTOMA",
+   "IRAMOKA",
+   "IRABIKA"
+  ]
+ },
+ "imvugo-7S": {
+  "deck": "imvugo",
+  "card": "imvugo-7S",
+  "rank": "7",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "INKA NTIVUGA",
+   "INKA ___"
+  ],
+  "answer": "IRABIRA",
+  "options": [
+   "IRABIRA",
+   "IRABWEGEKA",
+   "IRAMOKA"
+  ]
+ },
+ "imvugo-8S": {
+  "deck": "imvugo",
+  "card": "imvugo-8S",
+  "rank": "8",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "IMBWA NTIVUGA",
+   "IMBWA ___"
+  ],
+  "answer": "IRAMOKA",
+  "options": [
+   "IRAMOKA",
+   "IRABWEGEKA",
+   "IRABIKA"
+  ]
+ },
+ "imvugo-9S": {
+  "deck": "imvugo",
+  "card": "imvugo-9S",
+  "rank": "9",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "ISAKE NTIVUGA",
+   "ISAKE ___"
+  ],
+  "answer": "IRABIKA",
+  "options": [
+   "IRABIKA",
+   "IRAJWIGIRA",
+   "IRATONTOMA"
+  ]
+ },
+ "imvugo-10S": {
+  "deck": "imvugo",
+  "card": "imvugo-10S",
+  "rank": "10",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "IHENE NTIVUGA",
+   "IHENE ___"
+  ],
+  "answer": "IRAHEBEBA",
+  "options": [
+   "IRAHEBEBA",
+   "IRATONTOMA",
+   "IRABIRA"
+  ]
+ },
+ "imvugo-JS": {
+  "deck": "imvugo",
+  "card": "imvugo-JS",
+  "rank": "J",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "IMBEBA NTIVUGA",
+   "IMBEBA ___"
+  ],
+  "answer": "IRAJWIGIRA",
+  "options": [
+   "IRAJWIGIRA",
+   "IRAMOKA",
+   "IRABIKA"
+  ]
+ },
+ "imvugo-QS": {
+  "deck": "imvugo",
+  "card": "imvugo-QS",
+  "rank": "Q",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "INTAMA/IHENE/INKA NTIZITWITA",
+   "INTAMA/IHENE/INKA ___"
+  ],
+  "answer": "ZIRAHAKA",
+  "options": [
+   "ZIRAHAKA",
+   "IRABWEGEKA",
+   "IRAMOKA"
+  ]
+ },
+ "imvugo-KS": {
+  "deck": "imvugo",
+  "card": "imvugo-KS",
+  "rank": "K",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "IMBWA NTIHAKA, NTITWITA",
+   "IMBWA ___"
+  ],
+  "answer": "IRABWEGEKA",
+  "options": [
+   "IRABWEGEKA",
+   "IRAHEBEBA",
+   "IRAJWIGIRA"
+  ]
+ },
+ "imvugo-AS": {
+  "deck": "imvugo",
+  "card": "imvugo-AS",
+  "rank": "A",
+  "suit": "spades",
+  "kind": "fill",
+  "prompt": [
+   "INGURUBE NTIHAKA, NTITWITA",
+   "INGURUBE ___"
+  ],
+  "answer": "IRABWEGEKA",
+  "options": [
+   "IRABWEGEKA",
+   "IRAMOKA",
+   "IRAHUMA"
+  ]
+ },
+ "imvugo-2H": {
+  "deck": "imvugo",
+  "card": "imvugo-2H",
+  "rank": "2",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "IBIBWANA NTIBYONKA",
+   "IBIBWANA ___"
+  ],
+  "answer": "BIRABWAGAGUZA",
+  "options": [
+   "BIRABWAGAGUZA",
+   "IRAJWIGIRA",
+   "UMWAMIKAZI"
+  ]
+ },
+ "imvugo-3H": {
+  "deck": "imvugo",
+  "card": "imvugo-3H",
+  "rank": "3",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "AMATA Y’IHENE BAYITA ___"
+  ],
+  "answer": "AMAHENEHENE",
+  "options": [
+   "AMAHENEHENE",
+   "AMATAMATAMA",
+   "IKIBWANA"
+  ]
+ },
+ "imvugo-4H": {
+  "deck": "imvugo",
+  "card": "imvugo-4H",
+  "rank": "4",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "AMATA Y’INTAMA BAYITA ___"
+  ],
+  "answer": "AMATAMATAMA",
+  "options": [
+   "AMATAMATAMA",
+   "AMAHENEHENE",
+   "IKIBWANA"
+  ]
+ },
+ "imvugo-5H": {
+  "deck": "imvugo",
+  "card": "imvugo-5H",
+  "rank": "5",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INKA Y’INGABO BAYITA ___"
+  ],
+  "answer": "IKIMASA, IMFIZI (IKUZE)",
+  "options": [
+   "IKIMASA, IMFIZI (IKUZE)",
+   "IKIBWANA",
+   "INYANA, IMBYEYI (NIBA YONSA)"
+  ]
+ },
+ "imvugo-6H": {
+  "deck": "imvugo",
+  "card": "imvugo-6H",
+  "rank": "6",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INKA Y’INGORE BAYITA ___"
+  ],
+  "answer": "INYANA, IMBYEYI (NIBA YONSA)",
+  "options": [
+   "INYANA, IMBYEYI (NIBA YONSA)",
+   "INYANA, UMUTAVU (INYANA IKIVUKA)",
+   "IKIMASA, IMFIZI (IKUZE)"
+  ]
+ },
+ "imvugo-7H": {
+  "deck": "imvugo",
+  "card": "imvugo-7H",
+  "rank": "7",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INTAMA Y’INGABO BAYITA ___"
+  ],
+  "answer": "ISEKURUME Y’INTAMA, IMFIZI Y’INTAMA (IKUZE)",
+  "options": [
+   "ISEKURUME Y’INTAMA, IMFIZI Y’INTAMA (IKUZE)",
+   "INYANA, UMUTAVU (INYANA IKIVUKA)",
+   "INYANA, IMBYEYI (NIBA YONSA)"
+  ]
+ },
+ "imvugo-8H": {
+  "deck": "imvugo",
+  "card": "imvugo-8H",
+  "rank": "8",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INKA IKIRI NTO BAYITA ___"
+  ],
+  "answer": "INYANA, UMUTAVU (INYANA IKIVUKA)",
+  "options": [
+   "INYANA, UMUTAVU (INYANA IKIVUKA)",
+   "INYANA, IMBYEYI (NIBA YONSA)",
+   "ISEKURUME Y’INTAMA, IMFIZI Y’INTAMA (IKUZE)"
+  ]
+ },
+ "imvugo-9H": {
+  "deck": "imvugo",
+  "card": "imvugo-9H",
+  "rank": "9",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "IMBWA IKIRI NTO BAYITA ___"
+  ],
+  "answer": "IKIBWANA",
+  "options": [
+   "IKIBWANA",
+   "IKIMASA, IMFIZI (IKUZE)",
+   "AMATAMATAMA"
+  ]
+ },
+ "imvugo-10H": {
+  "deck": "imvugo",
+  "card": "imvugo-10H",
+  "rank": "10",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "INKOKO IKIVUKA BAYITA ___"
+  ],
+  "answer": "UMUSHWI",
+  "options": [
+   "UMUSHWI",
+   "IKIBWANA",
+   "AMAHENEHENE"
+  ]
+ },
+ "imvugo-JH": {
+  "deck": "imvugo",
+  "card": "imvugo-JH",
+  "rank": "J",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "MUSAZA WA MAMA BAMWITA ___"
+  ],
+  "answer": "MARUME",
+  "options": [
+   "MARUME",
+   "UMUBYEYI",
+   "MASENGE"
+  ]
+ },
+ "imvugo-QH": {
+  "deck": "imvugo",
+  "card": "imvugo-QH",
+  "rank": "Q",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "MUSHIKI WA DATA BAMWITA ___"
+  ],
+  "answer": "MASENGE",
+  "options": [
+   "MASENGE",
+   "UMUBYEYI",
+   "MARUME"
+  ]
+ },
+ "imvugo-KH": {
+  "deck": "imvugo",
+  "card": "imvugo-KH",
+  "rank": "K",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "MUKURU/MURUMUNA WA MAMA BAMWITA ___"
+  ],
+  "answer": "MAMA WACU",
+  "options": [
+   "MAMA WACU",
+   "DATA WACU",
+   "UMUBYEYI"
+  ]
+ },
+ "imvugo-AH": {
+  "deck": "imvugo",
+  "card": "imvugo-AH",
+  "rank": "A",
+  "suit": "hearts",
+  "kind": "fill",
+  "prompt": [
+   "MUKURU/MURUMUNA WA DATA BAMWITA ___"
+  ],
+  "answer": "DATA WACU",
+  "options": [
+   "DATA WACU",
+   "MAMA WACU",
+   "MASENGE"
+  ]
+ },
+ "imvugo-2C": {
+  "deck": "imvugo",
+  "card": "imvugo-2C",
+  "rank": "2",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA MBERE",
+   "BAVUGA ___"
+  ],
+  "answer": "MUTARAMA",
+  "options": [
+   "MUTARAMA",
+   "UKWAKIRA",
+   "NYAKANGA"
+  ]
+ },
+ "imvugo-3C": {
+  "deck": "imvugo",
+  "card": "imvugo-3C",
+  "rank": "3",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA KABIRI",
+   "BAVUGA ___"
+  ],
+  "answer": "GASHYANTARE",
+  "options": [
+   "GASHYANTARE",
+   "MUTARAMA",
+   "MUKADATA"
+  ]
+ },
+ "imvugo-4C": {
+  "deck": "imvugo",
+  "card": "imvugo-4C",
+  "rank": "4",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA GATATU",
+   "BAVUGA ___"
+  ],
+  "answer": "WERURWE",
+  "options": [
+   "WERURWE",
+   "NZERI",
+   "GICURASI"
+  ]
+ },
+ "imvugo-5C": {
+  "deck": "imvugo",
+  "card": "imvugo-5C",
+  "rank": "5",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA KANE",
+   "BAVUGA ___"
+  ],
+  "answer": "MATA",
+  "options": [
+   "MATA",
+   "UKUBOZA",
+   "KAMENA"
+  ]
+ },
+ "imvugo-6C": {
+  "deck": "imvugo",
+  "card": "imvugo-6C",
+  "rank": "6",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA GATANU",
+   "BAVUGA ___"
+  ],
+  "answer": "GICURASI",
+  "options": [
+   "GICURASI",
+   "MUTARAMA",
+   "GASHYANTARE"
+  ]
+ },
+ "imvugo-7C": {
+  "deck": "imvugo",
+  "card": "imvugo-7C",
+  "rank": "7",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA GATANDATU",
+   "BAVUGA ___"
+  ],
+  "answer": "KAMENA",
+  "options": [
+   "KAMENA",
+   "KANAMA",
+   "NYAKANGA"
+  ]
+ },
+ "imvugo-8C": {
+  "deck": "imvugo",
+  "card": "imvugo-8C",
+  "rank": "8",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA KARINDWI",
+   "BAVUGA ___"
+  ],
+  "answer": "NYAKANGA",
+  "options": [
+   "NYAKANGA",
+   "MUKADATA",
+   "MUTARAMA"
+  ]
+ },
+ "imvugo-9C": {
+  "deck": "imvugo",
+  "card": "imvugo-9C",
+  "rank": "9",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA MUNANI",
+   "BAVUGA ___"
+  ],
+  "answer": "KANAMA",
+  "options": [
+   "KANAMA",
+   "KAMENA",
+   "UKWAKIRA"
+  ]
+ },
+ "imvugo-10C": {
+  "deck": "imvugo",
+  "card": "imvugo-10C",
+  "rank": "10",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA CYENDA",
+   "BAVUGA ___"
+  ],
+  "answer": "NZERI",
+  "options": [
+   "NZERI",
+   "MATA",
+   "UKWAKIRA"
+  ]
+ },
+ "imvugo-JC": {
+  "deck": "imvugo",
+  "card": "imvugo-JC",
+  "rank": "J",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA CUMI",
+   "BAVUGA ___"
+  ],
+  "answer": "UKWAKIRA",
+  "options": [
+   "UKWAKIRA",
+   "GICURASI",
+   "NZERI"
+  ]
+ },
+ "imvugo-QC": {
+  "deck": "imvugo",
+  "card": "imvugo-QC",
+  "rank": "Q",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA CUMI NA KUMWE",
+   "BAVUGA ___"
+  ],
+  "answer": "UGUSHYINGO",
+  "options": [
+   "UGUSHYINGO",
+   "MUKADATA",
+   "IBIKOMANGOMA"
+  ]
+ },
+ "imvugo-KC": {
+  "deck": "imvugo",
+  "card": "imvugo-KC",
+  "rank": "K",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA MU KWA CUMI NA KABIRI",
+   "BAVUGA ___"
+  ],
+  "answer": "UKUBOZA",
+  "options": [
+   "UKUBOZA",
+   "WERURWE",
+   "GICURASI"
+  ]
+ },
+ "imvugo-AC": {
+  "deck": "imvugo",
+  "card": "imvugo-AC",
+  "rank": "A",
+  "suit": "clubs",
+  "kind": "fill",
+  "prompt": [
+   "NYINA/SE W’UMUNTU BAMWITA ___"
+  ],
+  "answer": "UMUBYEYI",
+  "options": [
+   "UMUBYEYI",
+   "MASENGE",
+   "MARUME"
+  ]
+ },
+ "imvugo-2D": {
+  "deck": "imvugo",
+  "card": "imvugo-2D",
+  "rank": "2",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UWABYAYE UMUNTU BAMWITA ___"
+  ],
+  "answer": "UMUBYEYI",
+  "options": [
+   "UMUBYEYI",
+   "MARUME",
+   "MASENGE"
+  ]
+ },
+ "imvugo-3D": {
+  "deck": "imvugo",
+  "card": "imvugo-3D",
+  "rank": "3",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UWO TUVA INDA IMWE UNDUTA NI ___"
+  ],
+  "answer": "MUKURU WANGE",
+  "options": [
+   "MUKURU WANGE",
+   "MURAMU WAWE",
+   "MURAMUKAZI WAWE"
+  ]
+ },
+ "imvugo-4D": {
+  "deck": "imvugo",
+  "card": "imvugo-4D",
+  "rank": "4",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UWO TUVA INDA IMWE NDUTA NI ___"
+  ],
+  "answer": "MURUMUNA WANGE",
+  "options": [
+   "MURUMUNA WANGE",
+   "MURAMUKAZI WAWE",
+   "MURAMU WAWE"
+  ]
+ },
+ "imvugo-5D": {
+  "deck": "imvugo",
+  "card": "imvugo-5D",
+  "rank": "5",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UMWANA WA MUSHIKI W’UMUNTU NI ___"
+  ],
+  "answer": "UMWISHYWA",
+  "options": [
+   "UMWISHYWA",
+   "UMWUZUKURU",
+   "UMWUZUKURUZA"
+  ]
+ },
+ "imvugo-6D": {
+  "deck": "imvugo",
+  "card": "imvugo-6D",
+  "rank": "6",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "ABASHATSE ABAGORE BAVA INDA IMWE NI ___"
+  ],
+  "answer": "ABASANZIRE",
+  "options": [
+   "ABASANZIRE",
+   "BAMWANA",
+   "SOGOKURU"
+  ]
+ },
+ "imvugo-7D": {
+  "deck": "imvugo",
+  "card": "imvugo-7D",
+  "rank": "7",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "ABAHANYE ABAGENI NI ___"
+  ],
+  "answer": "BAMWANA",
+  "options": [
+   "BAMWANA",
+   "SOGOKURU",
+   "ABASANZIRE"
+  ]
+ },
+ "imvugo-8D": {
+  "deck": "imvugo",
+  "card": "imvugo-8D",
+  "rank": "8",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "MUSHIKI W’UMUGABO WAWE NI ___"
+  ],
+  "answer": "MURAMUKAZI WAWE",
+  "options": [
+   "MURAMUKAZI WAWE",
+   "MURUMUNA WANGE",
+   "MURAMU WAWE"
+  ]
+ },
+ "imvugo-9D": {
+  "deck": "imvugo",
+  "card": "imvugo-9D",
+  "rank": "9",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "MUSAZA W’UMUGORE WAWE NI ___"
+  ],
+  "answer": "MURAMU WAWE",
+  "options": [
+   "MURAMU WAWE",
+   "MURUMUNA WANGE",
+   "MURAMUKAZI WAWE"
+  ]
+ },
+ "imvugo-10D": {
+  "deck": "imvugo",
+  "card": "imvugo-10D",
+  "rank": "10",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "NTIBAVUGA UNDI MUGORE WA DATA",
+   "BAVUGA ___"
+  ],
+  "answer": "MUKADATA",
+  "options": [
+   "MUKADATA",
+   "GICURASI",
+   "WERURWE"
+  ]
+ },
+ "imvugo-JD": {
+  "deck": "imvugo",
+  "card": "imvugo-JD",
+  "rank": "J",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UMUGABO UBYARA UMUBYEYI WAWE NI ___"
+  ],
+  "answer": "SOGOKURU",
+  "options": [
+   "SOGOKURU",
+   "UMWISHYWA",
+   "NYOGOKURU"
+  ]
+ },
+ "imvugo-QD": {
+  "deck": "imvugo",
+  "card": "imvugo-QD",
+  "rank": "Q",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UMUGORE UBYARA UMUBYEYI WAWE NI ___"
+  ],
+  "answer": "NYOGOKURU",
+  "options": [
+   "NYOGOKURU",
+   "UMWUZUKURUZA",
+   "BAMWANA"
+  ]
+ },
+ "imvugo-KD": {
+  "deck": "imvugo",
+  "card": "imvugo-KD",
+  "rank": "K",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UMWANA W’UMWANA W’UMUNTU NI ___"
+  ],
+  "answer": "UMWUZUKURU",
+  "options": [
+   "UMWUZUKURU",
+   "UMWISHYWA",
+   "UMWUZUKURUZA"
+  ]
+ },
+ "imvugo-AD": {
+  "deck": "imvugo",
+  "card": "imvugo-AD",
+  "rank": "A",
+  "suit": "diamonds",
+  "kind": "fill",
+  "prompt": [
+   "UMWANA W’UMWUZUKURU NI ___"
+  ],
+  "answer": "UMWUZUKURUZA",
+  "options": [
+   "UMWUZUKURUZA",
+   "UMWUZUKURU",
+   "UMWISHYWA"
+  ]
+ },
+ "imvugo-joker1": {
+  "deck": "imvugo",
+  "card": "imvugo-joker1",
+  "rank": null,
+  "suit": null,
+  "kind": "fill",
+  "prompt": [
+   "UMWAMI NTABWO APFA",
+   "UMWAMI ___"
+  ],
+  "answer": "ARATANGA",
+  "options": [
+   "ARATANGA",
+   "IRAJWIGIRA",
+   "IRAMOKA"
+  ]
+ },
+ "imvugo-joker2": {
+  "deck": "imvugo",
+  "card": "imvugo-joker2",
+  "rank": null,
+  "suit": null,
+  "kind": "fill",
+  "prompt": [
+   "UMWAMI NTABWO AGIRA INTEBE",
+   "UMWAMI AGIRA ___"
+  ],
+  "answer": "INTEKO",
+  "options": [
+   "INTEKO",
+   "IRAHEBEBA",
+   "ARATANGA"
+  ]
+ },
+ "kirazira-2S": {
+  "deck": "kirazira",
+  "card": "kirazira-2S",
+  "rank": "2",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUDATINYA UMUGAYO",
+  "answer": "KUDATINYA UMUGAYO",
+  "options": [
+   "KUDATINYA UMUGAYO",
+   "KUBAHA UMURYANGO",
+   "GUHANGA IMIRIMO MISHYA"
+  ]
+ },
+ "kirazira-3S": {
+  "deck": "kirazira",
+  "card": "kirazira-3S",
+  "rank": "3",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KWITURA INABI",
+  "answer": "KWITURA INABI",
+  "options": [
+   "KWITURA INABI",
+   "KWIYOROSHYA",
+   "KWANGA UMUGAYO"
+  ]
+ },
+ "kirazira-4S": {
+  "deck": "kirazira",
+  "card": "kirazira-4S",
+  "rank": "4",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUBIBA INGENGABITEKEREZO YA JENOSIDE",
+  "answer": "KUBIBA INGENGABITEKEREZO YA JENOSIDE",
+  "options": [
+   "KUBIBA INGENGABITEKEREZO YA JENOSIDE",
+   "KUGIRA URUHARE MU BIKORWA BY’IGIHUGU",
+   "GUKORA UMURIMO UNOZE KANDI UFITE IREME"
+  ]
+ },
+ "kirazira-5S": {
+  "deck": "kirazira",
+  "card": "kirazira-5S",
+  "rank": "5",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KWIYANDARIKA",
+  "answer": "KWIYANDARIKA",
+  "options": [
+   "KWIYANDARIKA",
+   "KWANGA UMUGAYO",
+   "IMBABAZI"
+  ]
+ },
+ "kirazira-6S": {
+  "deck": "kirazira",
+  "card": "kirazira-6S",
+  "rank": "6",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTIGIRIRA ICYIZERE",
+  "answer": "KUTIGIRIRA ICYIZERE",
+  "options": [
+   "KUTIGIRIRA ICYIZERE",
+   "KWANGA UMUGAYO",
+   "GUSIGASIRA UBUMWE"
+  ]
+ },
+ "kirazira-7S": {
+  "deck": "kirazira",
+  "card": "kirazira-7S",
+  "rank": "7",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGIRA UMURURUMBA / UBUSAMBO",
+  "answer": "KUGIRA UMURURUMBA / UBUSAMBO",
+  "options": [
+   "KUGIRA UMURURUMBA / UBUSAMBO",
+   "KUGIRA ISHYAKA N’UBUTWARI",
+   "KUGIRA UBUFATANYE N’UBUSABANE"
+  ]
+ },
+ "kirazira-8S": {
+  "deck": "kirazira",
+  "card": "kirazira-8S",
+  "rank": "8",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGIRA AGASUZUGURO",
+  "answer": "KUGIRA AGASUZUGURO",
+  "options": [
+   "KUGIRA AGASUZUGURO",
+   "GUKORERA KU GIHE",
+   "GUSHISHIKARIRA UMURIMO"
+  ]
+ },
+ "kirazira-9S": {
+  "deck": "kirazira",
+  "card": "kirazira-9S",
+  "rank": "9",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KWIYEMERA NO KWIKUZA",
+  "answer": "KWIYEMERA NO KWIKUZA",
+  "options": [
+   "KWIYEMERA NO KWIKUZA",
+   "KWIHESHA AGACIRO",
+   "KUGIRA ISHYAKA N’UBUTWARI"
+  ]
+ },
+ "kirazira-10S": {
+  "deck": "kirazira",
+  "card": "kirazira-10S",
+  "rank": "10",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KWIRATA",
+  "answer": "KWIRATA",
+  "options": [
+   "KWIRATA",
+   "KWIGIRA",
+   "IMPUHWE"
+  ]
+ },
+ "kirazira-JS": {
+  "deck": "kirazira",
+  "card": "kirazira-JS",
+  "rank": "J",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGIRA UMWANDA",
+  "answer": "KUGIRA UMWANDA",
+  "options": [
+   "KUGIRA UMWANDA",
+   "KWIGIRIRA ICYIZERE",
+   "IKINYABUPFURA"
+  ]
+ },
+ "kirazira-QS": {
+  "deck": "kirazira",
+  "card": "kirazira-QS",
+  "rank": "Q",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KWIRONDA",
+  "answer": "KWIRONDA",
+  "options": [
+   "KWIRONDA",
+   "KUDAHEMUKA",
+   "KWIGIRA"
+  ]
+ },
+ "kirazira-KS": {
+  "deck": "kirazira",
+  "card": "kirazira-KS",
+  "rank": "K",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUBIBA AMACAKUBIRI N’IVANGURA",
+  "answer": "KUBIBA AMACAKUBIRI N’IVANGURA",
+  "options": [
+   "KUBIBA AMACAKUBIRI N’IVANGURA",
+   "KUGIRA UBUNTU N’UBUMUNTU",
+   "GUTEGANYA NO KWITEGANYIRIZA"
+  ]
+ },
+ "kirazira-AS": {
+  "deck": "kirazira",
+  "card": "kirazira-AS",
+  "rank": "A",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUKORERA MU DUTSIKO",
+  "answer": "GUKORERA MU DUTSIKO",
+  "options": [
+   "GUKORERA MU DUTSIKO",
+   "GUKUNDA IGIHUGU",
+   "KUBUNGABUNGA UMUTEKANO"
+  ]
+ },
+ "kirazira-2H": {
+  "deck": "kirazira",
+  "card": "kirazira-2H",
+  "rank": "2",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUBOGAMA",
+  "answer": "KUBOGAMA",
+  "options": [
+   "KUBOGAMA",
+   "KWIHANGANA",
+   "KWIYOROSHYA"
+  ]
+ },
+ "kirazira-3H": {
+  "deck": "kirazira",
+  "card": "kirazira-3H",
+  "rank": "3",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUSABIRIZA",
+  "answer": "GUSABIRIZA",
+  "options": [
+   "GUSABIRIZA",
+   "GUSHISHOZA",
+   "UBUMWE"
+  ]
+ },
+ "kirazira-4H": {
+  "deck": "kirazira",
+  "card": "kirazira-4H",
+  "rank": "4",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KWIYANDARIKA",
+  "answer": "KWIYANDARIKA",
+  "options": [
+   "KWIYANDARIKA",
+   "IMBABAZI",
+   "GUKORERA HAMWE"
+  ]
+ },
+ "kirazira-5H": {
+  "deck": "kirazira",
+  "card": "kirazira-5H",
+  "rank": "5",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUBESHYA",
+  "answer": "KUBESHYA",
+  "options": [
+   "KUBESHYA",
+   "KUBAHANA",
+   "GUSHISHOZA"
+  ]
+ },
+ "kirazira-6H": {
+  "deck": "kirazira",
+  "card": "kirazira-6H",
+  "rank": "6",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUTANGA NO KWAKIRA RUSWA",
+  "answer": "GUTANGA NO KWAKIRA RUSWA",
+  "options": [
+   "GUTANGA NO KWAKIRA RUSWA",
+   "KUGIRA UBUFATANYE N’UBUSABANE",
+   "GUSHISHIKARIRA UMURIMO"
+  ]
+ },
+ "kirazira-7H": {
+  "deck": "kirazira",
+  "card": "kirazira-7H",
+  "rank": "7",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUBIBA INZANGANO",
+  "answer": "KUBIBA INZANGANO",
+  "options": [
+   "KUBIBA INZANGANO",
+   "GUKORERA KU GIHE",
+   "KWIGIRIRA ICYIZERE"
+  ]
+ },
+ "kirazira-8H": {
+  "deck": "kirazira",
+  "card": "kirazira-8H",
+  "rank": "8",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTUBAHIRIZA IGIHE",
+  "answer": "KUTUBAHIRIZA IGIHE",
+  "options": [
+   "KUTUBAHIRIZA IGIHE",
+   "UBUMWE N’UBWIYUNGE",
+   "KURWANYA RUSWA"
+  ]
+ },
+ "kirazira-9H": {
+  "deck": "kirazira",
+  "card": "kirazira-9H",
+  "rank": "9",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGIRA UBUNEBWE",
+  "answer": "KUGIRA UBUNEBWE",
+  "options": [
+   "KUGIRA UBUNEBWE",
+   "GUTABARANA",
+   "KUBAHA UMURYANGO"
+  ]
+ },
+ "kirazira-10H": {
+  "deck": "kirazira",
+  "card": "kirazira-10H",
+  "rank": "10",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUTSIMBARARA KU KIBI",
+  "answer": "GUTSIMBARARA KU KIBI",
+  "options": [
+   "GUTSIMBARARA KU KIBI",
+   "KUBUNGABUNGA UMUTEKANO",
+   "KWIHESHA AGACIRO"
+  ]
+ },
+ "kirazira-JH": {
+  "deck": "kirazira",
+  "card": "kirazira-JH",
+  "rank": "J",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGIRA UBUGWARI",
+  "answer": "KUGIRA UBUGWARI",
+  "options": [
+   "KUGIRA UBUGWARI",
+   "KWANGA UMUGAYO",
+   "KURWANYA RUSWA"
+  ]
+ },
+ "kirazira-QH": {
+  "deck": "kirazira",
+  "card": "kirazira-QH",
+  "rank": "Q",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGIRA UBUHEMU",
+  "answer": "KUGIRA UBUHEMU",
+  "options": [
+   "KUGIRA UBUHEMU",
+   "KUGIRA UBWITANGE",
+   "UBUMWE N’UBWIYUNGE"
+  ]
+ },
+ "kirazira-KH": {
+  "deck": "kirazira",
+  "card": "kirazira-KH",
+  "rank": "K",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KURANGARANA ABANTU",
+  "answer": "KURANGARANA ABANTU",
+  "options": [
+   "KURANGARANA ABANTU",
+   "KWIHESHA AGACIRO",
+   "KWANGA UMUGAYO"
+  ]
+ },
+ "kirazira-AH": {
+  "deck": "kirazira",
+  "card": "kirazira-AH",
+  "rank": "A",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUTONESHA UMWE UKAREKA UNDI",
+  "answer": "GUTONESHA UMWE UKAREKA UNDI",
+  "options": [
+   "GUTONESHA UMWE UKAREKA UNDI",
+   "KUGIRA UBUFATANYE N’UBUSABANE",
+   "KUGIRA UBUNTU N’UBUMUNTU"
+  ]
+ },
+ "kirazira-2C": {
+  "deck": "kirazira",
+  "card": "kirazira-2C",
+  "rank": "2",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTAGIRA GAHUNDA",
+  "answer": "KUTAGIRA GAHUNDA",
+  "options": [
+   "KUTAGIRA GAHUNDA",
+   "GUSIGASIRA UBUMWE",
+   "KWIYOROSHYA"
+  ]
+ },
+ "kirazira-3C": {
+  "deck": "kirazira",
+  "card": "kirazira-3C",
+  "rank": "3",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTAGISHA INAMA",
+  "answer": "KUTAGISHA INAMA",
+  "options": [
+   "KUTAGISHA INAMA",
+   "GUKUNDA IGIHUGU",
+   "KUBAHA UMURYANGO"
+  ]
+ },
+ "kirazira-4C": {
+  "deck": "kirazira",
+  "card": "kirazira-4C",
+  "rank": "4",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUNYEREZA UMUTUNGO W’IGIHUGU",
+  "answer": "KUNYEREZA UMUTUNGO W’IGIHUGU",
+  "options": [
+   "KUNYEREZA UMUTUNGO W’IGIHUGU",
+   "KUGIRA UBUFATANYE N’UBUSABANE",
+   "GUCUNGA NEZA IBYA RUBANDA"
+  ]
+ },
+ "kirazira-5C": {
+  "deck": "kirazira",
+  "card": "kirazira-5C",
+  "rank": "5",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTAGIRA ISHYAKA MURI GAHUNDA Z’ITERAMBERE RY’IGIHUGU",
+  "answer": "KUTAGIRA ISHYAKA MURI GAHUNDA Z’ITERAMBERE RY’IGIHUGU",
+  "options": [
+   "KUTAGIRA ISHYAKA MURI GAHUNDA Z’ITERAMBERE RY’IGIHUGU",
+   "KURANGIZA IBYO WATANGIYE NO KWISHIMIRA IBYAGEZWEHO",
+   "KUGIRA UMUCO WO GUHIGANWA NO KUBA INDASHYIKIRWA"
+  ]
+ },
+ "kirazira-6C": {
+  "deck": "kirazira",
+  "card": "kirazira-6C",
+  "rank": "6",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTUBAHIRIZA AMATEGEKO",
+  "answer": "KUTUBAHIRIZA AMATEGEKO",
+  "options": [
+   "KUTUBAHIRIZA AMATEGEKO",
+   "KUGIRA IJAMBO RYIZA",
+   "GUSHISHIKARIRA UMURIMO"
+  ]
+ },
+ "kirazira-7C": {
+  "deck": "kirazira",
+  "card": "kirazira-7C",
+  "rank": "7",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTITANGA MU BIKORWA BY’IGIHUGU",
+  "answer": "KUTITANGA MU BIKORWA BY’IGIHUGU",
+  "options": [
+   "KUTITANGA MU BIKORWA BY’IGIHUGU",
+   "GUTEGANYA NO KWITEGANYIRIZA",
+   "KUGIRA UBUFATANYE N’UBUSABANE"
+  ]
+ },
+ "kirazira-8C": {
+  "deck": "kirazira",
+  "card": "kirazira-8C",
+  "rank": "8",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUDASHISHIKARA",
+  "answer": "KUDASHISHIKARA",
+  "options": [
+   "KUDASHISHIKARA",
+   "GUKUNDA IGIHUGU",
+   "KWANGA UMUGAYO"
+  ]
+ },
+ "kirazira-9C": {
+  "deck": "kirazira",
+  "card": "kirazira-9C",
+  "rank": "9",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUDAKORA NEZA",
+  "answer": "KUDAKORA NEZA",
+  "options": [
+   "KUDAKORA NEZA",
+   "GUSIGASIRA UBUMWE",
+   "URUGWIRO"
+  ]
+ },
+ "kirazira-10C": {
+  "deck": "kirazira",
+  "card": "kirazira-10C",
+  "rank": "10",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GEKERERERWA",
+  "answer": "GEKERERERWA",
+  "options": [
+   "GEKERERERWA",
+   "KWANGA UMUGAYO",
+   "UBUMWE"
+  ]
+ },
+ "kirazira-JC": {
+  "deck": "kirazira",
+  "card": "kirazira-JC",
+  "rank": "J",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KURENGANYA",
+  "answer": "KURENGANYA",
+  "options": [
+   "KURENGANYA",
+   "KUJYA INAMA",
+   "KUGANURA"
+  ]
+ },
+ "kirazira-QC": {
+  "deck": "kirazira",
+  "card": "kirazira-QC",
+  "rank": "Q",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUHUBUKA",
+  "answer": "GUHUBUKA",
+  "options": [
+   "GUHUBUKA",
+   "KWIYOROSHYA",
+   "KUBAHANA"
+  ]
+ },
+ "kirazira-KC": {
+  "deck": "kirazira",
+  "card": "kirazira-KC",
+  "rank": "K",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUDASHISHOZA",
+  "answer": "KUDASHISHOZA",
+  "options": [
+   "KUDASHISHOZA",
+   "IMPUHWE",
+   "URUGWIRO"
+  ]
+ },
+ "kirazira-AC": {
+  "deck": "kirazira",
+  "card": "kirazira-AC",
+  "rank": "A",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGAYA NO GUSUZUGURA IMIRIMO",
+  "answer": "KUGAYA NO GUSUZUGURA IMIRIMO",
+  "options": [
+   "KUGAYA NO GUSUZUGURA IMIRIMO",
+   "KUGIRA ISHYAKA N’UBUTWARI",
+   "KUGIRA UBUNTU N’UBUMUNTU"
+  ]
+ },
+ "kirazira-2D": {
+  "deck": "kirazira",
+  "card": "kirazira-2D",
+  "rank": "2",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUSAMBANA",
+  "answer": "GUSAMBANA",
+  "options": [
+   "GUSAMBANA",
+   "KWIHANGANA",
+   "KUJYA INAMA"
+  ]
+ },
+ "kirazira-3D": {
+  "deck": "kirazira",
+  "card": "kirazira-3D",
+  "rank": "3",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KWIHESHA IKINTU CY’UNDI",
+  "answer": "KWIHESHA IKINTU CY’UNDI",
+  "options": [
+   "KWIHESHA IKINTU CY’UNDI",
+   "KURWANYA AKARENGANE",
+   "GUCUNGA NEZA IBYA RUBANDA"
+  ]
+ },
+ "kirazira-4D": {
+  "deck": "kirazira",
+  "card": "kirazira-4D",
+  "rank": "4",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUNKWA IBIYOBYABWENGE",
+  "answer": "KUNKWA IBIYOBYABWENGE",
+  "options": [
+   "KUNKWA IBIYOBYABWENGE",
+   "GUKORERA KU GIHE",
+   "GUHANGA IMIRIMO MISHYA"
+  ]
+ },
+ "kirazira-5D": {
+  "deck": "kirazira",
+  "card": "kirazira-5D",
+  "rank": "5",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGENDERA MU KIGARE",
+  "answer": "KUGENDERA MU KIGARE",
+  "options": [
+   "KUGENDERA MU KIGARE",
+   "UBUMWE N’UBWIYUNGE",
+   "KUBAHA UMURYANGO"
+  ]
+ },
+ "kirazira-6D": {
+  "deck": "kirazira",
+  "card": "kirazira-6D",
+  "rank": "6",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTITEZA IMBERE",
+  "answer": "KUTITEZA IMBERE",
+  "options": [
+   "KUTITEZA IMBERE",
+   "KUBAHA UMURYANGO",
+   "KUBA INTABERA"
+  ]
+ },
+ "kirazira-7D": {
+  "deck": "kirazira",
+  "card": "kirazira-7D",
+  "rank": "7",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUTUMVIRA ABABYEYI",
+  "answer": "KUTUMVIRA ABABYEYI",
+  "options": [
+   "KUTUMVIRA ABABYEYI",
+   "GUSIGASIRA UBUMWE",
+   "KUZUZA AMASEZERANO"
+  ]
+ },
+ "kirazira-8D": {
+  "deck": "kirazira",
+  "card": "kirazira-8D",
+  "rank": "8",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KWANGA KUGIRWA INAMA",
+  "answer": "KWANGA KUGIRWA INAMA",
+  "options": [
+   "KWANGA KUGIRWA INAMA",
+   "KUBUNGABUNGA UMUTEKANO",
+   "GUHANGA IMIRIMO MISHYA"
+  ]
+ },
+ "kirazira-9D": {
+  "deck": "kirazira",
+  "card": "kirazira-9D",
+  "rank": "9",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUHERANWA N’AGAHINDA",
+  "answer": "GUHERANWA N’AGAHINDA",
+  "options": [
+   "GUHERANWA N’AGAHINDA",
+   "GUSHISHIKARIRA UMURIMO",
+   "GUHANGA IMIRIMO MISHYA"
+  ]
+ },
+ "kirazira-10D": {
+  "deck": "kirazira",
+  "card": "kirazira-10D",
+  "rank": "10",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUPFOBYA JENOSIDE YAKOREWE ABATUTSI MURI 1994",
+  "answer": "GUPFOBYA JENOSIDE YAKOREWE ABATUTSI MURI 1994",
+  "options": [
+   "GUPFOBYA JENOSIDE YAKOREWE ABATUTSI MURI 1994",
+   "KUGIRA UMUCO WO GUHIGANWA NO KUBA INDASHYIKIRWA",
+   "KUNOZA AMASEZERANO, IJAMBO, INDAHIRO N’IGIHANGO"
+  ]
+ },
+ "kirazira-JD": {
+  "deck": "kirazira",
+  "card": "kirazira-JD",
+  "rank": "J",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUDAKUNDA MUGENZI WAWE",
+  "answer": "KUDAKUNDA MUGENZI WAWE",
+  "options": [
+   "KUDAKUNDA MUGENZI WAWE",
+   "GUSHIMA NO GUSHIMIRA",
+   "UBUMWE N’UBWIYUNGE"
+  ]
+ },
+ "kirazira-QD": {
+  "deck": "kirazira",
+  "card": "kirazira-QD",
+  "rank": "Q",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGAMBANIRA MUGENZI WAWE",
+  "answer": "KUGAMBANIRA MUGENZI WAWE",
+  "options": [
+   "KUGAMBANIRA MUGENZI WAWE",
+   "GUSHISHIKARIRA UMURIMO",
+   "GUTEGANYA NO KWITEGANYIRIZA"
+  ]
+ },
+ "kirazira-KD": {
+  "deck": "kirazira",
+  "card": "kirazira-KD",
+  "rank": "K",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUHISHIRA ICYAHA",
+  "answer": "GUHISHIRA ICYAHA",
+  "options": [
+   "GUHISHIRA ICYAHA",
+   "GUKORERA HAMWE",
+   "KURWANYA RUSWA"
+  ]
+ },
+ "kirazira-AD": {
+  "deck": "kirazira",
+  "card": "kirazira-AD",
+  "rank": "A",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUMVA KO NTACYO UZIMARIRA",
+  "answer": "KUMVA KO NTACYO UZIMARIRA",
+  "options": [
+   "KUMVA KO NTACYO UZIMARIRA",
+   "KUBUNGABUNGA UMUTEKANO",
+   "KUGIRA UBUNTU N’UBUMUNTU"
+  ]
+ },
+ "kirazira-joker1": {
+  "deck": "kirazira",
+  "card": "kirazira-joker1",
+  "rank": null,
+  "suit": null,
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "GUSENYA UBUMWE",
+  "answer": "GUSENYA UBUMWE",
+  "options": [
+   "GUSENYA UBUMWE",
+   "KUJYA INAMA",
+   "KUBAHA UMURYANGO"
+  ]
+ },
+ "kirazira-joker2": {
+  "deck": "kirazira",
+  "card": "kirazira-joker2",
+  "rank": null,
+  "suit": null,
+  "kind": "pick",
+  "category": "kirazira",
+  "statement": "KUGAMBANIRA IGIHUGU",
+  "answer": "KUGAMBANIRA IGIHUGU",
+  "options": [
+   "KUGAMBANIRA IGIHUGU",
+   "GUSHIMA NO GUSHIMIRA",
+   "GUKORERA HAMWE"
+  ]
+ },
+ "indangagaciro-2S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-2S",
+  "rank": "2",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUKUNDA IGIHUGU",
+  "answer": "GUKUNDA IGIHUGU",
+  "options": [
+   "GUKUNDA IGIHUGU",
+   "KUGAMBANIRA IGIHUGU",
+   "KUTAGIRA GAHUNDA"
+  ]
+ },
+ "indangagaciro-3S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-3S",
+  "rank": "3",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA ISHYAKA N’UBUTWARI",
+  "answer": "KUGIRA ISHYAKA N’UBUTWARI",
+  "options": [
+   "KUGIRA ISHYAKA N’UBUTWARI",
+   "KUGAYA NO GUSUZUGURA IMIRIMO",
+   "KUTUBAHIRIZA AMATEGEKO"
+  ]
+ },
+ "indangagaciro-4S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-4S",
+  "rank": "4",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA UBWITANGE",
+  "answer": "KUGIRA UBWITANGE",
+  "options": [
+   "KUGIRA UBWITANGE",
+   "KUDATINYA UMUGAYO",
+   "KUTUBAHIRIZA IGIHE"
+  ]
+ },
+ "indangagaciro-5S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-5S",
+  "rank": "5",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KWIHESHA AGACIRO",
+  "answer": "KWIHESHA AGACIRO",
+  "options": [
+   "KWIHESHA AGACIRO",
+   "GUHERANWA N’AGAHINDA",
+   "KWIYANDARIKA"
+  ]
+ },
+ "indangagaciro-6S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-6S",
+  "rank": "6",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUBAHA UMURYANGO",
+  "answer": "KUBAHA UMURYANGO",
+  "options": [
+   "KUBAHA UMURYANGO",
+   "KUDASHISHIKARA",
+   "KUDASHISHOZA"
+  ]
+ },
+ "indangagaciro-7S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-7S",
+  "rank": "7",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA URUHARE MU BIKORWA BY’IGIHUGU",
+  "answer": "KUGIRA URUHARE MU BIKORWA BY’IGIHUGU",
+  "options": [
+   "KUGIRA URUHARE MU BIKORWA BY’IGIHUGU",
+   "KUBIBA INGENGABITEKEREZO YA JENOSIDE",
+   "KUTITANGA MU BIKORWA BY’IGIHUGU"
+  ]
+ },
+ "indangagaciro-8S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-8S",
+  "rank": "8",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUCUNGA NEZA IBYA RUBANDA",
+  "answer": "GUCUNGA NEZA IBYA RUBANDA",
+  "options": [
+   "GUCUNGA NEZA IBYA RUBANDA",
+   "GUHERANWA N’AGAHINDA",
+   "KWIHESHA IKINTU CY’UNDI"
+  ]
+ },
+ "indangagaciro-9S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-9S",
+  "rank": "9",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUBUNGABUNGA UMUTEKANO",
+  "answer": "KUBUNGABUNGA UMUTEKANO",
+  "options": [
+   "KUBUNGABUNGA UMUTEKANO",
+   "KUGAMBANIRA IGIHUGU",
+   "KWIHESHA IKINTU CY’UNDI"
+  ]
+ },
+ "indangagaciro-10S": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-10S",
+  "rank": "10",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "UBUMWE",
+  "answer": "UBUMWE",
+  "options": [
+   "UBUMWE",
+   "GUSABIRIZA",
+   "KWIRONDA"
+  ]
+ },
+ "indangagaciro-JS": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-JS",
+  "rank": "J",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA UBUFATANYE N’UBUSABANE",
+  "answer": "KUGIRA UBUFATANYE N’UBUSABANE",
+  "options": [
+   "KUGIRA UBUFATANYE N’UBUSABANE",
+   "KUGAYA NO GUSUZUGURA IMIRIMO",
+   "KUGAMBANIRA MUGENZI WAWE"
+  ]
+ },
+ "indangagaciro-QS": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-QS",
+  "rank": "Q",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUTABARANA",
+  "answer": "GUTABARANA",
+  "options": [
+   "GUTABARANA",
+   "KUDASHISHOZA",
+   "GUSENYA UBUMWE"
+  ]
+ },
+ "indangagaciro-KS": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-KS",
+  "rank": "K",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUFATANYA",
+  "answer": "GUFATANYA",
+  "options": [
+   "GUFATANYA",
+   "KWIRONDA",
+   "KUBESHYA"
+  ]
+ },
+ "indangagaciro-AS": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-AS",
+  "rank": "A",
+  "suit": "spades",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUBAHANA",
+  "answer": "KUBAHANA",
+  "options": [
+   "KUBAHANA",
+   "KURENGANYA",
+   "KWITURA INABI"
+  ]
+ },
+ "indangagaciro-2H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-2H",
+  "rank": "2",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA UBUCUTI",
+  "answer": "KUGIRA UBUCUTI",
+  "options": [
+   "KUGIRA UBUCUTI",
+   "KUTAGISHA INAMA",
+   "KUGIRA UMWANDA"
+  ]
+ },
+ "indangagaciro-3H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-3H",
+  "rank": "3",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGANURA",
+  "answer": "KUGANURA",
+  "options": [
+   "KUGANURA",
+   "KUBESHYA",
+   "GUHUBUKA"
+  ]
+ },
+ "indangagaciro-4H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-4H",
+  "rank": "4",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUKUNDA UMURIMO",
+  "answer": "GUKUNDA UMURIMO",
+  "options": [
+   "GUKUNDA UMURIMO",
+   "KUGIRA AGASUZUGURO",
+   "KUDATINYA UMUGAYO"
+  ]
+ },
+ "indangagaciro-5H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-5H",
+  "rank": "5",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUSHISHIKARIRA UMURIMO",
+  "answer": "GUSHISHIKARIRA UMURIMO",
+  "options": [
+   "GUSHISHIKARIRA UMURIMO",
+   "KUNKWA IBIYOBYABWENGE",
+   "KUGAMBANIRA IGIHUGU"
+  ]
+ },
+ "indangagaciro-6H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-6H",
+  "rank": "6",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUKORA UMURIMO UNOZE KANDI UFITE IREME",
+  "answer": "GUKORA UMURIMO UNOZE KANDI UFITE IREME",
+  "options": [
+   "GUKORA UMURIMO UNOZE KANDI UFITE IREME",
+   "KUBIBA INGENGABITEKEREZO YA JENOSIDE",
+   "KUBIBA AMACAKUBIRI N’IVANGURA"
+  ]
+ },
+ "indangagaciro-7H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-7H",
+  "rank": "7",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUKORERA HAMWE",
+  "answer": "GUKORERA HAMWE",
+  "options": [
+   "GUKORERA HAMWE",
+   "KURENGANYA",
+   "KUTITEZA IMBERE"
+  ]
+ },
+ "indangagaciro-8H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-8H",
+  "rank": "8",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUKORERA KU GIHE",
+  "answer": "GUKORERA KU GIHE",
+  "options": [
+   "GUKORERA KU GIHE",
+   "KURANGARANA ABANTU",
+   "GUKORERA MU DUTSIKO"
+  ]
+ },
+ "indangagaciro-9H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-9H",
+  "rank": "9",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUHANGA IMIRIMO MISHYA",
+  "answer": "GUHANGA IMIRIMO MISHYA",
+  "options": [
+   "GUHANGA IMIRIMO MISHYA",
+   "KUTUBAHIRIZA AMATEGEKO",
+   "KUGAMBANIRA IGIHUGU"
+  ]
+ },
+ "indangagaciro-10H": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-10H",
+  "rank": "10",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUTEGANYA NO KWITEGANYIRIZA",
+  "answer": "GUTEGANYA NO KWITEGANYIRIZA",
+  "options": [
+   "GUTEGANYA NO KWITEGANYIRIZA",
+   "KUBIBA AMACAKUBIRI N’IVANGURA",
+   "GUTONESHA UMWE UKAREKA UNDI"
+  ]
+ },
+ "indangagaciro-JH": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-JH",
+  "rank": "J",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KWIGIRA",
+  "answer": "KWIGIRA",
+  "options": [
+   "KWIGIRA",
+   "KUBESHYA",
+   "KWIRONDA"
+  ]
+ },
+ "indangagaciro-QH": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-QH",
+  "rank": "Q",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA UMUCO WO GUHIGANWA NO KUBA INDASHYIKIRWA",
+  "answer": "KUGIRA UMUCO WO GUHIGANWA NO KUBA INDASHYIKIRWA",
+  "options": [
+   "KUGIRA UMUCO WO GUHIGANWA NO KUBA INDASHYIKIRWA",
+   "GUPFOBYA JENOSIDE YAKOREWE ABATUTSI MURI 1994",
+   "KUBIBA INGENGABITEKEREZO YA JENOSIDE"
+  ]
+ },
+ "indangagaciro-KH": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-KH",
+  "rank": "K",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "UBUPFURA",
+  "answer": "UBUPFURA",
+  "options": [
+   "UBUPFURA",
+   "KWIYANDARIKA",
+   "KURENGANYA"
+  ]
+ },
+ "indangagaciro-AH": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-AH",
+  "rank": "A",
+  "suit": "hearts",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KWANGA UMUGAYO",
+  "answer": "KWANGA UMUGAYO",
+  "options": [
+   "KWANGA UMUGAYO",
+   "GUSENYA UBUMWE",
+   "KUGIRA UMWANDA"
+  ]
+ },
+ "indangagaciro-2C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-2C",
+  "rank": "2",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUSHISHOZA",
+  "answer": "GUSHISHOZA",
+  "options": [
+   "GUSHISHOZA",
+   "GUSAMBANA",
+   "KWIRATA"
+  ]
+ },
+ "indangagaciro-3C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-3C",
+  "rank": "3",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUDAHEMUKA",
+  "answer": "KUDAHEMUKA",
+  "options": [
+   "KUDAHEMUKA",
+   "KWIRONDA",
+   "KUGIRA UBUGWARI"
+  ]
+ },
+ "indangagaciro-4C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-4C",
+  "rank": "4",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KWIYOROSHYA",
+  "answer": "KWIYOROSHYA",
+  "options": [
+   "KWIYOROSHYA",
+   "KUBESHYA",
+   "GUHUBUKA"
+  ]
+ },
+ "indangagaciro-5C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-5C",
+  "rank": "5",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUBAHA",
+  "answer": "KUBAHA",
+  "options": [
+   "KUBAHA",
+   "GEKERERERWA",
+   "GUSAMBANA"
+  ]
+ },
+ "indangagaciro-6C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-6C",
+  "rank": "6",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUNOZA AMASEZERANO, IJAMBO, INDAHIRO N’IGIHANGO",
+  "answer": "KUNOZA AMASEZERANO, IJAMBO, INDAHIRO N’IGIHANGO",
+  "options": [
+   "KUNOZA AMASEZERANO, IJAMBO, INDAHIRO N’IGIHANGO",
+   "GUPFOBYA JENOSIDE YAKOREWE ABATUTSI MURI 1994",
+   "KUBIBA INGENGABITEKEREZO YA JENOSIDE"
+  ]
+ },
+ "indangagaciro-7C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-7C",
+  "rank": "7",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KWIHANGANA",
+  "answer": "KWIHANGANA",
+  "options": [
+   "KWIHANGANA",
+   "KUGIRA UMWANDA",
+   "KWIYANDARIKA"
+  ]
+ },
+ "indangagaciro-8C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-8C",
+  "rank": "8",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUJYA INAMA",
+  "answer": "KUJYA INAMA",
+  "options": [
+   "KUJYA INAMA",
+   "KWIRONDA",
+   "GUHUBUKA"
+  ]
+ },
+ "indangagaciro-9C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-9C",
+  "rank": "9",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA IJAMBO RYIZA",
+  "answer": "KUGIRA IJAMBO RYIZA",
+  "options": [
+   "KUGIRA IJAMBO RYIZA",
+   "KUDASHISHIKARA",
+   "KUGAMBANIRA IGIHUGU"
+  ]
+ },
+ "indangagaciro-10C": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-10C",
+  "rank": "10",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUSHIMA NO GUSHIMIRA",
+  "answer": "GUSHIMA NO GUSHIMIRA",
+  "options": [
+   "GUSHIMA NO GUSHIMIRA",
+   "KUGAMBANIRA MUGENZI WAWE",
+   "KUTAGIRA GAHUNDA"
+  ]
+ },
+ "indangagaciro-JC": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-JC",
+  "rank": "J",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA UBUNTU N’UBUMUNTU",
+  "answer": "KUGIRA UBUNTU N’UBUMUNTU",
+  "options": [
+   "KUGIRA UBUNTU N’UBUMUNTU",
+   "KWIYEMERA NO KWIKUZA",
+   "GUTSIMBARARA KU KIBI"
+  ]
+ },
+ "indangagaciro-QC": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-QC",
+  "rank": "Q",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUHARANIRA UBUMANZI",
+  "answer": "GUHARANIRA UBUMANZI",
+  "options": [
+   "GUHARANIRA UBUMANZI",
+   "KURANGARANA ABANTU",
+   "KWANGA KUGIRWA INAMA"
+  ]
+ },
+ "indangagaciro-KC": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-KC",
+  "rank": "K",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUGIRA URURIMI N’UMUCO",
+  "answer": "KUGIRA URURIMI N’UMUCO",
+  "options": [
+   "KUGIRA URURIMI N’UMUCO",
+   "KUTUMVIRA ABABYEYI",
+   "KUMVA KO NTACYO UZIMARIRA"
+  ]
+ },
+ "indangagaciro-AC": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-AC",
+  "rank": "A",
+  "suit": "clubs",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "GUSIGASIRA UBUMWE",
+  "answer": "GUSIGASIRA UBUMWE",
+  "options": [
+   "GUSIGASIRA UBUMWE",
+   "KUGENDERA MU KIGARE",
+   "KURANGARANA ABANTU"
+  ]
+ },
+ "indangagaciro-2D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-2D",
+  "rank": "2",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUBA INTABERA",
+  "answer": "KUBA INTABERA",
+  "options": [
+   "KUBA INTABERA",
+   "KUDASHISHOZA",
+   "KUGIRA UBUHEMU"
+  ]
+ },
+ "indangagaciro-3D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-3D",
+  "rank": "3",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUZUZA AMASEZERANO",
+  "answer": "KUZUZA AMASEZERANO",
+  "options": [
+   "KUZUZA AMASEZERANO",
+   "KURANGARANA ABANTU",
+   "KUNKWA IBIYOBYABWENGE"
+  ]
+ },
+ "indangagaciro-4D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-4D",
+  "rank": "4",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "IKINYABUPFURA",
+  "answer": "IKINYABUPFURA",
+  "options": [
+   "IKINYABUPFURA",
+   "KUTITEZA IMBERE",
+   "GUSENYA UBUMWE"
+  ]
+ },
+ "indangagaciro-5D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-5D",
+  "rank": "5",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "UBUMWE N’UBWIYUNGE",
+  "answer": "UBUMWE N’UBWIYUNGE",
+  "options": [
+   "UBUMWE N’UBWIYUNGE",
+   "KUTAGIRA GAHUNDA",
+   "KWANGA KUGIRWA INAMA"
+  ]
+ },
+ "indangagaciro-6D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-6D",
+  "rank": "6",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KURWANYA AKARENGANE",
+  "answer": "KURWANYA AKARENGANE",
+  "options": [
+   "KURWANYA AKARENGANE",
+   "KUDAKUNDA MUGENZI WAWE",
+   "KUNKWA IBIYOBYABWENGE"
+  ]
+ },
+ "indangagaciro-7D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-7D",
+  "rank": "7",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KUBUNGABUNGA UMUTEKANO",
+  "answer": "KUBUNGABUNGA UMUTEKANO",
+  "options": [
+   "KUBUNGABUNGA UMUTEKANO",
+   "KUDATINYA UMUGAYO",
+   "KUTUMVIRA ABABYEYI"
+  ]
+ },
+ "indangagaciro-8D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-8D",
+  "rank": "8",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KURWANYA RUSWA",
+  "answer": "KURWANYA RUSWA",
+  "options": [
+   "KURWANYA RUSWA",
+   "KUGIRA UBUGWARI",
+   "KURANGARANA ABANTU"
+  ]
+ },
+ "indangagaciro-9D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-9D",
+  "rank": "9",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KWIGIRIRA ICYIZERE",
+  "answer": "KWIGIRIRA ICYIZERE",
+  "options": [
+   "KWIGIRIRA ICYIZERE",
+   "KUTUBAHIRIZA IGIHE",
+   "KUTAGISHA INAMA"
+  ]
+ },
+ "indangagaciro-10D": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-10D",
+  "rank": "10",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "IMPUHWE",
+  "answer": "IMPUHWE",
+  "options": [
+   "IMPUHWE",
+   "KWIRATA",
+   "KURENGANYA"
+  ]
+ },
+ "indangagaciro-JD": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-JD",
+  "rank": "J",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "IMBABAZI",
+  "answer": "IMBABAZI",
+  "options": [
+   "IMBABAZI",
+   "GUHUBUKA",
+   "KUBESHYA"
+  ]
+ },
+ "indangagaciro-QD": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-QD",
+  "rank": "Q",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "UBWUZU",
+  "answer": "UBWUZU",
+  "options": [
+   "UBWUZU",
+   "GUSAMBANA",
+   "GUHUBUKA"
+  ]
+ },
+ "indangagaciro-KD": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-KD",
+  "rank": "K",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "URUGWIRO",
+  "answer": "URUGWIRO",
+  "options": [
+   "URUGWIRO",
+   "GUSABIRIZA",
+   "KUDAKORA NEZA"
+  ]
+ },
+ "indangagaciro-AD": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-AD",
+  "rank": "A",
+  "suit": "diamonds",
+  "kind": "pick",
+  "category": "indangagaciro",
+  "statement": "KURANGIZA IBYO WATANGIYE NO KWISHIMIRA IBYAGEZWEHO",
+  "answer": "KURANGIZA IBYO WATANGIYE NO KWISHIMIRA IBYAGEZWEHO",
+  "options": [
+   "KURANGIZA IBYO WATANGIYE NO KWISHIMIRA IBYAGEZWEHO",
+   "KUTAGIRA ISHYAKA MURI GAHUNDA Z’ITERAMBERE RY’IGIHUGU",
+   "GUPFOBYA JENOSIDE YAKOREWE ABATUTSI MURI 1994"
+  ]
+ },
+ "indangagaciro-joker1": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-joker1",
+  "rank": null,
+  "suit": null,
+  "kind": "read"
+ },
+ "indangagaciro-joker2": {
+  "deck": "indangagaciro",
+  "card": "indangagaciro-joker2",
+  "rank": null,
+  "suit": null,
+  "kind": "read"
+ }
+}

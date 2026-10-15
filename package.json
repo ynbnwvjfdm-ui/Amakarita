@@ -1,0 +1,52 @@
+{
+  "name": "amakarita",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@expo-google-fonts/space-grotesk": "^0.4.1",
+    "@expo/metro-runtime": "~57.0.16",
+    "@expo/vector-icons": "^15.0.2",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~57.0.28",
+    "expo-font": "~57.0.4",
+    "expo-haptics": "~57.0.3",
+    "expo-sharing": "~57.0.23",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-view-shot": "5.1.0",
+    "react-native-web": "~0.21.0",
+    "react-native-worklets": "0.10.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/react": "~19.2.2",
+    "@types/react-dom": "~19.2.0",
+    "eslint": "^9.0.0",
+    "eslint-config-expo": "~57.0.2",
+    "https-proxy-agent": "7.0.6",
+    "jest": "^29.7.0",
+    "jest-expo": "^57.0.6",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "export:web": "expo export --platform web",
+    "lint": "expo lint",
+    "phone": "bash tools/phone/start.sh",
+    "preview": "EXPO_OFFLINE=1 CI=1 expo export --platform web && python3 -I tools/preview/build.py",
+    "check:overlaps": "bash tools/checks/overlaps.sh"
+  },
+  "private": true,
+  "jest": {
+    "preset": "jest-expo"
+  }
+}

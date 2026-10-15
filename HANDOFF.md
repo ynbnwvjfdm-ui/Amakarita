@@ -73,7 +73,7 @@ The README has the full list and the rules of each game. In short:
 3. **Matatu:** the Joker's value when someone cuts (50) is a guess.
 4. **Final app name and icon.**
 5. **Merging** PRs #1 and #2 into `master`.
-6. **What to build next.** Claude's recommendation is a **daily review**: "today's 10 cards" from Home, picked from the cards each person keeps missing. Other options:
+6. **Next build, chosen by the author on 15 October: the daily review.** "Today's 10 cards" from Home, picked from the cards each person keeps missing, counting towards the daily goal, streak and points. Start with a round of questions to the author about it. Later options:
    - English meanings of each saying (the author must check every one);
    - finishing Amaturufu.
 7. **Live phone testing:** the tunnel from cloud chats can drop at any time (see "Test on the author's iPhone"). An Apple Developer account would allow a proper installed build.

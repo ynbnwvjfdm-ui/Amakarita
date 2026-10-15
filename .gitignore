@@ -43,3 +43,6 @@ yarn-error.*
 # python
 __pycache__/
 *.pyc
+
+# Packaged claude.ai preview (npm run preview)
+/preview/

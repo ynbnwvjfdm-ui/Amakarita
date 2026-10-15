@@ -1,3 +1,26 @@
+# Amakarita — read this first
+
+Amakarita turns the author's own Rwandan card decks into games, to teach the Kinyarwanda printed on the cards. Before doing anything else in a new chat, read **HANDOFF.md**: where the work stands, decisions already made, questions waiting on the author, and what's next.
+
+## The author's rules (never break these)
+
+- Keep every card's words exactly as printed; never rewrite or "correct" them.
+- Never change the card backs (UMUGAMBI). Covers, backs and Ibisakuzo cards are shown as printed.
+- Keep each card's printed centre intact; redrawn frames and corners around it are fine.
+- No audio.
+- The interface is Kinyarwanda first, with English as the second language. New text needs both (`src/i18n.tsx`), and the author reviews the Kinyarwanda.
+- Space Grotesk is the only font.
+- Nothing on any screen may overlap, be cut off, or (on setup screens) need scrolling. Check with `npm run check:overlaps`.
+- Talk to the author in plain, non-technical language. Ask questions as you go (AskUserQuestion), one round at a time, with a recommended option first.
+
+## Working in this project
+
+- **Long chats lose detail.** When this chat has been summarised (a summary appears at the top), or when a big feature is finished, tell the author it is time for a new chat. Before that, update HANDOFF.md, then commit and push. Offer to open the new chat yourself: `create_session` (claude-code-remote tools) with `source_url` set to this repository and `source_revision` set to the working branch named in HANDOFF.md. A chat started from `master` sees none of the app until the pull requests are merged.
+- **Testing on the author's iPhone:** run `npm run phone` as a background job. When it prints `READY`, tell the author to open Expo Go → Home → Development servers → Amakarita (or give them the exp:// link it prints). No setup is needed on their side; details in HANDOFF.md.
+- **Navigation is not Expo Router.** The app uses its own small stack navigator (`App.tsx`, `src/navigation.ts`). Keep using it; the Expo Router advice below does not apply here.
+- **Before saying a change is done:** `npm run lint`, `npm run typecheck`, `npm test`. For screen changes, also run `npm run check:overlaps` (one size: `SIZES=390x844 npm run check:overlaps`). Then update the preview: `npm run preview`, and publish it (HANDOFF.md).
+- **Never run prettier** on this repository: it rewrites files in a different style.
+
 This is an Expo/React Native mobile application. Prioritize mobile-first patterns, performance, and cross-platform compatibility.
 
 ## Expo has changed — do not trust your training data

@@ -40,7 +40,12 @@ npm test                # game-rule tests
 npm run typecheck
 npm run lint
 npm run export:web      # browser build in dist/
+npm run phone           # run on a phone in Expo Go from a cloud session (HANDOFF.md)
+npm run preview         # package the browser build as the claude.ai preview
+npm run check:overlaps  # walk every screen at four phone sizes for overlaps
 ```
+
+HANDOFF.md has where the work stands, decisions made, open questions and how-tos.
 
 ## Code
 
@@ -77,6 +82,9 @@ Suited PDFs: page 1 cover, pages 2–53 ♠ ♥ ♣ ♦ (2 → A each), 54–55 
 - `tools/extract_decks.py` — regenerates `assets/` and `src/data/` from `source/`.
 - `tools/page_edges.py` — writes `src/data/decks/edges.ts`, each page's edge colour
   (put behind the rounded card so iOS draws a smooth shadow).
+- `tools/phone/` — `npm run phone`: Expo's tunnel through a cloud session's proxy.
+- `tools/preview/` — `npm run preview`: the claude.ai preview page.
+- `tools/checks/` — `npm run check:overlaps`: the no-overlap check.
 
 ## Card data
 
